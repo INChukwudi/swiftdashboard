@@ -1,0 +1,39 @@
+/* Flatpickr Custom Styling to match your screenshot */
+.flatpickr-calendar {
+    border: 1px solid #e4e6ef !important;
+    border-radius: 8px !important;
+    box-shadow: 0 8px 25px rgba(15, 20, 35, 0.15) !important;
+    font-family: inherit;
+  }
+  
+  .flatpickr-months .flatpickr-month {
+    background: #3b82f6;
+    color: white;
+  }
+  
+  .flatpickr-current-month .flatpickr-monthDropdown-months,
+  .flatpickr-current-month .numInputWrapper span {
+    color: white;
+  }
+  
+  .flatpickr-day.selected,
+  .flatpickr-day.startRange,
+  .flatpickr-day.endRange,
+  .flatpickr-day.selected:hover {
+    background: #3b82f6 !important;
+    border-color: #3b82f6 !important;
+    color: white !important;
+  }
+  
+  .flatpickr-day.today {
+    border-color: #3b82f6;
+  }
+  
+  .flatpickr-ranges .flatpickr-ranges-list {
+    border-right: 1px solid #e4e6ef;
+  }
+  
+  .flatpickr-ranges li.active {
+    background-color: #3b82f6 !important;
+    color: white !important;
+  }

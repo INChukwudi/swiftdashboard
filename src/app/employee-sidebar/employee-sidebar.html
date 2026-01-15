@@ -1,0 +1,266 @@
+<!--begin::Sidebar-->
+<div id="kt_app_sidebar" class="app-sidebar flex-column" style="background-color: #0d0e12;" data-kt-drawer="true" data-kt-drawer-name="app-sidebar" data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true" data-kt-drawer-width="225px" data-kt-drawer-direction="start" data-kt-drawer-toggle="#kt_app_sidebar_mobile_toggle">
+    <!--begin::Logo-->
+    <div class="app-sidebar-logo px-6" id="kt_app_sidebar_logo">
+        <!--begin::Logo image-->
+        <a href="index.html">
+            <img alt="Logo" src="/assets/swiftlogo.png" class="h-70px  app-sidebar-logo-default" />
+            <img alt="Logo" src="/assets/swifticon.png" class="h-40px app-sidebar-logo-minimize" />
+        </a>
+        <!--end::Logo image-->
+        <!--begin::Sidebar toggle-->
+        <div id="kt_app_sidebar_toggle" class="app-sidebar-toggle btn btn-icon btn-shadow btn-sm btn-color-muted btn-active-color-primary h-30px w-30px position-absolute top-50 start-100 translate-middle rotate" data-kt-toggle="true" data-kt-toggle-state="active" data-kt-toggle-target="body" data-kt-toggle-name="app-sidebar-minimize">
+            <i class="ki-duotone ki-black-left-line fs-3 rotate-180">
+                <span class="path1"></span>
+                <span class="path2"></span>
+            </i>
+        </div>
+        <!--end::Sidebar toggle-->
+    </div>
+    <!--end::Logo-->
+    <!--begin::sidebar menu-->
+    <div class="app-sidebar-menu overflow-hidden flex-column-fluid">
+        <!--begin::Menu wrapper-->
+        <div id="kt_app_sidebar_menu_wrapper" class="app-sidebar-wrapper">
+            <!--begin::Scroll wrapper-->
+            <div id="kt_app_sidebar_menu_scroll" class="scroll-y my-5 mx-3" data-kt-scroll="true" data-kt-scroll-activate="true" data-kt-scroll-height="auto" data-kt-scroll-dependencies="#kt_app_sidebar_logo, #kt_app_sidebar_footer" data-kt-scroll-wrappers="#kt_app_sidebar_menu" data-kt-scroll-offset="5px" data-kt-scroll-save-state="true">
+                <!--begin::Menu-->
+                <div class="menu menu-column menu-rounded menu-sub-indention fw-semibold fs-6" id="#kt_app_sidebar_menu" data-kt-menu="true" data-kt-menu-expand="false">
+                <!--begin:Menu item-->
+                <div data-kt-menu-trigger="click" class="menu-item here show menu-accordion">
+                 <!--begin:Menu link-->
+                    <a routerLink="/employee" class="menu-link" routerLinkActive="active">
+                        <span class="menu-icon">
+                            <i class="ki-duotone ki-home fs-2"></i>
+                        </span>
+                        <span class="menu-title">Dashboard</span>
+                    </a>
+                    <!--end:Menu link-->
+
+                </div>
+                <!--end:Menu item-->
+
+                    <!--begin:Menu item-->
+                    <div class="menu-item pt-5">
+                        <!--begin:Menu content-->
+                        <div class="menu-content">
+                            <span class="menu-heading fw-bold text-uppercase fs-7">Management</span>
+                        </div>
+                        <!--end:Menu content-->
+                    </div>
+                    <!--end:Menu item-->
+                    <!--begin:Menu item-->
+                    <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                        <!--begin:Menu link-->
+                        <a routerLink="/employee/task" class="menu-link" routerLinkActive="active">
+                            <span class="menu-icon">
+                                <i class="ki-duotone ki-address-book fs-2">
+                                    <span class="path1"></span>
+                                    <span class="path2"></span>
+                                    <span class="path3"></span>
+                                </i>
+                            </span>
+                            <span class="menu-title">My Task</span>
+                            
+                            
+                        </a>
+                        <!--end:Menu link-->
+                     
+                    </div>
+                    <!--end:Menu item-->
+                    <!--begin:Menu item-->
+                    <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                        <!--begin:Menu link-->
+                        <a href="index.html" class="menu-link">
+                            <span class="menu-icon">
+                                <i class="ki-duotone  ki-element-11 fs-">
+                                    <span class="path1"></span>
+                                    <span class="path2"></span>
+                                    <span class="path3"></span>
+                                    <span class="path4"></span>
+                                    <span class="path5"></span>
+                                    <span class="path6"></span>
+                                </i>
+                            </span>
+                            <span class="menu-title">Leave Management  </span>
+                           
+                        </a>
+                        <!--end:Menu link-->
+                  
+                    </div>
+                    <!--end:Menu item-->
+                    <!--begin:Menu item-->
+                    <div class="menu-item pt-5">
+                        <!--begin:Menu content-->
+                        <div class="menu-content">
+                            <span class="menu-heading fw-bold text-uppercase fs-7">Attendance </span>
+                        </div>
+                        <!--end:Menu content-->
+                    </div>
+                    <!--begin:Menu item-->
+                    <div class="menu-item">
+                        <!--begin:Menu link-->
+                        <a class="menu-link" href="/employee/myattendance">
+                            <span class="menu-icon">
+                                <i class="ki-duotone ki-faceid fs-2">
+                                    <span class="path1"></span>
+                                    <span class="path2"></span>
+                                    <span class="path3"></span>
+                                    <span class="path4"></span>
+                                </i>
+                            </span>
+                            <span class="menu-title">Attendance Register </span>
+                        </a>
+                        <!--end:Menu link-->
+                        
+                    </div>
+                    <!--end:Menu item-->
+                    <!--begin:Menu item-->
+                    <div class="menu-item pt-5">
+                        <!--begin:Menu content-->
+                        <div class="menu-content">
+                            <span class="menu-heading fw-bold text-uppercase fs-7">Directories </span>
+                        </div>
+                        <!--end:Menu content-->
+                    </div>
+                    <!--begin:Menu item-->
+                    <div class="menu-item">
+                        <!--begin:Menu link-->
+                        <a class="menu-link" routerLink="/employee/projects" routerLinkActive="active">
+                            <span class="menu-icon">
+                                <i class="ki-duotone ki-shield-tick fs-2">
+                                    <span class="path1"></span>
+                                    <span class="path2"></span>
+                                    <span class="path3"></span>
+                                </i>
+                            </span>
+                            <span class="menu-title">Project Directory</span>
+                            <span class="menu-badge">
+                                <span class="badge badge-danger">6</span>
+                            </span>
+                        </a>
+                        <!--end:Menu link--> 
+                    </div>
+                    <!--end:Menu item-->
+                    <!--begin:Menu item-->
+                    <div class="menu-item pt-5">
+                        <!--begin:Menu content-->
+                        <div class="menu-content">
+                            <span class="menu-heading fw-bold text-uppercase fs-7">Hub</span>
+                        </div>
+                        <!--end:Menu content-->
+                    </div>
+                    <!--begin:Menu item-->
+                    
+                    <!--begin:Menu item-->
+                    <div class="menu-item">
+                        <!--begin:Menu link-->
+                        <a class="menu-link" routerLink="/employee/innovation" routerLinkActive="active"> 
+                            <span class="menu-icon">
+                                <i class="ki-duotone ki-book-open fs-2">
+                                    <span class="path1"></span>
+                                    <span class="path2"></span>
+                                </i>
+                            </span>
+                            <span class="menu-title">Innovation Hub</span>
+                        </a>
+                        <!--end:Menu link-->
+                        
+                    </div>
+                    <!--end:Menu item-->
+                 
+                    <!--begin:Menu item-->
+                    <div class="menu-item pt-5">
+                        <!--begin:Menu content-->
+                        <div class="menu-content">
+                            <span class="menu-heading fw-bold text-uppercase fs-7">Settings</span>
+                        </div>
+                        <!--end:Menu content-->
+                    </div>
+                    <!--begin:Menu item-->
+                    <div class="menu-item">
+                        <!--begin:Menu link-->
+                        <a class="menu-link" routerLink="/employee/profile" routerLinkActive="active"> 
+                            <span class="menu-icon">
+                                <i class="ki-duotone ki-gear fs-2">
+                                    <span class="path1"></span>
+                                     <span class="path2"></span>
+                                </i>
+                            </span>
+                            <span class="menu-title">Profile</span>
+                        </a>
+                        <!--end:Menu link-->
+
+                        <!--begin:Menu link-->
+                        <a class="menu-link" href="signin.html">
+                            <span class="menu-icon">
+                                <i class="ki-duotone ki-exit-left fs-2">
+                                <span class="path1"></span>
+                                <span class="path2"></span>
+                                </i>
+                            </span>
+                            <span class="menu-title">Log Out</span>
+                        </a>
+                        <!--end:Menu link-->
+                    </div>
+                    <!--end:Menu item-->
+                </div>
+                <!--end::Menu-->
+            </div>
+            <!--end::Scroll wrapper-->
+        </div>
+        <!--end::Menu wrapper-->
+        <!--begin::Footer-->
+        <div class="app-sidebar-footer flex-column-auto pt-2 pb-6 px-6" id="kt_app_sidebar_footer">
+            <div class="card d-flex justify-content-center align-items-center bg-primary w-100 border-0 px-3 py-5" style="background-image: url('./assets/media/Ellipse-support.png'); background-position: left bottom; background-size: cover;">
+                <img src="/assets/media/customer-bitmoji.png" width="100px">
+                <button class="btn text-primary  w-100" style="border-radius: 50px !important; background-color: white;">Contact Support</button>
+            </div>
+        </div>
+        <!--end::Footer-->
+    </div>
+    <!--end::sidebar menu-->
+
+
+    
+</div>
+<!--end::Sidebar-->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Target the specific table inside this collapse section
+        const section = document.querySelector('#kt_customer_view_payment_method_2');
+        const tableBody = section.querySelector('tbody');
+        const addItemBtn = section.querySelector('[data-kt-element="add-item"]');
+    
+        // 🟢 Add New Row
+        addItemBtn.addEventListener('click', function (e) {
+            e.preventDefault();
+    
+            // Clone the first row (used as a template)
+            const firstRow = tableBody.querySelector('[data-kt-element="item"]');
+            const newRow = firstRow.cloneNode(true);
+    
+            // Clear input values in the new row
+            newRow.querySelectorAll('input').forEach(input => input.value = '');
+    
+            // Append the new row
+            tableBody.appendChild(newRow);
+        });
+    
+        // 🔴 Remove Row (event delegation for dynamic elements)
+        tableBody.addEventListener('click', function (e) {
+            const removeBtn = e.target.closest('[data-kt-element="remove-item"]');
+            if (removeBtn) {
+                const rows = tableBody.querySelectorAll('[data-kt-element="item"]');
+                if (rows.length > 1) {
+                    removeBtn.closest('[data-kt-element="item"]').remove();
+                } else {
+                    alert('At least one row must remain.');
+                }
+            }
+        });
+    });
+    </script>
+    <script src="assets/plugins/custom/datatables/datatables.bundle.js"></script>
+    <script src="assets/js/custom/account/settings/signin-methods.js"></script>
+    

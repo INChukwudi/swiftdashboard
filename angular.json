@@ -10,6 +10,7 @@
           "style": "scss"
         }
       },
+
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -24,11 +25,19 @@
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
+            "src/favicon.ico",
+            "src/assets",
               {
                 "glob": "**/*",
                 "input": "public"
               }
             ],
+            "scripts": [
+              "/public/assets/js/scripts.bundle.js",
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+              
+            ],
+
             "styles": [
               "src/styles.scss"
             ]
@@ -81,12 +90,20 @@
             ],
             "tsConfig": "tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
-            "assets": [
-              {
-                "glob": "**/*",
-                "input": "public"
-              }
+          "assets": [
+            "/public/assets",
+            "src/favicon.ico",
+            {
+              "glob": "**/*",
+              "input": "public"
+            }
+          ],
+          "scripts": [
+              "/public/assets/plugins/global/plugins.bundle.js",
+              "/public/assets/js/scripts.bundle.js",
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
             ],
+
             "styles": [
               "src/styles.scss"
             ]
@@ -94,5 +111,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }

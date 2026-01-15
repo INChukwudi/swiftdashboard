@@ -1,0 +1,483 @@
+	<!--begin::App-->
+    <div class="d-flex flex-column flex-root app-root" id="kt_app_root">
+        <!--begin::Page-->
+        <div class="app-page flex-column flex-column-fluid" id="kt_app_page">
+            <!--begin::Header-->
+            <div id="kt_app_header" class="app-header" data-kt-sticky="true" data-kt-sticky-activate="{default: true, lg: true}" data-kt-sticky-name="app-header-minimize" data-kt-sticky-offset="{default: '200px', lg: '0'}" data-kt-sticky-animation="false">
+                <!--begin::Header container-->
+                <div class="app-container container-fluid d-flex align-items-stretch justify-content-between" id="kt_app_header_container">
+                    <!--begin::Sidebar mobile toggle-->
+                    <div class="d-flex align-items-center d-lg-none ms-n3 me-1 me-md-2" title="Show sidebar menu">
+                        <div class="btn btn-icon btn-active-color-primary w-35px h-35px" id="kt_app_sidebar_mobile_toggle">
+                            <i class="ki-duotone ki-abstract-14 fs-2 fs-md-1">
+                                <span class="path1"></span>
+                                <span class="path2"></span>
+                            </i>
+                        </div>
+                    </div>
+                    <!--end::Sidebar mobile toggle-->
+                    <!--begin::Mobile logo-->
+                    <div class="d-flex align-items-center flex-grow-1 flex-lg-grow-0">
+                        <a href="index.html" class="d-lg-none">
+                            <img alt="Logo" src="assets/swiftlogo.png" class="h-30px" />
+                        </a>
+                    </div>
+                    <!--end::Mobile logo-->
+                    <!--begin::Header wrapper-->
+                    <div class="d-flex align-items-stretch justify-content-between flex-lg-grow-1" id="kt_app_header_wrapper">
+                        <!--begin::Menu wrapper-->
+                        <div class="app-header-menu app-header-mobile-drawer align-items-center" data-kt-drawer="true" data-kt-drawer-name="app-header-menu" data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true" data-kt-drawer-width="250px" data-kt-drawer-direction="end" data-kt-drawer-toggle="#kt_app_header_menu_toggle" data-kt-swapper="true" data-kt-swapper-mode="{default: 'append', lg: 'prepend'}" data-kt-swapper-parent="{default: '#kt_app_body', lg: '#kt_app_header_wrapper'}">
+                            <h1 class="title">Employee Ranking</h1>
+                        </div>
+                        <!--end::Menu wrapper-->
+                        <!--begin::Navbar-->
+                        <div class="app-navbar flex-shrink-0">
+                            <!--begin::Chat-->
+                            <div class="app-navbar-item ms-1 ms-md-4">
+                                <!--begin::Menu wrapper-->
+                                <div class="btn btn-icon btn-custom btn-icon-muted btn-active-light btn-active-color-primary w-35px h-35px position-relative" id="kt_drawer_chat_toggle">
+                                    <i class="ki-duotone ki-message-notif fs-2">
+                                            <span class="path1"></span>
+                                            <span class="path2"></span>
+                                            <span class="path3"></span>
+                                            <span class="path4"></span>
+                                            <span class="path5"></span>
+                                    </i>
+                                    <span class="bullet bullet-dot bg-success h-6px w-6px position-absolute translate-middle top-0 start-50 animation-blink"></span>
+                                </div>
+                                <!--end::Menu wrapper-->
+                            </div>
+                            <!--end::Chat-->
+                            
+                            <!--begin::Theme mode-->
+                            <div class="app-navbar-item ms-1 ms-md-4">
+                                <!--begin::Menu toggle-->
+                                <a href="#" class="btn btn-icon btn-custom btn-icon-muted btn-active-light btn-active-color-primary w-35px h-35px" data-kt-menu-trigger="{default:'click', lg: 'hover'}" data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end">
+                                    <i class="ki-duotone ki-night-day theme-light-show fs-1">
+                                        <span class="path1"></span>
+                                        <span class="path2"></span>
+                                        <span class="path3"></span>
+                                        <span class="path4"></span>
+                                        <span class="path5"></span>
+                                        <span class="path6"></span>
+                                        <span class="path7"></span>
+                                        <span class="path8"></span>
+                                        <span class="path9"></span>
+                                        <span class="path10"></span>
+                                    </i>
+                                    <i class="ki-duotone ki-moon theme-dark-show fs-1">
+                                        <span class="path1"></span>
+                                        <span class="path2"></span>
+                                    </i>
+                                </a>
+                                <!--begin::Menu toggle-->
+                                <!--begin::Menu-->
+                                <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-title-gray-700 menu-icon-gray-500 menu-active-bg menu-state-color fw-semibold py-4 fs-base w-150px" data-kt-menu="true" data-kt-element="theme-mode-menu">
+                                    <!--begin::Menu item-->
+                                    <div class="menu-item px-3 my-0">
+                                        <a href="#" class="menu-link px-3 py-2" data-kt-element="mode" data-kt-value="light">
+                                            <span class="menu-icon" data-kt-element="icon">
+                                                <i class="ki-duotone ki-night-day fs-2">
+                                                    <span class="path1"></span>
+                                                    <span class="path2"></span>
+                                                    <span class="path3"></span>
+                                                    <span class="path4"></span>
+                                                    <span class="path5"></span>
+                                                    <span class="path6"></span>
+                                                    <span class="path7"></span>
+                                                    <span class="path8"></span>
+                                                    <span class="path9"></span>
+                                                    <span class="path10"></span>
+                                                </i>
+                                            </span>
+                                            <span class="menu-title">Light</span>
+                                        </a>
+                                    </div>
+                                    <!--end::Menu item-->
+                                    <!--begin::Menu item-->
+                                    <div class="menu-item px-3 my-0">
+                                        <a href="#" class="menu-link px-3 py-2" data-kt-element="mode" data-kt-value="dark">
+                                            <span class="menu-icon" data-kt-element="icon">
+                                                <i class="ki-duotone ki-moon fs-2">
+                                                    <span class="path1"></span>
+                                                    <span class="path2"></span>
+                                                </i>
+                                            </span>
+                                            <span class="menu-title">Dark</span>
+                                        </a>
+                                    </div>
+                                    <!--end::Menu item-->
+                                    <!--begin::Menu item-->
+                                    <div class="menu-item px-3 my-0">
+                                        <a href="#" class="menu-link px-3 py-2" data-kt-element="mode" data-kt-value="system">
+                                            <span class="menu-icon" data-kt-element="icon">
+                                                <i class="ki-duotone ki-screen fs-2">
+                                                    <span class="path1"></span>
+                                                    <span class="path2"></span>
+                                                    <span class="path3"></span>
+                                                    <span class="path4"></span>
+                                                </i>
+                                            </span>
+                                            <span class="menu-title">System</span>
+                                        </a>
+                                    </div>
+                                    <!--end::Menu item-->
+                                </div>
+                                <!--end::Menu-->
+                            </div>
+                            <!--end::Theme mode-->
+                            <!--begin::User menu-->
+                            <div class="app-navbar-item ms-1 ms-md-4" id="kt_header_user_menu_toggle">
+                                <!--begin::Menu wrapper-->
+                                <div class="cursor-pointer symbol symbol-35px" data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end">
+                                    <img src="assets/pixelsicon.png" class="rounded-3" alt="user" />
+                                </div>
+                                <!--begin::User account menu-->
+                                <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg menu-state-color fw-semibold py-4 fs-6 w-275px" data-kt-menu="true">
+                                    <!--begin::Menu item-->
+                                    <div class="menu-item px-3">
+                                        <div class="menu-content d-flex align-items-center px-3">
+                                            <!--begin::Avatar-->
+                                            <div class="symbol symbol-50px me-5">
+                                                <img alt="Logo" src="assets/pixelsicon.png" />
+                                            </div>
+                                            <!--end::Avatar-->
+                                            <!--begin::Username-->
+                                            <div class="d-flex flex-column">
+                                                <div class="fw-bold d-flex align-items-center fs-5">Pixels Solutiin Ltd
+                                                <span class="badge badge-light-success fw-bold fs-8 px-2 py-1 ms-2">Pro</span></div>
+                                                
+                                            </div>
+                                            <!--end::Username-->
+                                        </div>
+                                    </div>
+                                    <!--end::Menu item-->
+                                    
+                                    <!--begin::Menu separator-->
+                                    <div class="separator my-2"></div>
+                                    <!--end::Menu separator-->
+                                    <!--begin::Menu item-->
+                                    <div class="menu-item px-5" data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-placement="left-start" data-kt-menu-offset="-15px, 0">
+                                        <a href="#" class="menu-link px-5">
+                                            <span class="menu-title position-relative">Mode 
+                                            <span class="ms-5 position-absolute translate-middle-y top-50 end-0">
+                                                <i class="ki-duotone ki-night-day theme-light-show fs-2">
+                                                    <span class="path1"></span>
+                                                    <span class="path2"></span>
+                                                    <span class="path3"></span>
+                                                    <span class="path4"></span>
+                                                    <span class="path5"></span>
+                                                    <span class="path6"></span>
+                                                    <span class="path7"></span>
+                                                    <span class="path8"></span>
+                                                    <span class="path9"></span>
+                                                    <span class="path10"></span>
+                                                </i>
+                                                <i class="ki-duotone ki-moon theme-dark-show fs-2">
+                                                    <span class="path1"></span>
+                                                    <span class="path2"></span>
+                                                </i>
+                                            </span></span>
+                                        </a>
+                                        <!--begin::Menu-->
+                                        <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-title-gray-700 menu-icon-gray-500 menu-active-bg menu-state-color fw-semibold py-4 fs-base w-150px" data-kt-menu="true" data-kt-element="theme-mode-menu">
+                                            <!--begin::Menu item-->
+                                            <div class="menu-item px-3 my-0">
+                                                <a href="#" class="menu-link px-3 py-2" data-kt-element="mode" data-kt-value="light">
+                                                    <span class="menu-icon" data-kt-element="icon">
+                                                        <i class="ki-duotone ki-night-day fs-2">
+                                                            <span class="path1"></span>
+                                                            <span class="path2"></span>
+                                                            <span class="path3"></span>
+                                                            <span class="path4"></span>
+                                                            <span class="path5"></span>
+                                                            <span class="path6"></span>
+                                                            <span class="path7"></span>
+                                                            <span class="path8"></span>
+                                                            <span class="path9"></span>
+                                                            <span class="path10"></span>
+                                                        </i>
+                                                    </span>
+                                                    <span class="menu-title">Light</span>
+                                                </a>
+                                            </div>
+                                            <!--end::Menu item-->
+                                            <!--begin::Menu item-->
+                                            <div class="menu-item px-3 my-0">
+                                                <a href="#" class="menu-link px-3 py-2" data-kt-element="mode" data-kt-value="dark">
+                                                    <span class="menu-icon" data-kt-element="icon">
+                                                        <i class="ki-duotone ki-moon fs-2">
+                                                            <span class="path1"></span>
+                                                            <span class="path2"></span>
+                                                        </i>
+                                                    </span>
+                                                    <span class="menu-title">Dark</span>
+                                                </a>
+                                            </div>
+                                            <!--end::Menu item-->
+                                            <!--begin::Menu item-->
+                                            <div class="menu-item px-3 my-0">
+                                                <a href="#" class="menu-link px-3 py-2" data-kt-element="mode" data-kt-value="system">
+                                                    <span class="menu-icon" data-kt-element="icon">
+                                                        <i class="ki-duotone ki-screen fs-2">
+                                                            <span class="path1"></span>
+                                                            <span class="path2"></span>
+                                                            <span class="path3"></span>
+                                                            <span class="path4"></span>
+                                                        </i>
+                                                    </span>
+                                                    <span class="menu-title">System</span>
+                                                </a>
+                                            </div>
+                                            <!--end::Menu item-->
+                                        </div>
+                                        <!--end::Menu-->
+                                    </div>
+                                    <!--end::Menu item-->
+                                
+                                    <!--begin::Menu item-->
+                                    <div class="menu-item px-5 my-1">
+                                        <a href="#" class="menu-link px-5">Account Settings</a>
+                                    </div>
+                                    <!--end::Menu item-->
+                                    <!--begin::Menu item-->
+                                    <div class="menu-item px-5">
+                                        <a href="#" class="menu-link px-5">Sign Out</a>
+                                    </div>
+                                    <!--end::Menu item-->
+                                </div>
+                                <!--end::User account menu-->
+                                <!--end::Menu wrapper-->
+                            </div>
+                            <!--end::User menu-->
+                            
+                            <!--begin::Aside toggle-->
+                            <!--end::Header menu toggle-->
+                        </div>
+                        <!--end::Navbar-->
+                    </div>
+                    <!--end::Header wrapper-->
+                </div>
+                <!--end::Header container-->
+            </div>
+            <!--end::Header-->
+            <!--begin::Wrapper-->
+            <div class="app-wrapper flex-column flex-row-fluid" id="kt_app_wrapper">
+            
+                <!--begin::Main-->
+                <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
+                    <!--begin::Content wrapper-->
+                    <div class="d-flex flex-column flex-column-fluid">
+          
+                        <!--begin::Content-->
+                        <div id="kt_app_content" class="app-content flex-column-fluid">
+                          <!--begin::Content container-->
+                          <div id="kt_app_content_container" class="app-container container-fluid">
+                            
+                            <!-- Loading State -->
+                            <div *ngIf="isLoading" class="text-center py-10">
+                              <div class="spinner-border text-primary" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                              </div>
+                            </div>
+              
+                            <!-- Error State -->
+                            <div *ngIf="errorMessage" class="alert alert-danger" role="alert">
+                              {{ errorMessage }}
+                            </div>
+              
+                            <!-- Top 3 Employees Card -->
+                            <div class="row g-5 gx-xl-10 mb-5 mb-xl-10" *ngIf="!isLoading && topThreeEmployees.length > 0">
+                              <div class="card border-transparent" data-bs-theme="light" 
+                                   style="background-color: #1800ad; background-image: url('assets/background.png'); background-position: center center; background-size: cover; background-repeat: no-repeat;">
+                                <div class="card-body px-4 px-md-8 py-6">
+                                  <!-- Header -->
+                                  <div class="text-center mb-6">
+                                    <h2 class="fs-2 fw-bold text-white">Top Employees of the Month</h2>
+                                    <span class="fs-6 fw-medium text-white opacity-75">Recognizing Outstanding Performance</span>
+                                  </div>
+                                  
+                                  <!-- Employees List -->
+                                  <div class="d-flex flex-column flex-md-row justify-content-between gap-4 gap-md-6">
+                                    
+                                    <!-- Loop through top 3 employees -->
+                                    <div *ngFor="let employee of topThreeEmployees; let i = index" 
+                                         class="flex-grow-1 text-center px-4 py-4 glass-card-employee" 
+                                         style="position: relative; border-radius: 20px;">
+                                      <div class="position-absolute top-0 start-50 translate-middle-x">
+                                        <span class="badge fs-6 fw-bold" 
+                                              [ngClass]="getRankBadgeClass(employee.monthlyRank)">
+                                          {{ getRankLabel(employee.monthlyRank) }}
+                                        </span>
+                                      </div>
+                                      <img [src]="employee.avatarUrl || 'assets/media/avatars/300-1.jpg'" 
+                                           [alt]="getFullName(employee)" 
+                                           class="w-100px h-100px rounded-circle mb-3">
+                                      <div class="text-white fs-4 fw-bold mb-2">{{ getFullName(employee) }}</div>
+                                      <span class="badge badge-light-primary text-primary mb-4">{{ employee.job }}</span>
+                                      <div class="d-flex justify-content-center gap-4">
+                                        <div class="d-flex flex-column align-items-center">
+                                          <div class="d-flex align-items-center mb-1">
+                                            <i class="bi bi-star-fill fs-4 me-2" style="color: #FFD700;"></i>
+                                            <span class="fs-4 fw-bold text-white">{{ formatPoints(employee.monthlyPoint) }}</span>
+                                          </div>
+                                          <span class="fs-6 fw-medium text-white opacity-75">Points</span>
+                                        </div>
+                                       
+                                      </div>
+                                    </div>
+                                    
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            
+                            <!-- Employee Ranking Table -->
+                            <div class="row gx-5 gx-xl-10">
+                              <div class="col-xl-12 mb-5 mb-xl-10">
+                                <div class="card card-flush h-xl-100">
+                                  <!-- Card Header -->
+                                  <div class="card-header pt-5 d-flex justify-content-between align-items-center flex-wrap">
+                                    <div>
+                                      <h3 class="card-title align-items-start flex-column">
+                                        <span class="card-label fw-bold text-gray-800">Employee Ranking</span>
+                                        <span class="text-gray-500 mt-1 fw-semibold fs-6">View staff overall ranking</span>
+                                      </h3>
+                                    </div>
+                                    
+                                    <!--begin::Card toolbar-->
+                                    <div class="card-toolbar flex-row-fluid justify-content-end gap-5">
+                                      <div class="d-flex align-items-center gap-2">
+                                        <!-- Preset Buttons -->
+                                        <button type="button" class="btn btn-sm btn-light-primary fw-bold px-4 btn-range-preset" 
+                                                data-range="today" id="todayBtn">
+                                          Today
+                                        </button>
+                                        
+                                        <!-- Date Range Input -->
+                                        <input class="form-control form-control-solid mw-250px" 
+                                               placeholder="Select date range" 
+                                               id="kt_ecommerce_report_views_daterangepicker" 
+                                               readonly />
+                                      </div>
+                                    </div>
+                                    <!--end::Card toolbar-->
+                                  </div>
+                                  
+                                  <!-- Card Body -->
+                                  <div class="card-body pt-6">
+                                    <div class="table-responsive">
+                                      <div class="mb-5">
+                                        <table class="table table-row-dashed align-middle gs-0 gy-3 my-0">
+                                          <thead>
+                                            <tr class="fs-7 fw-bold text-gray-500 border-bottom-0">
+                                              <th>S/N</th>
+                                              <th class="p-0 pb-3 min-w-150px text-start">Name</th>
+                                              <th class="p-0 pb-3 min-w-100px text-start">Monthly Rank</th>
+                                              <th class="p-0 pb-3 min-w-100px text-start">Monthly Point</th>
+                                              <th class="p-0 pb-3 min-w-100px text-start">Attendance Point</th>
+                                              <th class="p-0 pb-3 min-w-100px text-start">Monthly Task Point</th>
+                                              <th class="p-0 pb-3 min-w-100px text-start">Daily Rank</th>
+                                              <th class="p-0 pb-3 min-w-100px text-start">Daily Point</th>
+                                            </tr>
+                                          </thead>
+                                          <tbody>
+                                            <!-- No data message -->
+                                            <tr *ngIf="!isLoading && employees.length === 0">
+                                              <td colspan="8" class="text-center py-5">
+                                                <span class="text-gray-500">No employee data available</span>
+                                              </td>
+                                            </tr>
+                                            
+                                            <!-- Employee rows -->
+                                            <tr *ngFor="let employee of employees; let i = index">
+                                              <td>{{ i + 1 }}</td>
+                                              <td>
+                                                <div class="d-flex align-items-center">
+                                                  <div class="symbol symbol-50px me-3">
+                                                    <img [src]="employee.avatarUrl || 'assets/media/avatars/300-1.jpg'" 
+                                                         [alt]="getFullName(employee)">
+                                                  </div>
+                                                  <div class="d-flex justify-content-start flex-column">
+                                                    <a [routerLink]="['/staffprofile', employee.id]" 
+                                                       class="text-gray-800 fw-bold mb-1 fs-6">
+                                                      {{ getFullName(employee) }}
+                                                    </a>
+                                                    <span class="text-gray-500 fw-semibold d-block fs-7">{{ employee.employeeId }}</span>
+                                                  </div>
+                                                </div>
+                                              </td>
+                                              <td><span class="text-gray-600 fw-bold fs-6">{{ employee.monthlyRank }}</span></td>
+                                              <td><span class="badge bg-light-primary fs-7 fw-bold px-3 py-2">{{ formatPoints(employee.monthlyPoint) }} pts</span></td>
+                                              <td><span class="badge bg-light-success fs-7 fw-bold px-3 py-2">{{ formatPoints(employee.monthlyAttendancePoint) }} pts</span></td>
+                                              <td><span class="badge bg-light-info fs-7 fw-bold px-3 py-2">{{ formatPoints(employee.monthlyTaskPoint) }} pts</span></td>
+                                              <td><span class="text-gray-600 fw-bold fs-6">{{ employee.dailyRank }}</span></td>
+                                              <td><span class="badge bg-light-primary fs-7 fw-bold px-3 py-2">{{ formatPoints(employee.dailyPoint) }} pts</span></td>
+                                            </tr>
+                                          </tbody>
+                                        </table>
+                                      </div>
+                                    </div>
+                                    
+                                    <!-- Legend -->
+                                    <div class="mt-6 pt-3 border-top border-gray-300">
+                                      <div class="d-flex flex-wrap gap-4">
+                                        <div class="d-flex align-items-center">
+                                          <div class="w-15px h-15px rounded bg-success me-2"></div>
+                                          <span class="text-gray-600 fs-7 fw-semibold">≥ 8 hours (Full Day)</span>
+                                        </div>
+                                        <div class="d-flex align-items-center">
+                                          <div class="w-15px h-15px rounded bg-warning me-2"></div>
+                                          <span class="text-gray-600 fs-7 fw-semibold">6–7.9 hours (Partial)</span>
+                                        </div>
+                                        <div class="d-flex align-items-center">
+                                          <div class="w-15px h-15px rounded bg-danger me-2"></div>
+                                          <span class="text-gray-600 fs-7 fw-semibold">&lt; 6 hours (Incomplete)</span>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            
+                          </div>
+                          <!--end::Content container-->
+                        </div>
+                        <!--end::Content-->
+                      </div>
+                      <!--end::Content wrapper-->
+                            <!--end::Content container-->
+                        </div>
+                        <!--end::Content-->
+                    </div>
+                    <!--end::Content wrapper-->
+                    <!--begin::Footer-->
+                    <div id="kt_app_footer" class="app-footer">
+                        <!--begin::Footer container-->
+                        <div class="app-container container-fluid d-flex flex-column flex-md-row flex-center flex-md-stack py-3">
+                            <!--begin::Copyright-->
+                            <div class="text-gray-900 order-2 order-md-1">
+                                <span class="text-muted fw-semibold me-1">2025&copy;</span>
+                                <a href="#" target="_blank" class="text-gray-800 text-hover-primary">Swift - Office Productivity App</a>
+                            </div>
+                            <!--end::Copyright-->
+                            <!--begin::Menu-->
+                            <ul class="menu menu-gray-600 menu-hover-primary fw-semibold order-1">
+                                <li class="menu-item">
+                                    <a href="#" target="_blank" class="menu-link px-2">About</a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="#" target="_blank" class="menu-link px-2">Support</a>
+                                </li>
+                                
+                            </ul>
+                            <!--end::Menu-->
+                        </div>
+                        <!--end::Footer container-->
+                    </div>
+                    <!--end::Footer-->
+                </div>
+                <!--end:::Main-->
+            </div>
+            <!--end::Wrapper-->

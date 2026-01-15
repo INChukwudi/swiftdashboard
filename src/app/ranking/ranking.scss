@@ -1,0 +1,48 @@
+// Date Range Picker Custom Styles
+:host ::ng-deep {
+    .daterangepicker {
+      border: 1px solid #e4e6ef;
+      border-radius: 8px;
+      box-shadow: 0 8px 25px rgba(15, 20, 35, 0.15) !important;
+    }
+  
+    .daterangepicker .ranges {
+      border-right: 1px solid #e4e6ef;
+    }
+  
+    .daterangepicker .ranges li.active {
+      background-color: #3b82f6 !important;
+      color: white !important;
+    }
+  
+    .daterangepicker .calendar-table td.active {
+      background-color: #3b82f6 !important;
+      border-color: #3b82f6 !important;
+      color: white !important;
+    }
+  }
+  .glass-card-employee {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  
+    &:hover {
+      background: rgba(255, 255, 255, 0.15);
+      transform: translateY(-8px);
+      box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+  
+    img {
+      transition: transform 0.3s ease;
+      border: 3px solid rgba(255, 255, 255, 0.3);
+      object-fit: cover;
+    }
+  
+    &:hover img {
+      transform: scale(1.05);
+    }
+  }

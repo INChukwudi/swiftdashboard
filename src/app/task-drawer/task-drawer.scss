@@ -1,0 +1,172 @@
+/* Drawer Overlay */
+.drawer-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1049;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+  
+  .drawer-overlay-on {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  /* Drawer Container */
+  .drawer-new {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 750px;
+    max-width: 100%;
+    height: 100%;
+    background: #fff;
+    z-index: 1050;
+    overflow-y: auto;
+    overflow-x: hidden;
+    transition: right 0.3s ease;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  @media (min-width: 992px) {
+    .drawer-new {
+      width: 900px;
+    }
+  }
+  
+  .drawer-new.drawer-on {
+    right: 0;
+  }
+  
+  /* Prevent body scroll when drawer is open */
+  body.drawer-on {
+    overflow: hidden;
+  }
+  
+  /* Smooth transition for strikethrough effect */
+  input[name="name[]"],
+  .form-control-solid {
+    transition: all 0.3s ease;
+  }
+  
+  /* Tab styling */
+  .nav-line-tabs .nav-link {
+    cursor: pointer;
+  }
+  
+  .nav-line-tabs .nav-link.active {
+    border-bottom: 2px solid;
+  }
+  
+  /* Card styling improvements */
+  .card {
+    margin-bottom: 1rem;
+  }
+  
+  /* Upload card hover effect */
+  .card.bg-light-primary.border-dashed {
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .card.bg-light-primary.border-dashed:hover {
+    background-color: var(--bs-primary) !important;
+    color: white;
+    transform: translateY(-2px);
+  }
+  
+  .card.bg-light-primary.border-dashed:hover * {
+    color: white !important;
+  }
+  
+  /* Comment section styling */
+  .comment-item {
+    animation: fadeIn 0.3s ease;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* File item animations */
+  .file-item {
+    animation: slideIn 0.3s ease;
+  }
+  
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .drawer-new {
+      width: 100%;
+    }
+  }
+  
+  /* Scrollbar styling for drawer */
+  .drawer-new::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .drawer-new::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  .drawer-new::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+  }
+  
+  .drawer-new::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+  .select2-dropdown--status .select2-results__option[data-badge="success"] {
+    background-color: #1BC5BD;
+    color: #ffffff;
+  }
+  
+  .select2-dropdown--status .select2-results__option[data-badge="danger"] {
+    background-color: #F64E60;
+    color: #ffffff;
+  }
+  
+  .select2-dropdown--status .select2-results__option[data-badge="warning"] {
+    background-color: #FFA800;
+    color: #000000;
+  }
+  
+  .select2-dropdown--status .select2-results__option[data-badge="dark"] {
+    background-color: #343A40;
+    color: #ffffff;
+  }
+  
+
+  .timeline-label {
+    position: relative;
+  }
+  
+  .timeline-label::before {
+    left: 80px !important;
+  }
+  

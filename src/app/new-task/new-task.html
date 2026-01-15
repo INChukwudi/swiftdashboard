@@ -1,0 +1,438 @@
+<!--begin::Modal - New Target-->
+<div class="modal fade" id="kt_modal_new_target" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered mw-750px">
+        <div class="modal-content rounded">
+
+            <!--begin::Modal header-->
+            <div class="modal-header mt-10 mb-2 fixed-header border-0 px-10 py-5">
+                <!-- Title -->
+                <div class="w-100 text-center">
+                    <h1 class="mb-1 fw-bold">Create New Task</h1>
+                    <div class="text-muted fs-6">Fill in the details below to create a new task</div>
+                </div>
+
+                <!-- Close button -->
+                <div class="position-absolute top-0 end-0 mt-4 me-5">
+                    <button type="button"
+                            class="btn btn-sm btn-icon btn-active-color-primary"
+                            data-bs-dismiss="modal">
+                        <span class="svg-icon svg-icon-1">
+                            <svg width="24" height="24" fill="none">
+                                <rect opacity="0.5" x="6" y="17.3" width="16" height="2" rx="1"
+                                      transform="rotate(-45 6 17.3)" fill="currentColor"/>
+                                <rect x="7.41" y="6" width="16" height="2" rx="1"
+                                      transform="rotate(45 7.41 6)" fill="currentColor"/>
+                            </svg>
+                        </span>
+                    </button>
+                </div>
+            </div>
+            <!--end::Modal header-->
+
+            <!--begin::Modal body-->
+            <div class="modal-body scroll-y px-10 px-lg-15 pt-0 pb-15">
+
+                <!--begin::Form-->
+                <form id="kt_modal_new_target_form" [formGroup]="taskForm" (ngSubmit)="submitTask()" class="form">
+
+                    <!-- Project -->
+                    <div class="row g-9 mt-2 mb-8">
+                        <div class="col-md-12 fv-row">
+                            <label class="required fs-6 text-gray-700 fw-semibold mb-2">Assign to Project</label>
+                            <select class="form-select form-select-solid" formControlName="project"
+                                    [class.is-invalid]="isFieldInvalid('project')">
+                                <option value="">Select Project...</option>
+                                <option *ngFor="let project of projects" [value]="project.id">
+                                    {{ project.title || project.name }}
+                                </option>
+                            </select>
+                            <div class="invalid-feedback" *ngIf="isFieldInvalid('project')">
+                                {{ getFieldError('project') }}
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Task Title -->
+                    <div class="d-flex flex-column mb-8 fv-row">
+                        <label class="required fs-6 text-gray-700 fw-semibold mb-2">Task Title</label>
+                        <input type="text" class="form-control form-control-solid"
+                               placeholder="Enter Task Title"
+                               formControlName="title"
+                               [class.is-invalid]="isFieldInvalid('title')"/>
+                        <div class="invalid-feedback" *ngIf="isFieldInvalid('title')">
+                            {{ getFieldError('title') }}
+                        </div>
+                    </div>
+
+                    <!-- Task Description -->
+                    <div class="d-flex flex-column mb-8 fv-row">
+                        <label class="required fs-6 text-gray-700 fw-semibold mb-2">Task Description</label>
+                        <textarea class="form-control form-control-solid"
+                                  rows="3"
+                                  formControlName="description"
+                                  placeholder="Type Task Description"
+                                  [class.is-invalid]="isFieldInvalid('description')"></textarea>
+                        <div class="invalid-feedback" *ngIf="isFieldInvalid('description')">
+                            {{ getFieldError('description') }}
+                        </div>
+                    </div>
+
+                    <!-- Department -->
+                    <div class="row g-9 mb-8">
+                        <div class="col-md-12 fv-row">
+                            <label class="required text-gray-700 fs-6 fw-semibold mb-2">Department</label>
+                            <select class="form-select form-select-solid custom-select-icon" 
+                                    formControlName="department"
+                                    [class.is-invalid]="isFieldInvalid('department')">
+                                <option value="">Select Department...</option>
+                                <option *ngFor="let dept of departments" [value]="dept.id">
+                                    {{ dept.name }}
+                                </option>
+                            </select>
+                            <div class="invalid-feedback" *ngIf="isFieldInvalid('department')">
+                                {{ getFieldError('department') }}
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Category -->
+                    <div class="row g-9 mb-8">
+                        <div class="col-md-12 fv-row">
+                            <label class="required text-gray-700 fs-6 fw-semibold mb-2">Task Category</label>
+                            <select class="form-select form-select-solid custom-select-icon" 
+                                    formControlName="category"
+                                    [class.is-invalid]="isFieldInvalid('category')"
+                                    [disabled]="!taskForm.get('department')?.value">
+                                <option value="">Select Category...</option>
+                                <option *ngFor="let cat of filteredCategories" [value]="cat.id">
+                                    {{ cat.title }}
+                                </option>
+                            </select>
+                            <div class="invalid-feedback" *ngIf="isFieldInvalid('category')">
+                                {{ getFieldError('category') }}
+                            </div>
+                            <div class="form-text text-muted" *ngIf="!taskForm.get('department')?.value">
+                                Please select a department first
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Dates and Priority -->
+                    <div class="row g-9 mb-8">
+                        <div class="col-md-4 fv-row">
+                            <label class="required text-gray-700 fs-6 fw-semibold mb-2">Start Date</label>
+                            <input type="date"
+                                   class="form-control form-control-solid"
+                                   formControlName="startDate"
+                                   [class.is-invalid]="isFieldInvalid('startDate')"/>
+                            <div class="invalid-feedback" *ngIf="isFieldInvalid('startDate')">
+                                {{ getFieldError('startDate') }}
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 fv-row">
+                            <label class="required fs-6 fw-semibold mb-2">Due Date</label>
+                            <input type="date"
+                                   class="form-control form-control-solid"
+                                   formControlName="dueDate"
+                                   [class.is-invalid]="isFieldInvalid('dueDate')"/>
+                            <div class="invalid-feedback" *ngIf="isFieldInvalid('dueDate')">
+                                {{ getFieldError('dueDate') }}
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 fv-row">
+                            <label class=" text-gray-700 fs-6 fw-semibold mb-2">Priority</label>
+                            <select class="form-select form-select-solid" 
+                                    formControlName="priority"
+                                    [class.is-invalid]="isFieldInvalid('priority')">
+                                <option value="">Select Priority...</option>
+                                <option *ngFor="let priority of priorities" [value]="priority.value">
+                                    {{ priority.label }}
+                                </option>
+                            </select>
+                            <div class="invalid-feedback" *ngIf="isFieldInvalid('priority')">
+                                {{ getFieldError('priority') }}
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recurrence -->
+                    <div class="row g-9 mb-8">
+                        <div class="col-md-12 fv-row">
+                            <label class="fs-6 text-gray-700 fw-semibold mb-2">Recurrence</label>
+                            <select class="form-select form-select-solid" formControlName="recurrence">
+                                <option *ngFor="let rec of recurrences" [value]="rec.value">
+                                    {{ rec.label }}
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Collaborators -->
+                    <div class="d-flex flex-column mb-8 fv-row">
+                        <label class="d-flex text-gray-700 align-items-center fs-6 fw-semibold mb-2">
+                            <span>Collaborators</span>
+                            <i class="fas fa-exclamation-circle ms-2 fs-7" 
+                               data-bs-toggle="tooltip" 
+                               title="Add team members to collaborate on this task"></i>
+                        </label>
+                        
+                        <!-- Use the new Tagify component with formControlName -->
+                        <app-tagify-input
+                            formControlName="collaboratorIds"
+                            [whitelist]="collaboratorWhitelist"
+                            [maxTags]="20"
+                            [dropdownMaxItems]="20"
+                            placeholder="Type to search employees...">
+                        </app-tagify-input>
+                        
+                        <div class="form-text text-muted mt-2">
+                            Start typing to search and select collaborators
+                        </div>
+                    </div>
+
+                    <!-- Subtask Toggle -->
+                    <div class="mb-8">
+                        <div class="d-flex align-items-center justify-content-between p-5 bg-light-primary rounded">
+                            <div class="d-flex align-items-center">
+                                <span class="svg-icon svg-icon-2x svg-icon-primary me-3">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                        <path opacity="0.3" d="M10 4H21C21.6 4 22 4.4 22 5V7H10V4Z" fill="currentColor"/>
+                                        <path d="M10.4 3.60001L12 6H21C21.6 6 22 6.4 22 7V19C22 19.6 21.6 20 21 20H3C2.4 20 2 19.6 2 19V4C2 3.4 2.4 3 3 3H9.20001C9.70001 3 10.2 3.20001 10.4 3.60001ZM16 11.6L12.7 8.29999C12.3 7.89999 11.7 7.89999 11.3 8.29999L8 11.6H11V17C11 17.6 11.4 18 12 18C12.6 18 13 17.6 13 17V11.6H16Z" fill="currentColor"/>
+                                    </svg>
+                                </span>
+                                <div>
+                                    <div class="fs-6 fw-bold text-gray-800">Break into Subtasks</div>
+                                    <div class="fs-7 text-gray-600">Divide this task into smaller subtasks</div>
+                                </div>
+                            </div>
+                            <div class="form-check form-switch form-check-custom form-check-solid">
+                                <input class="form-check-input h-30px w-50px" 
+                                       type="checkbox" 
+                                       id="subtaskToggle"
+                                       (change)="toggleSubtasks($event)"/>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Subtasks Section -->
+                    <div *ngIf="showSubtasks" class="mb-8">
+                        <div class="d-flex align-items-center justify-content-between mb-5">
+                            <label class="fs-6 text-gray-700 fw-semibold">Subtasks</label>
+                            <button type="button" 
+                                    class="btn btn-sm btn-light-primary" 
+                                    (click)="addSubtask()">
+                                <span class="svg-icon svg-icon-3">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                        <path opacity="0.3" d="M11 13H7C6.4 13 6 12.6 6 12C6 11.4 6.4 11 7 11H11V13Z" fill="currentColor"/>
+                                        <path d="M17.2 11H11V4.20001C11 3.30001 11.9 2.80001 12.6 3.40001L19.4 9.60001C20.1 10.3 19.6 11.2 18.7 11.2L17.2 11Z" fill="currentColor"/>
+                                    </svg>
+                                </span>
+                                Add Subtask
+                            </button>
+                        </div>
+
+                        <div formArrayName="subtasks">
+                            <div *ngFor="let subtask of subtasks.controls; let i = index" 
+                                 [formGroupName]="i" 
+                                 class="d-flex align-items-center mb-4">
+                                <span class="svg-icon svg-icon-2 text-primary me-3">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                        <rect x="8" y="9" width="3" height="10" rx="1.5" fill="currentColor"/>
+                                        <rect opacity="0.5" x="13" y="5" width="3" height="14" rx="1.5" fill="currentColor"/>
+                                        <rect x="18" y="11" width="3" height="8" rx="1.5" fill="currentColor"/>
+                                        <rect x="3" y="13" width="3" height="6" rx="1.5" fill="currentColor"/>
+                                    </svg>
+                                </span>
+                                <input type="text" 
+                                       class="form-control form-control-solid me-3" 
+                                       formControlName="title"
+                                       placeholder="Enter subtask description"/>
+                                <button type="button" 
+                                        class="btn btn-sm btn-icon btn-light-danger" 
+                                        (click)="removeSubtask(i)">
+                                    <span class="svg-icon svg-icon-3">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <path d="M5 9C5 8.44772 5.44772 8 6 8H18C18.5523 8 19 8.44772 19 9V18C19 19.6569 17.6569 21 16 21H8C6.34315 21 5 19.6569 5 18V9Z" fill="currentColor"/>
+                                            <path opacity="0.5" d="M5 5C5 4.44772 5.44772 4 6 4H18C18.5523 4 19 4.44772 19 5V5C19 5.55228 18.5523 6 18 6H6C5.44772 6 5 5.55228 5 5V5Z" fill="currentColor"/>
+                                            <path opacity="0.5" d="M9 4C9 3.44772 9.44772 3 10 3H14C14.5523 3 15 3.44772 15 4V4H9V4Z" fill="currentColor"/>
+                                        </svg>
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div *ngIf="subtasks.length === 0" class="alert alert-dismissible bg-light-info d-flex flex-column flex-sm-row p-5 mb-0">
+                            <span class="svg-icon svg-icon-2hx svg-icon-info me-4 mb-5 mb-sm-0">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <path opacity="0.3" d="M20 15H4C2.9 15 2 14.1 2 13V7C2 6.4 2.4 6 3 6H21C21.6 6 22 6.4 22 7V13C22 14.1 21.1 15 20 15ZM13 12H11C10.5 12 10 12.4 10 13V16C10 16.5 10.4 17 11 17H13C13.6 17 14 16.6 14 16V13C14 12.4 13.6 12 13 12Z" fill="currentColor"/>
+                                    <path d="M14 6V5H10V6H8V5C8 3.9 8.9 3 10 3H14C15.1 3 16 3.9 16 5V6H14ZM20 15H14V16C14 16.6 13.5 17 13 17H11C10.5 17 10 16.6 10 16V15H4C3.6 15 3.3 14.9 3 14.7V18C3 19.1 3.9 20 5 20H19C20.1 20 21 19.1 21 18V14.7C20.7 14.9 20.4 15 20 15Z" fill="currentColor"/>
+                                </svg>
+                            </span>
+                            <div class="d-flex text-gray-700 flex-column pe-0 pe-sm-10">
+                                <span class="text-gray-700 fs-6">No subtasks added yet. Click "Add Subtask" to get started.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+                <!--end::Form-->
+
+            </div>
+            <!--end::Modal body-->
+
+            <!--begin::Modal footer-->
+            <div class="modal-footer fixed-footer d-flex justify-content-center px-10 pb-5 pt-3">
+                <button type="button" class="btn btn-light me-3" (click)="handleCancel()">Cancel</button>
+                <button type="submit" 
+                        class="btn text-white btn-primary" 
+                        [disabled]="taskForm.invalid || isSubmitting"
+                        (click)="submitTask()">
+                    <span class="indicator-label">Create Task</span>
+                    <span class="indicator-progress">
+                        Please wait... <span class="spinner-border spinner-border-sm align-middle ms-2"></span>
+                    </span>
+                </button>
+            </div>
+            <!--end::Modal footer-->
+        </div>
+    </div>
+</div>
+
+<style>
+.custom-select-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 16px 12px;
+}
+
+.fixed-header {
+    position: sticky;
+    top: 0;
+    z-index: 1055;
+    background-color: #ffffff;
+}
+
+.form-control-solid:focus,
+.form-select-solid:focus {
+    border-color: #009ef7;
+    box-shadow: 0 0 0 0.25rem rgba(0, 158, 247, 0.1);
+}
+
+.modal-dialog {
+    max-height: 90vh;
+}
+
+.modal-body {
+    max-height: calc(90vh - 200px);
+    overflow-y: auto;
+}
+
+.bg-light-primary {
+    background-color: rgba(0, 158, 247, 0.1) !important;
+}
+
+.bg-light-info {
+    background-color: rgba(113, 106, 202, 0.1) !important;
+}
+
+.form-check-input:checked {
+    background-color: #009ef7;
+    border-color: #009ef7;
+}
+
+.btn-light-primary {
+    background-color: rgba(0, 158, 247, 0.1);
+    color: #009ef7;
+    border: none;
+}
+
+.btn-light-primary:hover {
+    background-color: rgba(0, 158, 247, 0.2);
+    color: #009ef7;
+}
+
+.btn-light-danger {
+    background-color: rgba(244, 67, 54, 0.1);
+    color: #f44336;
+    border: none;
+}
+
+.btn-light-danger:hover {
+    background-color: rgba(244, 67, 54, 0.2);
+    color: #f44336;
+}
+
+.fixed-footer {
+    position: sticky;
+    bottom: 0;
+    background-color: #ffffff;
+    z-index: 10;
+}
+
+/* Tagify custom styles */
+.tags-dropdown {
+    max-height: 300px;
+    overflow-y: auto;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    border-radius: 0.475rem;
+}
+
+.tagify__dropdown__item {
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+}
+
+.tagify__dropdown__item:hover,
+.tagify__dropdown__item.tagify__dropdown__item--active {
+    background-color: #f5f8fa !important;
+}
+
+.tagify__dropdown__item .d-flex {
+    padding: 0.5rem;
+}
+
+.tagify {
+    --tag-bg: #009ef7;
+    --tag-hover: #0095e8;
+    --tag-text-color: #ffffff;
+    --tag-remove-bg: rgba(255, 255, 255, 0.3);
+    --tag-remove-btn-bg--hover: rgba(255, 255, 255, 0.5);
+    --tag-pad: 0.5rem 0.75rem;
+    --tag-inset-shadow-size: 1.3em;
+}
+
+.tagify__tag {
+    margin: 0.25rem;
+}
+
+.tagify__input {
+    min-width: 150px;
+    padding: 0.5rem;
+}
+
+.is-invalid {
+    border-color: #f1416c !important;
+}
+
+.invalid-feedback {
+    display: block;
+    color: #f1416c;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}
+
+[data-kt-indicator="on"] .indicator-label {
+    display: none;
+}
+
+[data-kt-indicator="on"] .indicator-progress {
+    display: inline-block;
+}
+
+.indicator-progress {
+    display: none;
+}
+</style>
