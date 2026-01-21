@@ -3,6 +3,7 @@ import { Component, Input, Output, EventEmitter, OnChanges, SimpleChanges, ViewC
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { TaskService, TaskData, SubTask, Comment, FileAttachment, User } from '../services/task.service';
+import { ToastService } from '../services/toast.service';
 
 interface Activity {
   id: string;
@@ -95,7 +96,15 @@ export class TaskDrawer implements OnChanges {
   // Delete confirmation
   showDeleteModal = false;
 
-  constructor(private taskService: TaskService) {}
+  // Loading states for buttons
+  isUpdating = false;
+  isDeleting = false;
+  isAddingCollaborators = false;
+
+  constructor(
+    private taskService: TaskService,
+    private toastService: ToastService
+  ) {}
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['task'] && this.task) {
@@ -171,6 +180,22 @@ export class TaskDrawer implements OnChanges {
     }
   }
 
+  /**
+   * Format date to ISO string for API (YYYY-MM-DDTHH:mm:ss.sssZ)
+   */
+  private formatDateForAPI(dateString: string): string | undefined {
+    if (!dateString) return undefined;
+    try {
+      // dateString is in YYYY-MM-DD format from the input
+      const date = new Date(dateString + 'T00:00:00.000Z');
+      if (isNaN(date.getTime())) return undefined;
+      return date.toISOString();
+    } catch (error) {
+      console.error('Error formatting date for API:', error);
+      return undefined;
+    }
+  }
+
   private loadAllTabData(): void {
     this.loadCollaborators();
     this.loadSubtasks();
@@ -235,121 +260,179 @@ export class TaskDrawer implements OnChanges {
     return this.subTasks.length;
   }
 
-  onStatusChange(): void {
-    if (!this.taskId || !this.canUpdateTask) {
-      alert('You do not have permission to update this task status');
-      return;
-    }
-
+  /**
+   * Map UI status to API status format
+   */
+  private getAPIStatus(uiStatus: string): string {
     const statusMap: { [key: string]: string } = {
       'completed': 'Completed',
       'overdue': 'Overdue',
-      'under-review': 'Under Review',
+      'under-review': 'UnderReview',
       'blocked': 'Blocked',
-      'in-progress': 'In Progress'
+      'in-progress': 'InProgress',
+      'not-started': 'NotStarted'
     };
+    return statusMap[uiStatus] || 'InProgress';
+  }
 
-    const newStatus = statusMap[this.taskStatus] || 'In Progress';
+  onStatusChange(): void {
+    if (!this.taskId || !this.canUpdateTask) {
+      this.toastService.error('You do not have permission to update this task status', 'Permission Denied');
+      return;
+    }
 
-    this.taskService.updateTask(this.taskId, { status: newStatus }).subscribe({
+    const newStatus = this.getAPIStatus(this.taskStatus);
+
+    this.taskService.updateTask(this.taskId, { status: newStatus } as any).subscribe({
       next: (res) => {
         if (res.success || res.ok) {
           this.taskUpdated.emit(res.data);
           this.loadActivities();
-          alert('Task status updated successfully!');
+          this.toastService.success('Task status has been updated', 'Status Updated');
         }
       },
       error: (err) => {
-        const errorMsg = err.error?.error?.message || 'Failed to update status';
-        alert(errorMsg);
+        const errorMsg = err.error?.error?.message || err.error?.message || 'Failed to update status';
+        this.toastService.error(errorMsg, 'Update Failed');
         console.error('Status update failed', err);
       }
     });
   }
 
+  /**
+   * Save all task updates - FIXED to use correct API format
+   */
   saveTaskUpdates(): void {
     if (!this.taskId || !this.canUpdateTask) {
-      alert('You do not have permission to update this task');
+      this.toastService.error('You do not have permission to update this task', 'Permission Denied');
       return;
     }
-  
-    // Format dates properly for the API
-    const formatDateForAPI = (dateString: string): string | undefined => {
-      if (!dateString) return undefined;
-      try {
-        const date = new Date(dateString);
-        if (isNaN(date.getTime())) return undefined;
-        return date.toISOString().split('T')[0]; // Returns YYYY-MM-DD
-      } catch (error) {
-        console.error('Error formatting date for API:', error);
-        return undefined;
-      }
-    };
-  
+
+    this.isUpdating = true;
+
+    // Build update payload matching the API expected format (camelCase)
     const updates: any = {
       title: this.taskTitle,
-      description: this.taskDescription,
-      start_date: formatDateForAPI(this.startDate),
-      due_date: formatDateForAPI(this.dueDate),
-      // Include other fields that might be required
-      status: this.taskStatus === 'completed' ? 'Completed' : 
-              this.taskStatus === 'overdue' ? 'Overdue' :
-              this.taskStatus === 'under-review' ? 'Under Review' :
-              this.taskStatus === 'blocked' ? 'Blocked' : 'In Progress'
+      description: this.taskDescription
     };
-  
-    // Remove undefined fields
-    Object.keys(updates).forEach(key => {
-      if (updates[key] === undefined || updates[key] === null) {
-        delete updates[key];
-      }
-    });
-  
+
+    // Add dates in ISO format if they exist
+    const formattedStartDate = this.formatDateForAPI(this.startDate);
+    const formattedDueDate = this.formatDateForAPI(this.dueDate);
+    
+    if (formattedStartDate) {
+      updates.startDate = formattedStartDate;
+    }
+    if (formattedDueDate) {
+      updates.dueDate = formattedDueDate;
+    }
+
+    // Add status if needed
+    updates.status = this.getAPIStatus(this.taskStatus);
+
+    // Add other fields from original task if available
+    if (this.task?.assignee?.id) {
+      updates.assigneeId = this.task.assignee.id;
+    }
+    if (this.task?.project?.id) {
+      updates.projectId = this.task.project.id;
+    }
+    if (this.task?.category?.id) {
+      updates.categoryId = this.task.category.id;
+    }
+
     console.log('Sending update request with data:', updates);
-  
-    this.taskService.updateTask(this.taskId, updates).subscribe({
-      next: (res) => {
-        console.log('Update response:', res);
-        if (res.ok || res.success) {
-          this.taskUpdated.emit(res.data);
-          this.loadActivities();
-          alert('Task updated successfully!');
-        } else {
-          // Handle API response with error
-          const errorMsg = res.error?.message || 'Failed to update task';
-          alert(errorMsg);
-        }
+
+    const token = localStorage.getItem('access_token');
+
+    fetch(`https://pixels-office-server.azurewebsites.net/v1/task/${this.taskId}`, {
+      method: 'PATCH',
+      headers: {
+        'Authorization': `Bearer ${token}`,
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
       },
-      error: (err) => {
-        console.error('Update failed with error:', err);
-        const errorMsg = err.error?.error?.message || 
-                        err.error?.message || 
-                        err.message || 
-                        'Failed to update task';
-        alert(errorMsg);
+      body: JSON.stringify(updates)
+    })
+    .then(res => res.json())
+    .then(data => {
+      console.log('Update response:', data);
+      this.isUpdating = false;
+      
+      if (data.ok === true) {
+        // Map the response data to TaskData format
+        const updatedTask = this.mapResponseToTaskData(data.data);
+        this.taskUpdated.emit(updatedTask);
+        this.loadActivities();
+        this.toastService.success('Your task has been updated successfully', 'Task Updated');
+      } else {
+        const errorMsg = data.error?.message || 'Failed to update task';
+        this.toastService.error(errorMsg, 'Update Failed');
       }
+    })
+    .catch(err => {
+      console.error('Update failed with error:', err);
+      this.isUpdating = false;
+      this.toastService.error('Failed to update task. Please try again.', 'Update Failed');
     });
+  }
+
+  /**
+   * Map API response to TaskData format
+   */
+  private mapResponseToTaskData(data: any): TaskData {
+    return {
+      id: data.id,
+      title: data.title,
+      description: data.description || '',
+      status: data.status,
+      priority: data.priority || 'Medium',
+      due_date: data.dueDate || '',
+      start_date: data.startDate || '',
+      dueDate: data.dueDate || '',
+      startDate: data.startDate || '',
+      createdAt: data.createdAt || '',
+      updatedAt: data.updatedAt || '',
+      assignee: data.assignee || null,
+      owner: data.owner,
+      collaborators: Array.isArray(data.collaborators) ? data.collaborators : [],
+      subtasks: Array.isArray(data.subtasks) ? data.subtasks : [],
+      project: data.project,
+      category: data.category,
+      totalComment: data.totalComment || 0,
+      totalAttachment: data.totalAttachment || 0,
+      commentCount: data.totalComment || 0,
+      attachmentCount: data.totalAttachment || 0,
+      progress: data.progress || 0,
+      isMine: data.isMine || false,
+      isAssigned: data.isAssigned || false
+    };
   }
 
   confirmDeleteTask(): void {
     if (!this.canDeleteTask) {
-      alert('You do not have permission to delete this task');
+      this.toastService.error('You do not have permission to delete this task', 'Permission Denied');
       return;
     }
     this.showDeleteModal = true;
   }
 
+  /**
+   * Delete task - FIXED to use correct endpoint /v1/task
+   */
   deleteTask(): void {
     if (!this.taskId) return;
 
+    this.isDeleting = true;
     const token = localStorage.getItem('access_token');
 
-    fetch('https://pixels-office-server.azurewebsites.net/v1/user/task', {
+    // FIXED: Use /v1/task endpoint instead of /v1/user/task
+    fetch('https://pixels-office-server.azurewebsites.net/v1/task', {
       method: 'DELETE',
       headers: {
         'Authorization': `Bearer ${token}`,
         'Content-Type': 'application/json',
-        'accept': 'application/json'
+        'Accept': 'application/json'
       },
       body: JSON.stringify({
         tasksId: [this.taskId]
@@ -357,19 +440,23 @@ export class TaskDrawer implements OnChanges {
     })
     .then(res => res.json())
     .then(data => {
-      if (data.ok) {
+      console.log('Delete response:', data);
+      this.isDeleting = false;
+      
+      if (data.ok === true) {
         this.showDeleteModal = false;
         this.taskDeleted.emit(this.taskId);
         this.onClose();
-        alert('Task deleted successfully');
+        this.toastService.success('The task has been permanently deleted', 'Task Deleted');
       } else {
         const errorMsg = data.error?.message || 'Failed to delete task';
-        alert(errorMsg);
+        this.toastService.error(errorMsg, 'Delete Failed');
       }
     })
     .catch(err => {
       console.error('Delete failed', err);
-      alert('Failed to delete task');
+      this.isDeleting = false;
+      this.toastService.error('Failed to delete task. Please try again.', 'Delete Failed');
     });
   }
 
@@ -411,11 +498,6 @@ export class TaskDrawer implements OnChanges {
         // Assign the NEW array (critical!)
         this.collaborators = [...newCollaborators];
   
-        // Extra safety: trigger change detection manually if needed
-        // (uncomment if still not showing)
-        // this.cdr.detectChanges();   ← add import { ChangeDetectorRef } from '@angular/core';
-        // and inject private cdr: ChangeDetectorRef in constructor
-  
         console.log('Final collaborators assigned to UI:', this.collaborators);
         console.log('Number of collaborators now visible:', this.collaborators.length);
       },
@@ -432,7 +514,7 @@ export class TaskDrawer implements OnChanges {
   
     if (!token) {
       console.warn('No access_token found in localStorage');
-      alert('Please login again - authentication required');
+      this.toastService.warning('Please login again - authentication required', 'Session Expired');
       this.isLoadingEmployees = false;
       return;
     }
@@ -451,7 +533,7 @@ export class TaskDrawer implements OnChanges {
       return res.json();
     })
     .then(data => {
-      console.log('Full /employee response:', data); // ← Debug gold!
+      console.log('Full /employee response:', data);
   
       let employees: any[] = [];
   
@@ -478,7 +560,7 @@ export class TaskDrawer implements OnChanges {
     })
     .catch(err => {
       console.error('Failed to load employees:', err);
-      alert('Could not load employee list. Check console for details.');
+      this.toastService.error('Could not load employee list', 'Loading Failed');
     })
     .finally(() => {
       this.isLoadingEmployees = false;
@@ -487,13 +569,24 @@ export class TaskDrawer implements OnChanges {
 
   filterEmployees(): void {
     const term = this.employeeSearchTerm.toLowerCase();
-    this.filteredEmployees = this.allEmployees.filter(emp => 
-      `${emp.firstName} ${emp.lastName}`.toLowerCase().includes(term) ||
-      emp.email.toLowerCase().includes(term)
-    );
+    
+    this.filteredEmployees = this.allEmployees.filter(emp => {
+      const matchesSearch = `${emp.firstName} ${emp.lastName}`.toLowerCase().includes(term) ||
+                           emp.email.toLowerCase().includes(term);
+      return matchesSearch;
+    });
   }
 
   toggleEmployeeSelection(employee: Employee): void {
+    const isAlreadyCollaborator = this.collaborators.some(c => c.id === employee.id);
+    
+    if (isAlreadyCollaborator) {
+      // Remove existing collaborator directly
+      this.removeCollaborator(employee.id);
+      return;
+    }
+    
+    // Toggle in selected list for new additions
     const index = this.selectedEmployees.findIndex(e => e.id === employee.id);
     if (index > -1) {
       this.selectedEmployees.splice(index, 1);
@@ -503,76 +596,150 @@ export class TaskDrawer implements OnChanges {
   }
 
   isEmployeeSelected(employee: Employee): boolean {
-    return this.selectedEmployees.some(e => e.id === employee.id);
+    // Check if in selected list OR already a collaborator
+    const isSelected = this.selectedEmployees.some(e => e.id === employee.id);
+    const isCollaborator = this.collaborators.some(c => c.id === employee.id);
+    return isSelected || isCollaborator;
   }
 
+  
+
+  /**
+   * Add collaborators - FIXED to use correct API format
+   */
   addCollaborators(): void {
     if (!this.taskId || this.selectedEmployees.length === 0) {
-      alert('Please select at least one collaborator');
+      this.toastService.warning('Please select at least one collaborator', 'No Selection');
       return;
     }
-  
+
+    this.isAddingCollaborators = true;
     const userIds = this.selectedEmployees.map(e => e.id);
-  
-    this.taskService.addTaskCollaborators(this.taskId, userIds).subscribe({
-      next: (res) => {
-        if (res.ok || res.success) {
-          alert(`Successfully added ${userIds.length} collaborator(s)!`);
-  
-          this.selectedEmployees = [];
-          this.employeeSearchTerm = '';
-  
-          // Close modal
-          this.closeModal('kt_modal_add_task_collaborators');
-  
-          // Give backend 500–800ms to finalize (common race condition)
-          setTimeout(() => {
-            this.loadCollaborators();
-          }, 800);
-        }
+    const token = localStorage.getItem('access_token');
+
+    console.log('Adding collaborators:', userIds);
+    console.log('Task ID:', this.taskId);
+
+    // Use fetch directly with the exact API format
+    fetch(`https://pixels-office-server.azurewebsites.net/v1/task/${this.taskId}/collaborator`, {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${token}`,
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
       },
-      error: (err) => {
-        console.error(err);
-        alert('Failed to add: ' + (err.error?.error?.message || 'Unknown error'));
+      body: JSON.stringify({
+        collaboratorsId: userIds
+      })
+    })
+    .then(res => res.json())
+    .then(data => {
+      console.log('Add collaborators response:', data);
+      this.isAddingCollaborators = false;
+
+      if (data.ok === true || data.success === true) {
+        const count = userIds.length;
+        
+        // Reset selection FIRST
+        this.selectedEmployees = [];
+        this.employeeSearchTerm = '';
+        
+        // Close modal properly
+        this.closeModalProperly('kt_modal_add_task_collaborators');
+        
+        // Reload collaborators immediately (don't close drawer!)
+        this.loadCollaborators();
+        
+        // Re-filter employees after collaborators load
+        setTimeout(() => {
+          this.filterEmployees();
+        }, 2500);
+        
+        // Show success toast
+        this.toastService.success(
+          `${count} collaborator${count > 1 ? 's have' : ' has'} been added to this task`,
+          'Collaborators Added'
+        );
       }
+      
+      else {
+        const errorMsg = data.error?.message || 'Failed to add collaborators';
+        this.toastService.error(errorMsg, 'Failed');
+      }
+    })
+    .catch(err => {
+      console.error('Failed to add collaborators:', err);
+      this.isAddingCollaborators = false;
+      this.toastService.error('Failed to add collaborators. Please try again.', 'Failed');
     });
   }
+
   removeCollaborator(userId: string): void {
     if (!this.taskId || !this.canAddCollaborators) {
-      alert('You do not have permission to remove collaborators');
+      this.toastService.error('You do not have permission to remove collaborators', 'Permission Denied');
       return;
     }
     if (!confirm('Remove this collaborator?')) return;
 
-    this.taskService.removeTaskCollaborators(this.taskId, [userId]).subscribe({
-      next: (res) => {
-        if (res.success || res.ok) {
-          this.collaborators = this.collaborators.filter(c => c.id !== userId);
-          this.loadActivities();
-          alert('Collaborator removed successfully!');
-        }
+    const token = localStorage.getItem('access_token');
+
+    fetch(`https://pixels-office-server.azurewebsites.net/v1/task/${this.taskId}/collaborator`, {
+      method: 'DELETE',
+      headers: {
+        'Authorization': `Bearer ${token}`,
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
       },
-      error: (err) => {
-        const errorMsg = err.error?.error?.message || 'Failed to remove collaborator';
-        alert(errorMsg);
-        console.error('Failed to remove collaborator', err);
+      body: JSON.stringify({
+        collaboratorsId: [userId]
+      })
+    })
+    .then(res => res.json())
+    .then(data => {
+      console.log('Remove collaborator response:', data);
+      
+      if (data.ok === true || data.success === true) {
+        this.collaborators = this.collaborators.filter(c => c.id !== userId);
+        this.loadActivities();
+        this.filterEmployees(); // Re-filter to include removed collaborator
+        this.toastService.success('Collaborator has been removed from this task', 'Collaborator Removed');
+      } else {
+        const errorMsg = data.error?.message || 'Failed to remove collaborator';
+        this.toastService.error(errorMsg, 'Failed');
       }
+    })
+    .catch(err => {
+      console.error('Failed to remove collaborator:', err);
+      this.toastService.error('Failed to remove collaborator. Please try again.', 'Failed');
     });
   }
 
-  private closeModal(modalId: string): void {
-    setTimeout(() => {
-      const modalEl = document.getElementById(modalId);
-      if (modalEl) {
-        const backdrop = document.querySelector('.modal-backdrop');
+  private closeModalProperly(modalId: string): void {
+    const modalEl = document.getElementById(modalId);
+    if (modalEl) {
+      // Try to use Bootstrap's modal instance if available
+      const bootstrapModal = (window as any).bootstrap?.Modal?.getInstance(modalEl);
+      if (bootstrapModal) {
+        bootstrapModal.hide();
+      } else {
+        // Manual cleanup if Bootstrap instance not available
         modalEl.classList.remove('show');
         modalEl.style.display = 'none';
-        if (backdrop) backdrop.remove();
+        modalEl.setAttribute('aria-hidden', 'true');
+        modalEl.removeAttribute('aria-modal');
+        modalEl.removeAttribute('role');
+      }
+      
+      // Remove all backdrops
+      setTimeout(() => {
+        document.querySelectorAll('.modal-backdrop').forEach(backdrop => {
+          backdrop.remove();
+        });
         document.body.classList.remove('modal-open');
         document.body.style.removeProperty('overflow');
         document.body.style.removeProperty('padding-right');
-      }
-    }, 100);
+      }, 150);
+    }
   }
 
   // === Sub-tasks ===
@@ -625,12 +792,12 @@ export class TaskDrawer implements OnChanges {
               completed: res.data.status === 'Completed'
             };
             this.loadActivities();
-            alert('Subtask created successfully!');
+            this.toastService.success('Subtask has been created', 'Subtask Created');
           }
         },
         error: (err) => {
           console.error('Failed to create subtask', err);
-          alert('Failed to create subtask');
+          this.toastService.error('Failed to create subtask', 'Creation Failed');
         }
       });
     }
@@ -642,7 +809,7 @@ export class TaskDrawer implements OnChanges {
 
   deleteSubTask(index: number): void {
     if (this.subTasks.length <= 0) {
-      alert('You must have at least one subtask');
+      this.toastService.warning('You must have at least one subtask', 'Cannot Delete');
       return;
     }
 
@@ -656,12 +823,12 @@ export class TaskDrawer implements OnChanges {
           if (res.success || res.ok) {
             this.subTasks.splice(index, 1);
             this.loadActivities();
-            alert('Subtask deleted');
+            this.toastService.success('Subtask has been deleted', 'Subtask Deleted');
           }
         },
         error: (err) => {
           console.error('Failed to delete subtask', err);
-          alert('Failed to delete subtask');
+          this.toastService.error('Failed to delete subtask', 'Deletion Failed');
         }
       });
     } else {
@@ -703,7 +870,7 @@ export class TaskDrawer implements OnChanges {
     const hasFile = this.selectedFile;
 
     if (!hasText && !hasFile) {
-      alert('Please write a comment or select a file');
+      this.toastService.warning('Please write a comment or select a file', 'Empty Comment');
       return;
     }
 
@@ -738,12 +905,12 @@ export class TaskDrawer implements OnChanges {
         if (hasFile) this.loadFiles();
         this.loadActivities();
         
-        alert('Posted successfully!');
+        this.toastService.success('Your comment has been posted', 'Comment Added');
       }
     })
     .catch(err => {
       console.error('Failed to post', err);
-      alert('Failed to post comment/file');
+      this.toastService.error('Failed to post comment', 'Posting Failed');
     });
   }
 
@@ -762,12 +929,12 @@ export class TaskDrawer implements OnChanges {
         if (res.success || res.ok) {
           this.comments = this.comments.filter(c => c.id !== commentId);
           this.loadActivities();
-          alert('Comment deleted successfully!');
+          this.toastService.success('Comment has been deleted', 'Comment Deleted');
         }
       },
       error: (err) => {
         console.error('Failed to delete comment', err);
-        alert('Failed to delete comment');
+        this.toastService.error('Failed to delete comment', 'Deletion Failed');
       }
     });
   }
@@ -826,12 +993,12 @@ export class TaskDrawer implements OnChanges {
         if (data.success || data.ok) {
           this.loadFiles();
           this.loadActivities();
-          alert(`File "${file.name}" uploaded successfully!`);
+          this.toastService.success(`File "${file.name}" has been uploaded`, 'Upload Complete');
         }
       })
       .catch(err => {
         console.error('Upload error:', err);
-        alert(`Failed to upload ${file.name}`);
+        this.toastService.error(`Failed to upload ${file.name}`, 'Upload Failed');
       });
     });
 
@@ -842,7 +1009,7 @@ export class TaskDrawer implements OnChanges {
     if (!confirm('Delete this file?')) return;
     const file = this.files.find(f => f.id === fileId);
     this.files = this.files.filter(f => f.id !== fileId);
-    alert(`File "${file?.name}" deleted successfully!`);
+    this.toastService.success(`File "${file?.name}" has been deleted`, 'File Deleted');
   }
 
   formatFileSize(size: string | number = 0): string {

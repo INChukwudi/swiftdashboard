@@ -1,10 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-import { Subject, takeUntil, forkJoin, Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { Subject, takeUntil, forkJoin, interval } from 'rxjs';
+import { map, switchMap } from 'rxjs/operators';
 
 declare var $: any;
 declare var moment: any;
@@ -20,6 +20,7 @@ interface User {
   employeeId: string;
   position?: string;
   department?: string;
+  job?: string;
 }
 
 interface Break {
@@ -60,6 +61,22 @@ interface AttendanceStatsData {
   };
 }
 
+interface EmployeeRankData {
+  id: string;
+  firstName: string;
+  lastName: string;
+  monthlyAttendancePoint: number;
+  monthlyTaskPoint: number;
+  monthlyExtraPoint: number;
+  monthlyPenaltyPoint: number;
+  monthlyPoint: number;
+  monthlyRank: number;
+  dailyAttendancePoint: number;
+  dailyTaskPoint: number;
+  dailyPoint: number;
+  dailyRank: number;
+}
+
 interface ApiResponse<T> {
   ok: boolean;
   data: T;
@@ -75,9 +92,10 @@ type Period = 'Day' | 'Week' | 'Month' | 'Quarter' | 'Year';
   templateUrl: './attenreport.html',
   styleUrl: './attenreport.scss',
 })
-export class Attenreport implements OnInit {
+export class Attenreport implements OnInit, OnDestroy {
   private apiUrl = 'https://pixels-office-server.azurewebsites.net/v1';
   private destroy$ = new Subject<void>();
+  private liveUpdateInterval$ = new Subject<void>();
 
   // Employee data
   employeeId: string = '';
@@ -96,6 +114,28 @@ export class Attenreport implements OnInit {
       Late: 0
     }
   };
+  
+  // Today's attendance data
+  todayAttendance: AttendanceRecord | null = null;
+  todayCheckInTime: string = '';
+  todayCheckOutTime: string = '';
+  isClockedIn: boolean = false;
+  todayStatus: string = 'Not Checked In';
+  
+  // Live working hours calculation
+  liveWorkingHours: number = 0;
+  liveWorkingMinutes: number = 0;
+  liveAttendancePoints: number = 0;
+  liveWorkingHoursDisplay: string = '0h 0m';
+  
+  // Monthly attendance points from rank API
+  monthlyAttendancePoints: number = 0;
+  employeeRankData: EmployeeRankData | null = null;
+  
+  // Progress tracking
+  monthlyTargetPoints: number = 400;
+  progressPercentage: number = 0;
+  pointsToTarget: number = 0;
   
   selectedPeriod: Period = 'Month';
   selectedMonth: string = '';
@@ -146,6 +186,7 @@ export class Attenreport implements OnInit {
   ngOnDestroy(): void {
     this.destroy$.next();
     this.destroy$.complete();
+    this.stopLiveUpdates();
   }
 
   /**
@@ -155,21 +196,30 @@ export class Attenreport implements OnInit {
     this.loading = true;
     this.error = null;
 
-    // Load employee profile and attendance data
+    // Load employee profile, attendance data, and rank data
     forkJoin({
       employee: this.loadEmployeeProfile(),
       stats: this.loadAttendanceStats(),
-      records: this.loadAttendanceRecords()
+      records: this.loadAttendanceRecords(),
+      rank: this.loadEmployeeRankData()
     })
       .pipe(takeUntil(this.destroy$))
       .subscribe({
         next: (results) => {
           this.employee = results.employee;
           this.attendanceStatsData = results.stats;
+          this.employeeRankData = results.rank;
+          
+          // Set monthly attendance points from rank API
+          if (results.rank) {
+            this.monthlyAttendancePoints = results.rank.monthlyAttendancePoint || 0;
+            this.calculateProgress();
+          }
           
           // Handle paginated response
           if (results.records && results.records.pageData) {
             this.attendanceRecords = results.records.pageData;
+            this.processTodayAttendance();
           }
           
           this.updateStatsDisplay();
@@ -238,6 +288,205 @@ export class Attenreport implements OnInit {
           }
         })
       );
+  }
+
+  /**
+   * Load employee rank data (contains monthly attendance points)
+   */
+  loadEmployeeRankData() {
+    const url = `${this.apiUrl}/employee/rank`;
+    
+    return this.http.get<ApiResponse<{ pageData: EmployeeRankData[] }>>(url)
+      .pipe(
+        takeUntil(this.destroy$),
+        map((response) => {
+          if (response.ok && response.data && response.data.pageData) {
+            // Find the current employee in the rank data
+            const employeeRank = response.data.pageData.find(
+              (emp: EmployeeRankData) => emp.id === this.employeeId
+            );
+            return employeeRank || null;
+          } else {
+            throw new Error(response.error || 'Failed to load rank data');
+          }
+        })
+      );
+  }
+
+  /**
+   * Process today's attendance from the records
+   */
+  processTodayAttendance(): void {
+    const today = new Date();
+    const todayStr = today.toISOString().slice(0, 10);
+    
+    // Find today's attendance record
+    this.todayAttendance = this.attendanceRecords.find(record => {
+      const recordDate = new Date(record.date).toISOString().slice(0, 10);
+      return recordDate === todayStr;
+    }) || null;
+    
+    if (this.todayAttendance) {
+      // Set today's check-in time
+      if (this.todayAttendance.checkIn) {
+        this.todayCheckInTime = this.formatTime(this.todayAttendance.checkIn);
+        this.isClockedIn = true;
+        this.todayStatus = this.todayAttendance.status || 'Present';
+      }
+      
+      // Set today's check-out time
+      if (this.todayAttendance.checkOut) {
+        this.todayCheckOutTime = this.formatTime(this.todayAttendance.checkOut);
+        this.isClockedIn = false; // Already clocked out
+      }
+      
+      // Start live updates if clocked in but not clocked out
+      if (this.todayAttendance.checkIn && !this.todayAttendance.checkOut) {
+        this.startLiveUpdates();
+      } else if (this.todayAttendance.checkIn && this.todayAttendance.checkOut) {
+        // Calculate final working hours for the day
+        this.calculateWorkingHoursAndPoints(
+          this.todayAttendance.checkIn,
+          this.todayAttendance.checkOut
+        );
+      }
+    } else {
+      // No attendance record for today
+      this.todayCheckInTime = '';
+      this.todayCheckOutTime = '';
+      this.isClockedIn = false;
+      this.todayStatus = 'Not Checked In';
+      this.liveWorkingHours = 0;
+      this.liveWorkingMinutes = 0;
+      this.liveAttendancePoints = 0;
+      this.liveWorkingHoursDisplay = '0h 0m';
+    }
+  }
+
+  /**
+   * Start live updates for working hours calculation
+   */
+  startLiveUpdates(): void {
+    this.stopLiveUpdates(); // Clear any existing interval
+    
+    // Update immediately
+    this.updateLiveWorkingHours();
+    
+    // Update every minute
+    interval(60000)
+      .pipe(takeUntil(this.liveUpdateInterval$))
+      .subscribe(() => {
+        this.updateLiveWorkingHours();
+      });
+  }
+
+  /**
+   * Stop live updates
+   */
+  stopLiveUpdates(): void {
+    this.liveUpdateInterval$.next();
+  }
+
+  /**
+   * Update live working hours and points
+   */
+  updateLiveWorkingHours(): void {
+    if (!this.todayAttendance?.checkIn) return;
+    
+    const now = new Date();
+    const checkInTime = new Date(this.todayAttendance.checkIn);
+    
+    // Calculate difference in milliseconds
+    const diffMs = now.getTime() - checkInTime.getTime();
+    if (diffMs < 0) return;
+    
+    // Convert to hours and minutes
+    const totalMinutes = Math.floor(diffMs / (1000 * 60));
+    this.liveWorkingHours = Math.floor(totalMinutes / 60);
+    this.liveWorkingMinutes = totalMinutes % 60;
+    
+    // Calculate attendance points (1 hour = 1 point)
+    this.liveAttendancePoints = parseFloat((totalMinutes / 60).toFixed(2));
+    
+    // Update display string
+    this.liveWorkingHoursDisplay = `${this.liveWorkingHours}h ${this.liveWorkingMinutes}m`;
+  }
+
+  /**
+   * Calculate working hours and points from check-in and check-out times
+   */
+  calculateWorkingHoursAndPoints(checkIn: string, checkOut: string): void {
+    if (!checkIn || !checkOut) return;
+    
+    const start = new Date(checkIn);
+    const end = new Date(checkOut);
+    
+    const diffMs = end.getTime() - start.getTime();
+    if (diffMs < 0) return;
+    
+    const totalMinutes = Math.floor(diffMs / (1000 * 60));
+    this.liveWorkingHours = Math.floor(totalMinutes / 60);
+    this.liveWorkingMinutes = totalMinutes % 60;
+    
+    // Calculate attendance points (1 hour = 1 point)
+    this.liveAttendancePoints = parseFloat((totalMinutes / 60).toFixed(2));
+    
+    this.liveWorkingHoursDisplay = `${this.liveWorkingHours}h ${this.liveWorkingMinutes}m`;
+  }
+
+  /**
+   * Calculate progress towards monthly target
+   */
+  calculateProgress(): void {
+    this.progressPercentage = Math.min(
+      Math.round((this.monthlyAttendancePoints / this.monthlyTargetPoints) * 100),
+      100
+    );
+    this.pointsToTarget = Math.max(
+      this.monthlyTargetPoints - this.monthlyAttendancePoints,
+      0
+    );
+  }
+
+  /**
+   * Get today's status badge class
+   */
+  getTodayStatusBadgeClass(): string {
+    if (!this.todayAttendance) {
+      return 'bg-light-secondary text-secondary';
+    }
+    
+    switch (this.todayStatus.toLowerCase()) {
+      case 'ontime':
+      case 'present':
+        return 'bg-light-success text-success';
+      case 'late':
+        return 'bg-light-warning text-warning';
+      case 'absent':
+        return 'bg-light-danger text-danger';
+      default:
+        return 'bg-light-info text-info';
+    }
+  }
+
+  /**
+   * Get display text for today's status
+   */
+  getTodayStatusDisplay(): string {
+    if (!this.todayAttendance) {
+      return 'Not Checked In';
+    }
+    
+    switch (this.todayStatus.toLowerCase()) {
+      case 'ontime':
+        return 'Present (On Time)';
+      case 'late':
+        return 'Present (Late)';
+      case 'absent':
+        return 'Absent';
+      default:
+        return this.todayStatus;
+    }
   }
 
   /**
@@ -442,6 +691,23 @@ export class Attenreport implements OnInit {
     const diffMinutes = Math.floor((diffMs % (1000 * 60 * 60)) / (1000 * 60));
     
     return `${diffHours}h ${diffMinutes}m`;
+  }
+
+  /**
+   * Calculate attendance points for a record (1 hour = 1 point)
+   */
+  getAttendancePoints(checkIn: string | null, checkOut: string | null): number {
+    if (!checkIn || !checkOut) return 0;
+    
+    const start = new Date(checkIn);
+    const end = new Date(checkOut);
+    
+    if (isNaN(start.getTime()) || isNaN(end.getTime())) return 0;
+    
+    const diffMs = end.getTime() - start.getTime();
+    if (diffMs < 0) return 0;
+    
+    return parseFloat((diffMs / (1000 * 60 * 60)).toFixed(2));
   }
 
   /**
@@ -668,9 +934,9 @@ export class Attenreport implements OnInit {
     return `${hours.toString().padStart(2, '0')}:${minutes} ${modifier}`;
   }
 
-  calculateWorkingHours(clockIn: string, clockOut: string): any {
+  calculateWorkingHoursFromStrings(clockIn: string, clockOut: string): any {
     if (clockIn === '-' || clockOut === '-' || !clockIn || !clockOut) {
-      return { hours: 0, minutes: 0, total: 0 };
+      return { hours: 0, minutes: 0, total: 0, points: 0 };
     }
     
     const start = moment(clockIn, 'HH:mm');
@@ -680,12 +946,13 @@ export class Attenreport implements OnInit {
     const hours = Math.floor(duration.asHours());
     const minutes = Math.floor(duration.asMinutes() % 60);
     const totalHours = duration.asHours();
+    const points = parseFloat(totalHours.toFixed(2)); // 1 hour = 1 point
     
-    return { hours, minutes, total: totalHours };
+    return { hours, minutes, total: totalHours, points };
   }
 
   updateWorkingHours(row: Element, clockIn: string, clockOut: string): void {
-    const workingHours = this.calculateWorkingHours(clockIn, clockOut);
+    const workingHours = this.calculateWorkingHoursFromStrings(clockIn, clockOut);
     const hoursDisplay = row.querySelector('.working-hours');
     const progressBar = row.querySelector('.working-hours-bar');
     
@@ -715,10 +982,104 @@ export class Attenreport implements OnInit {
     }
   }
 
+  /**
+   * Update attendance record via API
+   */
+  updateAttendanceRecord(recordId: string, date: string, checkIn: string, checkOut: string): void {
+    const url = `${this.apiUrl}/employee/attendance`;
+    
+    // Build the ISO date strings for the API
+    const dateObj = new Date(date);
+    const dateISO = dateObj.toISOString();
+    
+    // Parse the 24-hour time and combine with the date
+    const checkInISO = this.buildISODateTime(date, checkIn);
+    const checkOutISO = this.buildISODateTime(date, checkOut);
+    
+    const payload = {
+      employeeId: this.employeeId,
+      date: dateISO,
+      checkIn: checkInISO,
+      checkOut: checkOutISO,
+      
+    };
+    
+    console.log('Updating attendance with payload:', payload);
+    
+    this.http.post<ApiResponse<AttendanceRecord>>(url, payload)
+      .pipe(takeUntil(this.destroy$))
+      .subscribe({
+        next: (response) => {
+          if (response.ok) {
+            console.log('Attendance updated successfully:', response.data);
+            if (typeof toastr !== 'undefined') {
+              toastr.success('Attendance record updated successfully!');
+            }
+            
+            // Update the local record
+            const index = this.attendanceRecords.findIndex(r => r.id === recordId);
+            if (index !== -1 && response.data) {
+              this.attendanceRecords[index] = response.data;
+            }
+            
+            // Refresh data to get updated stats
+            this.loadAttendanceStats()
+              .pipe(takeUntil(this.destroy$))
+              .subscribe(stats => {
+                this.attendanceStatsData = stats;
+                this.updateStatsDisplay();
+              });
+            
+            // Refresh rank data for updated points
+            this.loadEmployeeRankData()
+              .pipe(takeUntil(this.destroy$))
+              .subscribe(rank => {
+                if (rank) {
+                  this.employeeRankData = rank;
+                  this.monthlyAttendancePoints = rank.monthlyAttendancePoint || 0;
+                  this.calculateProgress();
+                }
+              });
+          } else {
+            console.error('Failed to update attendance:', response.error);
+            if (typeof toastr !== 'undefined') {
+              toastr.error(response.error || 'Failed to update attendance record');
+            }
+          }
+        },
+        error: (err) => {
+          console.error('Error updating attendance:', err);
+          if (typeof toastr !== 'undefined') {
+            toastr.error('Failed to update attendance record. Please try again.');
+          }
+        }
+      });
+  }
+
+  /**
+   * Build ISO datetime string from date and time (24-hour format)
+   */
+  buildISODateTime(dateStr: string, time24: string): string {
+    if (!time24) return '';
+    
+    const date = new Date(dateStr);
+    const [hours, minutes] = time24.split(':').map(Number);
+    
+    date.setHours(hours, minutes, 0, 0);
+    
+    return date.toISOString();
+  }
+
   saveRow(event: MouseEvent): void {
     const btn = event.currentTarget as HTMLElement;
     const row = btn.closest('tr');
     if (!row) return;
+    
+    // Get the record ID from the row
+    const recordId = row.getAttribute('data-row-id');
+    
+    // Find the record to get additional info (date, status)
+    const record = this.attendanceRecords.find(r => r.id === recordId);
     
     const clockInCell = row.querySelector('[data-field="clockIn"]');
     const clockOutCell = row.querySelector('[data-field="clockOut"]');
@@ -731,6 +1092,17 @@ export class Attenreport implements OnInit {
     
     const clockIn12 = this.convertTo12Hour(newClockIn);
     const clockOut12 = this.convertTo12Hour(newClockOut);
+    
+    // Call the API to update the attendance record
+    if (record && recordId) {
+      this.updateAttendanceRecord(
+        recordId,
+        record.date,
+        newClockIn,
+        newClockOut,
+       
+      );
+    }
     
     if (clockInCell) {
       const timeDisplay = clockInCell.querySelector('.time-display');
@@ -773,10 +1145,6 @@ export class Attenreport implements OnInit {
     if (cancelBtn) cancelBtn.remove();
     
     this.currentEditingRow = null;
-    
-    if (typeof toastr !== 'undefined') {
-      toastr.success('Changes saved successfully!');
-    }
   }
 
   cancelEdit(event: MouseEvent | Element): void {

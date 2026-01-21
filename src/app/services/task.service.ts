@@ -109,6 +109,21 @@ export interface PageData<T> {
   pageData: T;
 }
 
+// Interface for task update payload (matches API expected format)
+export interface TaskUpdatePayload {
+  title?: string;
+  description?: string;
+  assigneeId?: string;
+  projectId?: string;
+  categoryId?: string;
+  startDate?: string;      // ISO format: "2026-01-14T00:00:00.000Z"
+  dueDate?: string;        // ISO format: "2026-01-14T00:00:00.000Z"
+  priority?: 'Low' | 'Medium' | 'High' | 'Urgent';
+  status?: 'NotStarted' | 'InProgress' | 'UnderReview' | 'Completed' | 'Overdue' | 'Blocked';
+  recurrence?: 'OneTime' | 'Daily' | 'Weekly' | 'Monthly';
+  isMileStone?: boolean;
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -183,10 +198,10 @@ export class TaskService {
       description: task.description || '',
       status: task.status,
       priority: task.priority || 'Medium',
-      due_date: task.due_date || task.dueDate || '',
-      start_date: task.start_date || task.startDate || '',
-      dueDate: task.due_date || task.dueDate || '',
-      startDate: task.start_date || task.startDate || '',
+      due_date: task.dueDate || task.due_date || '',
+      start_date: task.startDate || task.start_date || '',
+      dueDate: task.dueDate || task.due_date || '',
+      startDate: task.startDate || task.start_date || '',
       createdAt: task.createdAt || task.created_at || '',
       updatedAt: task.updatedAt || task.updated_at || '',
       assignee: task.assignee || null,
@@ -355,9 +370,11 @@ export class TaskService {
   }
 
   /**
-   * Update a task
+   * Update a task - Uses camelCase field names as expected by API
+   * @param taskId - The task ID to update
+   * @param taskData - The update payload with camelCase field names
    */
-  updateTask(taskId: string, taskData: Partial<TaskData>): Observable<ApiResponse<TaskData>> {
+  updateTask(taskId: string, taskData: TaskUpdatePayload): Observable<ApiResponse<TaskData>> {
     return this.http.patch<ApiResponse<any>>(
       `${this.baseUrl}/task/${taskId}`,
       taskData,
@@ -388,11 +405,12 @@ export class TaskService {
   }
 
   /**
-   * Delete tasks
+   * Delete tasks - Uses /v1/task endpoint (not /v1/user/task)
+   * @param taskIds - Array of task IDs to delete
    */
   deleteTasks(taskIds: string[]): Observable<ApiResponse<any>> {
     return this.http.delete<ApiResponse<any>>(
-      `${this.baseUrl}/user/task`,
+      `${this.baseUrl}/task`,  // FIXED: Changed from /user/task to /task
       { 
         headers: this.getHeaders(),
         body: { tasksId: taskIds }
@@ -507,20 +525,30 @@ export class TaskService {
     ).pipe(catchError(this.handleError));
   }
 
+  /**
+   * Add collaborators to a task
+   * @param taskId - The task ID
+   * @param userIds - Array of user IDs to add as collaborators
+   */
   addTaskCollaborators(taskId: string, userIds: string[]): Observable<ApiResponse<any>> {
     return this.http.post<ApiResponse<any>>(
       `${this.baseUrl}/task/${taskId}/collaborator`,
-      { user_ids: userIds },
+      { user_ids: userIds },  // API expects user_ids in snake_case
       { headers: this.getHeaders() }
     ).pipe(catchError(this.handleError));
   }
 
+  /**
+   * Remove collaborators from a task
+   * @param taskId - The task ID
+   * @param userIds - Array of user IDs to remove
+   */
   removeTaskCollaborators(taskId: string, userIds: string[]): Observable<ApiResponse<any>> {
     return this.http.delete<ApiResponse<any>>(
       `${this.baseUrl}/task/${taskId}/collaborator`,
       {
         headers: this.getHeaders(),
-        body: { user_ids: userIds }
+        body: { user_ids: userIds }  // API expects user_ids in snake_case
       }
     ).pipe(catchError(this.handleError));
   }

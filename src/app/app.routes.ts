@@ -28,6 +28,7 @@ import { Project } from './project/project';
 import { Viewproject } from './viewproject/viewproject';
 import { Myattendance } from './myattendance/myattendance';
 import { Profile } from './profile/profile';
+import { Leave } from './leave/leave';
 
 export const routes: Routes = [
   // ================= AUTH =================
@@ -43,6 +44,7 @@ export const routes: Routes = [
       { path: 'allemployees', component: AllEmployees },
       { path: 'alltasks', component: Alltask },
       { path: 'ranking', component: Ranking },
+      { path: 'leave', component: Leave },
       { path: 'staffprofile', component: Staffprofile },
       { path: 'attendance', component: Attendance },
       { path: 'attenreport/:employeeId', component: Attenreport },

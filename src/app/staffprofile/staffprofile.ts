@@ -7,6 +7,8 @@ import { CommonModule } from '@angular/common';
 import { catchError, forkJoin, of, map, Subject, takeUntil } from 'rxjs';
 import { Task } from '../task/task';
 import { TaskDrawer } from '../task-drawer/task-drawer'; 
+import { NewTaskComponent } from '../new-task/new-task';
+import flatpickr from 'flatpickr';
 import { TaskService, Project, ApiResponse, PageData, TaskData } from '../services/task.service';
 
 interface Employee {
@@ -59,6 +61,9 @@ interface ActivityItem {
   styleUrl: './staffprofile.scss',
 })
 export class Staffprofile implements OnInit, OnDestroy {
+onTaskCreated($event: Event) {
+throw new Error('Method not implemented.');
+}
   private apiUrl = 'https://pixels-office-server.azurewebsites.net/v1';
   private destroy$ = new Subject<void>();
   
@@ -108,6 +113,7 @@ export class Staffprofile implements OnInit, OnDestroy {
   
   // Math reference for template
   Math = Math;
+projects: any;
 
   constructor(
     private http: HttpClient,
@@ -222,6 +228,7 @@ export class Staffprofile implements OnInit, OnDestroy {
       }
     });
   }
+
 
   // ============= TASK DATA MAPPING =============
   
