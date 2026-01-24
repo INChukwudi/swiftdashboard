@@ -2,7 +2,7 @@
     <!--begin::Page-->
     <div class="app-page flex-column flex-column-fluid" id="kt_app_page">
      	<!--begin::Header-->
-				<div id="kt_app_header" class="app-header" data-kt-sticky="true" data-kt-sticky-activate="{default: true, lg: true}" style="background: white" data-kt-sticky-name="app-header-minimize" data-kt-sticky-offset="{default: '200px', lg: '0'}" data-kt-sticky-animation="false">
+				<div id="kt_app_header" class="app-header" data-kt-sticky="true" data-kt-sticky-activate="{default: true, lg: true}"  data-kt-sticky-name="app-header-minimize" data-kt-sticky-offset="{default: '200px', lg: '0'}" data-kt-sticky-animation="false">
 					<!--begin::Header container-->
 					<div class="app-container container-fluid d-flex align-items-stretch justify-content-between" id="kt_app_header_container">
 						<!--begin::Sidebar mobile toggle-->
@@ -381,7 +381,7 @@
 
     <!--begin::Action-->
     <div class="mb-xl-10 mb-3">
-        <a href='#' class="btn btn-primary text-white fw-semibold me-2" data-bs-toggle="modal" data-bs-target="#kt_modal_upgrade_plan">Add New Task</a>
+        <div class="btn btn-primary text-white fw-semibold me-2" (click)="openTaskModal()"> Create New Task</div>
         <a href="#" class="btn btn-secondary btn-outline fw-semibold" style="border: 1px solid rgba(255, 255, 255, 0.3)">Check Out</a>
     </div>
     <!--end::Action-->
@@ -410,9 +410,7 @@
                         <i class="ki-outline ki-chart-line-up fs-2x text-white"></i>
                     </span>
                 </div>
-                <div class="d-flex flex-column align-items-end">
-                    <span class="badge badge-light-success fs-8 fw-bold">Active</span>
-                </div>
+             
             </div>
         </div>
         <div class="card-body d-flex flex-column justify-content-end pt-0">
@@ -431,9 +429,7 @@
                         <i class="ki-outline ki-timer fs-2x text-white"></i>
                     </span>
                 </div>
-                <div class="d-flex flex-column align-items-end">
-                    <span class="badge badge-light-warning fs-8 fw-bold">In Progress</span>
-                </div>
+            
             </div>
         </div>
         <div class="card-body d-flex flex-column justify-content-end pt-0">
@@ -453,9 +449,7 @@
                         <i class="ki-outline ki-time fs-2x text-white"></i>
                     </span>
                 </div>
-                <div class="d-flex flex-column align-items-end">
-                    <span class="badge badge-danger fs-8 fw-bold">Requires Action</span>
-                </div>
+              
             </div>
         </div>
         <div class="card-body d-flex flex-column justify-content-end pt-0">
@@ -506,12 +500,12 @@
                             <span class="card-label fw-bold text-gray-800">Notifications</span>
                             <span class="text-gray-500 mt-1 fw-semibold fs-6">Stay updated on your tasks and projects</span>
                         </h3>
-                        <div class="card-toolbar">
+                        <!-- <div class="card-toolbar">
                             <button type="button" class="btn btn-sm btn-light-primary fw-bold">
                                 <i class="bi bi-funnel me-2"></i>View All
                                
                             </button>
-                        </div>
+                        </div> -->
                     </div>
             
                     <!-- Card Body -->
@@ -546,9 +540,9 @@
                                                     <i class="bi bi-calendar3 me-2"></i>{{ task.due }}
                                                 </div>
                                             </div>
-                                            <button class="btn btn-light-primary btn-sm">
+                                            <!-- <button class="btn btn-light-primary btn-sm">
                                                 <i class="bi bi-eye me-1"></i>View
-                                            </button>
+                                            </button> -->
                                         </div>
                                     </div>
                                 </div>

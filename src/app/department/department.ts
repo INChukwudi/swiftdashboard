@@ -45,7 +45,7 @@ export class Department implements OnInit, OnDestroy {
   // Department Data
   departments: Department[] = [];
   totalDepartments = 0;
-  bestPerformingDepartment = 'Admin';
+  bestPerformingDepartment = 'Software Dev';
   
   // Loading States
   isLoading = false;

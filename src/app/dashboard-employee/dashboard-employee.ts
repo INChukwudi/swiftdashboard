@@ -4,8 +4,11 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { NewTaskComponent } from '../new-task/new-task';
 import { catchError, forkJoin, of } from 'rxjs';
 import { map } from 'rxjs/operators';
+
+declare var bootstrap: any;
 
 interface User {
   firstName?: string;
@@ -82,11 +85,18 @@ interface DisplayAttendance {
 @Component({
   selector: 'app-dashboard-employee',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,  NewTaskComponent,],
   templateUrl: './dashboard-employee.html',
   styleUrls: ['./dashboard-employee.scss'],
 })
 export class DashboardEmployeeComponent implements OnInit, OnDestroy {
+  openTaskModal(): void {
+    const modalElement = document.getElementById('kt_modal_new_target');
+    if (modalElement) {
+      const modal = new bootstrap.Modal(modalElement);
+      modal.show();
+    }
+  }
   private apiUrl = 'https://pixels-office-server.azurewebsites.net/v1';
 
   userName = 'User';

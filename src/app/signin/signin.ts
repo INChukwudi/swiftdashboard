@@ -35,7 +35,6 @@ interface UserProfile {
   lastName?: string;
   role?: string;
   profilePicture?: string;
-  // Add more fields if your API returns them
 }
 
 // ──────────────────────────────────────────────────
@@ -53,29 +52,56 @@ export class SigninComponent {
   password = '';
   isLoading = false;
   errorMessage = '';
+  selectedRole = '';
+
+  // Modal state
+  showRoleModal = false;
 
   private readonly apiUrl = 'https://pixels-office-server.azurewebsites.net/v1';
-role: any;
 
   constructor(
     private http: HttpClient,
     private router: Router
   ) {}
 
-  login() {
+  // Called when Sign In button is clicked - shows the role modal
+  onSignInClick() {
     // Validation
     if (this.email.trim() === '' || this.password === '') {
       this.errorMessage = 'Please enter your email and password';
       return;
     }
 
+    // Clear any previous error
+    this.errorMessage = '';
+
+    // Show the role selection modal
+    this.showRoleModal = true;
+  }
+
+  // Close the role modal
+  closeRoleModal() {
+    this.showRoleModal = false;
+  }
+
+  // Called when a role is selected from the modal
+  selectRole(role: 'admin' | 'employee') {
+    this.selectedRole = role;
+    this.showRoleModal = false;
+    
+    // Proceed with login
+    this.performLogin();
+  }
+
+  // Perform the actual login API call
+  private performLogin() {
     this.isLoading = true;
     this.errorMessage = '';
 
     const payload = {
       phoneNumberOrEmail: this.email.trim(),
       password: this.password,
-      allowedAdminRoles: true // Adjust if needed
+      allowedAdminRoles: true
     };
 
     this.http
@@ -88,7 +114,7 @@ role: any;
             );
           }
 
-          // Save tokens temporarily
+          // Save tokens
           localStorage.setItem('access_token', loginRes.data.accessToken);
           if (loginRes.data.refreshToken) {
             localStorage.setItem('refresh_token', loginRes.data.refreshToken);
@@ -118,20 +144,17 @@ role: any;
       )
       .subscribe((profileRes) => {
         if (profileRes?.ok && profileRes.data) {
-      
           // Save user profile
           localStorage.setItem('user', JSON.stringify(profileRes.data));
-      
-          // Route based on selected role (NOT backend role)
-          if (this.role === 'admin') {
+
+          // Route based on selected role
+          if (this.selectedRole === 'admin') {
             this.router.navigate(['/admin']);
           } else {
             this.router.navigate(['/employee']);
           }
         }
       });
-      
-      
   }
 
   // Toggle password visibility (eye icon)

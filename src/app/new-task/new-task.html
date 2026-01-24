@@ -131,7 +131,7 @@
                         </div>
 
                         <div class="col-md-4 fv-row">
-                            <label class="required fs-6 fw-semibold mb-2">Due Date</label>
+                            <label class="required fs-6 text-gray-700 fw-semibold mb-2">Due Date</label>
                             <input type="date"
                                    class="form-control form-control-solid"
                                    formControlName="dueDate"
@@ -142,7 +142,7 @@
                         </div>
 
                         <div class="col-md-4 fv-row">
-                            <label class=" text-gray-700 fs-6 fw-semibold mb-2">Priority</label>
+                            <label class="text-gray-700 fs-6 fw-semibold mb-2">Priority</label>
                             <select class="form-select form-select-solid" 
                                     formControlName="priority"
                                     [class.is-invalid]="isFieldInvalid('priority')">
@@ -169,28 +169,39 @@
                         </div>
                     </div>
 
-                    <!-- Collaborators -->
+                    <!-- ============= NEW COLLABORATORS SECTION ============= -->
                     <div class="d-flex flex-column mb-8 fv-row">
                         <label class="d-flex text-gray-700 align-items-center fs-6 fw-semibold mb-2">
                             <span>Collaborators</span>
-                            <i class="fas fa-exclamation-circle ms-2 fs-7" 
+                            <i class="ki-outline ki-information-5 ms-2 fs-7 text-gray-500" 
                                data-bs-toggle="tooltip" 
-                               title="Add team members to collaborate on this task"></i>
+                               title="Add team members to collaborate on this task. You can select multiple employees or select all."></i>
                         </label>
                         
-                        <!-- Use the new Tagify component with formControlName -->
-                        <app-tagify-input
+                        <!-- Loading State -->
+                        <div *ngIf="isLoadingEmployees" class="d-flex align-items-center py-4">
+                            <div class="spinner-border spinner-border-sm text-primary me-3" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                            <span class="text-muted">Loading employees...</span>
+                        </div>
+                        
+                        <!-- Collaborator Selector Component -->
+                        <app-collaborator-selector
+                            *ngIf="!isLoadingEmployees"
                             formControlName="collaboratorIds"
-                            [whitelist]="collaboratorWhitelist"
-                            [maxTags]="20"
-                            [dropdownMaxItems]="20"
-                            placeholder="Type to search employees...">
-                        </app-tagify-input>
+                            [employees]="collaboratorList"
+                            placeholder="Search employees by name, email, or job role..."
+                            [maxSelections]="0"
+                            (selectionChange)="onCollaboratorsChange($event)">
+                        </app-collaborator-selector>
                         
                         <div class="form-text text-muted mt-2">
-                            Start typing to search and select collaborators
+                            <i class="ki-outline ki-information fs-7 me-1"></i>
+                            Start typing to search and select collaborators. You can select multiple team members.
                         </div>
                     </div>
+                    <!-- ============= END COLLABORATORS SECTION ============= -->
 
                     <!-- Subtask Toggle -->
                     <div class="mb-8">
@@ -312,7 +323,6 @@
     position: sticky;
     top: 0;
     z-index: 1055;
-    background-color: #ffffff;
 }
 
 .form-control-solid:focus,
@@ -368,49 +378,7 @@
 .fixed-footer {
     position: sticky;
     bottom: 0;
-    background-color: #ffffff;
     z-index: 10;
-}
-
-/* Tagify custom styles */
-.tags-dropdown {
-    max-height: 300px;
-    overflow-y: auto;
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-    border-radius: 0.475rem;
-}
-
-.tagify__dropdown__item {
-    cursor: pointer;
-    transition: background-color 0.15s ease;
-}
-
-.tagify__dropdown__item:hover,
-.tagify__dropdown__item.tagify__dropdown__item--active {
-    background-color: #f5f8fa !important;
-}
-
-.tagify__dropdown__item .d-flex {
-    padding: 0.5rem;
-}
-
-.tagify {
-    --tag-bg: #009ef7;
-    --tag-hover: #0095e8;
-    --tag-text-color: #ffffff;
-    --tag-remove-bg: rgba(255, 255, 255, 0.3);
-    --tag-remove-btn-bg--hover: rgba(255, 255, 255, 0.5);
-    --tag-pad: 0.5rem 0.75rem;
-    --tag-inset-shadow-size: 1.3em;
-}
-
-.tagify__tag {
-    margin: 0.25rem;
-}
-
-.tagify__input {
-    min-width: 150px;
-    padding: 0.5rem;
 }
 
 .is-invalid {

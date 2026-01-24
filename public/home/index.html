@@ -1,0 +1,1139 @@
+<!doctype html>
+<html lang="en-US">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Swift &amp; Office Productivity">
+	<link rel="profile" href="#">
+
+	<title>Swift - Office Productivity </title>
+<meta name='robots' content='max-image-preview:large' />
+	<style>img:is([sizes="auto" i], [sizes^="auto," i]) { contain-intrinsic-size: 3000px 1500px }</style>
+	<link rel="alternate" type="application/rss+xml" title="swift Light &raquo; Feed" href="feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="swift Light &raquo; Comments Feed" href="comments/feed/index.html" />
+<script type="text/javascript">
+/* <![CDATA[ */
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16.0.1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16.0.1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/sasico.pikathemes.site\/swift\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.8.3"}};
+/*! This file is auto-generated */
+!function(s,n){var o,i,e;function c(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function p(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data),a=(e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0),new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data));return t.every(function(e,t){return e===a[t]})}function u(e,t){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);for(var n=e.getImageData(16,16,1,1),a=0;a<n.data.length;a++)if(0!==n.data[a])return!1;return!0}function f(e,t,n,a){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\udde8\ud83c\uddf6","\ud83c\udde8\u200b\ud83c\uddf6")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!a(e,"\ud83e\udedf")}return!1}function g(e,t,n,a){var r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):s.createElement("canvas"),o=r.getContext("2d",{willReadFrequently:!0}),i=(o.textBaseline="top",o.font="600 32px Arial",{});return e.forEach(function(e){i[e]=t(o,e,n,a)}),i}function t(e){var t=s.createElement("script");t.src=e,t.defer=!0,s.head.appendChild(t)}"undefined"!=typeof Promise&&(o="wpEmojiSettingsSupports",i=["flag","emoji"],n.supports={everything:!0,everythingExceptFlag:!0},e=new Promise(function(e){s.addEventListener("DOMContentLoaded",e,{once:!0})}),new Promise(function(t){var n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+g.toString()+"("+[JSON.stringify(i),f.toString(),p.toString(),u.toString()].join(",")+"));",a=new Blob([e],{type:"text/javascript"}),r=new Worker(URL.createObjectURL(a),{name:"wpTestEmojiSupports"});return void(r.onmessage=function(e){c(n=e.data),r.terminate(),t(n)})}catch(e){}c(n=g(i,f,p,u))}t(n)}).then(function(e){for(var t in e)n.supports[t]=e[t],n.supports.everything=n.supports.everything&&n.supports[t],"flag"!==t&&(n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&n.supports[t]);n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&!n.supports.flag,n.DOMReady=!1,n.readyCallback=function(){n.DOMReady=!0}}).then(function(){return e}).then(function(){var e;n.supports.everything||(n.readyCallback(),(e=n.source||{}).concatemoji?t(e.concatemoji):e.wpemoji&&e.twemoji&&(t(e.twemoji),t(e.wpemoji)))}))}((window,document),window._wpemojiSettings);
+/* ]]> */
+</script>
+<style id='wp-emoji-styles-inline-css' type='text/css'>
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+</style>
+<style id='classic-theme-styles-inline-css' type='text/css'>
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+</style>
+<style id='global-styles-inline-css' type='text/css'>
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}
+</style>
+<link rel='stylesheet' id='contact-form-7-css' href='/home/wp-content/plugins/contact-form-7/includes/css/styles658f.css?ver=6.1.2' type='text/css' media='all' />
+<link rel='stylesheet' id='sasico-font-text-css' href='/home/wp-content/themes/sasico/css/font-text32d4.css?ver=6.8.3' type='text/css' media='all' />
+<link rel='stylesheet' id='sasico-font-icomoon-css' href='/home/wp-content/themes/sasico/css/icomoon32d4.css?ver=6.8.3' type='text/css' media='all' />
+<link rel='stylesheet' id='sasico-plugin-css-css' href='/home/wp-content/themes/sasico/css/plugin-addon5152.css?ver=1.0' type='text/css' media='all' />
+<link rel='stylesheet' id='sasico-style-css' href='/home/wp-content/themes/sasico/style20b9.css?ver=1.0.2' type='text/css' media='all' />
+<style id='sasico-style-inline-css' type='text/css'>
+:root{--sasi-color-primary:#004ffc;--sasi-color-dark:#021b42;} .dark-mode{--sasi-color-white:#021b42; --sasi-bg-color-white:#021b42;}.sasi-btn-primary{--sasi-btn-color:#ffffff;--sasi-btn-bg-color-hover:#021b42;}.sasi-btn-primary .sasi-icon{--sasi-btn-icon-color:#004ffc;--sasi-btn-icon-bg-color:#ffffff;}.sasi-btn-primary:hover .sasi-icon{--sasi-btn-icon-color-hover:#021b42;}.sasi-btn-outline_1{--sasi-btn-color:#021b42;--sasi-btn-color-hover:#ffffff;--sasi-btn-bg-color-hover:#021b42;--sasi-btn-border-color:#021b421a;}.sasi-btn-outline_1 .sasi-icon{--sasi-btn-icon-color:#ffffff;--sasi-btn-icon-bg-color:#021b42;}
+</style>
+<link rel='stylesheet' id='sasico-preloader-css' href='wp-content/themes/sasico/css/preloader32d4.css?ver=6.8.3' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-frontend-css' href='wp-content/uploads/sites/9/elementor/css/custom-frontend.minf23b.css?ver=1757929543' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-post-51-css' href='wp-content/uploads/sites/9/elementor/css/post-51f23b.css?ver=1757929543' type='text/css' media='all' />
+<link rel='stylesheet' id='e-animation-fadeInUp-css' href='wp-content/plugins/elementor/assets/lib/animations/styles/fadeInUp.min9287.css?ver=3.32.5' type='text/css' media='all' />
+<link rel='stylesheet' id='widget-divider-css' href='wp-content/plugins/elementor/assets/css/widget-divider.min9287.css?ver=3.32.5' type='text/css' media='all' />
+<link rel='stylesheet' id='widget-image-css' href='wp-content/plugins/elementor/assets/css/widget-image.min9287.css?ver=3.32.5' type='text/css' media='all' />
+<link rel='stylesheet' id='widget-rating-css' href='wp-content/plugins/elementor/assets/css/widget-rating.min9287.css?ver=3.32.5' type='text/css' media='all' />
+<link rel='stylesheet' id='e-animation-fadeIn-css' href='wp-content/plugins/elementor/assets/lib/animations/styles/fadeIn.min9287.css?ver=3.32.5' type='text/css' media='all' />
+<link rel='stylesheet' id='e-animation-fadeInLeft-css' href='wp-content/plugins/elementor/assets/lib/animations/styles/fadeInLeft.min9287.css?ver=3.32.5' type='text/css' media='all' />
+<link rel='stylesheet' id='e-animation-fadeInRight-css' href='wp-content/plugins/elementor/assets/lib/animations/styles/fadeInRight.min9287.css?ver=3.32.5' type='text/css' media='all' />
+<link rel='stylesheet' id='widget-heading-css' href='wp-content/plugins/elementor/assets/css/widget-heading.min9287.css?ver=3.32.5' type='text/css' media='all' />
+<link rel='stylesheet' id='e-animation-zoomIn-css' href='wp-content/plugins/elementor/assets/lib/animations/styles/zoomIn.min9287.css?ver=3.32.5' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-post-454-css' href='wp-content/uploads/sites/9/elementor/css/post-45400ba.css?ver=1759487552' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-gf-local-roboto-css' href='wp-content/uploads/sites/9/elementor/google-fonts/css/roboto1c16.css?ver=1756438741' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-gf-local-robotoslab-css' href='wp-content/uploads/sites/9/elementor/google-fonts/css/robotoslab00d1.css?ver=1756438797' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-gf-local-inter-css' href='wp-content/uploads/sites/9/elementor/google-fonts/css/inter7216.css?ver=1756441594' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-gf-local-plusjakartasans-css' href='wp-content/uploads/sites/9/elementor/google-fonts/css/plusjakartasansc15b.css?ver=1756440496' type='text/css' media='all' />
+<script type="text/javascript" src="wp-includes/js/jquery/jquery.minf43b.js?ver=3.7.1" id="jquery-core-js"></script>
+<script type="text/javascript" src="wp-includes/js/jquery/jquery-migrate.min5589.js?ver=3.4.1" id="jquery-migrate-js"></script>
+<script type="text/javascript" id="sasico_scripts-js-extra">
+/* <![CDATA[ */
+var sasico_loadmore_params = {"ajaxurl":"https:\/\/sasico.pikathemes.site\/swift\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="wp-content/themes/sasico/js/theme-loadmore7ce5.js?ver=1762164013" id="sasico_scripts-js"></script>
+<script type="text/javascript" src="wp-content/themes/sasico/js/preloader32d4.js?ver=6.8.3" id="sasico-preloader-js"></script>
+<link rel="https://api.w.org/" href="wp-json/index.html" /><link rel="alternate" title="JSON" type="application/json" href="wp-json/wp/v2/pages/454.json" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="xmlrpc0db0.php?rsd" />
+<meta name="generator" content="WordPress 6.8.3" />
+<link rel="canonical" href="index.html" />
+<link rel='shortlink' href='index.html' />
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="wp-json/oembed/1.0/embed7354.json?url=https%3A%2F%2Fsasico.pikathemes.site%2Fswift%2F" />
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="wp-json/oembed/1.0/embeda5ce?url=https%3A%2F%2Fsasico.pikathemes.site%2Fswift%2F&amp;format=xml" />
+<meta name="generator" content="Elementor 3.32.5; features: e_font_icon_svg, additional_custom_breakpoints; settings: css_print_method-external, google_font-enabled, font_display-swap">
+			<style>
+				.e-con.e-parent:nth-of-type(n+4):not(.e-lazyloaded):not(.e-no-lazyload),
+				.e-con.e-parent:nth-of-type(n+4):not(.e-lazyloaded):not(.e-no-lazyload) * {
+					background-image: none !important;
+				}
+				@media screen and (max-height: 1024px) {
+					.e-con.e-parent:nth-of-type(n+3):not(.e-lazyloaded):not(.e-no-lazyload),
+					.e-con.e-parent:nth-of-type(n+3):not(.e-lazyloaded):not(.e-no-lazyload) * {
+						background-image: none !important;
+					}
+				}
+				@media screen and (max-height: 640px) {
+					.e-con.e-parent:nth-of-type(n+2):not(.e-lazyloaded):not(.e-no-lazyload),
+					.e-con.e-parent:nth-of-type(n+2):not(.e-lazyloaded):not(.e-no-lazyload) * {
+						background-image: none !important;
+					}
+				}
+			</style>
+			<link rel="icon" href="images/swift_icon.png" sizes="32x32" />
+<link rel="icon" href="images/swift_icon.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="images/swift_icon.png" />
+<meta name="msapplication-TileImage" content="images/swift_icon.png" />
+		<style type="text/css" id="wp-custom-css">
+			.e-con {
+  scroll-margin-top: 79px;
+}
+.sasi-subscribe-form input[type=email]{
+	color: #ffffff;
+	border-color: rgba(255, 255, 255, 0.1);
+	background: rgba(255, 255, 255, 0.05);
+}
+.sasi-subscribe-form input[type=email]::-webkit-input-placeholder{
+	color: #8B98AC;
+}		</style>
+	
+	
+	
+	<style id="kirki-inline-styles">@media (max-width: 767px){}@media (min-width: 768px) and (max-width: 1024px){}@media (min-width: 1024px){}.page-header{background:rgba(255,255,255,0);background-color:rgba(255,255,255,0);background-repeat:no-repeat;background-position:center center;background-attachment:scroll;-webkit-background-size:cover;-moz-background-size:cover;-ms-background-size:cover;-o-background-size:cover;background-size:cover;}body.blog, body.archive, body.search, body.single-post{background:rgba(255,255,255,0);background-color:rgba(255,255,255,0);background-repeat:no-repeat;background-position:center top;background-attachment:scroll;-webkit-background-size:cover;-moz-background-size:cover;-ms-background-size:cover;-o-background-size:cover;background-size:cover;}</style></head>
+
+<body class="home wp-singular page-template-default page page-id-454 wp-theme-sasico elementor-default elementor-kit-51 elementor-page elementor-page-454 header-trans light-mode sasico-theme-ver-1.0.2 wordpress-version-6.8.3">
+<div id="preloader" style="background:#fff"><div class="loader-content"><img style="width:180;" src="images/swiftlogo.png" alt="Preload Logo" class="loader-logo"></div></div>
+<div id="page" class="site">
+
+<header id="site-header" class="site-header header-transparent">
+
+    <div class="header-desktop">		<div data-elementor-type="wp-post" data-elementor-id="12" class="elementor elementor-12">
+				<div class="elementor-element elementor-element-4d30488 e-con-full e-flex e-con e-parent" data-id="4d30488" data-element_type="container">
+		<div class="elementor-element elementor-element-846f108 e-con-full e-flex e-con e-child" data-id="846f108" data-element_type="container">
+				<div class="elementor-element elementor-element-799d22d elementor-widget elementor-widget-sasico-logo" data-id="799d22d" data-element_type="widget" data-widget_type="sasico-logo.default">
+				<div class="elementor-widget-container">
+								
+	    	<div class="the-logo">
+				<a href="index.html">
+					<img src="images/logoswift.png" alt="swift Light">
+				</a>			        
+		    </div>
+		    
+	    				</div>
+				</div>
+				<div class="elementor-element elementor-element-4e539cf elementor-widget elementor-widget-sasico-menu" data-id="4e539cf" data-element_type="widget" data-widget_type="sasico-menu.default">
+				<div class="elementor-widget-container">
+								
+	    	<nav id="site-navigation" class="main-navigation">			
+				<ul id="primary-menu" class="menu"><li id="menu-item-566" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-566"><a href="index.html">Home</a></li>
+		<li id="menu-item-569" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-569"><a href="/home/features.html">Features</a></li>
+<li id="menu-item-570" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-570"><a href="pricing.html">Pricing</a></li>
+<li id="menu-item-567" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-567"><a href="privacy.html">Privacy</a></li>
+<li id="menu-item-565" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-565"><a href="contact-us.html">Contact</a></li>
+</ul>			</nav>
+			
+	    				</div>
+				</div>
+				</div>
+		<div class="elementor-element elementor-element-2cfee6a e-con-full e-flex e-con e-child" data-id="2cfee6a" data-element_type="container">
+				<div class="elementor-element elementor-element-286a188 elementor-hidden-tablet_extra sasi-view-default elementor-widget elementor-widget-sasi-icon-list" data-id="286a188" data-element_type="widget" data-widget_type="sasi-icon-list.default">
+				<div class="elementor-widget-container">
+						        <div class="sasi-icon-list-wrapper">
+	        	<ul class="unstyle sasi-icon-list-items ">
+	        			        			<li class="sasi-icon-list-item ">
+	        				
+							<span class="sasi-icon-list-icon">
+								<svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 16" fill="none"><path d="M12.5 6C13.3125 6 14 6.6875 14 7.5V14.5C14 15.3438 13.3125 16 12.5 16H1.5C0.65625 16 0 15.3438 0 14.5V7.5C0 6.6875 0.65625 6 1.5 6H2.5V4.5C2.5 2.03125 4.5 0 7 0C9.5 0.03125 11.5 2.0625 11.5 4.5625V6H12.5ZM4 4.5V6H10V4.5C10 2.875 8.625 1.5 7 1.5C5.34375 1.5 4 2.875 4 4.5ZM12.5 14.5V7.5H1.5V14.5H12.5Z" fill="white"></path></svg>							</span>
+								<a href="/app/signin">
+									<span class="sasi-icon-list-text title-link">Login</span>
+								</a>
+								        			</li>
+	        			        	</ul>
+	        </div>
+	    				</div>
+				</div>
+				<div class="elementor-element elementor-element-e9319bb elementor-align-right elementor-tablet_extra-align-right elementor-widget elementor-widget-sasi-button" data-id="e9319bb" data-element_type="widget" data-widget_type="sasi-button.default">
+				<div class="elementor-widget-container">
+							
+		<a href="#" class="sasi-btn sasi-btn-primary sasi-btn-icon sasi-btn-icon__right">
+			<span class="sasi-text">Sign Up</span> 
+							<span class="sasi-icon">
+					<svg xmlns="http://www.w3.org/2000/svg" width="15" height="14" viewBox="0 0 15 14" fill="none"><path d="M6.84375 13.8125C6.96875 13.9688 7.21875 13.9688 7.375 13.8125L13.9062 7.28125C14.0625 7.125 14.0625 6.90625 13.9062 6.75L7.375 0.21875C7.21875 0.0625 6.96875 0.0625 6.84375 0.21875L6.21875 0.8125C6.0625 0.96875 6.0625 1.21875 6.21875 1.34375L11.0625 6.1875H0.375C0.1875 6.1875 0 6.375 0 6.5625V7.4375C0 7.65625 0.1875 7.8125 0.375 7.8125H11.0625L6.21875 12.6875C6.0625 12.8125 6.0625 13.0625 6.21875 13.2188L6.84375 13.8125Z" fill="#0E0E0E"></path></svg>				</span>
+					</a>
+	    
+	    				</div>
+				</div>
+				</div>
+				</div>
+				</div>
+		</div>
+    <div class="header-mobile">		<div data-elementor-type="wp-post" data-elementor-id="85" class="elementor elementor-85">
+				<div class="elementor-element elementor-element-5cfac93 e-flex e-con-boxed e-con e-parent" data-id="5cfac93" data-element_type="container">
+					<div class="e-con-inner">
+				<div class="elementor-element elementor-element-e128445 elementor-widget elementor-widget-sasico-logo" data-id="e128445" data-element_type="widget" data-widget_type="sasico-logo.default">
+				<div class="elementor-widget-container">
+								
+	    	<div class="the-logo">
+				<a href="index.html">
+					<img src="images/logoswift.png" alt="swift Light"> 
+				</a>			        
+		    </div>
+		    
+	    				</div>
+				</div>
+				<div class="elementor-element elementor-element-fa0e0c8 elementor-widget elementor-widget-sasico-menu-mobile" data-id="fa0e0c8" data-element_type="widget" data-widget_type="sasico-menu-mobile.default">
+				<div class="elementor-widget-container">
+								
+	    	<div class="sasi-menu-mobile sasi-cta-header">
+				<div id="mmenu-toggle" class="mmenu-toggle">
+					<button type="button" aria-label="menu mobile">
+						<i class="ss-menu1"></i>
+					</button>
+				</div>
+				<div class="site-overlay mmenu-overlay"></div>
+				<div id="mmenu-wrapper" class="mmenu-wrapper">
+					<div class="mmenu-inner">
+						<a class="mmenu-close btn-close" href="#" aria-label="Close"><svg aria-hidden="true" role="img" focusable="false" width="16" height="16" viewBox="0 0 16 16"><path d="M16 1.4L14.6 0L8 6.6L1.4 0L0 1.4L6.6 8L0 14.6L1.4 16L8 9.4L14.6 16L16 14.6L9.4 8L16 1.4Z"></path></svg></a>
+						<div class="mobile-nav">
+							<ul id="menu-main-menu" class="mobile_mainmenu none-style"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-566"><a href="index.html">Home</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-569"><a href="features.html">Features</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-570"><a href="pricing.html">Pricing</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-567"><a href="privacy.html">Privacy</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-565"><a href="contact-us.html">Contact</a></li>
+</ul>						</div>   	
+					</div>   	
+				</div>
+			</div>
+	    				</div>
+				</div>
+					</div>
+				</div>
+				</div>
+		</div>
+</header>
+<div id="content" class="site-content">
+	
+    		<div data-elementor-type="wp-page" data-elementor-id="454" class="elementor elementor-454">
+				<div class="elementor-element elementor-element-4cc1497 e-con-full e-flex e-con e-parent" data-id="4cc1497" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+		<div class="elementor-element elementor-element-3ce4189 e-con-full e-flex e-con e-child" data-id="3ce4189" data-element_type="container">
+		<div class="elementor-element elementor-element-92633ea e-con-full e-flex e-con e-child" data-id="92633ea" data-element_type="container">
+				<div class="elementor-element elementor-element-eae2509 elementor-widget__width-initial elementor-invisible elementor-widget elementor-widget-sasi-heading" data-id="eae2509" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;}" data-widget_type="sasi-heading.default">
+				<div class="elementor-widget-container">
+							<div class="sasi-heading">
+	        <span class="sasi-heading__sub">Your Office Productivity App</span>	        <h2 class="sasi-heading__title">Built for how <br> you work Today</h2>	    </div>
+	    				</div>
+				</div>
+				<div class="elementor-element elementor-element-19bf9cf elementor-widget__width-initial elementor-invisible elementor-widget elementor-widget-text-editor" data-id="19bf9cf" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;,&quot;_animation_delay&quot;:150}" data-widget_type="text-editor.default">
+									<p>An all-in-one office productivity app that helps users manage tasks, documents, meetings, and team collaboration in one clean and efficient workspace.</p>								</div>
+				<div class="elementor-element elementor-element-e5bba3f elementor-invisible elementor-widget elementor-widget-sasi-button" data-id="e5bba3f" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;,&quot;_animation_delay&quot;:300}" data-widget_type="sasi-button.default">
+				<div class="elementor-widget-container">
+							
+		<a href="contact-us.html" class="sasi-btn sasi-btn-primary sasi-btn-icon sasi-btn-icon__right">
+			<span class="sasi-text">Get a Free 14-days trial</span> 
+							<span class="sasi-icon">
+					<svg xmlns="http://www.w3.org/2000/svg" width="15" height="14" viewBox="0 0 15 14" fill="none"><path d="M6.84375 13.8125C6.96875 13.9688 7.21875 13.9688 7.375 13.8125L13.9062 7.28125C14.0625 7.125 14.0625 6.90625 13.9062 6.75L7.375 0.21875C7.21875 0.0625 6.96875 0.0625 6.84375 0.21875L6.21875 0.8125C6.0625 0.96875 6.0625 1.21875 6.21875 1.34375L11.0625 6.1875H0.375C0.1875 6.1875 0 6.375 0 6.5625V7.4375C0 7.65625 0.1875 7.8125 0.375 7.8125H11.0625L6.21875 12.6875C6.0625 12.8125 6.0625 13.0625 6.21875 13.2188L6.84375 13.8125Z" fill="#0E0E0E"></path></svg>				</span>
+					</a>
+	    
+	    				</div>
+				</div>
+				<div class="elementor-element elementor-element-0b77f01 elementor-widget-divider--view-line elementor-widget elementor-widget-divider" data-id="0b77f01" data-element_type="widget" data-widget_type="divider.default">
+							<div class="elementor-divider">
+			<span class="elementor-divider-separator">
+						</span>
+		</div>
+						</div>
+		<div class="elementor-element elementor-element-f8a6c55 e-con-full e-flex e-con e-child" data-id="f8a6c55" data-element_type="container">
+
+		<div class="elementor-element elementor-element-d1fb88e e-con-full e-flex e-con e-child" data-id="d1fb88e" data-element_type="container">
+		<div class="elementor-element elementor-element-876af00 e-con-full e-flex elementor-invisible e-con e-child" data-id="876af00" data-element_type="container" data-settings="{&quot;animation&quot;:&quot;fadeInUp&quot;,&quot;animation_delay&quot;:600}">
+				<div class="elementor-element elementor-element-6cd5076 elementor-widget elementor-widget-rating" data-id="6cd5076" data-element_type="widget" data-widget_type="rating.default">
+							<div class="e-rating" itemtype="https://schema.org/Rating" itemscope="" itemprop="reviewRating">
+			<meta itemprop="worstRating" content="0">
+			<meta itemprop="bestRating" content="5">
+			<div class="e-rating-wrapper" itemprop="ratingValue" content="5" role="img" aria-label="Rated 5 out of 5">
+							<div class="e-icon">
+				<div class="e-icon-wrapper e-icon-marked">
+					<svg aria-hidden="true" class="e-font-icon-svg e-eicon-star" viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg"><path d="M450 75L338 312 88 350C46 354 25 417 58 450L238 633 196 896C188 942 238 975 275 954L500 837 725 954C767 975 813 942 804 896L763 633 942 450C975 417 954 358 913 350L663 312 550 75C529 33 471 33 450 75Z"></path></svg>				</div>
+				<div class="e-icon-wrapper e-icon-unmarked">
+					<svg aria-hidden="true" class="e-font-icon-svg e-eicon-star" viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg"><path d="M450 75L338 312 88 350C46 354 25 417 58 450L238 633 196 896C188 942 238 975 275 954L500 837 725 954C767 975 813 942 804 896L763 633 942 450C975 417 954 358 913 350L663 312 550 75C529 33 471 33 450 75Z"></path></svg>				</div>
+			</div>
+						<div class="e-icon">
+				<div class="e-icon-wrapper e-icon-marked">
+					<svg aria-hidden="true" class="e-font-icon-svg e-eicon-star" viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg"><path d="M450 75L338 312 88 350C46 354 25 417 58 450L238 633 196 896C188 942 238 975 275 954L500 837 725 954C767 975 813 942 804 896L763 633 942 450C975 417 954 358 913 350L663 312 550 75C529 33 471 33 450 75Z"></path></svg>				</div>
+				<div class="e-icon-wrapper e-icon-unmarked">
+					<svg aria-hidden="true" class="e-font-icon-svg e-eicon-star" viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg"><path d="M450 75L338 312 88 350C46 354 25 417 58 450L238 633 196 896C188 942 238 975 275 954L500 837 725 954C767 975 813 942 804 896L763 633 942 450C975 417 954 358 913 350L663 312 550 75C529 33 471 33 450 75Z"></path></svg>				</div>
+			</div>
+						<div class="e-icon">
+				<div class="e-icon-wrapper e-icon-marked">
+					<svg aria-hidden="true" class="e-font-icon-svg e-eicon-star" viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg"><path d="M450 75L338 312 88 350C46 354 25 417 58 450L238 633 196 896C188 942 238 975 275 954L500 837 725 954C767 975 813 942 804 896L763 633 942 450C975 417 954 358 913 350L663 312 550 75C529 33 471 33 450 75Z"></path></svg>				</div>
+				<div class="e-icon-wrapper e-icon-unmarked">
+					<svg aria-hidden="true" class="e-font-icon-svg e-eicon-star" viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg"><path d="M450 75L338 312 88 350C46 354 25 417 58 450L238 633 196 896C188 942 238 975 275 954L500 837 725 954C767 975 813 942 804 896L763 633 942 450C975 417 954 358 913 350L663 312 550 75C529 33 471 33 450 75Z"></path></svg>				</div>
+			</div>
+						<div class="e-icon">
+				<div class="e-icon-wrapper e-icon-marked">
+					<svg aria-hidden="true" class="e-font-icon-svg e-eicon-star" viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg"><path d="M450 75L338 312 88 350C46 354 25 417 58 450L238 633 196 896C188 942 238 975 275 954L500 837 725 954C767 975 813 942 804 896L763 633 942 450C975 417 954 358 913 350L663 312 550 75C529 33 471 33 450 75Z"></path></svg>				</div>
+				<div class="e-icon-wrapper e-icon-unmarked">
+					<svg aria-hidden="true" class="e-font-icon-svg e-eicon-star" viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg"><path d="M450 75L338 312 88 350C46 354 25 417 58 450L238 633 196 896C188 942 238 975 275 954L500 837 725 954C767 975 813 942 804 896L763 633 942 450C975 417 954 358 913 350L663 312 550 75C529 33 471 33 450 75Z"></path></svg>				</div>
+			</div>
+						<div class="e-icon">
+				<div class="e-icon-wrapper e-icon-marked">
+					<svg aria-hidden="true" class="e-font-icon-svg e-eicon-star" viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg"><path d="M450 75L338 312 88 350C46 354 25 417 58 450L238 633 196 896C188 942 238 975 275 954L500 837 725 954C767 975 813 942 804 896L763 633 942 450C975 417 954 358 913 350L663 312 550 75C529 33 471 33 450 75Z"></path></svg>				</div>
+				<div class="e-icon-wrapper e-icon-unmarked">
+					<svg aria-hidden="true" class="e-font-icon-svg e-eicon-star" viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg"><path d="M450 75L338 312 88 350C46 354 25 417 58 450L238 633 196 896C188 942 238 975 275 954L500 837 725 954C767 975 813 942 804 896L763 633 942 450C975 417 954 358 913 350L663 312 550 75C529 33 471 33 450 75Z"></path></svg>				</div>
+			</div>
+						</div>
+		</div>
+						</div>
+				<div class="elementor-element elementor-element-54c0ff7 elementor-widget elementor-widget-text-editor" data-id="54c0ff7" data-element_type="widget" data-widget_type="text-editor.default">
+									<p>150+ Reviews</p>								</div>
+				</div>
+				<div class="elementor-element elementor-element-558eada elementor-invisible elementor-widget elementor-widget-text-editor" data-id="558eada" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;,&quot;_animation_delay&quot;:600}" data-widget_type="text-editor.default">
+									<p>by over 2500+ global satisfied clients</p>								</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-fe3880c e-con-full e-flex e-con e-child" data-id="fe3880c" data-element_type="container" style="margin-top: 15px;">
+					<div class="elementor-element elementor-element-658ed62 elementor-invisible elementor-widget elementor-widget-image" data-id="658ed62" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;,&quot;_animation_delay&quot;:300}" data-widget_type="image.default">
+																	<a href="https://play.google.com/store/apps/details?id=com.pixels.swift_productivity&hl=en">
+								<img loading="lazy" decoding="async" width="190" height="64" src="wp-content/uploads/sites/9/2025/09/btn-playstore.webp" class="attachment-full size-full wp-image-532" alt="" />								</a>
+																</div>
+					<div class="elementor-element elementor-element-3499995 elementor-invisible elementor-widget elementor-widget-image" data-id="3499995" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;,&quot;_animation_delay&quot;:300}" data-widget_type="image.default">
+																	<a href="https://apps.apple.com/us/app/swift-track-your-productivity/id6755123326">
+								<img loading="lazy" decoding="async" width="206" height="64" src="wp-content/uploads/sites/9/2025/09/btn-appstore.webp" class="attachment-full size-full wp-image-531" alt="" />								</a>
+																</div>
+					</div>
+				</div>
+				
+		<div class="elementor-element elementor-element-a7d21f0 e-con-full e-flex e-con e-child" data-id="a7d21f0" data-element_type="container">
+				<div class="elementor-element elementor-element-3024824 elementor-invisible elementor-widget elementor-widget-image" data-id="3024824" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeIn&quot;,&quot;_animation_delay&quot;:150}" data-widget_type="image.default">
+															<img fetchpriority="high" decoding="async" width="512" height="1059" src="images/swift_appscreen.png" class="attachment-full size-full wp-image-585" alt="" srcset="images/swift_appscreen.png 612w, https://sasico.pikathemes.site/swift/wp-content/uploads/sites/9/2025/09/home-image1-145x300.webp 145w, https://sasico.pikathemes.site/swift/wp-content/uploads/sites/9/2025/09/home-image1-495x1024.webp 495w" sizes="(max-width: 512px) 100vw, 512px" />															</div>
+				</div>
+				</div>
+				</div>
+		<div class="elementor-element elementor-element-1b8d66c section-padd e-flex e-con-boxed e-con e-parent" data-id="1b8d66c" data-element_type="container">
+					<div class="e-con-inner">
+				<div class="elementor-element elementor-element-cef5cd0 elementor-widget__width-initial elementor-widget-mobile_extra__width-initial elementor-invisible elementor-widget elementor-widget-sasi-heading" data-id="cef5cd0" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;}" data-widget_type="sasi-heading.default">
+				<div class="elementor-widget-container">
+							<div class="sasi-heading">
+	        <span class="sasi-heading__sub">Built-In brilliance</span>	        <h2 class="sasi-heading__title"> Discover how to track time & boost office productivity.</h2>	    </div>
+	    				</div>
+				</div>
+				<div class="elementor-element elementor-element-44c8e2b elementor-widget__width-initial elementor-widget-mobile_extra__width-inherit elementor-invisible elementor-widget elementor-widget-text-editor" data-id="44c8e2b" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;}" data-widget_type="text-editor.default">
+									<p>Swift App is packed with office intelligent features designed to make every interaction seamless, and efficient</p>								</div>
+		<div class="elementor-element elementor-element-9f4013b e-grid e-con-full e-con e-child" data-id="9f4013b" data-element_type="container">
+				<div class="elementor-element elementor-element-b562bed sasi-view-icon-stacked sasi-icon-align-left sasi-position-top elementor-invisible elementor-widget elementor-widget-sasi-iconbox" data-id="b562bed" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInLeft&quot;}" data-widget_type="sasi-iconbox.default">
+				<div class="elementor-widget-container">
+							<div class="sasi-icon-box">
+						<div class="sasi-icon sasi-icon-box__icon">
+				<svg xmlns="http://www.w3.org/2000/svg" width="54" height="40" viewBox="0 0 54 40" fill="none"><path d="M22.3492 18.9883H18.6133C18.6519 20.1201 18.7634 21.2483 18.9471 22.366L22.3492 18.9883Z" fill="#004FFC"></path><path d="M17.9242 10.1894C15.8025 9.84788 13.7018 9.38754 11.6324 8.81055C10.0819 11.3488 9.19446 14.2314 9.05078 17.1966H16.805C16.8791 14.8234 17.2552 12.4689 17.9242 10.1894Z" fill="#004FFC"></path><path d="M26.1802 15.1861V10.9144C24.0239 10.8799 21.8713 10.7246 19.7327 10.4492C19.0662 12.6405 18.6899 14.9087 18.6133 17.1965H24.1553L26.1802 15.1861Z" fill="#004FFC"></path><path d="M22.8753 0.65625C18.8195 1.61418 15.2259 3.94357 12.7109 7.24477C14.6159 7.75272 16.5468 8.1591 18.4955 8.46216C19.5224 5.64295 21.0014 3.00702 22.8753 0.65625Z" fill="#004FFC"></path><path d="M26.1816 9.12189V0.189453C25.9932 0.19864 25.8054 0.21186 25.6182 0.226761C23.3214 2.6932 21.5253 5.57621 20.3281 8.71789C22.2708 8.95487 24.2246 9.08973 26.1816 9.12189Z" fill="#004FFC"></path><path d="M33.5129 7.90484C32.3226 5.07718 30.6425 2.47851 28.5486 0.226761C28.3612 0.211748 28.1732 0.19864 27.9844 0.189453V9.12189C29.5099 9.09702 31.041 9.00873 32.5519 8.85905L33.5129 7.90484Z" fill="#004FFC"></path><path d="M37.7928 3.65883C35.852 2.23351 33.6412 1.21221 31.293 0.65625C32.7315 2.4632 33.9395 4.43984 34.8893 6.54118L37.7928 3.65883Z" fill="#004FFC"></path><path d="M27.9844 10.9145V13.3935L30.5822 10.8145C29.7173 10.8673 28.8513 10.9006 27.9844 10.9145Z" fill="#004FFC"></path><path d="M16.8065 18.9883H9.05078C9.22956 22.5029 10.4443 25.888 12.5442 28.7231L17.4003 23.902C17.0583 22.2844 16.8596 20.6402 16.8065 18.9883Z" fill="#004FFC"></path><path d="M41.6214 7.46094L16.375 32.5265C18.9787 34.4384 22.0555 35.6144 25.2785 35.9293C26.4784 36.047 27.6871 36.047 28.887 35.9293C29.1363 35.9047 29.3902 35.874 29.6635 35.8352C29.7915 35.817 29.922 35.8263 30.0461 35.8626C30.1702 35.8989 30.285 35.9612 30.3827 36.0453C30.4804 36.1295 30.5588 36.2335 30.6125 36.3503C30.6662 36.4671 30.694 36.5941 30.694 36.7225V39.9996L37.289 32.9062C37.3327 32.8592 37.3813 32.8169 37.4341 32.7802C41.2808 30.1071 43.9277 26.0517 44.8137 21.4738C45.6997 16.8959 44.7551 12.1554 42.1801 8.25729C42.0024 7.9884 41.8162 7.72295 41.6214 7.46094ZM27.0832 28.8476C26.7261 28.8476 26.377 28.7424 26.0801 28.5455C25.7832 28.3485 25.5518 28.0685 25.4151 27.741C25.2784 27.4134 25.2427 27.053 25.3124 26.7053C25.382 26.3575 25.554 26.0381 25.8065 25.7874C26.059 25.5367 26.3807 25.366 26.7309 25.2968C27.0812 25.2277 27.4442 25.2632 27.7741 25.3989C28.104 25.5345 28.386 25.7643 28.5844 26.0591C28.7828 26.3539 28.8887 26.7004 28.8887 27.055C28.8887 27.5304 28.6985 27.9864 28.3599 28.3225C28.0213 28.6587 27.562 28.8476 27.0832 28.8476ZM32.4997 28.8476C32.1426 28.8476 31.7936 28.7424 31.4966 28.5455C31.1997 28.3485 30.9683 28.0685 30.8316 27.741C30.695 27.4134 30.6592 27.053 30.7289 26.7053C30.7986 26.3575 30.9705 26.0381 31.223 25.7874C31.4755 25.5367 31.7973 25.366 32.1475 25.2968C32.4977 25.2277 32.8608 25.2632 33.1907 25.3989C33.5206 25.5345 33.8026 25.7643 34.001 26.0591C34.1994 26.3539 34.3052 26.7004 34.3052 27.055C34.3052 27.5304 34.115 27.9864 33.7764 28.3225C33.4378 28.6587 32.9786 28.8476 32.4997 28.8476ZM37.9163 28.8476C37.5592 28.8476 37.2101 28.7424 36.9132 28.5455C36.6163 28.3485 36.3849 28.0685 36.2482 27.741C36.1115 27.4134 36.0758 27.053 36.1455 26.7053C36.2151 26.3575 36.3871 26.0381 36.6396 25.7874C36.8921 25.5367 37.2138 25.366 37.564 25.2968C37.9143 25.2277 38.2773 25.2632 38.6072 25.3989C38.9371 25.5345 39.2191 25.7643 39.4175 26.0591C39.6159 26.3539 39.7218 26.7004 39.7218 27.055C39.7218 27.5304 39.5316 27.9864 39.193 28.3225C38.8544 28.6587 38.3951 28.8476 37.9163 28.8476Z" fill="#004FFC"></path><path d="M7.48954 0.261934C3.24234 4.43855 0.623441 9.97443 0.0979101 15.8865C-0.427621 21.7987 1.17423 27.7044 4.619 32.555L3.85617 32.4429C3.73889 32.4257 3.61934 32.4315 3.50434 32.4602C3.38935 32.4888 3.28115 32.5396 3.18595 32.6098C2.99366 32.7514 2.86593 32.9631 2.83086 33.1983C2.79578 33.4334 2.85623 33.6728 2.99891 33.8637C3.14159 34.0546 3.35481 34.1814 3.59166 34.2162L6.63847 34.6644C6.75745 34.6819 6.87875 34.6756 6.99524 34.6459C7.11174 34.6162 7.22109 34.5637 7.31685 34.4914C7.41262 34.4192 7.49288 34.3286 7.55292 34.2252C7.61296 34.1217 7.65157 34.0074 7.66648 33.8889L8.00502 31.2C8.03266 30.9651 7.9657 30.7289 7.81872 30.5428C7.67173 30.3568 7.45664 30.2359 7.22031 30.2066C6.98397 30.1773 6.74553 30.2419 6.55695 30.3863C6.36837 30.5307 6.24492 30.7433 6.21349 30.9777L6.13721 31.5827C2.91695 27.0781 1.41291 21.5843 1.89332 16.0811C2.37372 10.5778 4.80734 5.42282 8.76017 1.53545C8.84492 1.45274 8.91239 1.35422 8.9587 1.24556C9.00501 1.13689 9.02925 1.02022 9.03004 0.902236C9.03083 0.784249 9.00814 0.667268 8.96329 0.558005C8.91844 0.448742 8.85229 0.349347 8.76866 0.265522C8.68502 0.181697 8.58554 0.115092 8.47592 0.069528C8.3663 0.0239639 8.24869 0.000336914 8.12985 3.57713e-06C8.01101 -0.00032976 7.89327 0.0226367 7.78339 0.0675851C7.67351 0.112534 7.57365 0.17858 7.48954 0.261934Z" fill="#004FFC"></path><path d="M48.8105 2.85508H49.489C49.7284 2.85508 49.9581 2.76065 50.1274 2.59256C50.2967 2.42448 50.3918 2.1965 50.3918 1.95879C50.3918 1.72108 50.2967 1.4931 50.1274 1.32502C49.9581 1.15693 49.7284 1.0625 49.489 1.0625H46.7807C46.5413 1.0625 46.3117 1.15693 46.1424 1.32502C45.9731 1.4931 45.878 1.72108 45.878 1.95879V4.64766C45.878 4.88537 45.9731 5.11335 46.1424 5.28144C46.3117 5.44952 46.5413 5.54395 46.7807 5.54395C47.0202 5.54395 47.2498 5.44952 47.4191 5.28144C47.5884 5.11335 47.6835 4.88537 47.6835 4.64766V4.35211C50.9725 8.82546 52.5493 14.3156 52.1312 19.8385C51.7132 25.3613 49.3276 30.5558 45.402 34.4908C45.2335 34.6597 45.1395 34.8881 45.1406 35.1258C45.1418 35.3635 45.238 35.5911 45.4081 35.7584C45.5782 35.9257 45.8083 36.019 46.0477 36.0179C46.2872 36.0167 46.5163 35.9212 46.6848 35.7523C50.9793 31.4474 53.5601 25.7454 53.9508 19.6988C54.3415 13.6522 52.5157 7.66949 48.8105 2.85508Z" fill="#004FFC"></path></svg>	        </div>
+	        	        <div class="sasi-icon-box__content">
+	        	<h4 class="icon-box-title">Weekly Productivity Stats</h4>				<div class="icon-box-des">Tracks and visualizes your task completion and focus time throughout the week to measure progress.</div>							</div>	
+	    </div>
+	    				</div>
+				</div>
+				<div class="elementor-element elementor-element-966c7b7 sasi-view-icon-stacked sasi-icon-align-left sasi-position-top elementor-invisible elementor-widget elementor-widget-sasi-iconbox" data-id="966c7b7" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;}" data-widget_type="sasi-iconbox.default">
+				<div class="elementor-widget-container">
+							<div class="sasi-icon-box">
+						<div class="sasi-icon sasi-icon-box__icon">
+				<svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 44 44" fill="none"><g clip-path="url(#clip0_6034_40870)"><path fill-rule="evenodd" clip-rule="evenodd" d="M21.0833 3.421V9.16667H16.9583V6.875C16.9583 6.63208 16.8616 6.39879 16.6898 6.22692L14.146 3.68317C14.1868 3.53146 14.2083 3.37242 14.2083 3.20833C14.2083 2.19633 13.387 1.375 12.375 1.375C11.363 1.375 10.5417 2.19633 10.5417 3.20833C10.5417 4.22033 11.363 5.04167 12.375 5.04167C12.5391 5.04167 12.6981 5.02013 12.8498 4.97934L15.125 7.2545V9.16667H13.7496C11.2186 9.16667 9.16667 11.2186 9.16667 13.75V15.125H7.2545L4.97934 12.8498C5.02013 12.6981 5.04167 12.5391 5.04167 12.375C5.04167 11.363 4.22033 10.5417 3.20833 10.5417C2.19633 10.5417 1.375 11.363 1.375 12.375C1.375 13.387 2.19633 14.2083 3.20833 14.2083C3.37242 14.2083 3.53146 14.1868 3.68317 14.146L6.22692 16.6898C6.39879 16.8616 6.63208 16.9583 6.875 16.9583H9.16667V21.0833H3.421C3.10383 20.5356 2.51121 20.1667 1.83333 20.1667C0.821333 20.1667 0 20.988 0 22C0 23.012 0.821333 23.8333 1.83333 23.8333C2.51121 23.8333 3.10383 23.4644 3.421 22.9167H9.16667V27.0417H6.875C6.63208 27.0417 6.39879 27.1384 6.22692 27.3102L3.68317 29.854C3.53146 29.8132 3.37242 29.7917 3.20833 29.7917C2.19633 29.7917 1.375 30.613 1.375 31.625C1.375 32.637 2.19633 33.4583 3.20833 33.4583C4.22033 33.4583 5.04167 32.637 5.04167 31.625C5.04167 31.4609 5.02013 31.3019 4.97934 31.1502L7.2545 28.875H9.16667V30.25C9.16667 32.7814 11.2186 34.8333 13.7496 34.8333H15.125V36.7455L12.8498 39.0207C12.6981 38.9799 12.5391 38.9583 12.375 38.9583C11.363 38.9583 10.5417 39.7797 10.5417 40.7917C10.5417 41.8037 11.363 42.625 12.375 42.625C13.387 42.625 14.2083 41.8037 14.2083 40.7917C14.2083 40.6276 14.1868 40.4685 14.146 40.3168L16.6898 37.7731C16.8616 37.6012 16.9583 37.3679 16.9583 37.125V34.8333H21.0833V40.579C20.5356 40.8962 20.1667 41.4888 20.1667 42.1667C20.1667 43.1787 20.988 44 22 44C23.012 44 23.8333 43.1787 23.8333 42.1667C23.8333 41.4888 23.4644 40.8962 22.9167 40.579V34.8333H27.0417V37.125C27.0417 37.3679 27.1384 37.6012 27.3102 37.7731L29.854 40.3168C29.8132 40.4685 29.7917 40.6276 29.7917 40.7917C29.7917 41.8037 30.613 42.625 31.625 42.625C32.637 42.625 33.4583 41.8037 33.4583 40.7917C33.4583 39.7797 32.637 38.9583 31.625 38.9583C31.4609 38.9583 31.3019 38.9799 31.1502 39.0207L28.875 36.7455V34.8333H30.2504C32.7814 34.8333 34.8333 32.7814 34.8333 30.25V28.875H36.7455L39.0207 31.1502C38.9799 31.3019 38.9583 31.4609 38.9583 31.625C38.9583 32.637 39.7797 33.4583 40.7917 33.4583C41.8037 33.4583 42.625 32.637 42.625 31.625C42.625 30.613 41.8037 29.7917 40.7917 29.7917C40.6276 29.7917 40.4685 29.8132 40.3168 29.854L37.7731 27.3102C37.6012 27.1384 37.3679 27.0417 37.125 27.0417H34.8333V22.9167H40.579C40.8962 23.4644 41.4888 23.8333 42.1667 23.8333C43.1787 23.8333 44 23.012 44 22C44 20.988 43.1787 20.1667 42.1667 20.1667C41.4888 20.1667 40.8962 20.5356 40.579 21.0833H34.8333V16.9583H37.125C37.3679 16.9583 37.6012 16.8616 37.7731 16.6898L40.3168 14.146C40.4685 14.1868 40.6276 14.2083 40.7917 14.2083C41.8037 14.2083 42.625 13.387 42.625 12.375C42.625 11.363 41.8037 10.5417 40.7917 10.5417C39.7797 10.5417 38.9583 11.363 38.9583 12.375C38.9583 12.5391 38.9799 12.6981 39.0207 12.8498L36.7455 15.125H34.8333V13.75C34.8333 11.2186 32.7814 9.16667 30.2504 9.16667H28.875V7.2545L31.1502 4.97934C31.3019 5.02013 31.4609 5.04167 31.625 5.04167C32.637 5.04167 33.4583 4.22033 33.4583 3.20833C33.4583 2.19633 32.637 1.375 31.625 1.375C30.613 1.375 29.7917 2.19633 29.7917 3.20833C29.7917 3.37242 29.8132 3.53146 29.854 3.68317L27.3102 6.22692C27.1384 6.39879 27.0417 6.63208 27.0417 6.875V9.16667H22.9167V3.421C23.4644 3.10383 23.8333 2.51121 23.8333 1.83333C23.8333 0.821333 23.012 0 22 0C20.988 0 20.1667 0.821333 20.1667 1.83333C20.1667 2.51121 20.5356 3.10383 21.0833 3.421ZM16.7617 22L18.1193 16.9583H19.9224L22.9483 28.1967C23.0798 28.6852 23.5831 28.9749 24.0717 28.8434C24.5603 28.7118 24.8499 28.2086 24.7184 27.72L21.5101 15.8033C21.4023 15.4032 21.0393 15.125 20.625 15.125H17.4167C17.0023 15.125 16.6393 15.4032 16.5316 15.8033L13.3233 27.72C13.1917 28.2086 13.4814 28.7118 13.97 28.8434C14.4586 28.9749 14.9618 28.6852 15.0934 28.1967L16.2681 23.8333H19.25C19.756 23.8333 20.1667 23.4227 20.1667 22.9167C20.1667 22.4107 19.756 22 19.25 22H16.7617ZM28.875 15.125H27.9583C27.4519 15.125 27.0417 15.5352 27.0417 16.0417V27.0417C26.5357 27.0417 26.125 27.4523 26.125 27.9583C26.125 28.4643 26.5357 28.875 27.0417 28.875H27.9583C28.4648 28.875 28.875 28.4648 28.875 27.9583V16.9583C29.381 16.9583 29.7917 16.5477 29.7917 16.0417C29.7917 15.5357 29.381 15.125 28.875 15.125Z" fill="#004FFC"></path></g><defs><clipPath id="clip0_6034_40870"><rect width="44" height="44" fill="white"></rect></clipPath></defs></svg>	        </div>
+	        	        <div class="sasi-icon-box__content">
+	        	<h4 class="icon-box-title">Overview Dashboard</h4>				<div class="icon-box-des">Provides a quick snapshot of your tasks, meetings, and productivity metrics all in one central view.</div>							</div>	
+	    </div>
+	    				</div>
+				</div>
+				<div class="elementor-element elementor-element-eed57b9 sasi-view-icon-stacked sasi-icon-align-left sasi-position-top elementor-invisible elementor-widget elementor-widget-sasi-iconbox" data-id="eed57b9" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInRight&quot;}" data-widget_type="sasi-iconbox.default">
+				<div class="elementor-widget-container">
+							<div class="sasi-icon-box">
+						<div class="sasi-icon sasi-icon-box__icon">
+				<svg xmlns="http://www.w3.org/2000/svg" width="44" height="40" viewBox="0 0 44 40" fill="none"><path d="M18.469 23.8426C18.3298 24.0044 18.1331 24.0874 17.9352 24.0874C17.7726 24.0874 17.6092 24.0313 17.4762 23.9167C16.5571 23.125 16.0298 21.9855 16.0298 20.7907C16.0298 19.6924 16.4641 18.6557 17.2526 17.8715C17.5284 17.5972 17.9741 17.5987 18.2481 17.8745C18.5222 18.1503 18.5209 18.5964 18.2451 18.8705C17.7244 19.3884 17.4376 20.0702 17.4376 20.7906C17.4376 21.5749 17.7865 22.3252 18.3947 22.8491C18.6893 23.1029 18.7226 23.5477 18.4689 23.8424L18.469 23.8426ZM43.9953 32.9894C43.9953 34.9169 42.428 36.485 40.5016 36.485C38.7441 36.485 37.2862 35.1796 37.044 33.4871H31.4136C31.0248 33.4871 30.7096 33.1717 30.7096 32.7827V26.9042H27.7455V33.0801C29.3356 33.407 30.5351 34.8181 30.5351 36.5044C30.5351 38.4319 28.9678 40 27.0415 40C25.1152 40 23.5479 38.4319 23.5479 36.5044C23.5479 34.8182 24.7474 33.407 26.3375 33.0801V26.9042H23.3733V32.7827C23.3733 33.1717 23.0581 33.4871 22.6693 33.4871H17.039C16.7968 35.1796 15.3388 36.485 13.5814 36.485C11.6549 36.485 10.0877 34.9169 10.0877 32.9894C10.0877 31.062 11.655 29.4939 13.5814 29.4939C15.1928 29.4939 16.5521 30.5915 16.9538 32.0784H21.9653V26.9042H19.3671C16.0377 26.9042 13.3292 24.1943 13.3292 20.8631C13.3292 20.0712 13.4833 19.3149 13.7615 18.6212H6.03779C2.70853 18.6212 0 15.9112 0 12.5801C0 9.32301 2.58965 6.6597 5.81692 6.54304C6.44337 4.56866 8.28645 3.1899 10.4046 3.1899C11.056 3.1899 11.6939 3.32038 12.285 3.57166C13.3389 1.40605 15.5439 0 18.0007 0C21.3511 0 24.1045 2.6067 24.3417 5.89953C26.3827 5.90877 28.301 6.91256 29.482 8.55721C30.0706 8.37866 30.6917 8.28295 31.33 8.28295C34.6804 8.28295 37.4338 10.8897 37.6709 14.1825C41.1635 14.1977 44 17.0453 44 20.5433C44 24.0412 41.1481 26.9041 37.6426 26.9041H32.1177V32.0783H37.1292C37.5309 30.5914 38.8903 29.4939 40.5017 29.4939C42.4282 29.4939 43.9954 31.062 43.9954 32.9894L43.9953 32.9894ZM14.8218 5.01936C15.0855 5.30515 15.5309 5.32293 15.8166 5.05907C16.4245 4.49752 17.1864 4.32461 18.2147 4.51487C19.3932 4.73286 20.2918 5.65442 20.5043 6.86255C20.5644 7.20433 20.8615 7.44496 21.1968 7.44496C21.2373 7.44496 21.2783 7.44143 21.3196 7.43413C21.7026 7.36669 21.9584 7.00148 21.891 6.6184C21.5757 4.82505 20.2331 3.45562 18.4707 3.12959C17.0108 2.85948 15.7964 3.16041 14.8616 4.02403C14.5759 4.28789 14.5581 4.73348 14.8218 5.01936ZM5.06561 14.5664C4.45737 14.0424 4.10847 13.292 4.10847 12.5078C4.10847 11.7874 4.39525 11.1056 4.91592 10.5878C5.1917 10.3136 5.19302 9.86756 4.91892 9.59172C4.64498 9.31588 4.19919 9.31447 3.92341 9.58873C3.13487 10.3729 2.70061 11.4096 2.70061 12.5078C2.70061 13.7026 3.2278 14.8421 4.1471 15.6339C4.28006 15.7484 4.44347 15.8045 4.60609 15.8045C4.80399 15.8045 5.00066 15.7215 5.13987 15.5597C5.39357 15.2649 5.36031 14.8202 5.06569 14.5664L5.06561 14.5664ZM32.1175 21.5444V25.4955H37.6424C40.3716 25.4955 42.5919 23.274 42.5919 20.5434C42.5919 17.8127 40.3716 15.5912 37.6424 15.5912C37.4495 15.5912 37.253 15.6027 37.0585 15.6256C36.8525 15.6498 36.6471 15.5821 36.4958 15.4408C36.3446 15.2995 36.2632 15.0987 36.2733 14.8918C36.2773 14.8083 36.2794 14.7249 36.2794 14.6439C36.2794 11.9133 34.059 9.69174 31.3298 9.69174C29.2014 9.69174 27.3157 11.0469 26.6375 13.0638C26.5682 13.2702 26.4073 13.4329 26.2017 13.5044C25.9962 13.576 25.7692 13.5483 25.5867 13.4297C25.0353 13.0711 24.3946 12.8816 23.7336 12.8816C22.0915 12.8816 20.6831 14.052 20.3848 15.6646C20.3202 16.0143 20.0069 16.2615 19.6503 16.2395C19.5526 16.2336 19.4573 16.2306 19.3669 16.2306C16.8139 16.2306 14.7369 18.3087 14.7369 20.863C14.7369 23.4172 16.814 25.4954 19.3669 25.4954H21.9652V21.5442C21.9652 21.1553 22.2804 20.8399 22.6691 20.8399C23.0579 20.8399 23.3731 21.1553 23.3731 21.5442V25.4954H26.3373V21.7165C26.3373 21.3276 26.6525 21.0122 27.0413 21.0122C27.4301 21.0122 27.7453 21.3276 27.7453 21.7165V25.4954H30.7095V21.5442C30.7095 21.1553 31.0247 20.8399 31.4134 20.8399C31.8022 20.8399 32.1174 21.1553 32.1174 21.5442L32.1175 21.5444ZM33.8335 15.1456C33.8937 15.4874 34.1907 15.728 34.5259 15.728C34.5664 15.728 34.6076 15.7245 34.6488 15.7172C35.0318 15.6497 35.2875 15.2845 35.2201 14.9014C34.9046 13.108 33.5621 11.7387 31.7998 11.4126C30.3399 11.1426 29.1255 11.4434 28.1906 12.3071C27.9049 12.5709 27.8871 13.0165 28.1509 13.3024C28.4144 13.5883 28.8599 13.6061 29.1456 13.3422C29.7537 12.7807 30.5157 12.6077 31.5439 12.7979C32.7223 13.0159 33.621 13.9374 33.8335 15.1456Z" fill="#004FFC"></path></svg>	        </div>
+	        	        <div class="sasi-icon-box__content">
+	        	<h4 class="icon-box-title">Built-in Pomodoro timer</h4>				<div class="icon-box-des">Helps you stay focused and manage your time efficiently using structured work and break intervals.</div>							</div>	
+	    </div>
+	    				</div>
+				</div>
+				</div>
+		<div class="elementor-element elementor-element-cb89391 e-con-full section-padd-top e-flex e-con e-child" data-id="cb89391" data-element_type="container">
+		<div class="elementor-element elementor-element-dd517e2 e-con-full e-flex e-con e-child" data-id="dd517e2" data-element_type="container">
+				<div class="elementor-element elementor-element-0cb9c63 elementor-invisible elementor-widget elementor-widget-sasi-heading" data-id="0cb9c63" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInRight&quot;}" data-widget_type="sasi-heading.default">
+				<div class="elementor-widget-container">
+							<div class="sasi-heading">
+	        <span class="sasi-heading__sub">Manage tasks with Ease</span>	        <h2 class="sasi-heading__title">All you need to stay Productive</h2>	    </div>
+	    				</div>
+				</div>
+				<div class="elementor-element elementor-element-48520d3 elementor-invisible elementor-widget elementor-widget-text-editor" data-id="48520d3" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInRight&quot;,&quot;_animation_delay&quot;:150}" data-widget_type="text-editor.default">
+									<p>Our office productivity app combines task management, scheduling, and focus tools to help you stay organized and productive all in one seamless workspace.
+
+										</p>								</div>
+				<div class="elementor-element elementor-element-ec4fa75 sasi-position-left sasi-view-icon-default elementor-invisible elementor-widget elementor-widget-sasi-iconbox" data-id="ec4fa75" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInRight&quot;,&quot;_animation_delay&quot;:300}" data-widget_type="sasi-iconbox.default">
+				<div class="elementor-widget-container">
+							<div class="sasi-icon-box">
+						<div class="sasi-icon sasi-icon-box__icon">
+				<svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35" fill="none"><g clip-path="url(#clip0_6034_38442)"><path d="M14.4236 10.5956C6.50802 10.5956 7.19889e-05 16.0388 7.19889e-05 22.7298C7.19889e-05 25.4043 1.03749 28.1225 2.94 30.2293L0.253412 33.2994C-0.0109339 33.6018 -0.075055 34.0314 0.0922204 34.3978C0.25847 34.7643 0.622963 34.9997 1.02546 34.9997H15.4489C21.2933 34.9997 28.847 29.9671 28.847 22.7298C28.847 16.0388 22.3391 10.5956 14.4236 10.5956ZM8.20299 24.6093C7.07246 24.6093 6.15228 23.689 6.15228 22.5585C6.15228 21.428 7.07253 20.5078 8.20299 20.5078C9.33345 20.5078 10.2537 21.4281 10.2537 22.5585C10.2538 23.689 9.33352 24.6093 8.20299 24.6093ZM14.4236 24.6093C13.293 24.6093 12.3728 23.689 12.3728 22.5585C12.3728 21.428 13.2931 20.5078 14.4236 20.5078C15.554 20.5078 16.4743 21.4281 16.4743 22.5585C16.4743 23.689 15.5541 24.6093 14.4236 24.6093ZM20.6441 24.6093C19.5136 24.6093 18.5934 23.689 18.5934 22.5585C18.5934 21.428 19.5137 20.5078 20.6441 20.5078C21.7746 20.5078 22.6948 21.4281 22.6948 22.5585C22.6948 23.689 21.7747 24.6093 20.6441 24.6093Z" fill="#004FFC"></path><path d="M34.7511 20.8648L32.337 18.048C34.0602 16.1035 34.9985 13.7322 34.9985 11.279C34.9985 5.05976 29.0185 0 21.6687 0C15.0225 0 9.37593 4.14183 8.37891 9.53272C10.2334 8.90258 12.3131 8.54438 14.4228 8.54438C23.402 8.54438 30.7792 14.816 30.8871 22.558H33.9731C34.849 22.5581 35.3194 21.5267 34.7511 20.8648Z" fill="#004FFC"></path></g><defs><clipPath id="clip0_6034_38442"><rect width="35" height="35" fill="white"></rect></clipPath></defs></svg>	        </div>
+	        	        <div class="sasi-icon-box__content">
+	        	<h4 class="icon-box-title">Overview Dashboard</h4>				<div class="icon-box-des">Get a real-time snapshot of everything that matters upcoming meetings, pending tasks, focus sessions, and achievements.</div>							</div>	
+	    </div>
+	    				</div>
+				</div>
+				<div class="elementor-element elementor-element-f2cc4aa sasi-position-left sasi-view-icon-default elementor-invisible elementor-widget elementor-widget-sasi-iconbox" data-id="f2cc4aa" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInRight&quot;,&quot;_animation_delay&quot;:300}" data-widget_type="sasi-iconbox.default">
+				<div class="elementor-widget-container">
+							<div class="sasi-icon-box">
+						<div class="sasi-icon sasi-icon-box__icon">
+				<svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35" fill="none"><g clip-path="url(#clip0_6034_38452)"><path d="M34.4533 19.4368L32.2375 18.0502C32.247 17.8691 32.2529 17.6866 32.2529 17.5C32.2529 17.3134 32.247 17.1309 32.2375 16.9498L34.4533 15.5632C34.8522 15.3137 35.03 14.8246 34.8846 14.3771L33.3997 9.80725C33.2543 9.35977 32.823 9.06869 32.3537 9.10116L29.7363 9.28245C29.5311 8.97565 29.3176 8.67993 29.0969 8.39733L30.0768 5.96736C30.2528 5.53096 30.1092 5.03084 29.7285 4.75433L25.8413 1.92992C25.4606 1.65334 24.9406 1.67139 24.58 1.9736L22.5798 3.64984C22.2439 3.52864 21.8958 3.41811 21.5311 3.317L20.8961 0.776699C20.7819 0.320195 20.3718 0 19.9013 0H15.0961C14.6256 0 14.2155 0.320195 14.1014 0.776699L13.4663 3.317C13.1017 3.41811 12.7535 3.52864 12.4177 3.64984L10.4176 1.9736C10.0569 1.67139 9.53688 1.65341 9.15619 1.92999L5.26879 4.75439C4.88817 5.03098 4.74455 5.53109 4.92057 5.96743L5.9005 8.39733C5.67984 8.67993 5.46628 8.97559 5.26107 9.28245L2.64373 9.10116C2.17437 9.06862 1.74309 9.35977 1.59769 9.80725L0.112788 14.3771C-0.0326125 14.8246 0.14519 15.3136 0.544067 15.5632L2.75994 16.9498C2.75043 17.1309 2.74449 17.3135 2.74449 17.5C2.74449 17.6865 2.75043 17.8689 2.75994 18.0502L0.544067 19.4368C0.14519 19.6863 -0.0326125 20.1754 0.112788 20.6229L1.59769 25.1928C1.74309 25.6402 2.17437 25.9313 2.64379 25.8988L5.26107 25.7175C5.46628 26.0244 5.67984 26.32 5.9005 26.6027L4.92057 29.0326C4.74461 29.469 4.88817 29.9691 5.26879 30.2457L9.15619 33.0701C9.53688 33.3467 10.0569 33.3286 10.4176 33.0264L12.4177 31.3502C12.7537 31.4715 13.1018 31.582 13.4663 31.6831L14.1014 34.2234C14.2155 34.6799 14.6256 35.0001 15.0961 35.0001H19.9013C20.3718 35.0001 20.7819 34.6799 20.896 34.2234L21.5311 31.6831C21.8956 31.582 22.2438 31.4715 22.5798 31.3502L24.5799 33.0264C24.9406 33.3286 25.4606 33.3466 25.8413 33.0701L29.7287 30.2457C30.1093 29.9691 30.2529 29.469 30.0769 29.0326L29.097 26.6027C29.3176 26.32 29.5312 26.0244 29.7364 25.7175L32.3537 25.8988C32.823 25.9314 33.2544 25.6402 33.3997 25.1928L34.8846 20.6229C35.03 20.1754 34.8522 19.6863 34.4533 19.4368ZM25.0182 24.6777H22.6257V25.7031C22.6257 26.2694 22.1665 26.7285 21.6003 26.7285C21.034 26.7285 20.5749 26.2694 20.5749 25.7031V24.6777H9.97916C9.41288 24.6777 8.95377 24.2186 8.95377 23.6523C8.95377 23.0861 9.41288 22.627 9.97916 22.627H20.5749V21.6016C20.5749 21.0353 21.034 20.5762 21.6003 20.5762C22.1665 20.5762 22.6257 21.0353 22.6257 21.6016V22.627H25.0182C25.5845 22.627 26.0436 23.0861 26.0436 23.6523C26.0436 24.2186 25.5845 24.6777 25.0182 24.6777ZM25.0182 18.5254H15.1061V19.5508C15.1061 20.1171 14.647 20.5762 14.0807 20.5762C13.5144 20.5762 13.0553 20.1171 13.0553 19.5508V18.5254H9.97916C9.41288 18.5254 8.95377 18.0663 8.95377 17.5C8.95377 16.9337 9.41288 16.4746 9.97916 16.4746H13.0553V15.4492C13.0553 14.8829 13.5144 14.4238 14.0807 14.4238C14.647 14.4238 15.1061 14.8829 15.1061 15.4492V16.4746H25.0182C25.5845 16.4746 26.0436 16.9337 26.0436 17.5C26.0436 18.0663 25.5845 18.5254 25.0182 18.5254ZM25.0182 12.373H22.6257V13.3984C22.6257 13.9647 22.1665 14.4238 21.6003 14.4238C21.034 14.4238 20.5749 13.9647 20.5749 13.3984V12.373H9.97916C9.41288 12.373 8.95377 11.9139 8.95377 11.3477C8.95377 10.7814 9.41288 10.3223 9.97916 10.3223H20.5749V9.29688C20.5749 8.73059 21.034 8.27148 21.6003 8.27148C22.1665 8.27148 22.6257 8.73059 22.6257 9.29688V10.3223H25.0182C25.5845 10.3223 26.0436 10.7814 26.0436 11.3477C26.0436 11.9139 25.5845 12.373 25.0182 12.373Z" fill="#004FFC"></path></g><defs><clipPath id="clip0_6034_38452"><rect width="35" height="35" fill="white"></rect></clipPath></defs></svg>	        </div>
+	        	        <div class="sasi-icon-box__content">
+	        	<h4 class="icon-box-title">Weekly Productivity Stats</h4>				<div class="icon-box-des">Track your weekly performance, monitor completed tasks, and gain insights into your productivity trends.</div>							</div>	
+	    </div>
+	    				</div>
+				</div>
+				<div class="elementor-element elementor-element-a40fb77 sasi-position-left sasi-view-icon-default elementor-invisible elementor-widget elementor-widget-sasi-iconbox" data-id="a40fb77" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInRight&quot;,&quot;_animation_delay&quot;:300}" data-widget_type="sasi-iconbox.default">
+				<div class="elementor-widget-container">
+							<div class="sasi-icon-box">
+						<div class="sasi-icon sasi-icon-box__icon">
+				<svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 45 45" fill="none"><g clip-path="url(#clip0_6034_40896)"><path d="M43.7022 16.8926C43.5668 16.9252 43.4497 17.01 43.3766 17.1286C43.3035 17.2471 43.2803 17.3898 43.312 17.5254C43.6964 19.1569 43.891 20.8274 43.8921 22.5036C43.8853 28.1751 41.6292 33.6125 37.6188 37.6229C33.6084 41.6333 28.1711 43.8894 22.4995 43.8961C17.8413 43.9125 13.3081 42.3899 9.60416 39.5649C10.1015 38.8234 10.3002 37.9213 10.1604 37.0395C10.0207 36.1576 9.55289 35.3612 8.8507 34.8097C8.14852 34.2582 7.26387 33.9925 6.37403 34.0658C5.4842 34.1391 4.65493 34.5459 4.05242 35.2048C3.44991 35.8637 3.11867 36.726 3.12509 37.6188C3.13151 38.5116 3.47511 39.3691 4.08703 40.0192C4.69894 40.6694 5.53397 41.0643 6.42477 41.1248C7.31556 41.1853 8.1963 40.9069 8.89049 40.3454C12.7903 43.3477 17.5779 44.9678 22.4995 44.9508C25.89 44.9472 29.2358 44.1763 32.2861 42.696C35.3365 41.2158 38.0123 39.0644 40.1132 36.4032C42.214 33.7419 43.6855 30.6398 44.4172 27.3291C45.149 24.0185 45.1221 20.5852 44.3385 17.2864C44.3228 17.2186 44.2939 17.1546 44.2533 17.0981C44.2128 17.0416 44.1615 16.9937 44.1023 16.9571C44.0432 16.9205 43.9774 16.8959 43.9087 16.8849C43.84 16.8738 43.7699 16.8765 43.7022 16.8926Z" fill="#004FFC"></path><path d="M1.10549 22.5035C1.10572 18.6982 2.12087 14.9619 4.04628 11.6797C5.9717 8.39752 8.73768 5.68827 12.0591 3.83128C15.3804 1.97428 19.137 1.03676 22.9415 1.11538C26.7459 1.19399 30.4605 2.28589 33.7024 4.2785C33.3678 4.99438 33.3142 5.80981 33.5523 6.5633C33.7904 7.31678 34.3028 7.95336 34.9881 8.34696C35.6733 8.74056 36.4813 8.86246 37.2522 8.68852C38.023 8.51459 38.7004 8.0575 39.1502 7.40779C39.6 6.75808 39.7894 5.96314 39.6808 5.18041C39.5723 4.39769 39.1738 3.68426 38.5642 3.18145C37.9546 2.67863 37.1784 2.42309 36.3893 2.46545C35.6002 2.5078 34.8558 2.84496 34.3035 3.41014C30.9031 1.30804 27.003 0.152132 23.0063 0.0618757C19.0096 -0.0283806 15.0613 0.95029 11.5694 2.89674C8.07756 4.8432 5.16883 7.68682 3.14383 11.1337C1.11883 14.5806 0.0510384 18.5058 0.0508024 22.5035C0.0489119 23.8738 0.173661 25.2413 0.423459 26.5887C0.4449 26.71 0.50849 26.82 0.603029 26.8991C0.697567 26.9782 0.816988 27.0214 0.940256 27.0211C0.972187 27.021 1.00402 27.0175 1.03518 27.0105C1.17265 26.9857 1.29465 26.9073 1.3744 26.7927C1.45415 26.678 1.48514 26.5363 1.46057 26.3988C1.22359 25.1139 1.10473 23.8101 1.10549 22.5035Z" fill="#004FFC"></path><path d="M19.3359 19.0195V19.3359H25.6641V19.0195C25.6148 14.7445 19.3852 14.7445 19.3359 19.0195Z" fill="#004FFC"></path><path d="M37.2469 11.5453C31.3125 11.6051 25.6031 7.93829 23.4199 6.35626C23.1518 6.16259 22.8295 6.05835 22.4988 6.05835C22.1681 6.05835 21.8458 6.16259 21.5777 6.35626C19.3945 7.93829 13.6711 11.591 7.75078 11.5453C7.54053 11.5432 7.33193 11.5828 7.13702 11.6616C6.9421 11.7405 6.7647 11.8571 6.61504 12.0048C6.46539 12.1525 6.34642 12.3283 6.265 12.5222C6.18358 12.7161 6.14131 12.9241 6.14062 13.1344C6.14414 21.252 7.76836 32.8641 21.7852 39.9586C22.0062 40.0713 22.2507 40.13 22.4988 40.13C22.7469 40.13 22.9915 40.0713 23.2125 39.9586C37.2293 32.8641 38.8535 21.252 38.857 13.1344C38.8539 12.7103 38.6825 12.3047 38.3807 12.0068C38.0788 11.7089 37.671 11.5429 37.2469 11.5453ZM28.2996 27.5977C28.2996 28.297 28.0218 28.9676 27.5273 29.4621C27.0328 29.9566 26.3622 30.2344 25.6629 30.2344H19.3348C18.6355 30.2344 17.9648 29.9566 17.4703 29.4621C16.9758 28.9676 16.698 28.297 16.698 27.5977V21.9727C16.6983 21.4599 16.8481 20.9582 17.1291 20.5293C17.4101 20.1003 17.8101 19.7626 18.2801 19.5574V19.0125C18.3434 13.3699 26.6543 13.3699 26.7176 19.0125V19.5574C27.1876 19.7626 27.5876 20.1003 27.8686 20.5293C28.1495 20.9582 28.2993 21.4599 28.2996 21.9727V27.5977Z" fill="#004FFC"></path><path d="M23.3613 24.1798C23.3535 24.1326 23.3557 24.0843 23.3678 24.038C23.3799 23.9917 23.4017 23.9485 23.4316 23.9112C23.5494 23.7409 23.6183 23.5416 23.6309 23.335C23.6436 23.1283 23.5994 22.9221 23.5033 22.7388C23.4072 22.5554 23.2627 22.4018 23.0855 22.2947C22.9084 22.1875 22.7053 22.1309 22.4982 22.1309C22.2912 22.1309 22.0881 22.1875 21.9109 22.2947C21.7337 22.4018 21.5893 22.5554 21.4931 22.7388C21.397 22.9221 21.3529 23.1283 21.3655 23.335C21.3781 23.5416 21.4471 23.7409 21.5648 23.9112C21.5946 23.9481 21.6163 23.9909 21.6284 24.0367C21.6405 24.0826 21.6428 24.1305 21.6351 24.1773C21.5525 24.589 21.3187 25.766 21.1538 26.5831C21.1338 26.685 21.1366 26.79 21.162 26.8907C21.1874 26.9914 21.2348 27.0853 21.3008 27.1655C21.3668 27.2457 21.4497 27.3103 21.5436 27.3546C21.6375 27.3989 21.7401 27.4219 21.844 27.4219H23.1518C23.2558 27.4219 23.3586 27.3989 23.4526 27.3544C23.5467 27.3099 23.6297 27.2451 23.6957 27.1647C23.7617 27.0842 23.809 26.9901 23.8342 26.8892C23.8594 26.7883 23.8619 26.683 23.8415 26.5809L23.3613 24.1798Z" fill="#004FFC"></path></g><defs><clipPath id="clip0_6034_40896"><rect width="45" height="45" fill="white"></rect></clipPath></defs></svg>	        </div>
+	        	        <div class="sasi-icon-box__content">
+	        	<h4 class="icon-box-title">Secure & Reliable </h4>				<div class="icon-box-des">Security and reliability are at the core of swift office app technology, protection & encryption</div>							</div>	
+	    </div>
+	    				</div>
+				</div>
+				</div>
+		<div class="elementor-element elementor-element-e4b6e36 e-con-full e-flex elementor-invisible e-con e-child" data-id="e4b6e36" data-element_type="container" data-settings="{&quot;animation&quot;:&quot;fadeInLeft&quot;}">
+				<div class="elementor-element elementor-element-c069150 elementor-widget elementor-widget-image" data-id="c069150" data-element_type="widget" data-widget_type="image.default">
+															<img decoding="async" width="520" height="630" src="images/atten.png" class="attachment-full size-full wp-image-377" alt="" srcset="images/atten.png 520w, https://sasico.pikathemes.site/swift/wp-content/uploads/sites/9/2025/09/features-image2-248x300.webp 248w" sizes="(max-width: 520px) 100vw, 520px" />															</div>
+				</div>
+				</div>
+		<div class="elementor-element elementor-element-ef6bbdc section-padd-top e-con-full e-flex e-con e-child" data-id="ef6bbdc" data-element_type="container">
+				<div class="elementor-element elementor-element-fb39acc elementor-widget__width-initial elementor-widget-mobile_extra__width-initial elementor-invisible elementor-widget elementor-widget-sasi-heading" data-id="fb39acc" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;}" data-widget_type="sasi-heading.default">
+				<div class="elementor-widget-container">
+							<div class="sasi-heading">
+	        <span class="sasi-heading__sub">Office Productivity Platform</span>	        <h2 class="sasi-heading__title">Your all-in-one office Productivity App</h2>	    </div>
+	    				</div>
+				</div>
+				<div class="elementor-element elementor-element-921ad10 elementor-widget__width-initial elementor-widget-mobile_extra__width-inherit elementor-invisible elementor-widget elementor-widget-text-editor" data-id="921ad10" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;,&quot;_animation_delay&quot;:150}" data-widget_type="text-editor.default">
+									<p>Built for professionals, teams, and students who value efficiency, clarity, and performance.</p>								</div>
+		<div class="elementor-element elementor-element-6420861 e-con-full e-flex e-con e-child" data-id="6420861" data-element_type="container">
+		<div class="elementor-element elementor-element-7434bd0 e-con-full e-flex e-con e-child" data-id="7434bd0" data-element_type="container">
+		<div class="elementor-element elementor-element-5e50389 e-con-full e-flex elementor-invisible e-con e-child" data-id="5e50389" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;animation&quot;:&quot;fadeInLeft&quot;}">
+				<div class="elementor-element elementor-element-15ada27 elementor-widget elementor-widget-image" data-id="15ada27" data-element_type="widget" data-widget_type="image.default">
+															<img loading="lazy" decoding="async" width="230" height="168" src="wp-content/uploads/sites/9/2025/09/ai-power.webp" class="attachment-full size-full wp-image-401" alt="" />															</div>
+				<div class="elementor-element elementor-element-5e2fb42 elementor-widget elementor-widget-heading" data-id="5e2fb42" data-element_type="widget" data-widget_type="heading.default">
+					<h3 class="elementor-heading-title elementor-size-default">Innovation boost productivity with Swift</h3>				</div>
+				</div>
+		<div class="elementor-element elementor-element-64095c5 e-con-full e-flex elementor-invisible e-con e-child" data-id="64095c5" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;animation&quot;:&quot;fadeInLeft&quot;,&quot;animation_delay&quot;:250}">
+				<div class="elementor-element elementor-element-eeaaa5a elementor-widget elementor-widget-heading" data-id="eeaaa5a" data-element_type="widget" data-widget_type="heading.default">
+					<span class="elementor-heading-title elementor-size-default">2h 20m</span>				</div>
+				<div class="elementor-element elementor-element-946c703 elementor-widget elementor-widget-text-editor" data-id="946c703" data-element_type="widget" data-widget_type="text-editor.default">
+									<p>Average time you spent per day</p>								</div>
+				<div class="elementor-element elementor-element-76794e1 elementor-widget elementor-widget-image" data-id="76794e1" data-element_type="widget" data-widget_type="image.default">
+															<img loading="lazy" decoding="async" width="235" height="121" src="wp-content/uploads/sites/9/2025/09/graph-light.webp" class="attachment-full size-full wp-image-615" alt="" />															</div>
+				<div class="elementor-element elementor-element-d474c06 elementor-widget elementor-widget-heading" data-id="d474c06" data-element_type="widget" data-widget_type="heading.default">
+					<h3 class="elementor-heading-title elementor-size-default">Cutting-edge features to boost Productivity</h3>				</div>
+				</div>
+				</div>
+		<div class="elementor-element elementor-element-04783f4 e-con-full e-flex elementor-invisible e-con e-child" data-id="04783f4" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;animation&quot;:&quot;zoomIn&quot;,&quot;animation_delay&quot;:150}">
+				<div class="elementor-element elementor-element-f20b764 elementor-widget elementor-widget-image" data-id="f20b764" data-element_type="widget" data-widget_type="image.default">
+															<img loading="lazy" decoding="async" width="545" height="600" src="images/mock.png" class="attachment-full size-full wp-image-524" alt="" srcset="images/mock.png 545w, https://sasico.pikathemes.site/swift/wp-content/uploads/sites/9/2025/09/home-image3-273x300.webp 273w" sizes="(max-width: 545px) 100vw, 545px" />															</div>
+				<div class="elementor-element elementor-element-9fdcded elementor-invisible elementor-widget elementor-widget-heading" data-id="9fdcded" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeIn&quot;,&quot;_animation_delay&quot;:250}" data-widget_type="heading.default">
+					<h3 class="elementor-heading-title elementor-size-default">Smart Task Management user friendly design and swift app powerful features drives office productivity</h3>				</div>
+				</div>
+				<div class="elementor-element elementor-element-1ebf1ee e-con-full e-flex e-con e-child" data-id="1ebf1ee" data-element_type="container">
+					<div class="elementor-element elementor-element-63596fc e-con-full e-flex elementor-invisible e-con e-child" data-id="63596fc" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;animation&quot;:&quot;fadeInRight&quot;}">
+							<div class="elementor-element elementor-element-b2b17f9 elementor-widget elementor-widget-image" data-id="b2b17f9" data-element_type="widget" data-widget_type="image.default">
+																		<img loading="lazy" decoding="async" width="186" height="230" src="images/employee.png" class="attachment-full size-full wp-image-398" alt="" />															</div>
+							<div class="elementor-element elementor-element-a864a8f elementor-widget elementor-widget-heading" data-id="a864a8f" data-element_type="widget" data-widget_type="heading.default">
+								<h3 class="elementor-heading-title elementor-size-default"> Honor top performer with Swift Employee of the Month.</h3>				</div>
+					</div>
+					<div class="elementor-element elementor-element-64095c5 e-con-full e-flex elementor-invisible e-con e-child" data-id="64095c5" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;animation&quot;:&quot;fadeInRight&quot;,&quot;animation_delay&quot;:250}">
+						<div class="elementor-element elementor-element-eeaaa5a elementor-widget elementor-widget-heading" data-id="eeaaa5a" data-element_type="widget" data-widget_type="heading.default">
+							<span class="elementor-heading-title elementor-size-default">14d 3h 10m 5s</span>				</div>
+						<div class="elementor-element elementor-element-946c703 elementor-widget elementor-widget-text-editor" data-id="946c703" data-element_type="widget" data-widget_type="text-editor.default">
+							<p>Until the next payday</p>					</div>
+						<div class="elementor-element elementor-element-76794e1 elementor-widget elementor-widget-image" data-id="76794e1" data-element_type="widget" data-widget_type="image.default">
+																	<img loading="lazy" decoding="async" width="235" height="121" src="images/payroll.png" class="attachment-full size-full wp-image-615" alt="" />															</div>
+						<div class="elementor-element elementor-element-d474c06 elementor-widget elementor-widget-heading" data-id="d474c06" data-element_type="widget" data-widget_type="heading.default">
+							<h3 class="elementor-heading-title elementor-size-default"> Swift makes payroll accurate and effortless</h3>				</div>
+						</div>
+							</div>
+				</div>
+				</div>
+					</div>
+				</div>
+		<div class="elementor-element elementor-element-60b945d section-padd-top e-flex e-con-boxed e-con e-parent" data-id="60b945d" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;gradient&quot;}">
+					<div class="e-con-inner">
+				<div class="elementor-element elementor-element-e6c50d8 elementor-widget__width-initial elementor-widget-mobile_extra__width-initial elementor-invisible elementor-widget elementor-widget-sasi-heading" data-id="e6c50d8" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;}" data-widget_type="sasi-heading.default">
+				<div class="elementor-widget-container">
+							<div class="sasi-heading">
+	        <span class="sasi-heading__sub">Benefits for use</span>	        <h2 class="sasi-heading__title">Transform Work and Team Management in One Smart App</h2>	    </div>
+	    				</div>
+				</div>
+		<div class="elementor-element elementor-element-cac2189 e-grid e-con-full e-con e-child" data-id="cac2189" data-element_type="container">
+				<div class="elementor-element elementor-element-e722159 sasi-view-icon-stacked sasi-icon-align-left sasi-position-top elementor-invisible elementor-widget elementor-widget-sasi-iconbox" data-id="e722159" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInLeft&quot;}" data-widget_type="sasi-iconbox.default">
+				<div class="elementor-widget-container">
+							<div class="sasi-icon-box">
+						<div class="sasi-icon sasi-icon-box__icon">
+				<svg xmlns="http://www.w3.org/2000/svg" width="40" height="39" viewBox="0 0 40 39" fill="none"><path d="M39.7858 16.6771C39.7286 16.2682 39.3859 15.9336 38.9669 15.8965L34.3204 15.3203C34.0348 14.3723 33.6348 13.4616 33.1588 12.588L36.0343 8.98213C36.3009 8.64756 36.3009 8.20148 36.0343 7.86691C34.8727 6.34278 33.5015 5.00453 31.94 3.87073C31.5972 3.6291 31.1212 3.6291 30.7784 3.87073L27.084 6.67735C26.189 6.21268 25.2559 5.82235 24.2847 5.54355L23.6944 1.00834C23.6372 0.599428 23.3135 0.264864 22.8946 0.209103C20.9712 -0.0697009 19.0288 -0.0697009 17.1054 0.209103C16.6865 0.264864 16.3437 0.599428 16.3056 1.00834L15.7153 5.54355C14.7441 5.82235 13.811 6.21268 12.916 6.67735L9.22161 3.87073C8.87884 3.61051 8.4218 3.61051 8.05999 3.87073C6.49845 5.00453 5.12735 6.34278 3.96572 7.86691C3.71816 8.20148 3.71816 8.66615 3.96572 8.98213L6.84123 12.588C6.36515 13.4616 5.96525 14.3723 5.6796 15.3203L1.03309 15.8965C0.614139 15.9522 0.271364 16.2682 0.214235 16.6771C-0.0714116 18.5544 -0.0714116 20.4503 0.214235 22.3275C0.271364 22.7364 0.614139 23.071 1.03309 23.1082L5.6796 23.6844C5.96525 24.6323 6.36515 25.5431 6.84123 26.4167L3.96572 30.0225C3.69912 30.3571 3.69912 30.8032 3.96572 31.1377C5.12735 32.6619 6.49845 34.0001 8.05999 35.1339C8.40276 35.3941 8.87884 35.3756 9.22161 35.1339L12.916 32.3273C13.811 32.792 14.7441 33.1823 15.7153 33.4611L16.3056 37.9963C16.3628 38.4052 16.6865 38.7398 17.1054 38.7955C18.0576 38.9257 19.0288 39 20 39C20.9712 39 21.9424 38.9257 22.8946 38.7955C23.3135 38.7398 23.6563 38.4052 23.6944 37.9963L24.2847 33.4611C25.2559 33.1823 26.189 32.792 27.084 32.3273L30.7784 35.1339C31.1212 35.3941 31.5972 35.3941 31.94 35.1339C33.5015 34.0001 34.8727 32.6619 36.0343 31.1377C36.2818 30.8032 36.2818 30.3385 36.0343 30.0225L33.1588 26.4167C33.6348 25.5431 34.0348 24.6323 34.3204 23.6844L38.9669 23.1082C39.3859 23.0524 39.7286 22.7364 39.7858 22.3275C40.0714 20.4503 40.0714 18.5544 39.7858 16.6771ZM37.9957 21.361L33.4635 21.9186C33.0826 21.9744 32.7589 22.2346 32.6637 22.6063C32.359 23.8145 31.8638 24.9483 31.2164 26.0077C31.0069 26.3423 31.045 26.7512 31.2735 27.0486L34.0728 30.5801C33.273 31.5466 32.359 32.4388 31.3687 33.2195L27.7505 30.4872C27.4458 30.2456 27.0079 30.227 26.6841 30.4314C25.5987 31.0634 24.418 31.5466 23.1992 31.844C22.8184 31.937 22.5327 32.2529 22.4946 32.6247L21.9234 37.067C20.6475 37.1971 19.3716 37.1971 18.1147 37.067L17.5434 32.6247C17.4863 32.2529 17.2197 31.937 16.8388 31.844C15.6201 31.5466 14.4394 31.0634 13.354 30.4314C13.0112 30.227 12.5922 30.2642 12.2876 30.4872L8.66936 33.2195C7.67912 32.4388 6.7841 31.5652 5.96525 30.5801L8.76458 27.0486C9.01214 26.7512 9.03118 26.3237 8.82171 26.0077C8.17424 24.9483 7.67912 23.7959 7.37443 22.6063C7.27922 22.2346 6.95549 21.9558 6.57463 21.9186L2.04237 21.361C1.90907 20.1157 1.90907 18.8704 2.04237 17.6436L6.57463 17.086C6.95549 17.0303 7.27922 16.77 7.37443 16.3983C7.67912 15.1902 8.17424 14.0564 8.82171 12.9969C9.03118 12.6623 8.9931 12.2534 8.76458 11.956L5.96525 8.42452C6.76506 7.458 7.67912 6.56583 8.66936 5.78518L12.2876 8.51746C12.5922 8.75908 13.0112 8.77767 13.354 8.57322C14.4394 7.94126 15.6201 7.458 16.8388 7.16061C17.2197 7.06768 17.5054 6.7517 17.5434 6.37996L18.1147 1.93769C19.3906 1.80758 20.6665 1.80758 21.9234 1.93769L22.4946 6.37996C22.5518 6.7517 22.8184 7.06768 23.1992 7.16061C24.418 7.458 25.5987 7.94126 26.6841 8.57322C27.0269 8.77767 27.4458 8.7405 27.7505 8.51746L31.3687 5.78518C32.359 6.56583 33.254 7.43941 34.0728 8.42452L31.2735 11.956C31.0259 12.2534 31.0069 12.6809 31.2164 12.9969C31.8638 14.0564 32.359 15.2087 32.6637 16.3983C32.7589 16.77 33.0826 17.0489 33.4635 17.086L37.9957 17.6436C38.129 18.889 38.129 20.1343 37.9957 21.361Z" fill="#004FFC"></path><path d="M29.5226 18.5728H27.6183V17.6434H28.5704C29.1036 17.6434 29.5226 17.2345 29.5226 16.7141C29.5226 16.1936 29.1036 15.7847 28.5704 15.7847H27.6183V14.8925C27.6183 13.3312 26.3233 12.0673 24.7237 12.0673H23.8097V11.138C23.8097 10.6176 23.3907 10.2086 22.8575 10.2086C22.3243 10.2086 21.9053 10.6176 21.9053 11.138V12.0673H20.9532V10.2086C20.9532 9.68821 20.5342 9.2793 20.001 9.2793C19.4678 9.2793 19.0489 9.68821 19.0489 10.2086V12.0673H18.0967V11.138C18.0967 10.6176 17.6778 10.2086 17.1446 10.2086C16.6114 10.2086 16.1924 10.6176 16.1924 11.138V12.0673H15.2784C13.6787 12.0673 12.3838 13.3312 12.3838 14.8925V15.7847H11.4317C10.8984 15.7847 10.4795 16.1936 10.4795 16.7141C10.4795 17.2345 10.8984 17.6434 11.4317 17.6434H12.3838V18.5728H10.4795C9.94629 18.5728 9.52734 18.9817 9.52734 19.5021C9.52734 20.0225 9.94629 20.4314 10.4795 20.4314H12.3838V21.3608H11.4317C10.8984 21.3608 10.4795 21.7697 10.4795 22.2901C10.4795 22.8106 10.8984 23.2195 11.4317 23.2195H12.3838V24.1117C12.3838 25.673 13.6787 26.9369 15.2784 26.9369H16.1924V27.8662C16.1924 28.3866 16.6114 28.7956 17.1446 28.7956C17.6778 28.7956 18.0967 28.3866 18.0967 27.8662V26.9369H19.0489V28.7956C19.0489 29.316 19.4678 29.7249 20.001 29.7249C20.5342 29.7249 20.9532 29.316 20.9532 28.7956V26.9369H21.9053V27.8662C21.9053 28.3866 22.3243 28.7956 22.8575 28.7956C23.3907 28.7956 23.8097 28.3866 23.8097 27.8662V26.9369H24.7237C26.3233 26.9369 27.6183 25.673 27.6183 24.1117V23.2195H28.5704C29.1036 23.2195 29.5226 22.8106 29.5226 22.2901C29.5226 21.7697 29.1036 21.3608 28.5704 21.3608H27.6183V20.4314H29.5226C30.0558 20.4314 30.4747 20.0225 30.4747 19.5021C30.4747 18.9817 30.0558 18.5728 29.5226 18.5728ZM25.714 24.1117C25.714 24.6507 25.276 25.0782 24.7237 25.0782H15.2784C14.7261 25.0782 14.2881 24.6507 14.2881 24.1117V14.8925C14.2881 14.3535 14.7261 13.926 15.2784 13.926H24.7237C25.276 13.926 25.714 14.3535 25.714 14.8925V24.1117Z" fill="#004FFC"></path><path d="M18.647 16.1016C17.1807 16.1016 16 17.254 16 18.6851V21.9936C16 22.514 16.4189 22.923 16.9522 22.923C17.4854 22.923 17.9043 22.514 17.9043 21.9936V21.436H19.3897V21.9936C19.3897 22.514 19.8086 22.923 20.3418 22.923C20.875 22.923 21.294 22.514 21.294 21.9936V18.6851C21.294 17.254 20.1133 16.1016 18.647 16.1016ZM17.9043 19.5587V18.6666C17.9043 18.2762 18.228 17.9417 18.647 17.9417C19.0659 17.9417 19.3897 18.2576 19.3897 18.6666V19.5587H17.9043Z" fill="#004FFC"></path><path d="M23.0459 16.1016C22.5127 16.1016 22.0938 16.5105 22.0938 17.0309V21.9936C22.0938 22.514 22.5127 22.923 23.0459 22.923C23.5791 22.923 23.9981 22.514 23.9981 21.9936V17.0309C23.9981 16.5105 23.5791 16.1016 23.0459 16.1016Z" fill="#004FFC"></path></svg>	        </div>
+	        	        <div class="sasi-icon-box__content">
+	        	<h4 class="icon-box-title">Employee Directory</h4>				<div class="icon-box-des">A centralized list of all employees with profiles, contact details, departments, and roles for easy access.</div>							</div>	
+	    </div>
+	    				</div>
+				</div>
+				<div class="elementor-element elementor-element-f6da6db sasi-view-icon-stacked sasi-icon-align-left sasi-position-top elementor-invisible elementor-widget elementor-widget-sasi-iconbox" data-id="f6da6db" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;}" data-widget_type="sasi-iconbox.default">
+				<div class="elementor-widget-container">
+							<div class="sasi-icon-box">
+						<div class="sasi-icon sasi-icon-box__icon">
+				<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none"><path d="M24.7857 31.7693L31.5199 38.5035C33.3905 40.3741 36.6329 40.3741 38.5035 38.5035C40.4988 36.6329 40.4988 33.3905 38.5035 31.5199L31.7693 24.7857C33.0164 22.4162 33.7646 19.6726 33.7646 16.8044C33.7646 16.3055 33.7646 15.8067 33.6399 15.4326L38.2541 10.8184C38.7529 10.3196 38.7529 9.57132 38.2541 9.07249C37.7553 8.57366 37.007 8.57366 36.5082 9.07249L33.1411 12.4396C32.3928 9.57132 30.8963 7.07716 28.7763 4.95713C22.1668 -1.65238 11.5666 -1.65238 4.95713 4.95713C-1.65238 11.5666 -1.65238 22.1668 4.95713 28.7763C10.4443 34.2634 18.5503 35.1364 24.7857 31.7693ZM36.6329 33.2658C37.6306 34.2634 37.6306 35.7599 36.6329 36.7576C35.6352 37.7553 34.1387 37.7553 33.1411 36.7576L26.781 30.3975C27.4045 29.8987 28.0281 29.3998 28.6516 28.7763C29.2751 28.1528 29.774 27.5292 30.2728 26.9057L36.6329 33.2658ZM6.70304 6.70304C12.3149 1.09119 21.4186 1.09119 27.0304 6.70304C29.1504 8.82307 30.5222 11.5666 31.021 14.5596L28.5269 17.0538L24.4115 12.9384C23.9127 12.4396 23.1645 12.4396 22.6656 12.9384L16.1808 19.4232L13.3125 16.5549C12.8137 16.0561 12.0655 16.0561 11.5666 16.5549L6.57833 21.5433C6.0795 22.0421 6.0795 22.7903 6.57833 23.2892C7.07716 23.788 7.82541 23.788 8.32424 23.2892L12.4396 19.1738C14.3102 20.6703 15.682 23.4139 17.0538 22.0421L23.5386 15.5573L27.6539 19.6726C28.1528 20.1715 28.901 20.1715 29.3998 19.6726L31.1458 17.9267C30.8963 21.4185 29.3998 24.5362 27.0304 27.0304C21.4186 32.6422 12.3149 32.6422 6.70304 27.0304C1.09119 21.4186 1.09119 12.3149 6.70304 6.70304Z" fill="#004FFC"></path></svg>	        </div>
+	        	        <div class="sasi-icon-box__content">
+	        	<h4 class="icon-box-title">Overview Dashboard</h4>				<div class="icon-box-des">Get a real-time snapshot of everything that matters — upcoming meetings, pending tasks, and achievements.</div>							</div>	
+	    </div>
+	    				</div>
+				</div>
+				<div class="elementor-element elementor-element-ebb2a5f sasi-view-icon-stacked sasi-icon-align-left sasi-position-top elementor-invisible elementor-widget elementor-widget-sasi-iconbox" data-id="ebb2a5f" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInRight&quot;}" data-widget_type="sasi-iconbox.default">
+				<div class="elementor-widget-container">
+							<div class="sasi-icon-box">
+						<div class="sasi-icon sasi-icon-box__icon">
+				<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none"><path d="M37.5438 16.9289C37.3875 12.4763 35.5844 8.31266 32.4183 5.14654C29.0997 1.82734 24.6892 0 20 0C10.5291 0 2.79045 7.53835 2.45687 16.9289C1.01158 17.5712 0 19.0178 0 20.699V25.3309C0 27.6053 1.8503 29.4563 4.12539 29.4563C5.59747 29.4563 6.79466 28.2591 6.79466 26.787V19.2423C6.79466 17.8601 5.7346 16.7331 4.3869 16.5992C4.8844 8.4179 11.695 1.91345 20 1.91345C24.179 1.91345 28.1086 3.54243 31.0661 6.49998C33.7819 9.21581 35.3714 12.7557 35.6105 16.5998C34.2641 16.735 33.206 17.8614 33.206 19.2423V26.7864C33.206 28.18 34.2826 29.314 35.6463 29.432V31.3385C35.6463 33.4853 33.8993 35.2317 31.7524 35.2317H28.8688C28.7272 34.8273 28.5053 34.4536 28.194 34.1436C27.6487 33.5957 26.9216 33.294 26.1473 33.294H23.175C22.7484 33.294 22.3389 33.3846 21.9638 33.5593C20.9408 34.0294 20.28 35.0614 20.28 36.1884C20.28 36.9627 20.5817 37.6898 21.1283 38.2339C21.6749 38.7818 22.402 39.0835 23.175 39.0835H26.1473C27.3795 39.0835 28.4657 38.2868 28.8707 37.1451H31.7524C34.9549 37.1451 37.5597 34.5403 37.5597 31.3385V29.0914C38.9961 28.4453 40 27.0039 40 25.3296V20.6978C40 19.0178 38.9884 17.5712 37.5438 16.9289ZM4.88057 19.2423V26.7864C4.88057 27.2029 4.54189 27.5422 4.12476 27.5422C2.90525 27.5422 1.91281 26.5497 1.91281 25.3302V20.6984C1.91281 19.4783 2.90525 18.4865 4.12476 18.4865C4.54189 18.4865 4.88057 18.8258 4.88057 19.2423ZM27.1072 36.3938C27.0122 36.8441 26.6078 37.1713 26.1466 37.1713H23.1744C22.9129 37.1713 22.6673 37.0692 22.4798 36.8817C22.2949 36.6974 22.1928 36.4512 22.1928 36.1897C22.1928 35.8076 22.4167 35.4588 22.7675 35.2974C22.8925 35.2387 23.0296 35.2087 23.1744 35.2087H26.1466C26.4081 35.2087 26.6537 35.3101 26.8406 35.4977C27.0255 35.682 27.1276 35.9282 27.1276 36.1897C27.1282 36.2599 27.1206 36.33 27.1072 36.3938ZM38.0866 25.3302C38.0866 26.5497 37.0941 27.5422 35.8746 27.5422C35.4581 27.5422 35.1188 27.2035 35.1188 26.7864V19.2423C35.1188 18.8258 35.4575 18.4865 35.8746 18.4865C37.0941 18.4865 38.0866 19.4789 38.0866 20.6984V25.3302Z" fill="#004FFC"></path><path d="M26.1942 25.6593C28.4297 25.6593 30.2481 23.8402 30.2481 21.6053V13.345C30.2481 12.2645 29.8259 11.2466 29.0592 10.4799C28.2926 9.71325 27.2753 9.29102 26.1942 9.29102H13.804C11.5684 9.29102 9.75 11.1094 9.75 13.345V21.6053C9.75 23.8409 11.5684 25.6593 13.804 25.6593H13.8799V27.7998C13.8799 28.6162 14.3665 29.3408 15.1191 29.6463C15.3621 29.7439 15.6147 29.7923 15.8647 29.7923C16.3858 29.7923 16.8935 29.5857 17.2654 29.2011L20.8263 25.6593H26.1942ZM19.758 24.0239L15.9043 27.8566C15.8871 27.8744 15.8743 27.8878 15.838 27.8719C15.7939 27.854 15.7939 27.8253 15.7939 27.7998V24.7026C15.7939 24.1745 15.366 23.7458 14.8372 23.7458H13.8046C12.624 23.7458 11.6641 22.7853 11.6641 21.6053V13.345C11.6641 12.1644 12.624 11.2045 13.8046 11.2045H26.1948C26.765 11.2045 27.3014 11.4277 27.7071 11.8327C28.1127 12.2384 28.3353 12.7754 28.3353 13.345V21.6053C28.3353 22.7859 27.3748 23.7458 26.1948 23.7458H20.4328C20.1796 23.7458 19.9372 23.846 19.758 24.0239Z" fill="#004FFC"></path><path d="M15.3529 16.2168C14.5748 16.2168 13.9414 16.8508 13.9414 17.6283C13.9414 18.4058 14.5754 19.0398 15.3529 19.0398C16.1317 19.0398 16.7657 18.4058 16.7657 17.6283C16.7657 16.8508 16.1323 16.2168 15.3529 16.2168Z" fill="#004FFC"></path><path d="M20.0013 16.2168C19.2232 16.2168 18.5898 16.8508 18.5898 17.6283C18.5898 18.4058 19.2238 19.0398 20.0013 19.0398C20.7807 19.0398 21.4141 18.4058 21.4141 17.6283C21.4141 16.8508 20.7807 16.2168 20.0013 16.2168Z" fill="#004FFC"></path><path d="M24.6459 16.2168C23.8677 16.2168 23.2344 16.8508 23.2344 17.6283C23.2344 18.4058 23.8684 19.0398 24.6459 19.0398C25.4246 19.0398 26.0586 18.4058 26.0586 17.6283C26.0586 16.8508 25.4246 16.2168 24.6459 16.2168Z" fill="#004FFC"></path></svg>	        </div>
+	        	        <div class="sasi-icon-box__content">
+	        	<h4 class="icon-box-title">Attendance & Time Tracking</h4>				<div class="icon-box-des">Monitor employee attendance, clock-in/out times, and working hours seamlessly through mobile or desktop.</div>							</div>	
+	    </div>
+	    				</div>
+				</div>
+				<div class="elementor-element elementor-element-29bafa6 sasi-view-icon-stacked sasi-icon-align-left sasi-position-top elementor-invisible elementor-widget elementor-widget-sasi-iconbox" data-id="29bafa6" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInLeft&quot;}" data-widget_type="sasi-iconbox.default">
+				<div class="elementor-widget-container">
+							<div class="sasi-icon-box">
+						<div class="sasi-icon sasi-icon-box__icon">
+				<svg xmlns="http://www.w3.org/2000/svg" width="40" height="36" viewBox="0 0 40 36" fill="none"><path d="M31.9981 8.65732C30.9613 5.83049 28.9894 3.44292 26.4095 1.89046C23.8296 0.338008 20.7966 -0.286087 17.8133 0.121651C14.8301 0.529389 12.0757 1.94447 10.007 4.13228C7.93832 6.32009 6.67947 9.14922 6.43918 12.1506C4.59083 12.3365 2.88724 13.234 1.68863 14.6532C0.490032 16.0725 -0.109605 17.9023 0.0165237 19.7557C0.142652 21.609 0.984657 23.3407 2.36449 24.5845C3.74432 25.8283 5.5538 26.4867 7.41029 26.4205H10.2562V31.9773C10.2562 32.8716 10.6114 33.7293 11.2438 34.3616C11.8761 34.994 12.7338 35.3492 13.6281 35.3492H26.6773C27.5716 35.3492 28.4292 34.994 29.0616 34.3616C29.6939 33.7293 30.0492 32.8716 30.0492 31.9773V26.4205H31.1619C33.4369 26.4059 35.6198 25.5202 37.2618 23.9455C38.9037 22.3708 39.88 20.2268 39.9896 17.9545C40.0993 15.6821 39.3342 13.454 37.8515 11.7285C36.3688 10.003 34.2814 8.91118 32.0184 8.67756L31.9981 8.65732ZM26.6773 33.2856H13.6078C13.2501 33.2856 12.9071 33.1435 12.6541 32.8906C12.4012 32.6376 12.2591 32.2946 12.2591 31.9369V20.351C12.2591 19.9933 12.4012 19.6503 12.6541 19.3973C12.9071 19.1444 13.2501 19.0023 13.6078 19.0023H26.6773C27.035 19.0023 27.3781 19.1444 27.631 19.3973C27.8839 19.6503 28.026 19.9933 28.026 20.351V31.9571C28.0207 32.3113 27.8763 32.6492 27.6239 32.8978C27.3715 33.1464 27.0315 33.2857 26.6773 33.2856ZM24.6946 16.9792H15.5905V15.772C15.5905 14.5647 16.0701 13.4069 16.9238 12.5532C17.7774 11.6996 18.9353 11.22 20.1426 11.22C21.3498 11.22 22.5077 11.6996 23.3613 12.5532C24.215 13.4069 24.6946 14.5647 24.6946 15.772V16.9792ZM36.0039 22.3742C35.367 23.0154 34.6094 23.5243 33.7749 23.8716C32.9405 24.2188 32.0455 24.3975 31.1417 24.3973H30.0289V20.351C30.0291 19.4672 29.6822 18.6186 29.0629 17.988C28.4436 17.3573 27.6015 16.9951 26.7177 16.9792V15.772C26.7177 14.0282 26.025 12.3557 24.7919 11.1227C23.5588 9.88957 21.8864 9.19683 20.1426 9.19683C18.3987 9.19683 16.7263 9.88957 15.4932 11.1227C14.2601 12.3557 13.5674 14.0282 13.5674 15.772V16.9792C12.6836 16.9951 11.8415 17.3573 11.2222 17.988C10.6029 18.6186 10.256 19.4672 10.2562 20.351V24.3973H7.41029C6.72024 24.4223 6.03223 24.308 5.38735 24.0612C4.74246 23.8144 4.15394 23.4401 3.65692 22.9608C3.1599 22.4815 2.76458 21.9069 2.49457 21.2714C2.22456 20.6358 2.08539 19.9524 2.08539 19.2619C2.08539 18.5714 2.22456 17.888 2.49457 17.2525C2.76458 16.617 3.1599 16.0424 3.65692 15.5631C4.15394 15.0837 4.74246 14.7095 5.38735 14.4627C6.03223 14.2158 6.72024 14.1015 7.41029 14.1265C7.67741 14.1265 7.93369 14.0209 8.1232 13.8326C8.31271 13.6444 8.42007 13.3888 8.42185 13.1217C8.44653 10.4526 9.42524 7.88039 11.1811 5.86998C12.9369 3.85957 15.354 2.54361 17.9955 2.15997C20.637 1.77633 23.3286 2.35031 25.5838 3.77818C27.839 5.20605 29.509 7.39358 30.292 9.94539C30.3546 10.1497 30.4804 10.3289 30.6512 10.4574C30.822 10.5858 31.0291 10.6568 31.2428 10.6602C32.5901 10.6826 33.9011 11.1006 35.0127 11.8622C36.1243 12.6238 36.9874 13.6954 37.4948 14.9437C38.0022 16.192 38.1313 17.5619 37.8663 18.883C37.6012 20.2042 36.9536 21.4182 36.0039 22.3742Z" fill="#004FFC"></path><path d="M20.1427 22.6651C19.4888 22.6253 18.8427 22.8249 18.3251 23.2265C17.8075 23.6281 17.4538 24.2043 17.3299 24.8476C17.206 25.4909 17.3205 26.1573 17.652 26.7224C17.9834 27.2875 18.5092 27.7127 19.1311 27.9186V29.1864C19.1311 29.4547 19.2377 29.712 19.4274 29.9017C19.6171 30.0914 19.8744 30.198 20.1427 30.198C20.411 30.198 20.6683 30.0914 20.858 29.9017C21.0477 29.712 21.1543 29.4547 21.1543 29.1864V27.9186C21.7762 27.7127 22.302 27.2875 22.6335 26.7224C22.9649 26.1573 23.0794 25.4909 22.9555 24.8476C22.8316 24.2043 22.4779 23.6281 21.9603 23.2265C21.4427 22.8249 20.7966 22.6253 20.1427 22.6651ZM20.1427 24.6883C20.2761 24.6883 20.4065 24.7278 20.5174 24.8019C20.6283 24.876 20.7147 24.9814 20.7658 25.1046C20.8168 25.2278 20.8302 25.3634 20.8041 25.4942C20.7781 25.625 20.7139 25.7452 20.6196 25.8395C20.5253 25.9338 20.4051 25.9981 20.2743 26.0241C20.1435 26.0501 20.0079 26.0367 19.8846 25.9857C19.7614 25.9347 19.6561 25.8482 19.582 25.7373C19.5079 25.6264 19.4683 25.496 19.4683 25.3627C19.4683 25.1838 19.5394 25.0123 19.6659 24.8858C19.7923 24.7593 19.9639 24.6883 20.1427 24.6883Z" fill="#004FFC"></path></svg>	        </div>
+	        	        <div class="sasi-icon-box__content">
+	        	<h4 class="icon-box-title">Performance Tracking</h4>				<div class="icon-box-des">Set performance goals, track progress, and review productivity reports using built-in analytics and feedback tools.</div>							</div>	
+	    </div>
+	    				</div>
+				</div>
+				<div class="elementor-element elementor-element-c4433be sasi-view-icon-stacked sasi-icon-align-left sasi-position-top elementor-invisible elementor-widget elementor-widget-sasi-iconbox" data-id="c4433be" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;}" data-widget_type="sasi-iconbox.default">
+				<div class="elementor-widget-container">
+							<div class="sasi-icon-box">
+						<div class="sasi-icon sasi-icon-box__icon">
+				<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none"><path d="M6.28375 26.5492C4.25375 27.1255 2.75375 28.6892 2.27125 30.7305C1.385 34.4842 1.375 37.3792 1.375 37.5005C1.375 38.1217 1.87875 38.6255 2.5 38.6255C2.62125 38.6255 5.51625 38.6142 9.27 37.728C11.3112 37.2455 12.875 35.7455 13.4512 33.7155C14.0362 31.658 13.485 29.5292 11.9775 28.0217C10.47 26.5167 8.345 25.9642 6.28375 26.5492ZM11.2863 33.1005C10.9363 34.3355 9.98875 35.2467 8.7525 35.538C6.6425 36.0355 4.8075 36.238 3.68 36.3192C3.76125 35.193 3.96375 33.3567 4.46125 31.2467C4.7525 30.0105 5.66375 29.063 6.89875 28.713C7.23 28.618 7.565 28.573 7.895 28.573C8.81875 28.573 9.70625 28.9342 10.385 29.6142C11.3087 30.5367 11.645 31.8405 11.2863 33.1005Z" fill="#004FFC"></path><path d="M38.5259 3.6147C38.4109 2.4897 37.5109 1.5897 36.3859 1.4747C33.1397 1.14595 23.8134 1.1247 15.7109 9.8522L9.63465 9.8472C9.6334 9.8472 9.6309 9.8472 9.6284 9.8472C8.3159 9.8472 7.03215 10.3797 6.1034 11.3072L2.9134 14.4972C2.3709 15.0397 2.1234 15.7859 2.23215 16.5434C2.3409 17.301 2.78715 17.9472 3.45715 18.316L9.35465 21.5609L18.4372 30.6434L21.6821 36.5409C22.0509 37.2122 22.6984 37.6597 23.4559 37.7659C23.5734 37.7834 23.6897 37.7922 23.8034 37.7922C24.4384 37.7922 25.0422 37.5434 25.5009 37.0859L28.6834 33.9035C29.6259 32.9609 30.1447 31.7084 30.1447 30.3772L30.1459 24.2897C38.8772 16.1909 38.8572 6.86595 38.5259 3.6147ZM4.4584 16.226C4.45215 16.1722 4.46715 16.1247 4.5059 16.0872L7.6959 12.8985C8.20465 12.3897 8.90965 12.0972 9.6309 12.0972H9.6334L13.8122 12.101C12.2984 14.0597 10.8534 16.3697 9.5259 19.0872L4.5434 16.3447C4.49465 16.3185 4.46715 16.2785 4.4584 16.226ZM36.1597 3.71345C36.2271 3.7197 36.2809 3.7747 36.2884 3.84345C36.6747 7.63345 36.5847 20.4984 19.5997 28.6222L11.3797 20.4022C19.5034 3.41595 32.3622 3.32345 36.1597 3.71345ZM27.8959 30.3784C27.8959 31.1097 27.6109 31.7972 27.0934 32.3134L23.9109 35.4959C23.8747 35.5334 23.8272 35.5522 23.7747 35.5422C23.7209 35.5334 23.6809 35.506 23.6534 35.4597L20.9122 30.4772C23.6297 29.1509 25.9384 27.7059 27.8959 26.1934V30.3784Z" fill="#004FFC"></path><path d="M25.9738 18.6212C27.2013 18.6212 28.3575 18.1437 29.2275 17.2749C31.02 15.4812 31.02 12.5637 29.2275 10.7699C27.4888 9.03242 24.4613 9.03242 22.7225 10.7699C21.855 11.6387 21.375 12.7937 21.375 14.0224C21.375 15.2512 21.855 16.4062 22.7225 17.2749C23.5913 18.1437 24.7463 18.6212 25.9738 18.6212ZM24.3137 12.3612C24.7562 11.9174 25.3463 11.6737 25.9738 11.6737C26.6013 11.6737 27.1925 11.9174 27.635 12.3612C28.55 13.2774 28.55 14.7674 27.635 15.6837C26.7488 16.5712 25.2 16.5712 24.3137 15.6837C23.87 15.2399 23.625 14.6499 23.625 14.0224C23.625 13.3949 23.87 12.8062 24.3137 12.3612Z" fill="#004FFC"></path></svg>	        </div>
+	        	        <div class="sasi-icon-box__content">
+	        	<h4 class="icon-box-title">Scalable for Any Business</h4>				<div class="icon-box-des">Startup looking to improve office productivity and engage staffs or an enterprise managing thousands .</div>							</div>	
+	    </div>
+	    				</div>
+				</div>
+				<div class="elementor-element elementor-element-08ab85c sasi-view-icon-stacked sasi-icon-align-left sasi-position-top elementor-invisible elementor-widget elementor-widget-sasi-iconbox" data-id="08ab85c" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInRight&quot;}" data-widget_type="sasi-iconbox.default">
+				<div class="elementor-widget-container">
+							<div class="sasi-icon-box">
+						<div class="sasi-icon sasi-icon-box__icon">
+				<svg xmlns="http://www.w3.org/2000/svg" width="40" height="45" viewBox="0 0 40 45" fill="none"><path d="M22.1025 43.4435C19.5108 43.4468 16.9508 42.8818 14.6077 41.7894C12.2645 40.697 10.1968 39.1046 8.55407 37.1273C8.48073 37.0395 8.42563 36.9384 8.39192 36.8296C8.35821 36.7209 8.34654 36.6066 8.35759 36.4934C8.36864 36.3802 8.40219 36.2703 8.45631 36.1698C8.51044 36.0694 8.58409 35.9805 8.67305 35.9082C8.76201 35.8358 8.86455 35.7815 8.97481 35.7482C9.08507 35.715 9.20089 35.7035 9.31565 35.7144C9.43042 35.7253 9.54188 35.7584 9.64368 35.8117C9.74548 35.8651 9.83563 35.9378 9.90897 36.0255C11.387 37.8057 13.2479 39.2395 15.3567 40.2231C17.4656 41.2067 19.7698 41.7155 22.1025 41.7127C30.8082 41.7127 37.8909 34.7204 37.8909 26.1277C37.8905 22.4594 36.5776 18.9089 34.1836 16.1018C31.7896 13.2947 28.468 11.4111 24.8041 10.7828C21.1402 10.1544 17.369 10.8218 14.155 12.6671C10.941 14.5125 8.49034 17.4176 7.23481 20.8705C7.19592 20.9775 7.13605 21.0759 7.05862 21.1601C6.98118 21.2443 6.88769 21.3126 6.78349 21.3611C6.67929 21.4096 6.56642 21.4375 6.45132 21.443C6.33622 21.4485 6.22114 21.4316 6.11267 21.3932C6.00419 21.3549 5.90443 21.2958 5.81909 21.2194C5.73375 21.1431 5.6645 21.0508 5.61529 20.9481C5.56608 20.8453 5.53787 20.7339 5.53228 20.6204C5.52669 20.5069 5.54383 20.3934 5.58271 20.2864C6.66857 17.3037 8.56382 14.6723 11.0618 12.6792C13.5598 10.6861 16.5646 9.40787 19.7486 8.98379C22.9326 8.55971 26.1735 9.0061 29.1179 10.2743C32.0623 11.5425 34.5972 13.5838 36.4461 16.1756C38.2951 18.7674 39.3871 21.8102 39.6031 24.9722C39.8191 28.1343 39.1508 31.2941 37.671 34.1071C36.1913 36.9202 33.9569 39.2785 31.2116 40.9248C28.4663 42.5712 25.3154 43.4424 22.1025 43.4435Z" fill="#004FFC"></path><path d="M5.63903 24.4358C5.40635 24.4358 5.18321 24.3447 5.01868 24.1824C4.85415 24.0201 4.76172 23.8 4.76172 23.5705C4.76172 23.3993 4.81317 23.232 4.90957 23.0897C5.00597 22.9474 5.14299 22.8364 5.3033 22.771C5.46361 22.7055 5.64001 22.6883 5.81019 22.7217C5.98037 22.7551 6.13669 22.8375 6.25939 22.9585C6.38208 23.0796 6.46564 23.2338 6.49949 23.4016C6.53334 23.5695 6.51597 23.7435 6.44956 23.9016C6.38316 24.0598 6.27072 24.1949 6.12644 24.29C5.98217 24.3851 5.81255 24.4358 5.63903 24.4358Z" fill="#004FFC"></path><path d="M26.678 5.82458H17.521C16.9752 5.82286 16.4523 5.6078 16.0669 5.22652C15.6815 4.84523 15.465 4.32881 15.4648 3.79038V2.03257C15.4654 1.49368 15.6827 0.977016 16.069 0.595959C16.4553 0.214902 16.9791 0.000572684 17.5254 0H26.678C27.2243 0.000572684 27.7481 0.214902 28.1344 0.595959C28.5207 0.977016 28.738 1.49368 28.7386 2.03257V3.79038C28.7385 4.32956 28.5214 4.84664 28.135 5.22804C27.7486 5.60945 27.2246 5.824 26.678 5.82458ZM17.521 1.73077C17.4399 1.73077 17.3621 1.76256 17.3047 1.81916C17.2473 1.87576 17.2151 1.95253 17.2151 2.03257V3.79038C17.2151 3.87043 17.2473 3.94719 17.3047 4.00379C17.3621 4.06039 17.4399 4.09219 17.521 4.09219H26.678C26.7182 4.09219 26.758 4.08438 26.7951 4.06921C26.8322 4.05404 26.8659 4.03181 26.8944 4.00379C26.9228 3.97576 26.9453 3.94249 26.9607 3.90588C26.9761 3.86926 26.984 3.83002 26.984 3.79038V2.03257C26.984 1.99294 26.9761 1.95369 26.9607 1.91708C26.9453 1.88046 26.9228 1.84719 26.8944 1.81916C26.8659 1.79114 26.8322 1.76891 26.7951 1.75374C26.758 1.73857 26.7182 1.73077 26.678 1.73077H17.521Z" fill="#004FFC"></path><path d="M25.1273 10.8108C24.8946 10.8108 24.6715 10.7196 24.507 10.5573C24.3424 10.395 24.25 10.1749 24.25 9.94537V4.95913C24.25 4.72962 24.3424 4.50951 24.507 4.34722C24.6715 4.18492 24.8946 4.09375 25.1273 4.09375C25.36 4.09375 25.5831 4.18492 25.7477 4.34722C25.9122 4.50951 26.0046 4.72962 26.0046 4.95913V9.94537C26.0046 10.1749 25.9122 10.395 25.7477 10.5573C25.5831 10.7196 25.36 10.8108 25.1273 10.8108Z" fill="#004FFC"></path><path d="M19.0804 10.7967C18.8478 10.7967 18.6246 10.7055 18.4601 10.5432C18.2956 10.3809 18.2031 10.1608 18.2031 9.93131V4.95913C18.2031 4.72962 18.2956 4.50951 18.4601 4.34722C18.6246 4.18492 18.8478 4.09375 19.0804 4.09375C19.3131 4.09375 19.5363 4.18492 19.7008 4.34722C19.8653 4.50951 19.9578 4.72962 19.9578 4.95913V9.93131C19.9578 10.1608 19.8653 10.3809 19.7008 10.5432C19.5363 10.7055 19.3131 10.7967 19.0804 10.7967Z" fill="#004FFC"></path><path d="M32.5454 14.1697C32.3719 14.1697 32.2023 14.119 32.058 14.0239C31.9137 13.9289 31.8013 13.7938 31.7348 13.6357C31.6684 13.4776 31.651 13.3036 31.6848 13.1357C31.7186 12.9679 31.8021 12.8136 31.9247 12.6926L33.8373 10.8039C33.9182 10.7216 34.015 10.6559 34.1219 10.6108C34.2288 10.5657 34.3437 10.542 34.46 10.541C34.5763 10.5401 34.6916 10.562 34.7993 10.6055C34.9069 10.6489 35.0047 10.713 35.087 10.7941C35.1692 10.8751 35.2344 10.9715 35.2786 11.0776C35.3227 11.1837 35.3451 11.2974 35.3443 11.4121C35.3435 11.5268 35.3197 11.6403 35.2741 11.7458C35.2284 11.8513 35.162 11.9468 35.0787 12.0268L33.1667 13.916C33.0851 13.9965 32.9883 14.0604 32.8817 14.1039C32.7751 14.1474 32.6608 14.1698 32.5454 14.1697Z" fill="#004FFC"></path><path d="M36.523 13.6244C36.1885 13.6254 35.8571 13.5609 35.548 13.4345C35.239 13.3081 34.9585 13.1225 34.7228 12.8883L32.9775 11.1662C32.5016 10.6949 32.2344 10.0568 32.2344 9.3916C32.2344 8.72639 32.5016 8.08829 32.9775 7.61702L33.9135 6.69322C34.1499 6.45984 34.4305 6.27469 34.7394 6.14837C35.0484 6.02205 35.3795 5.95703 35.7139 5.95703C36.0483 5.95703 36.3795 6.02205 36.6884 6.14837C36.9973 6.27469 37.278 6.45984 37.5143 6.69322L39.2591 8.41588C39.7353 8.88692 40.0027 9.52498 40.0027 10.1902C40.0027 10.8554 39.7353 11.4934 39.2591 11.9645L38.3231 12.8883C38.0874 13.1224 37.8069 13.308 37.4979 13.4344C37.1889 13.5607 36.8575 13.6253 36.523 13.6244ZM35.7142 7.68787C35.6103 7.68751 35.5073 7.70755 35.4112 7.74683C35.3152 7.7861 35.2281 7.84384 35.1549 7.91666L34.2189 8.84046C34.0711 8.98683 33.9882 9.18501 33.9882 9.3916C33.9882 9.59819 34.0711 9.79636 34.2189 9.94274L35.9637 11.6649C36.0371 11.7374 36.1243 11.795 36.2202 11.8342C36.3162 11.8735 36.4191 11.8937 36.523 11.8937C36.6269 11.8937 36.7298 11.8735 36.8257 11.8342C36.9217 11.795 37.0089 11.7374 37.0823 11.6649L38.0177 10.7411C38.1657 10.5949 38.2489 10.3968 38.2489 10.1902C38.2489 9.9836 38.1657 9.78546 38.0177 9.63931L36.2729 7.91666C36.1998 7.8439 36.1128 7.78621 36.0169 7.74693C35.9209 7.70765 35.8181 7.68758 35.7142 7.68787Z" fill="#004FFC"></path><path d="M11.6588 14.1697C11.5435 14.1697 11.4294 14.1473 11.3229 14.1038C11.2164 14.0603 11.1196 13.9965 11.0381 13.916L9.12504 12.0268C9.04167 11.9468 8.97526 11.8513 8.92965 11.7458C8.88405 11.6403 8.86017 11.5268 8.85939 11.4121C8.85862 11.2974 8.88098 11.1837 8.92516 11.0776C8.96934 10.9715 9.03446 10.8751 9.11674 10.7941C9.19903 10.713 9.29683 10.6489 9.40445 10.6055C9.51208 10.562 9.62739 10.5401 9.74367 10.541C9.85996 10.542 9.9749 10.5657 10.0818 10.6108C10.1887 10.6559 10.2855 10.7216 10.3664 10.8039L12.2795 12.6926C12.4022 12.8136 12.4857 12.9679 12.5195 13.1357C12.5533 13.3036 12.5359 13.4776 12.4694 13.6357C12.403 13.7938 12.2905 13.9289 12.1462 14.0239C12.002 14.119 11.8323 14.1697 11.6588 14.1697Z" fill="#004FFC"></path><path d="M7.68671 13.6244C7.3522 13.6253 7.02084 13.5607 6.71182 13.4343C6.40281 13.308 6.12231 13.1224 5.88658 12.8882L4.95059 11.9644C4.47442 11.4934 4.20703 10.8553 4.20703 10.1901C4.20703 9.52494 4.47442 8.88687 4.95059 8.41583L6.69535 6.69318C6.93164 6.45981 7.21225 6.27467 7.52114 6.14836C7.83002 6.02205 8.16111 5.95703 8.49549 5.95703C8.82986 5.95703 9.16096 6.02205 9.46984 6.14836C9.77872 6.27467 10.0593 6.45981 10.2956 6.69318L11.2316 7.61697C11.7078 8.08802 11.9752 8.72608 11.9752 9.39128C11.9752 10.0565 11.7078 10.6945 11.2316 11.1656L9.48685 12.8882C9.25112 13.1224 8.97062 13.308 8.6616 13.4343C8.35259 13.5607 8.02122 13.6253 7.68671 13.6244ZM7.93675 7.91661L6.19144 9.63927C6.04368 9.78555 5.96071 9.98364 5.96071 10.1901C5.96071 10.3966 6.04368 10.5947 6.19144 10.741L7.12743 11.6648C7.20082 11.7374 7.288 11.7949 7.38397 11.8342C7.47994 11.8734 7.58281 11.8937 7.68671 11.8937C7.79061 11.8937 7.89349 11.8734 7.98946 11.8342C8.08543 11.7949 8.17261 11.7374 8.246 11.6648L9.99076 9.94269C10.1386 9.79632 10.2215 9.59814 10.2215 9.39155C10.2215 9.18496 10.1386 8.98679 9.99076 8.84041L9.05478 7.91661C8.98143 7.84408 8.8943 7.78654 8.79838 7.74728C8.70245 7.70802 8.59962 7.68781 8.49576 7.68781C8.39191 7.68781 8.28907 7.70802 8.19315 7.74728C8.09722 7.78654 8.01009 7.84408 7.93675 7.91661Z" fill="#004FFC"></path><path d="M22.1039 16.9882C21.8712 16.9882 21.648 16.897 21.4835 16.7347C21.319 16.5724 21.2266 16.3523 21.2266 16.1228V13.7462C21.2266 13.6326 21.2493 13.5201 21.2933 13.4151C21.3374 13.3101 21.4021 13.2147 21.4835 13.1343C21.565 13.054 21.6617 12.9902 21.7681 12.9467C21.8746 12.9032 21.9887 12.8809 22.1039 12.8809C22.2191 12.8809 22.3332 12.9032 22.4396 12.9467C22.546 12.9902 22.6428 13.054 22.7242 13.1343C22.8057 13.2147 22.8703 13.3101 22.9144 13.4151C22.9585 13.5201 22.9812 13.6326 22.9812 13.7462V16.1228C22.9812 16.3523 22.8888 16.5724 22.7242 16.7347C22.5597 16.897 22.3366 16.9882 22.1039 16.9882Z" fill="#004FFC"></path><path d="M22.1039 39.3736C21.8712 39.3736 21.648 39.2824 21.4835 39.1202C21.319 38.9579 21.2266 38.7377 21.2266 38.5082V36.1349C21.2266 36.0213 21.2493 35.9087 21.2933 35.8037C21.3374 35.6988 21.4021 35.6034 21.4835 35.523C21.565 35.4426 21.6617 35.3789 21.7681 35.3354C21.8746 35.2919 21.9887 35.2695 22.1039 35.2695C22.2191 35.2695 22.3332 35.2919 22.4396 35.3354C22.546 35.3789 22.6428 35.4426 22.7242 35.523C22.8057 35.6034 22.8703 35.6988 22.9144 35.8037C22.9585 35.9087 22.9812 36.0213 22.9812 36.1349V38.5109C22.9805 38.74 22.8877 38.9594 22.7233 39.1211C22.5588 39.2828 22.3361 39.3736 22.1039 39.3736Z" fill="#004FFC"></path><path d="M17.0352 18.3266C16.881 18.3267 16.7296 18.2868 16.5961 18.2108C16.4626 18.1348 16.3517 18.0255 16.2746 17.8939L15.0683 15.8386C15.009 15.7401 14.9701 15.631 14.9539 15.5176C14.9377 15.4041 14.9445 15.2887 14.9738 15.1779C15.0032 15.067 15.0545 14.9631 15.1249 14.872C15.1953 14.7809 15.2834 14.7045 15.3839 14.6472C15.4845 14.5899 15.5956 14.5529 15.7108 14.5383C15.8259 14.5237 15.9429 14.5318 16.0549 14.5621C16.1669 14.5924 16.2716 14.6444 16.3631 14.715C16.4546 14.7855 16.5309 14.8733 16.5877 14.9732L17.794 17.0285C17.871 17.16 17.9116 17.3092 17.9116 17.4611C17.9116 17.613 17.8711 17.7622 17.7941 17.8937C17.7172 18.0253 17.6065 18.1345 17.4732 18.2105C17.3398 18.2865 17.1886 18.3265 17.0346 18.3266H17.0352Z" fill="#004FFC"></path><path d="M28.3773 37.714C28.2232 37.7141 28.0717 37.6742 27.9382 37.5982C27.8047 37.5222 27.6939 37.4129 27.6168 37.2813L26.4105 35.226C26.3529 35.1275 26.3155 35.0189 26.3005 34.9062C26.2854 34.7935 26.2931 34.679 26.3229 34.5692C26.3527 34.4594 26.4042 34.3565 26.4744 34.2663C26.5445 34.1761 26.632 34.1005 26.7318 34.0436C26.8316 33.9868 26.9418 33.95 27.056 33.9351C27.1703 33.9203 27.2864 33.9278 27.3977 33.9573C27.509 33.9867 27.6133 34.0375 27.7047 34.1067C27.7961 34.1759 27.8728 34.2621 27.9304 34.3606L29.1367 36.4159C29.2137 36.5474 29.2542 36.6965 29.2543 36.8484C29.2543 37.0002 29.2139 37.1494 29.137 37.2809C29.0601 37.4124 28.9494 37.5217 28.8162 37.5977C28.683 37.6737 28.5318 37.7138 28.3779 37.714H28.3773Z" fill="#004FFC"></path><path d="M11.2391 20.8054C11.0869 20.8054 10.9374 20.766 10.8054 20.6913L10.7983 20.6875C10.5961 20.5738 10.4481 20.3856 10.3866 20.1642C10.3252 19.9429 10.3554 19.7065 10.4706 19.5071C10.5859 19.3077 10.7767 19.1616 11.0011 19.101C11.2256 19.0404 11.4652 19.0702 11.6674 19.1839L11.675 19.1882C11.8433 19.2829 11.9751 19.4297 12.0498 19.6059C12.1246 19.7821 12.1382 19.9778 12.0884 20.1624C12.0386 20.347 11.9283 20.5102 11.7747 20.6265C11.6211 20.7428 11.4328 20.8057 11.2391 20.8054Z" fill="#004FFC"></path><path d="M32.9703 33.1821C32.8162 33.1823 32.6649 33.1422 32.5316 33.0659L30.448 31.876C30.3468 31.8199 30.2578 31.7446 30.1862 31.6544C30.1147 31.5641 30.062 31.4608 30.0313 31.3503C30.0006 31.2399 29.9924 31.1245 30.0072 31.0109C30.022 30.8973 30.0595 30.7877 30.1176 30.6885C30.1756 30.5893 30.2531 30.5025 30.3454 30.433C30.4378 30.3636 30.5432 30.3129 30.6555 30.284C30.7679 30.255 30.8849 30.2483 30.9999 30.2644C31.1149 30.2804 31.2255 30.3187 31.3253 30.3772L33.409 31.5671C33.5763 31.6623 33.7071 31.8094 33.7811 31.9854C33.8551 32.1614 33.8681 32.3566 33.8181 32.5407C33.7681 32.7248 33.6579 32.8874 33.5046 33.0034C33.3513 33.1194 33.1635 33.1822 32.9703 33.1821Z" fill="#004FFC"></path><path d="M34.6433 26.9944H32.2367C32.004 26.9944 31.7809 26.9033 31.6163 26.741C31.4518 26.5787 31.3594 26.3586 31.3594 26.1291C31.3594 25.8995 31.4518 25.6794 31.6163 25.5171C31.7809 25.3548 32.004 25.2637 32.2367 25.2637H34.6433C34.8759 25.2637 35.0991 25.3548 35.2636 25.5171C35.4282 25.6794 35.5206 25.8995 35.5206 26.1291C35.5206 26.3586 35.4282 26.5787 35.2636 26.741C35.0991 26.9033 34.8759 26.9944 34.6433 26.9944Z" fill="#004FFC"></path><path d="M30.8816 21.9949C30.6884 21.995 30.5006 21.9322 30.3473 21.8162C30.194 21.7002 30.0838 21.5376 30.0338 21.3535C29.9838 21.1694 29.9968 20.9742 30.0708 20.7982C30.1447 20.6221 30.2756 20.4751 30.4429 20.3799L32.5265 19.1927C32.7278 19.0813 32.9655 19.0526 33.1881 19.1129C33.4106 19.1732 33.6002 19.3175 33.7156 19.5147C33.831 19.7118 33.863 19.9459 33.8046 20.1662C33.7463 20.3865 33.6023 20.5752 33.4038 20.6914L31.3202 21.8813C31.1866 21.9565 31.0353 21.9956 30.8816 21.9949Z" fill="#004FFC"></path><path d="M15.8334 37.7068C15.6795 37.7067 15.5283 37.6666 15.3951 37.5906C15.2619 37.5145 15.1512 37.4053 15.0743 37.2738C14.9975 37.1422 14.957 36.9931 14.957 36.8412C14.9571 36.6894 14.9976 36.5402 15.0746 36.4088L16.2809 34.3535C16.4048 34.1715 16.5941 34.0427 16.8106 33.9931C17.0271 33.9435 17.2546 33.9768 17.4471 34.0863C17.6397 34.1958 17.7829 34.3732 17.848 34.5828C17.913 34.7924 17.895 35.0186 17.7975 35.2156L16.594 37.2709C16.5173 37.4032 16.4066 37.5131 16.2731 37.5897C16.1396 37.6662 15.9879 37.7066 15.8334 37.7068Z" fill="#004FFC"></path><path d="M27.1733 18.3344C27.0194 18.3342 26.8682 18.2941 26.7349 18.2181C26.6017 18.1421 26.4911 18.0328 26.4142 17.9013C26.3373 17.7698 26.2968 17.6206 26.2969 17.4688C26.2969 17.3169 26.3374 17.1678 26.4144 17.0363L27.6207 14.981C27.6775 14.8811 27.7539 14.7933 27.8454 14.7228C27.9368 14.6522 28.0416 14.6003 28.1536 14.5699C28.2656 14.5396 28.3825 14.5315 28.4977 14.5461C28.6129 14.5607 28.724 14.5977 28.8245 14.655C28.9251 14.7123 29.0131 14.7887 29.0835 14.8798C29.1539 14.9709 29.2053 15.0748 29.2346 15.1857C29.264 15.2965 29.2708 15.412 29.2545 15.5254C29.2383 15.6388 29.1994 15.7479 29.1401 15.8464L27.9365 17.9017C27.8593 18.0337 27.748 18.1433 27.6139 18.2193C27.4799 18.2953 27.3279 18.335 27.1733 18.3344Z" fill="#004FFC"></path><path d="M22.1017 39.3731C19.7606 39.3739 17.4602 38.7702 15.429 37.622C13.3979 36.4739 11.7068 34.8213 10.5239 32.8286C10.4655 32.7306 10.4274 32.6222 10.4115 32.5096C10.3956 32.3971 10.4024 32.2825 10.4314 32.1725C10.4605 32.0625 10.5112 31.9593 10.5807 31.8686C10.6501 31.7779 10.737 31.7017 10.8364 31.6441C10.9358 31.5866 11.0457 31.5489 11.1598 31.5333C11.2739 31.5176 11.3901 31.5243 11.5016 31.553C11.6131 31.5816 11.7178 31.6316 11.8097 31.7001C11.9016 31.7687 11.9789 31.8544 12.0372 31.9524C13.3317 34.1336 15.3185 35.8335 17.6904 36.7896C20.0623 37.7456 22.6874 37.9045 25.16 37.2417C27.6326 36.5788 29.8151 35.1312 31.3703 33.1225C32.9254 31.1138 33.7666 28.6558 33.7639 26.1284C33.7639 19.7792 28.5313 14.615 22.1017 14.615C19.8211 14.6171 17.5911 15.2777 15.6868 16.5154C13.7824 17.753 12.2871 19.5136 11.3853 21.5797C11.3413 21.6863 11.2763 21.7831 11.194 21.8646C11.1116 21.9461 11.0137 22.0105 10.9058 22.0542C10.7979 22.0979 10.6822 22.1199 10.5656 22.119C10.449 22.1181 10.3337 22.0943 10.2266 22.0489C10.1194 22.0035 10.0225 21.9375 9.94148 21.8547C9.86047 21.772 9.79701 21.6741 9.75479 21.5669C9.71258 21.4596 9.69247 21.3452 9.69564 21.2302C9.6988 21.1152 9.72518 21.002 9.77322 20.8971C9.98055 20.4203 10.2166 19.9562 10.48 19.5071C11.6569 17.4932 13.3511 15.8207 15.3918 14.6581C17.4325 13.4955 19.7478 12.8839 22.1044 12.8848C24.4596 12.8879 26.7725 13.5017 28.8113 14.6647C30.8501 15.8277 32.5431 17.4989 33.7206 19.5108C34.8981 21.5228 35.5186 23.8047 35.5201 26.1278C35.5215 28.4509 34.9038 30.7336 33.7288 32.747C32.5526 34.7618 30.8587 36.4352 28.8179 37.5985C26.7771 38.7618 24.4615 39.3739 22.1044 39.3731H22.1017Z" fill="#004FFC"></path><path d="M22.1058 29.2108C21.4875 29.2115 20.8829 29.0314 20.3684 28.6931C19.8539 28.3548 19.4527 27.8735 19.2156 27.3103C18.9784 26.747 18.916 26.127 19.0362 25.5287C19.1563 24.9304 19.4537 24.3808 19.8906 23.9492C20.3276 23.5177 20.8845 23.2237 21.4908 23.1044C22.0972 22.9852 22.7258 23.046 23.2972 23.2792C23.8685 23.5125 24.3568 23.9076 24.7004 24.4147C25.044 24.9217 25.2274 25.5179 25.2274 26.1279C25.2274 26.9448 24.8987 27.7284 24.3134 28.3065C23.7281 28.8845 22.9341 29.2098 22.1058 29.2108ZM22.1058 24.78C21.8345 24.7793 21.5691 24.8579 21.3432 25.0061C21.1173 25.1542 20.941 25.3651 20.8366 25.6121C20.7323 25.8591 20.7046 26.1311 20.7571 26.3936C20.8095 26.6562 20.9398 26.8975 21.1313 27.087C21.3229 27.2764 21.5671 27.4056 21.8331 27.4581C22.0992 27.5106 22.375 27.484 22.6257 27.3818C22.8764 27.2795 23.0907 27.1062 23.2415 26.8838C23.3923 26.6613 23.4728 26.3998 23.4728 26.1322C23.4732 25.7739 23.3295 25.4302 23.0732 25.1763C22.8169 24.9225 22.469 24.7794 22.1058 24.7784V24.78Z" fill="#004FFC"></path><path d="M22.1039 24.7792C21.8712 24.7792 21.648 24.688 21.4835 24.5257C21.319 24.3634 21.2266 24.1433 21.2266 23.9138V18.4084C21.2266 18.1788 21.319 17.9587 21.4835 17.7964C21.648 17.6341 21.8712 17.543 22.1039 17.543C22.3366 17.543 22.5597 17.6341 22.7242 17.7964C22.8888 17.9587 22.9812 18.1788 22.9812 18.4084L22.9784 23.9144C22.9783 24.1433 22.8862 24.3629 22.7223 24.525C22.5583 24.6871 22.336 24.7785 22.1039 24.7792Z" fill="#004FFC"></path><path d="M29.928 26.9925H24.3461C24.1134 26.9925 23.8902 26.9013 23.7257 26.739C23.5612 26.5767 23.4688 26.3566 23.4688 26.1271C23.4688 25.8976 23.5612 25.6775 23.7257 25.5152C23.8902 25.3529 24.1134 25.2617 24.3461 25.2617H29.9274C30.1601 25.2617 30.3832 25.3529 30.5478 25.5152C30.7123 25.6775 30.8047 25.8976 30.8047 26.1271C30.8047 26.3566 30.7123 26.5767 30.5478 26.739C30.3832 26.9013 30.1601 26.9925 29.9274 26.9925H29.928Z" fill="#004FFC"></path><path d="M7.50048 34.4231C3.3645 34.4231 0 31.1038 0 27.024C0 22.9443 3.3645 19.625 7.50048 19.625C11.6365 19.625 14.9993 22.9443 14.9993 27.024C14.9993 31.1038 11.6365 34.4231 7.50048 34.4231ZM7.50048 21.3558C6.36386 21.3553 5.25263 21.6874 4.30735 22.31C3.36207 22.9326 2.6252 23.8177 2.18993 24.8534C1.75467 25.8891 1.64056 27.0289 1.86203 28.1285C2.08351 29.2282 2.63063 30.2384 3.43419 31.0313C4.23775 31.8243 5.26166 32.3643 6.37641 32.5832C7.49117 32.8021 8.64669 32.69 9.69684 32.261C10.747 31.8321 11.6446 31.1056 12.2761 30.1734C12.9076 29.2412 13.2447 28.1452 13.2447 27.024C13.243 25.5216 12.6373 24.0812 11.5605 23.0186C10.4837 21.9561 9.02361 21.3581 7.50048 21.3558Z" fill="#004FFC"></path><path d="M7.50012 31.8021C6.54209 31.8021 5.60558 31.5219 4.80901 30.9969C4.01244 30.4718 3.39159 29.7256 3.02497 28.8526C2.65835 27.9795 2.56242 27.0188 2.74933 26.092C2.93623 25.1651 3.39756 24.3138 4.07499 23.6455C4.75241 22.9773 5.61551 22.5223 6.55513 22.3379C7.49475 22.1535 8.46869 22.2482 9.35379 22.6098C10.2389 22.9714 10.9954 23.5838 11.5276 24.3696C12.0599 25.1553 12.344 26.0791 12.344 27.0241C12.3425 28.2909 11.8317 29.5053 10.9236 30.4011C10.0156 31.2968 8.78435 31.8007 7.50012 31.8021ZM7.50012 23.9769C6.88913 23.9769 6.29185 24.1556 5.78383 24.4904C5.27581 24.8252 4.87985 25.3012 4.64603 25.858C4.41222 26.4148 4.35104 27.0275 4.47024 27.6186C4.58944 28.2097 4.88366 28.7527 5.3157 29.1788C5.74774 29.605 6.29818 29.8952 6.89744 30.0128C7.49669 30.1304 8.11784 30.07 8.68232 29.8394C9.24681 29.6087 9.72928 29.2182 10.0687 28.717C10.4082 28.2159 10.5894 27.6268 10.5894 27.0241C10.5885 26.2162 10.2627 25.4416 9.68358 24.8703C9.10442 24.299 8.31917 23.9777 7.50012 23.9769Z" fill="#004FFC"></path><path d="M7.50231 36.7744C7.26964 36.7744 7.04649 36.6832 6.88196 36.5209C6.71743 36.3586 6.625 36.1385 6.625 35.909V33.5568C6.625 33.3273 6.71743 33.1072 6.88196 32.9449C7.04649 32.7826 7.26964 32.6914 7.50231 32.6914C7.73499 32.6914 7.95814 32.7826 8.12267 32.9449C8.2872 33.1072 8.37963 33.3273 8.37963 33.5568V35.909C8.37963 36.1385 8.2872 36.3586 8.12267 36.5209C7.95814 36.6832 7.73499 36.7744 7.50231 36.7744Z" fill="#004FFC"></path><path d="M7.49954 44.9992C6.80778 44.9984 6.14462 44.7269 5.65552 44.2443C5.16643 43.7618 4.89135 43.1076 4.89062 42.4252V35.9084C4.89062 35.6788 4.98306 35.4587 5.14758 35.2964C5.31211 35.1341 5.53526 35.043 5.76794 35.043H9.23168C9.46436 35.043 9.68751 35.1341 9.85204 35.2964C10.0166 35.4587 10.109 35.6788 10.109 35.9084V42.4252C10.1081 43.1076 9.83292 43.7618 9.34374 44.2444C8.85456 44.7269 8.19134 44.9984 7.49954 44.9992ZM6.64525 36.7737V42.4252C6.64236 42.5377 6.66233 42.6497 6.70398 42.7544C6.74562 42.8592 6.80811 42.9547 6.88775 43.0352C6.96738 43.1158 7.06257 43.1798 7.16769 43.2236C7.2728 43.2673 7.38573 43.2898 7.49981 43.2898C7.61389 43.2898 7.72682 43.2673 7.83193 43.2236C7.93705 43.1798 8.03223 43.1158 8.11187 43.0352C8.19151 42.9547 8.254 42.8592 8.29564 42.7544C8.33729 42.6497 8.35726 42.5377 8.35437 42.4252V36.7737H6.64525Z" fill="#004FFC"></path></svg>	        </div>
+	        	        <div class="sasi-icon-box__content">
+	        	<h4 class="icon-box-title">Leave & Absence Management</h4>				<div class="icon-box-des">Employees can request leave, view leave balances, and track approvals in real time.</div>							</div>	
+	    </div>
+	    				</div>
+				</div>
+				</div>
+					</div>
+				</div>
+
+				
+		
+		<div class="elementor-element elementor-element-08b3fb4 section-padd-top e-flex e-con-boxed e-con e-parent" data-id="08b3fb4" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;gradient&quot;}">
+					<div class="e-con-inner">
+				<div class="elementor-element elementor-element-de7df3a elementor-widget__width-initial elementor-widget-mobile_extra__width-initial elementor-invisible elementor-widget elementor-widget-sasi-heading" data-id="de7df3a" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;}" data-widget_type="sasi-heading.default">
+				<div class="elementor-widget-container">
+							<div class="sasi-heading">
+	        <span class="sasi-heading__sub">Trusted Clients says</span>	        <h2 class="sasi-heading__title">Powerful Solutions proven results</h2>	    </div>
+	    				</div>
+				</div>
+				<div class="elementor-element elementor-element-e86f4d1 elementor-invisible elementor-widget elementor-widget-text-editor" data-id="e86f4d1" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;}" data-widget_type="text-editor.default">
+									<p>Trusted by many companies worldwide</p>								</div>
+									<div class="elementor-element elementor-element-e435826 e-grid e-con-full e-con e-child" data-id="e435826" data-element_type="container">
+
+										<!-- Testimonial 1 -->
+										<div class="elementor-element elementor-element-2dfd1ad elementor-invisible elementor-widget elementor-widget-sasi-testimonials" data-id="2dfd1ad" data-element_type="widget" data-settings='{"_animation":"fadeIn"}' data-widget_type="sasi-testimonials.default">
+											<div class="elementor-widget-container">
+												<div class="sasi-testimonial">
+													<div class="sasi-testimonial-wrap">
+														<div class="testi-stitle">“A Complete Productivity Game-Changer”</div>
+														<span class="sasi-ratings five"></span>
+														<div class="testi-quote">“Swift transformed how our team works — we now handle projects, meetings, and HR tasks in one place. Productivity has never been this seamless!”</div>
+														<div class="testi-meta dflex dflex-align-center">
+															<div class="testi-avatar">
+																<img loading="lazy" decoding="async" width="40" height="40" src="wp-content/uploads/sites/9/2025/09/testi1.webp" class="attachment-full size-full" alt="Daniel Rivera," />
+															</div>
+															<div class="tinfo dflex dflex-align-center flex-wrap">
+																<div class="tname">Daniel Rivera,</div>
+																<div class="tjob">&nbsp;CO-Founder</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									
+										<!-- Testimonial 2 -->
+										<div class="elementor-element elementor-element-9a66aa6 elementor-invisible elementor-widget elementor-widget-sasi-testimonials" data-id="9a66aa6" data-element_type="widget" data-settings='{"_animation":"fadeIn","_animation_delay":150}' data-widget_type="sasi-testimonials.default">
+											<div class="elementor-widget-container">
+												<div class="sasi-testimonial">
+													<div class="sasi-testimonial-wrap">
+														<div class="testi-stitle">"The Smartest Way to Manage Work"</div>
+														<span class="sasi-ratings five"></span>
+														<div class="testi-quote">"From scheduling to performance tracking, Swift keeps our workflow structured and stress-free. The dashboard is incredibly intuitive."</div>
+														<div class="testi-meta dflex dflex-align-center">
+															<div class="testi-avatar">
+																<img loading="lazy" decoding="async" width="40" height="40" src="wp-content/uploads/sites/9/2025/09/testi2.webp" class="attachment-full size-full" alt="Sean C. White," />
+															</div>
+															<div class="tinfo dflex dflex-align-center flex-wrap">
+																<div class="tname">Sean C. White,</div>
+																<div class="tjob">&nbsp;Operations Lead</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									
+										<!-- Testimonial 3 -->
+										<div class="elementor-element elementor-element-51340fa elementor-invisible elementor-widget elementor-widget-sasi-testimonials" data-id="51340fa" data-element_type="widget" data-settings='{"_animation":"fadeIn","_animation_delay":300}' data-widget_type="sasi-testimonials.default">
+											<div class="elementor-widget-container">
+												<div class="sasi-testimonial">
+													<div class="sasi-testimonial-wrap">
+														<div class="testi-stitle">"Perfect for Startups and Small Teams"</div>
+														<span class="sasi-ratings five"></span>
+														<div class="testi-quote">"Swift helps our team stay on track. We manage HR, communication, and tasks without juggling multiple apps. It’s a huge time saver!"</div>
+														<div class="testi-meta dflex dflex-align-center">
+															<div class="testi-avatar">
+																<img loading="lazy" decoding="async" width="40" height="40" src="wp-content/uploads/sites/9/2025/09/testi3.webp" class="attachment-full size-full" alt="Echo Chels," />
+															</div>
+															<div class="tinfo dflex dflex-align-center flex-wrap">
+																<div class="tname">Echo Chels,</div>
+																<div class="tjob">&nbsp;App Developer</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									
+										<!-- Testimonial 4 -->
+										<div class="elementor-element elementor-element-e84755c elementor-invisible elementor-widget elementor-widget-sasi-testimonials" data-id="e84755c" data-element_type="widget" data-settings='{"_animation":"fadeIn"}' data-widget_type="sasi-testimonials.default">
+											<div class="elementor-widget-container">
+												<div class="sasi-testimonial">
+													<div class="sasi-testimonial-wrap">
+														<div class="testi-stitle">"Boosts Focus and Accountability"</div>
+														<span class="sasi-ratings five"></span>
+														<div class="testi-quote">"The Pomodoro timer and analytics features help me stay focused and meet every deadline. Swift keeps me consistent and productive."</div>
+														<div class="testi-meta dflex dflex-align-center">
+															<div class="testi-avatar">
+																<img loading="lazy" decoding="async" width="40" height="40" src="wp-content/uploads/sites/9/2025/09/testi4.webp" class="attachment-full size-full" alt="Daniel A," />
+															</div>
+															<div class="tinfo dflex dflex-align-center flex-wrap">
+																<div class="tname">Daniel A,</div>
+																<div class="tjob">&nbsp;Developer</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									
+										<!-- Testimonial 5 -->
+										<div class="elementor-element elementor-element-e15511a elementor-invisible elementor-widget elementor-widget-sasi-testimonials" data-id="e15511a" data-element_type="widget" data-settings='{"_animation":"fadeIn","_animation_delay":150}' data-widget_type="sasi-testimonials.default">
+											<div class="elementor-widget-container">
+												<div class="sasi-testimonial">
+													<div class="sasi-testimonial-wrap">
+														<div class="testi-stitle">"Reliable, Fast & Team-Friendly"</div>
+														<span class="sasi-ratings five"></span>
+														<div class="testi-quote">"Swift integrates perfectly with our daily tools. HR tasks, reports, and communication now happen effortlessly — it’s truly reliable!"</div>
+														<div class="testi-meta dflex dflex-align-center">
+															<div class="testi-avatar">
+																<img loading="lazy" decoding="async" width="40" height="40" src="wp-content/uploads/sites/9/2025/09/testi5.webp" class="attachment-full size-full" alt="Vincent L. Smith," />
+															</div>
+															<div class="tinfo dflex dflex-align-center flex-wrap">
+																<div class="tname">Vincent L. Smith,</div>
+																<div class="tjob">&nbsp;HR Manager</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									
+										<!-- Testimonial 6 -->
+										<div class="elementor-element elementor-element-7ce0512 elementor-invisible elementor-widget elementor-widget-sasi-testimonials" data-id="7ce0512" data-element_type="widget" data-settings='{"_animation":"fadeIn","_animation_delay":300}' data-widget_type="sasi-testimonials.default">
+											<div class="elementor-widget-container">
+												<div class="sasi-testimonial">
+													<div class="sasi-testimonial-wrap">
+														<div class="testi-stitle">“Seamless Integration & Great Support”</div>
+														<span class="sasi-ratings five"></span>
+														<div class="testi-quote">“We easily integrated Swift with our HR system and communication tools. The support team was fantastic and onboarding was smooth!”</div>
+														<div class="testi-meta dflex dflex-align-center">
+															<div class="testi-avatar">
+																<img loading="lazy" decoding="async" width="40" height="40" src="wp-content/uploads/sites/9/2025/09/testi6.webp" class="attachment-full size-full" alt="Jerry T. Rochon," />
+															</div>
+															<div class="tinfo dflex dflex-align-center flex-wrap">
+																<div class="tname">Jerry T. Rochon,</div>
+																<div class="tjob">&nbsp;UI/UX Designer</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									
+									</div>
+									
+					</div>
+				</div>
+		<div class="elementor-element elementor-element-4c9d9d4 section-padd e-flex e-con-boxed e-con e-parent" data-id="4c9d9d4" data-element_type="container">
+					<div class="e-con-inner">
+		<div class="elementor-element elementor-element-1e29842 e-con-full e-flex e-con e-child" data-id="1e29842" data-element_type="container">
+				<div class="elementor-element elementor-element-1131ad7 elementor-invisible elementor-widget elementor-widget-sasi-heading" data-id="1131ad7" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;}" data-widget_type="sasi-heading.default">
+				<div class="elementor-widget-container">
+							<div class="sasi-heading">
+	        <span class="sasi-heading__sub">Asked Questions</span>	        <h2 class="sasi-heading__title">Frequently Asked Questions</h2>	    </div>
+	    				</div>
+				</div>
+				<div class="elementor-element elementor-element-ca4b6ac elementor-widget__width-initial elementor-widget-mobile_extra__width-inherit elementor-widget-tablet__width-inherit elementor-invisible elementor-widget elementor-widget-text-editor" data-id="ca4b6ac" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;,&quot;_animation_delay&quot;:150}" data-widget_type="text-editor.default">
+									<p>Our FAQ section covers everything you need to know, from setup and functionality to customization and support.</p>								</div>
+				<div class="elementor-element elementor-element-2be99e6 elementor-widget-tablet_extra__width-inherit elementor-invisible elementor-widget elementor-widget-sasi-accordions-2" data-id="2be99e6" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;zoomIn&quot;}" data-widget_type="sasi-accordions-2.default">
+				<div class="elementor-widget-container">
+					
+					<div class="sasi-accordions-wrapper">
+						<div class="sasi-acc-item-s2">
+				<h5 class="sasi-acc-item__title" data-tab="1" data-default="yes" >
+
+										1. What is swift app and what does it do ?
+																		<span class="sasi-icon down"><svg xmlns="http://www.w3.org/2000/svg" width="7" height="12" viewBox="0 0 7 12" fill="none"><path d="M6.84375 6.28125L2.28125 10.9062C2.125 11.0625 1.875 11.0625 1.75 10.9062L1.125 10.2812C0.96875 10.125 0.96875 9.90625 1.125 9.75L4.8125 6L1.125 2.28125C0.96875 2.125 0.96875 1.875 1.125 1.75L1.75 1.125C1.875 0.96875 2.125 0.96875 2.28125 1.125L6.84375 5.75C7 5.90625 7 6.125 6.84375 6.28125Z" fill="#0E0E0E"></path></svg></span>
+							<span class="sasi-icon up"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="7" viewBox="0 0 12 7" fill="none"><path d="M6.28125 0.15625L10.9062 4.71875C11.0625 4.875 11.0625 5.125 10.9062 5.25L10.2812 5.875C10.125 6.03125 9.90625 6.03125 9.75 5.875L6 2.1875L2.28125 5.875C2.125 6.03125 1.875 6.03125 1.75 5.875L1.125 5.25C0.96875 5.125 0.96875 4.875 1.125 4.71875L5.75 0.15625C5.90625 -6.34632e-08 6.125 -7.30251e-08 6.28125 0.15625Z" fill="#0E0E0E"></path></svg></span>
+															</h5>
+				<div class="sasi-acc-item__content">
+					<div class="acc__content-inner"><p>Swift is a productivity and performance management platform that helps businesses track tasks, measure employee output, manage attendance, and streamline internal operations.
+					</p></div>
+				</div>
+			</div>
+						<div class="sasi-acc-item-s2">
+				<h5 class="sasi-acc-item__title" data-tab="2" data-default="" >
+
+										2. Who can use Swift ?
+																		<span class="sasi-icon down"><svg xmlns="http://www.w3.org/2000/svg" width="7" height="12" viewBox="0 0 7 12" fill="none"><path d="M6.84375 6.28125L2.28125 10.9062C2.125 11.0625 1.875 11.0625 1.75 10.9062L1.125 10.2812C0.96875 10.125 0.96875 9.90625 1.125 9.75L4.8125 6L1.125 2.28125C0.96875 2.125 0.96875 1.875 1.125 1.75L1.75 1.125C1.875 0.96875 2.125 0.96875 2.28125 1.125L6.84375 5.75C7 5.90625 7 6.125 6.84375 6.28125Z" fill="#0E0E0E"></path></svg></span>
+							<span class="sasi-icon up"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="7" viewBox="0 0 12 7" fill="none"><path d="M6.28125 0.15625L10.9062 4.71875C11.0625 4.875 11.0625 5.125 10.9062 5.25L10.2812 5.875C10.125 6.03125 9.90625 6.03125 9.75 5.875L6 2.1875L2.28125 5.875C2.125 6.03125 1.875 6.03125 1.75 5.875L1.125 5.25C0.96875 5.125 0.96875 4.875 1.125 4.71875L5.75 0.15625C5.90625 -6.34632e-08 6.125 -7.30251e-08 6.28125 0.15625Z" fill="#0E0E0E"></path></svg></span>
+															</h5>
+				<div class="sasi-acc-item__content">
+					<div class="acc__content-inner"><p>Swift is a productivity and performance management platform that helps businesses track tasks, measure employee output, manage attendance, and streamline internal operations.
+					</p></div>
+				</div>
+			</div>
+						<div class="sasi-acc-item-s2">
+				<h5 class="sasi-acc-item__title" data-tab="3" data-default="" >
+
+										3. How does Swift measure employee performance?
+																		<span class="sasi-icon down"><svg xmlns="http://www.w3.org/2000/svg" width="7" height="12" viewBox="0 0 7 12" fill="none"><path d="M6.84375 6.28125L2.28125 10.9062C2.125 11.0625 1.875 11.0625 1.75 10.9062L1.125 10.2812C0.96875 10.125 0.96875 9.90625 1.125 9.75L4.8125 6L1.125 2.28125C0.96875 2.125 0.96875 1.875 1.125 1.75L1.75 1.125C1.875 0.96875 2.125 0.96875 2.28125 1.125L6.84375 5.75C7 5.90625 7 6.125 6.84375 6.28125Z" fill="#0E0E0E"></path></svg></span>
+							<span class="sasi-icon up"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="7" viewBox="0 0 12 7" fill="none"><path d="M6.28125 0.15625L10.9062 4.71875C11.0625 4.875 11.0625 5.125 10.9062 5.25L10.2812 5.875C10.125 6.03125 9.90625 6.03125 9.75 5.875L6 2.1875L2.28125 5.875C2.125 6.03125 1.875 6.03125 1.75 5.875L1.125 5.25C0.96875 5.125 0.96875 4.875 1.125 4.71875L5.75 0.15625C5.90625 -6.34632e-08 6.125 -7.30251e-08 6.28125 0.15625Z" fill="#0E0E0E"></path></svg></span>
+															</h5>
+				<div class="sasi-acc-item__content">
+					<div class="acc__content-inner"><p>Swift is a productivity and performance management platform that helps businesses track tasks, measure employee output, manage attendance, and streamline internal operations.		</p></div>
+				</div>
+			</div>
+						<div class="sasi-acc-item-s2">
+				<h5 class="sasi-acc-item__title" data-tab="4" data-default="" >
+
+										4. Can Swift help improve employee morale?
+																		<span class="sasi-icon down"><svg xmlns="http://www.w3.org/2000/svg" width="7" height="12" viewBox="0 0 7 12" fill="none"><path d="M6.84375 6.28125L2.28125 10.9062C2.125 11.0625 1.875 11.0625 1.75 10.9062L1.125 10.2812C0.96875 10.125 0.96875 9.90625 1.125 9.75L4.8125 6L1.125 2.28125C0.96875 2.125 0.96875 1.875 1.125 1.75L1.75 1.125C1.875 0.96875 2.125 0.96875 2.28125 1.125L6.84375 5.75C7 5.90625 7 6.125 6.84375 6.28125Z" fill="#0E0E0E"></path></svg></span>
+							<span class="sasi-icon up"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="7" viewBox="0 0 12 7" fill="none"><path d="M6.28125 0.15625L10.9062 4.71875C11.0625 4.875 11.0625 5.125 10.9062 5.25L10.2812 5.875C10.125 6.03125 9.90625 6.03125 9.75 5.875L6 2.1875L2.28125 5.875C2.125 6.03125 1.875 6.03125 1.75 5.875L1.125 5.25C0.96875 5.125 0.96875 4.875 1.125 4.71875L5.75 0.15625C5.90625 -6.34632e-08 6.125 -7.30251e-08 6.28125 0.15625Z" fill="#0E0E0E"></path></svg></span>
+															</h5>
+				<div class="sasi-acc-item__content">
+					<div class="acc__content-inner"><p>Yes. Swift includes features that recognise effort, highlight achievements, track employee-of-the-month metrics, and support celebration moments like birthdays and milestones.</p></div>
+				</div>
+			</div>
+			<div class="sasi-acc-item-s2">
+				<h5 class="sasi-acc-item__title" data-tab="3" data-default="" >
+
+										5.Can one-man businesses use Swift effectively?
+																		<span class="sasi-icon down"><svg xmlns="http://www.w3.org/2000/svg" width="7" height="12" viewBox="0 0 7 12" fill="none"><path d="M6.84375 6.28125L2.28125 10.9062C2.125 11.0625 1.875 11.0625 1.75 10.9062L1.125 10.2812C0.96875 10.125 0.96875 9.90625 1.125 9.75L4.8125 6L1.125 2.28125C0.96875 2.125 0.96875 1.875 1.125 1.75L1.75 1.125C1.875 0.96875 2.125 0.96875 2.28125 1.125L6.84375 5.75C7 5.90625 7 6.125 6.84375 6.28125Z" fill="#0E0E0E"></path></svg></span>
+							<span class="sasi-icon up"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="7" viewBox="0 0 12 7" fill="none"><path d="M6.28125 0.15625L10.9062 4.71875C11.0625 4.875 11.0625 5.125 10.9062 5.25L10.2812 5.875C10.125 6.03125 9.90625 6.03125 9.75 5.875L6 2.1875L2.28125 5.875C2.125 6.03125 1.875 6.03125 1.75 5.875L1.125 5.25C0.96875 5.125 0.96875 4.875 1.125 4.71875L5.75 0.15625C5.90625 -6.34632e-08 6.125 -7.30251e-08 6.28125 0.15625Z" fill="#0E0E0E"></path></svg></span>
+															</h5>
+				<div class="sasi-acc-item__content">
+					<div class="acc__content-inner"><p>Absolutely. Swift allows solo entrepreneurs to track personal tasks, manage priorities, maintain simple financial logs, and measure their daily or weekly productivity.	</p></div>
+				</div>
+			</div>
+						<div class="sasi-acc-item-s2">
+				<h5 class="sasi-acc-item__title" data-tab="4" data-default="" >
+
+										6. Does Swift include attendance tracking?
+																		<span class="sasi-icon down"><svg xmlns="http://www.w3.org/2000/svg" width="7" height="12" viewBox="0 0 7 12" fill="none"><path d="M6.84375 6.28125L2.28125 10.9062C2.125 11.0625 1.875 11.0625 1.75 10.9062L1.125 10.2812C0.96875 10.125 0.96875 9.90625 1.125 9.75L4.8125 6L1.125 2.28125C0.96875 2.125 0.96875 1.875 1.125 1.75L1.75 1.125C1.875 0.96875 2.125 0.96875 2.28125 1.125L6.84375 5.75C7 5.90625 7 6.125 6.84375 6.28125Z" fill="#0E0E0E"></path></svg></span>
+							<span class="sasi-icon up"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="7" viewBox="0 0 12 7" fill="none"><path d="M6.28125 0.15625L10.9062 4.71875C11.0625 4.875 11.0625 5.125 10.9062 5.25L10.2812 5.875C10.125 6.03125 9.90625 6.03125 9.75 5.875L6 2.1875L2.28125 5.875C2.125 6.03125 1.875 6.03125 1.75 5.875L1.125 5.25C0.96875 5.125 0.96875 4.875 1.125 4.71875L5.75 0.15625C5.90625 -6.34632e-08 6.125 -7.30251e-08 6.28125 0.15625Z" fill="#0E0E0E"></path></svg></span>
+															</h5>
+				<div class="sasi-acc-item__content">
+					<div class="acc__content-inner"><p>Yes. Swift offers smart attendance with clock-in and clock-out features, including the unique ability to track short breaks outside the office without counting them as work hours.</p></div>
+				</div>
+			</div>
+				
+				    </div>
+
+	    				</div>
+				</div>
+				</div>
+					</div>
+				</div>
+				<div class="elementor-element elementor-element-2f4e455 e-flex e-con-boxed e-con e-parent" data-id="2f4e455" data-element_type="container">
+					<div class="e-con-inner">
+		<div class="elementor-element elementor-element-5f29919 e-con-full e-flex e-con e-child" data-id="5f29919" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+		<div class="elementor-element elementor-element-aab8fc9 e-con-full e-flex e-con e-child" data-id="aab8fc9" data-element_type="container">
+				<div class="elementor-element elementor-element-111933c elementor-invisible elementor-widget elementor-widget-sasi-heading" data-id="111933c" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;}" data-widget_type="sasi-heading.default">
+				<div class="elementor-widget-container">
+							<div class="sasi-heading">
+	        	        <h2 class="sasi-heading__title">Ready to Work Smarter? Get the Swift Office App!</h2>	    </div>
+	    				</div>
+				</div>
+				<div class="elementor-element elementor-element-8951186 elementor-invisible elementor-widget elementor-widget-text-editor" data-id="8951186" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;,&quot;_animation_delay&quot;:150}" data-widget_type="text-editor.default">
+									<p>Take the power of AI wherever you go. With swift app, can enjoy real-time conversations, instant.</p>								</div>
+		<div class="elementor-element elementor-element-fe3880c e-con-full e-flex e-con e-child" data-id="fe3880c" data-element_type="container">
+				<div class="elementor-element elementor-element-658ed62 elementor-invisible elementor-widget elementor-widget-image" data-id="658ed62" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;,&quot;_animation_delay&quot;:300}" data-widget_type="image.default">
+																<a href="https://play.google.com/store/apps/details?id=com.pixels.swift_productivity&hl=en">
+							<img loading="lazy" decoding="async" width="190" height="64" src="wp-content/uploads/sites/9/2025/09/btn-playstore.webp" class="attachment-full size-full wp-image-532" alt="" />								</a>
+															</div>
+				<div class="elementor-element elementor-element-3499995 elementor-invisible elementor-widget elementor-widget-image" data-id="3499995" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;,&quot;_animation_delay&quot;:300}" data-widget_type="image.default">
+																<a href="https://apps.apple.com/us/app/swift-track-your-productivity/id6755123326">
+							<img loading="lazy" decoding="async" width="206" height="64" src="wp-content/uploads/sites/9/2025/09/btn-appstore.webp" class="attachment-full size-full wp-image-531" alt="" />								</a>
+															</div>
+				</div>
+				</div>
+		<div class="elementor-element elementor-element-23b99ce e-con-full e-flex e-con e-child" data-id="23b99ce" data-element_type="container">
+				<div class="elementor-element elementor-element-03534c2 elementor-invisible elementor-widget elementor-widget-image" data-id="03534c2" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;zoomIn&quot;,&quot;_animation_delay&quot;:250}" data-widget_type="image.default">
+															<img loading="lazy" decoding="async" width="545" height="600" src="images/mock.png" class="attachment-full size-full wp-image-524" alt="" srcset="images/mock.png 545w, images/mock.png 273w" sizes="(max-width: 545px) 100vw, 545px" />															</div>
+				</div>
+				</div>
+					</div>
+				</div>
+		<div class="elementor-element elementor-element-edc6d38 e-con-full section-padd e-flex e-con e-parent" data-id="edc6d38" data-element_type="container">
+		<div class="elementor-element elementor-element-c14946e e-flex e-con-boxed e-con e-child" data-id="c14946e" data-element_type="container">
+					<div class="e-con-inner">
+				<div class="elementor-element elementor-element-c9a9e4d elementor-widget__width-initial elementor-widget-tablet__width-initial elementor-invisible elementor-widget elementor-widget-sasi-heading" data-id="c9a9e4d" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;}" data-widget_type="sasi-heading.default">
+				<div class="elementor-widget-container">
+							<div class="sasi-heading">
+	        <span class="sasi-heading__sub">Meet our trusted clients</span>	        <h2 class="sasi-heading__title">Trusted by many companies worldwide</h2>	    </div>
+	    				</div>
+				</div>
+				<div class="elementor-element elementor-element-4d1a851 elementor-widget__width-initial elementor-widget-mobile_extra__width-initial elementor-widget-tablet__width-initial elementor-invisible elementor-widget elementor-widget-text-editor" data-id="4d1a851" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;}" data-widget_type="text-editor.default">
+									<p>Our swift app is trusted by businesses of all sizes—from innovative startups to global enterprises. We’re proud to support a growing network</p>								</div>
+					</div>
+				</div>
+		<div class="elementor-element elementor-element-e01b816 e-grid e-con-full e-con e-child" data-id="e01b816" data-element_type="container" style="display:flexbox; justify-content:center; align-items:center; gap:100px; margin-left: 200px; ">
+							
+						<div class="elementor-element elementor-element-10738da cursor-pointer elementor-view-default elementor-invisible elementor-widget elementor-widget-icon" data-id="10738da" data-element_type="widget" data-settings='{"_animation":"fadeIn","_animation_delay":600}' data-widget_type="icon.default">
+							<div class="elementor-icon-wrapper">
+								<a class="elementor-icon" href="#">
+									<img src="images/form.png" alt="Your Image Description" width="150" height="150">
+								</a>
+							</div>
+						</div>
+						<div class="elementor-element elementor-element-10738da cursor-pointer elementor-view-default elementor-invisible elementor-widget elementor-widget-icon" data-id="10738da" data-element_type="widget" data-settings='{"_animation":"fadeIn","_animation_delay":600}' data-widget_type="icon.default">
+							<div class="elementor-icon-wrapper">
+								<a class="elementor-icon" href="#">
+									<img src="images/pixpay.png" alt="Your Image Description" width="75" height="100">
+								</a>
+							</div>
+						</div>
+						<div class="elementor-element elementor-element-10738da cursor-pointer elementor-view-default elementor-invisible elementor-widget elementor-widget-icon" data-id="10738da" data-element_type="widget" data-settings='{"_animation":"fadeIn","_animation_delay":600}' data-widget_type="icon.default">
+							<div class="elementor-icon-wrapper">
+								<a class="elementor-icon" href="#">
+									<img src="images/grade.png" alt="Your Image Description" width="150" height="100">
+								</a>
+							</div>
+						</div>
+						<div class="elementor-element elementor-element-10738da cursor-pointer elementor-view-default elementor-invisible elementor-widget elementor-widget-icon" data-id="10738da" data-element_type="widget" data-settings='{"_animation":"fadeIn","_animation_delay":600}' data-widget_type="icon.default">
+							<div class="elementor-icon-wrapper">
+								<a class="elementor-icon" href="#">
+									<img src="images/Pixels.png" alt="Your Image Description" width="150" height="100">
+								</a>
+							</div>
+						</div>
+						<div class="elementor-element elementor-element-10738da cursor-pointer elementor-view-default elementor-invisible elementor-widget elementor-widget-icon" data-id="10738da" data-element_type="widget" data-settings='{"_animation":"fadeIn","_animation_delay":600}' data-widget_type="icon.default">
+							<div class="elementor-icon-wrapper">
+								<a class="elementor-icon" href="#">
+									<img src="images/willow.png" alt="Your Image Description" width="150" height="100">
+								</a>
+							</div>
+						</div>
+		
+				</div>
+				</div>
+				</div>
+		
+
+	</div>
+	<footer id="site-footer" class="site-footer" itemscope="itemscope" itemtype="http://schema.org/WPFooter">		<div data-elementor-type="wp-post" data-elementor-id="33" class="elementor elementor-33">
+				<div class="elementor-element elementor-element-574efd6 e-flex e-con-boxed e-con e-parent" data-id="574efd6" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+					<div class="e-con-inner">
+		<div class="elementor-element elementor-element-426ad21 e-con-full e-flex e-con e-child" data-id="426ad21" data-element_type="container">
+				<div class="elementor-element elementor-element-4219d24 elementor-invisible elementor-widget elementor-widget-heading" data-id="4219d24" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;}" data-widget_type="heading.default">
+					<h2 class="elementor-heading-title elementor-size-default">Start your free trial today</h2>				</div>
+				<div class="elementor-element elementor-element-bd87ba4 elementor-invisible elementor-widget elementor-widget-text-editor" data-id="bd87ba4" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;,&quot;_animation_delay&quot;:200}" data-widget_type="text-editor.default">
+									<p>Let your business thrive with smart conversations, smarter support, better results</p>								</div>
+		<div class="elementor-element elementor-element-3d7212c e-con-full e-flex e-con e-child" data-id="3d7212c" data-element_type="container">
+				<div class="elementor-element elementor-element-2d340ce elementor-invisible elementor-widget elementor-widget-sasi-button" data-id="2d340ce" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;,&quot;_animation_delay&quot;:400}" data-widget_type="sasi-button.default">
+				<div class="elementor-widget-container">
+							
+		<a href="#" class="sasi-btn sasi-btn-primary sasi-btn-icon sasi-btn-icon__right">
+			<span class="sasi-text">Start 14 Days Free Trial</span> 
+							<span class="sasi-icon">
+					<svg xmlns="http://www.w3.org/2000/svg" width="15" height="14" viewBox="0 0 15 14" fill="none"><path d="M6.84375 13.8125C6.96875 13.9688 7.21875 13.9688 7.375 13.8125L13.9062 7.28125C14.0625 7.125 14.0625 6.90625 13.9062 6.75L7.375 0.21875C7.21875 0.0625 6.96875 0.0625 6.84375 0.21875L6.21875 0.8125C6.0625 0.96875 6.0625 1.21875 6.21875 1.34375L11.0625 6.1875H0.375C0.1875 6.1875 0 6.375 0 6.5625V7.4375C0 7.65625 0.1875 7.8125 0.375 7.8125H11.0625L6.21875 12.6875C6.0625 12.8125 6.0625 13.0625 6.21875 13.2188L6.84375 13.8125Z" fill="#0E0E0E"></path></svg>				</span>
+					</a>
+	    
+	    				</div>
+				</div>
+				<div class="elementor-element elementor-element-d7fb592 elementor-invisible elementor-widget elementor-widget-sasi-button" data-id="d7fb592" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;,&quot;_animation_delay&quot;:500}" data-widget_type="sasi-button.default">
+				<div class="elementor-widget-container">
+	
+	    
+	    				</div>
+				</div>
+				</div>
+				</div>
+		<div class="elementor-element elementor-element-b507c39 e-con-full e-flex e-con e-child" data-id="b507c39" data-element_type="container">
+		<div class="elementor-element elementor-element-2f51374 e-con-full e-flex elementor-invisible e-con e-child" data-id="2f51374" data-element_type="container" data-settings="{&quot;animation&quot;:&quot;fadeIn&quot;}">
+				<div class="elementor-element elementor-element-3c184f5 elementor-widget elementor-widget-sasico-logo" data-id="3c184f5" data-element_type="widget" data-widget_type="sasico-logo.default">
+				<div class="elementor-widget-container">
+								
+					<div class="the-logo">
+						<a href="index.html">
+							<img src="images/logoswift.png" alt="swift Light">
+						</a>			        
+					</div>
+					
+								</div>
+						</div>
+						<div class="elementor-element elementor-element-85cefd9 elementor-widget elementor-widget-text-editor" data-id="85cefd9" data-element_type="widget" data-widget_type="text-editor.default">
+											<p>Built for professionals, teams, and students who value efficiency, clarity, and performance.</p>								</div>
+				<div class="elementor-element elementor-element-21fc5cd elementor-widget elementor-widget-sasi-social-icons" data-id="21fc5cd" data-element_type="widget" data-widget_type="sasi-social-icons.default">
+				<div class="elementor-widget-container">
+							<div class="sasi-social-icons__wrapper dflex justify-content-center align-items-center">
+							<a class="sasi-social-icons__item dflex justify-content-center align-items-center sasi-social-icon-facebook-f elementor-repeater-item-a1d5d2d" aria-label="Social Icon Link" href="#" target="_blank">
+					<span class="sasi-icon">						<svg class="e-font-icon-svg e-fab-facebook-f" viewBox="0 0 320 512" xmlns="http://www.w3.org/2000/svg"><path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"></path></svg></span>									</a>
+							<a class="sasi-social-icons__item dflex justify-content-center align-items-center sasi-social-icon-x-twitter elementor-repeater-item-45ceb26" aria-label="Social Icon Link" href="#" target="_blank">
+					<span class="sasi-icon">						<svg class="e-font-icon-svg e-fab-x-twitter" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"></path></svg></span>									</a>
+							<a class="sasi-social-icons__item dflex justify-content-center align-items-center sasi-social-icon-linkedin-in elementor-repeater-item-17864c7" aria-label="Social Icon Link" href="#" target="_blank">
+					<span class="sasi-icon">						<svg class="e-font-icon-svg e-fab-linkedin-in" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"></path></svg></span>									</a>
+							<a class="sasi-social-icons__item dflex justify-content-center align-items-center sasi-social-icon-youtube elementor-repeater-item-6582f03" aria-label="Social Icon Link" href="#" target="_blank">
+					<span class="sasi-icon">						<svg class="e-font-icon-svg e-fab-youtube" viewBox="0 0 576 512" xmlns="http://www.w3.org/2000/svg"><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"></path></svg></span>									</a>
+					</div>
+						</div>
+				</div>
+				</div>
+		<div class="elementor-element elementor-element-68d71f6 e-con-full e-flex e-con e-child" data-id="68d71f6" data-element_type="container">
+		<div class="elementor-element elementor-element-6356ad3 e-grid e-con-full elementor-invisible e-con e-child" data-id="6356ad3" data-element_type="container" data-settings="{&quot;animation&quot;:&quot;fadeIn&quot;,&quot;animation_delay&quot;:150}">
+		<div class="elementor-element elementor-element-1d15523 e-con-full e-flex e-con e-child" data-id="1d15523" data-element_type="container">
+				<div class="elementor-element elementor-element-027c53f elementor-widget elementor-widget-heading" data-id="027c53f" data-element_type="widget" data-widget_type="heading.default">
+					<h5 class="elementor-heading-title elementor-size-default">Product</h5>				</div>
+				<div class="elementor-element elementor-element-460d54c sasi-view-default elementor-widget elementor-widget-sasi-icon-list" data-id="460d54c" data-element_type="widget" data-widget_type="sasi-icon-list.default">
+				<div class="elementor-widget-container">
+						        <div class="sasi-icon-list-wrapper">
+	        		<ul class="unstyle sasi-icon-list-items ">
+									<li class="sasi-icon-list-item ">
+					<a href="home">							<span class="sasi-icon-list-text title-link">Home</span>
+													</a>
+											</li>
+									<li class="sasi-icon-list-item ">
+					<a href="features.html">							<span class="sasi-icon-list-text title-link">Features</span>
+													</a>
+											</li>
+									<li class="sasi-icon-list-item ">
+					<a href="pricing.html">							<span class="sasi-icon-list-text title-link">Pricing</span>
+													</a>
+											</li>
+									<li class="sasi-icon-list-item ">
+					<a href="privacy.html
+					">							<span class="sasi-icon-list-text title-link">Privacy</span>
+													</a>
+											</li>
+							</ul>
+	        </div>
+	    				</div>
+				</div>
+				</div>
+		<div class="elementor-element elementor-element-92cc9fd e-con-full e-flex e-con e-child" data-id="92cc9fd" data-element_type="container">
+				<div class="elementor-element elementor-element-924a3d5 elementor-widget elementor-widget-heading" data-id="924a3d5" data-element_type="widget" data-widget_type="heading.default">
+					<h5 class="elementor-heading-title elementor-size-default">Company</h5>				</div>
+				<div class="elementor-element elementor-element-35ed3c6 sasi-view-default elementor-widget elementor-widget-sasi-icon-list" data-id="35ed3c6" data-element_type="widget" data-widget_type="sasi-icon-list.default">
+				<div class="elementor-widget-container">
+						        <div class="sasi-icon-list-wrapper">
+	        	<ul class="unstyle sasi-icon-list-items ">
+	        			        			<li class="sasi-icon-list-item ">
+	        				<a href="#">							<span class="sasi-icon-list-text title-link">About us</span>
+															</a>
+								        			</li>
+	        			        			<li class="sasi-icon-list-item ">
+	        				<a href="#">							<span class="sasi-icon-list-text title-link">Latest Blog</span>
+															</a>
+								        			</li>
+	        			        			<li class="sasi-icon-list-item ">
+	        				<a href="#">							<span class="sasi-icon-list-text title-link">Our Clients</span>
+															</a>
+								        			</li>
+	        			        			<li class="sasi-icon-list-item ">
+	        				<a href="#">							<span class="sasi-icon-list-text title-link">Careers</span>
+															</a>
+								        			</li>
+	        			        	</ul>
+	        </div>
+	    				</div>
+				</div>
+				</div>
+				</div>
+				</div>
+		<div class="elementor-element elementor-element-1ac6060 e-con-full e-flex elementor-invisible e-con e-child" data-id="1ac6060" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;animation&quot;:&quot;fadeIn&quot;,&quot;animation_delay&quot;:300}">
+				<div class="elementor-element elementor-element-916855c elementor-widget elementor-widget-heading" data-id="916855c" data-element_type="widget" data-widget_type="heading.default">
+					<h5 class="elementor-heading-title elementor-size-default">Join Our Newsletter</h5>				</div>
+				<div class="elementor-element elementor-element-c99cce0 elementor-widget elementor-widget-text-editor" data-id="c99cce0" data-element_type="widget" data-widget_type="text-editor.default">
+									<p>Never Miss an Update — Sign Up Today</p>								</div>
+				<div class="elementor-element elementor-element-acd25b9 elementor-widget elementor-widget-shortcode" data-id="acd25b9" data-element_type="widget" data-widget_type="shortcode.default">
+							<div class="elementor-shortcode"><script>(function() {
+	window.mc4wp = window.mc4wp || {
+		listeners: [],
+		forms: {
+			on: function(evt, cb) {
+				window.mc4wp.listeners.push(
+					{
+						event   : evt,
+						callback: cb
+					}
+				);
+			}
+		}
+	}
+})();
+</script><!-- Mailchimp for WordPress v4.10.7 - https://wordpress.org/plugins/mailchimp-for-wp/ --><form id="mc4wp-form-1" class="mc4wp-form mc4wp-form-53" method="post" data-id="53" data-name="Form Footer" ><div class="mc4wp-form-fields"><div class="sasi-subscribe-form dflex gap-10">
+<input type="email" id="email" name="EMAIL" placeholder="Enter email" required>
+<button type="submit" class="sasi-icon"><i class="ss-arrow-right"></i></button>
+</div>
+</div><label style="display: none !important;">Leave this field empty if you're human: <input type="text" name="_mc4wp_honeypot" value="" tabindex="-1" autocomplete="off" /></label><input type="hidden" name="_mc4wp_timestamp" value="1762164013" /><input type="hidden" name="_mc4wp_form_id" value="53" /><input type="hidden" name="_mc4wp_form_element_id" value="mc4wp-form-1" /><div class="mc4wp-response"></div></form><!-- / Mailchimp for WordPress Plugin --></div>
+						</div>
+				</div>
+				</div>
+		<div class="elementor-element elementor-element-95d50ef e-con-full e-flex e-con e-child" data-id="95d50ef" data-element_type="container">
+				<div class="elementor-element elementor-element-c284bd1 elementor-invisible elementor-widget elementor-widget-text-editor" data-id="c284bd1" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeIn&quot;,&quot;_animation_delay&quot;:300}" data-widget_type="text-editor.default">
+									<p>Swift App,2025 © All rights reserved</p>								</div>
+				<div class="elementor-element elementor-element-193f7e9 elementor-view-stacked btn-back-to-top elementor-shape-circle elementor-invisible elementor-widget elementor-widget-icon" data-id="193f7e9" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeIn&quot;,&quot;_animation_delay&quot;:300}" data-widget_type="icon.default">
+							<div class="elementor-icon-wrapper">
+			<a class="elementor-icon" href="#">
+			<svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13"><path d="M0.539062 6.91406C0.402344 6.80469 0.402344 6.58594 0.539062 6.44922L6.25391 0.734375C6.39062 0.597656 6.58203 0.597656 6.71875 0.734375L12.4336 6.44922C12.5703 6.58594 12.5703 6.80469 12.4336 6.91406L11.9141 7.46094C11.7773 7.59766 11.5586 7.59766 11.4492 7.46094L7.21094 3.22266V12.5469C7.21094 12.7383 7.04688 12.875 6.88281 12.875H6.11719C5.92578 12.875 5.78906 12.7383 5.78906 12.5469V3.22266L1.52344 7.46094C1.41406 7.59766 1.19531 7.59766 1.05859 7.46094L0.539062 6.91406Z"></path></svg>			</a>
+		</div>
+						</div>
+				<div class="elementor-element elementor-element-3e24e7c sasi-view-default elementor-invisible elementor-widget elementor-widget-sasi-icon-list" data-id="3e24e7c" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeIn&quot;,&quot;_animation_delay&quot;:300}" data-widget_type="sasi-icon-list.default">
+				<div class="elementor-widget-container">
+						        <div class="sasi-icon-list-wrapper">
+	        	<ul class="unstyle sasi-icon-list-items --inline-items">
+	        			        			<li class="sasi-icon-list-item --inline-item">
+	        				<a href="#">							<span class="sasi-icon-list-text title-link">Terms & Conditions</span>
+															</a>
+								        			</li>
+	        			        			<li class="sasi-icon-list-item --inline-item">
+	        				<a href="#">							<span class="sasi-icon-list-text title-link">Privacy Policy</span>
+															</a>
+								        			</li>
+	        			        	</ul>
+	        </div>
+	    				</div>
+				</div>
+				</div>
+					</div>
+				</div>
+				</div>
+		</footer></div>
+<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"\/swift\/*"},{"not":{"href_matches":["\/swift\/wp-*.php","\/swift\/wp-admin\/*","\/swift\/wp-content\/uploads\/sites\/9\/*","\/swift\/wp-content\/*","\/swift\/wp-content\/plugins\/*","\/swift\/wp-content\/themes\/sasico\/*","\/swift\/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+<script>(function() {function maybePrefixUrlField () {
+  const value = this.value.trim()
+  if (value !== '' && value.indexOf('http') !== 0) {
+    this.value = 'http://' + value
+  }
+}
+
+const urlFields = document.querySelectorAll('.mc4wp-form input[type="url"]')
+for (let j = 0; j < urlFields.length; j++) {
+  urlFields[j].addEventListener('blur', maybePrefixUrlField)
+}
+})();</script>			<script>
+				const lazyloadRunObserver = () => {
+					const lazyloadBackgrounds = document.querySelectorAll( `.e-con.e-parent:not(.e-lazyloaded)` );
+					const lazyloadBackgroundObserver = new IntersectionObserver( ( entries ) => {
+						entries.forEach( ( entry ) => {
+							if ( entry.isIntersecting ) {
+								let lazyloadBackground = entry.target;
+								if( lazyloadBackground ) {
+									lazyloadBackground.classList.add( 'e-lazyloaded' );
+								}
+								lazyloadBackgroundObserver.unobserve( entry.target );
+							}
+						});
+					}, { rootMargin: '200px 0px 200px 0px' } );
+					lazyloadBackgrounds.forEach( ( lazyloadBackground ) => {
+						lazyloadBackgroundObserver.observe( lazyloadBackground );
+					} );
+				};
+				const events = [
+					'DOMContentLoaded',
+					'elementor/lazyload/observe',
+				];
+				events.forEach( ( event ) => {
+					document.addEventListener( event, lazyloadRunObserver );
+				} );
+			</script>
+			<link rel='stylesheet' id='elementor-post-12-css' href='wp-content/uploads/sites/9/elementor/css/post-12f23b.css?ver=1757929543' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-post-85-css' href='wp-content/uploads/sites/9/elementor/css/post-85f23b.css?ver=1757929543' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-post-33-css' href='wp-content/uploads/sites/9/elementor/css/post-33f23b.css?ver=1757929543' type='text/css' media='all' />
+<script type="text/javascript" src="wp-includes/js/dist/hooks.min4fdd.js?ver=4d63a3d491d11ffd8ac6" id="wp-hooks-js"></script>
+<script type="text/javascript" src="wp-includes/js/dist/i18n.minc33c.js?ver=5e580eb46a90c2b997e6" id="wp-i18n-js"></script>
+<script type="text/javascript" id="wp-i18n-js-after">
+/* <![CDATA[ */
+wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+/* ]]> */
+</script>
+<script type="text/javascript" src="wp-content/plugins/contact-form-7/includes/swv/js/index658f.js?ver=6.1.2" id="swv-js"></script>
+<script type="text/javascript" id="contact-form-7-js-before">
+/* <![CDATA[ */
+var wpcf7 = {
+    "api": {
+        "root": "https:\/\/sasico.pikathemes.site\/swift\/wp-json\/",
+        "namespace": "contact-form-7\/v1"
+    }
+};
+/* ]]> */
+</script>
+<script type="text/javascript" src="wp-content/plugins/contact-form-7/includes/js/index658f.js?ver=6.1.2" id="contact-form-7-js"></script>
+<script type="text/javascript" src="wp-content/themes/sasico/js/plugin-addon20b9.js?ver=1.0.2" id="sasico-plugin-script-js"></script>
+<script type="text/javascript" src="wp-includes/js/imagesloaded.minbb93.js?ver=5.0.0" id="imagesloaded-js"></script>
+<script type="text/javascript" src="wp-content/themes/sasico/js/elementor-widgets20b9.js?ver=1.0.2" id="sasico-elementor-js"></script>
+<script type="text/javascript" src="wp-content/themes/sasico/js/elementor-header20b9.js?ver=1.0.2" id="sasico-elementor-header-js"></script>
+<script type="text/javascript" src="wp-content/themes/sasico/js/theme20b9.js?ver=1.0.2" id="sasico-scripts-js"></script>
+<script type="text/javascript" src="wp-content/plugins/elementor/assets/js/webpack.runtime.min9287.js?ver=3.32.5" id="elementor-webpack-runtime-js"></script>
+<script type="text/javascript" src="wp-content/plugins/elementor/assets/js/frontend-modules.min9287.js?ver=3.32.5" id="elementor-frontend-modules-js"></script>
+<script type="text/javascript" src="wp-includes/js/jquery/ui/core.minb37e.js?ver=1.13.3" id="jquery-ui-core-js"></script>
+<script type="text/javascript" id="elementor-frontend-js-before">
+/* <![CDATA[ */
+var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false,"isScriptDebug":false},"i18n":{"shareOnFacebook":"Share on Facebook","shareOnTwitter":"Share on Twitter","pinIt":"Pin it","download":"Download","downloadImage":"Download image","fullscreen":"Fullscreen","zoom":"Zoom","share":"Share","playVideo":"Play Video","previous":"Previous","next":"Next","close":"Close","a11yCarouselPrevSlideMessage":"Previous slide","a11yCarouselNextSlideMessage":"Next slide","a11yCarouselFirstSlideMessage":"This is the first slide","a11yCarouselLastSlideMessage":"This is the last slide","a11yCarouselPaginationBulletMessage":"Go to slide"},"is_rtl":false,"breakpoints":{"xs":0,"sm":480,"md":576,"lg":992,"xl":1440,"xxl":1600},"responsive":{"breakpoints":{"mobile":{"label":"Mobile Portrait","value":575,"default_value":767,"direction":"max","is_enabled":true},"mobile_extra":{"label":"Mobile Landscape","value":767,"default_value":880,"direction":"max","is_enabled":true},"tablet":{"label":"Tablet Portrait","value":991,"default_value":1024,"direction":"max","is_enabled":true},"tablet_extra":{"label":"Tablet Landscape","value":1199,"default_value":1200,"direction":"max","is_enabled":true},"laptop":{"label":"Laptop","value":1399,"default_value":1366,"direction":"max","is_enabled":true},"widescreen":{"label":"Widescreen","value":2400,"default_value":2400,"direction":"min","is_enabled":false}},"hasCustomBreakpoints":true},"version":"3.32.5","is_static":false,"experimentalFeatures":{"e_font_icon_svg":true,"additional_custom_breakpoints":true,"container":true,"e_optimized_markup":true,"nested-elements":true,"home_screen":true,"global_classes_should_enforce_capabilities":true,"e_variables":true,"cloud-library":true,"e_opt_in_v4_page":true,"import-export-customization":true},"urls":{"assets":"https:\/\/sasico.pikathemes.site\/swift\/wp-content\/plugins\/elementor\/assets\/","ajaxurl":"https:\/\/sasico.pikathemes.site\/swift\/wp-admin\/admin-ajax.php","uploadUrl":"https:\/\/sasico.pikathemes.site\/swift\/wp-content\/uploads\/sites\/9"},"nonces":{"floatingButtonsClickTracking":"6a80d0fdc9"},"swiperClass":"swiper","settings":{"page":[],"editorPreferences":[]},"kit":{"active_breakpoints":["viewport_mobile","viewport_mobile_extra","viewport_tablet","viewport_tablet_extra","viewport_laptop"],"viewport_mobile":575,"viewport_mobile_extra":767,"viewport_tablet":991,"viewport_tablet_extra":1199,"viewport_laptop":1399,"global_image_lightbox":"yes","lightbox_enable_counter":"yes","lightbox_enable_fullscreen":"yes","lightbox_enable_zoom":"yes","lightbox_enable_share":"yes","lightbox_title_src":"title","lightbox_description_src":"description"},"post":{"id":454,"title":"swift%20Light%20%E2%80%93%20Startup%20%26%20Multipurpose%20WordPress%20Theme","excerpt":"","featuredImage":false}};
+/* ]]> */
+</script>
+<script type="text/javascript" src="wp-content/plugins/elementor/assets/js/frontend.min9287.js?ver=3.32.5" id="elementor-frontend-js"></script>
+<script type="text/javascript" defer src="wp-content/plugins/mailchimp-for-wp/assets/js/forms9073.js?ver=4.10.7" id="mc4wp-forms-api-js"></script>
+
+</body>
+
+</html>

@@ -29,11 +29,22 @@ import { Viewproject } from './viewproject/viewproject';
 import { Myattendance } from './myattendance/myattendance';
 import { Profile } from './profile/profile';
 import { Leave } from './leave/leave';
+import { Myleave } from './myleave/myleave';
+import { HomeComponent } from './home/home.component';
+
+
 
 export const routes: Routes = [
   // ================= AUTH =================
-  { path: '', component: SigninComponent },
-  { path: 'signin', component: SigninComponent },
+  { path: '', component: HomeComponent },
+
+  {
+    path: 'app',
+    children: [
+      { path: '', component: SigninComponent },
+      { path: 'signin', component: SigninComponent },
+    ]
+  },
 
   // ================= ADMIN =================
   {
@@ -67,10 +78,10 @@ export const routes: Routes = [
       { path: 'projects/:projectId', component: Viewproject },
       { path: 'innovation', component: InnovationComponent },
       { path: 'myattendance', component: Myattendance},
-      { path: 'profile', component: Profile}
+      { path: 'profile', component: Profile},
+      { path: 'myleave', component: Myleave},
     ],
   },
 
   { path: '**', redirectTo: '' },
 ];
-

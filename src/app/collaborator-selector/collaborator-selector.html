@@ -1,0 +1,223 @@
+<!-- src/app/collaborator-selector/collaborator-selector.html -->
+
+<div class="collaborator-selector" [class.disabled]="disabled">
+  
+    <!-- Selected Collaborators Display (Pills/Chips) -->
+    <div class="selected-collaborators-container mb-3" *ngIf="selectedCollaborators.length > 0">
+      <div class="d-flex flex-wrap gap-2">
+        
+        <!-- Individual Collaborator Pills -->
+        <div 
+          *ngFor="let collaborator of selectedCollaborators; trackBy: trackByEmployeeId"
+          class="collaborator-pill d-flex align-items-center bg-light-primary rounded-pill px-3 py-2">
+          
+          <!-- Avatar -->
+          <div class="symbol symbol-25px symbol-circle me-2">
+            <img 
+              *ngIf="collaborator.avatarUrl" 
+              [src]="collaborator.avatarUrl" 
+              [alt]="getFullName(collaborator)"
+              class="object-fit-cover" />
+            <span 
+              *ngIf="!collaborator.avatarUrl" 
+              class="symbol-label fs-8 fw-bold text-inverse-primary"
+              [ngClass]="getAvatarBgColor(collaborator.id)">
+              {{ getInitials(collaborator.firstName, collaborator.lastName) }}
+            </span>
+          </div>
+          
+          <!-- Name -->
+          <span class="fs-7 fw-semibold text-primary me-2">
+            {{ getFullName(collaborator) }}
+          </span>
+          
+          <!-- Remove Button -->
+          <button 
+            type="button"
+            class="btn btn-icon btn-sm btn-active-light-primary rounded-circle p-0"
+            style="width: 18px; height: 18px; min-height: 18px;"
+            (click)="removeCollaborator(collaborator, $event)"
+            [disabled]="disabled"
+            title="Remove">
+            <i class="ki-outline ki-cross fs-7"></i>
+          </button>
+        </div>
+        
+        <!-- Clear All Button -->
+        <button 
+          *ngIf="selectedCollaborators.length > 1"
+          type="button"
+          class="btn btn-sm btn-light-danger rounded-pill px-3 py-2"
+          (click)="clearAll()"
+          [disabled]="disabled">
+          <i class="ki-outline ki-trash fs-7 me-1"></i>
+          Clear All
+        </button>
+      </div>
+      
+      <!-- Selection Count -->
+      <div class="text-muted fs-8 mt-2">
+        {{ selectedCollaborators.length }} collaborator{{ selectedCollaborators.length !== 1 ? 's' : '' }} selected
+      </div>
+    </div>
+    
+    <!-- Dropdown Trigger -->
+    <div class="position-relative">
+      
+      <!-- Input Field / Trigger -->
+      <div 
+        class="form-control form-control-solid d-flex align-items-center cursor-pointer min-h-45px"
+        [class.focus]="isDropdownOpen"
+        [class.disabled]="disabled"
+        (click)="toggleDropdown()">
+        
+        <!-- Search Icon -->
+        <i class="ki-outline ki-magnifier fs-4 text-gray-500 me-3"></i>
+        
+        <!-- Search Input -->
+        <input 
+          #searchInput
+          type="text"
+          class="form-control form-control-transparent border-0 p-0 flex-grow-1"
+          [placeholder]="selectedCollaborators.length > 0 ? 'Add more collaborators...' : placeholder"
+          [(ngModel)]="searchTerm"
+          (input)="onSearchInput($event)"
+          (focus)="openDropdown()"
+          [disabled]="disabled" />
+        
+        <!-- Dropdown Arrow -->
+        <i 
+          class="ki-outline fs-4 text-gray-500 ms-2"
+          [ngClass]="isDropdownOpen ? 'ki-up' : 'ki-down'"></i>
+      </div>
+      
+      <!-- Dropdown Menu -->
+      <div 
+        *ngIf="isDropdownOpen"
+        class="dropdown-menu dropdown-menu-custom show w-100 bg-gray-100 py-3"
+        style="max-height: 350px; overflow-y: auto;">
+        
+        <!-- Quick Actions Header -->
+        <div class="px-4 pb-3 border-bottom">
+          <div class="d-flex align-items-center justify-content-between">
+            <span class="text-muted fs-7 fw-semibold">
+              {{ filteredEmployees.length }} employee{{ filteredEmployees.length !== 1 ? 's' : '' }} available
+            </span>
+            
+            <div class="d-flex gap-2">
+              <!-- Select All Button -->
+              <button 
+                *ngIf="!allSelected && employees.length > 0"
+                type="button"
+                class="btn btn-sm btn-light-primary py-1 px-3"
+                (click)="selectAll(); $event.stopPropagation()">
+                <i class="ki-outline ki-double-check fs-7 me-1"></i>
+                Select All
+              </button>
+              
+              <!-- Deselect All Button -->
+              <button 
+                *ngIf="selectedCollaborators.length > 0"
+                type="button"
+                class="btn btn-sm btn-light-danger py-1 px-3"
+                (click)="clearAll(); $event.stopPropagation()">
+                <i class="ki-outline ki-cross fs-7 me-1"></i>
+                Deselect All
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Employee List -->
+        <div class="employee-list">
+          
+          <!-- No Results -->
+          <div 
+            *ngIf="filteredEmployees.length === 0" 
+            class="text-center py-8">
+            <i class="ki-outline ki-search-list fs-2x text-gray-400 mb-3 d-block"></i>
+            <span class="text-muted fs-6">No employees found</span>
+            <div class="text-gray-500 fs-7 mt-1">
+              Try a different search term
+            </div>
+          </div>
+          
+          <!-- Employee Items -->
+          <div 
+            *ngFor="let employee of filteredEmployees; let i = index; trackBy: trackByEmployeeId"
+            class="dropdown-item d-flex align-items-center px-4 py-3 cursor-pointer"
+            [class.selected]="isSelected(employee)"
+            [class.highlighted]="i === highlightedIndex"
+            (click)="toggleSelection(employee)">
+            
+            <!-- Checkbox -->
+            <div class="form-check form-check-custom form-check-solid me-4">
+              <input 
+                class="form-check-input"
+                type="checkbox"
+                [checked]="isSelected(employee)"
+                (click)="$event.stopPropagation()"
+                (change)="toggleSelection(employee)" />
+            </div>
+            
+            <!-- Avatar -->
+            <div class="symbol symbol-45px symbol-circle me-4">
+              <img 
+                *ngIf="employee.avatarUrl" 
+                [src]="employee.avatarUrl" 
+                [alt]="getFullName(employee)"
+                class="object-fit-cover" />
+              <span 
+                *ngIf="!employee.avatarUrl" 
+                class="symbol-label fs-6 fw-bold"
+                [ngClass]="getAvatarBgColor(employee.id)"
+                [class.text-inverse-primary]="getAvatarBgColor(employee.id) === 'bg-primary'"
+                [class.text-inverse-success]="getAvatarBgColor(employee.id) === 'bg-success'"
+                [class.text-inverse-info]="getAvatarBgColor(employee.id) === 'bg-info'"
+                [class.text-inverse-warning]="getAvatarBgColor(employee.id) === 'bg-warning'"
+                [class.text-inverse-danger]="getAvatarBgColor(employee.id) === 'bg-danger'"
+                [class.text-inverse-dark]="getAvatarBgColor(employee.id) === 'bg-dark'"
+                [class.text-inverse-secondary]="getAvatarBgColor(employee.id) === 'bg-secondary'">
+                {{ getInitials(employee.firstName, employee.lastName) }}
+              </span>
+            </div>
+            
+            <!-- Employee Info -->
+            <div class="d-flex flex-column flex-grow-1 overflow-hidden">
+              <!-- Name -->
+              <span class="fs-6 fw-bold text-gray-800 text-truncate">
+                {{ getFullName(employee) }}
+              </span>
+              
+              <!-- Email -->
+              <span class="fs-7 text-muted text-truncate">
+                {{ employee.email }}
+              </span>
+              
+              <!-- Job Role / Department -->
+              <div class="d-flex align-items-center gap-2 mt-1" *ngIf="employee.job || employee.department">
+                <span 
+                  *ngIf="employee.job"
+                  class="badge badge-light-info fs-8 fw-semibold">
+                  {{ employee.job }}
+                </span>
+                <span 
+                  *ngIf="employee.department"
+                  class="badge badge-light-secondary fs-8 fw-semibold">
+                  {{ employee.department }}
+                </span>
+              </div>
+            </div>
+            
+            <!-- Selected Indicator -->
+            <div *ngIf="isSelected(employee)" class="ms-3">
+              <i class="ki-outline ki-check-circle fs-2 text-success"></i>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      
+    </div>
+    
+  </div>

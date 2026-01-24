@@ -1,0 +1,627 @@
+<!doctype html>
+<html lang="en-US">
+
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Swift &amp; Office Productivity ">
+	<link rel="profile" href="#">
+
+	<title> Swift &#8211; Office Productivity </title>
+<meta name='robots' content='max-image-preview:large' />
+	<style>img:is([sizes="auto" i], [sizes^="auto," i]) { contain-intrinsic-size: 3000px 1500px }</style>
+
+<script type="text/javascript">
+/* <![CDATA[ */
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16.0.1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16.0.1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/sasico.pikathemes.site\/swift\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.8.3"}};
+/*! This file is auto-generated */
+!function(s,n){var o,i,e;function c(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function p(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data),a=(e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0),new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data));return t.every(function(e,t){return e===a[t]})}function u(e,t){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);for(var n=e.getImageData(16,16,1,1),a=0;a<n.data.length;a++)if(0!==n.data[a])return!1;return!0}function f(e,t,n,a){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\udde8\ud83c\uddf6","\ud83c\udde8\u200b\ud83c\uddf6")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!a(e,"\ud83e\udedf")}return!1}function g(e,t,n,a){var r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):s.createElement("canvas"),o=r.getContext("2d",{willReadFrequently:!0}),i=(o.textBaseline="top",o.font="600 32px Arial",{});return e.forEach(function(e){i[e]=t(o,e,n,a)}),i}function t(e){var t=s.createElement("script");t.src=e,t.defer=!0,s.head.appendChild(t)}"undefined"!=typeof Promise&&(o="wpEmojiSettingsSupports",i=["flag","emoji"],n.supports={everything:!0,everythingExceptFlag:!0},e=new Promise(function(e){s.addEventListener("DOMContentLoaded",e,{once:!0})}),new Promise(function(t){var n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+g.toString()+"("+[JSON.stringify(i),f.toString(),p.toString(),u.toString()].join(",")+"));",a=new Blob([e],{type:"text/javascript"}),r=new Worker(URL.createObjectURL(a),{name:"wpTestEmojiSupports"});return void(r.onmessage=function(e){c(n=e.data),r.terminate(),t(n)})}catch(e){}c(n=g(i,f,p,u))}t(n)}).then(function(e){for(var t in e)n.supports[t]=e[t],n.supports.everything=n.supports.everything&&n.supports[t],"flag"!==t&&(n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&n.supports[t]);n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&!n.supports.flag,n.DOMReady=!1,n.readyCallback=function(){n.DOMReady=!0}}).then(function(){return e}).then(function(){var e;n.supports.everything||(n.readyCallback(),(e=n.source||{}).concatemoji?t(e.concatemoji):e.wpemoji&&e.twemoji&&(t(e.twemoji),t(e.wpemoji)))}))}((window,document),window._wpemojiSettings);
+/* ]]> */
+</script>
+<style id='wp-emoji-styles-inline-css' type='text/css'>
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+</style>
+<style id='classic-theme-styles-inline-css' type='text/css'>
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+</style>
+<style id='global-styles-inline-css' type='text/css'>
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}
+</style>
+<link rel='stylesheet' id='contact-form-7-css' href='../home/wp-content/plugins/contact-form-7/includes/css/styles658f.css?ver=6.1.2' type='text/css' media='all' />
+<link rel='stylesheet' id='sasico-font-text-css' href='../home/wp-content/themes/sasico/css/font-text32d4.css?ver=6.8.3' type='text/css' media='all' />
+<link rel='stylesheet' id='sasico-font-icomoon-css' href='../home/wp-content/themes/sasico/css/icomoon32d4.css?ver=6.8.3' type='text/css' media='all' />
+<link rel='stylesheet' id='sasico-plugin-css-css' href='../home/wp-content/themes/sasico/css/plugin-addon5152.css?ver=1.0' type='text/css' media='all' />
+<link rel='stylesheet' id='sasico-style-css' href='../home/wp-content/themes/sasico/style20b9.css?ver=1.0.2' type='text/css' media='all' />
+<style id='sasico-style-inline-css' type='text/css'>
+:root{--sasi-color-primary:#004ffc;--sasi-color-dark:#021b42;} .dark-mode{--sasi-color-white:#021b42; --sasi-bg-color-white:#021b42;}.sasi-btn-primary{--sasi-btn-color:#ffffff;--sasi-btn-bg-color-hover:#021b42;}.sasi-btn-primary .sasi-icon{--sasi-btn-icon-color:#004ffc;--sasi-btn-icon-bg-color:#ffffff;}.sasi-btn-primary:hover .sasi-icon{--sasi-btn-icon-color-hover:#021b42;}.sasi-btn-outline_1{--sasi-btn-color:#021b42;--sasi-btn-color-hover:#ffffff;--sasi-btn-bg-color-hover:#021b42;--sasi-btn-border-color:#021b421a;}.sasi-btn-outline_1 .sasi-icon{--sasi-btn-icon-color:#ffffff;--sasi-btn-icon-bg-color:#021b42;}
+</style>
+<link rel='stylesheet' id='sasico-preloader-css' href='../home/wp-content/themes/sasico/css/preloader32d4.css?ver=6.8.3' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-frontend-css' href='../home/wp-content/uploads/sites/9/elementor/css/custom-frontend.minf23b.css?ver=1757929543' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-post-51-css' href='../home/wp-content/uploads/sites/9/elementor/css/post-51f23b.css?ver=1757929543' type='text/css' media='all' />
+<link rel='stylesheet' id='e-animation-fadeIn-css' href='../home/wp-content/plugins/elementor/assets/lib/animations/styles/fadeIn.min9287.css?ver=3.32.5' type='text/css' media='all' />
+<link rel='stylesheet' id='widget-heading-css' href='../home/wp-content/plugins/elementor/assets/css/widget-heading.min9287.css?ver=3.32.5' type='text/css' media='all' />
+<link rel='stylesheet' id='e-animation-fadeInUp-css' href='../home/wp-content/plugins/elementor/assets/lib/animations/styles/fadeInUp.min9287.css?ver=3.32.5' type='text/css' media='all' />
+<link rel='stylesheet' id='e-animation-fadeInLeft-css' href='../home/wp-content/plugins/elementor/assets/lib/animations/styles/fadeInLeft.min9287.css?ver=3.32.5' type='text/css' media='all' />
+<link rel='stylesheet' id='widget-google_maps-css' href='../home/wp-content/plugins/elementor/assets/css/widget-google_maps.min9287.css?ver=3.32.5' type='text/css' media='all' />
+<link rel='stylesheet' id='e-animation-fadeInRight-css' href='../home/wp-content/plugins/elementor/assets/lib/animations/styles/fadeInRight.min9287.css?ver=3.32.5' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-post-80-css' href='../home/wp-content/uploads/sites/9/elementor/css/post-8086ee.css?ver=1758853686' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-gf-local-roboto-css' href='../home/wp-content/uploads/sites/9/elementor/google-fonts/css/roboto1c16.css?ver=1756438741' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-gf-local-robotoslab-css' href='../home/wp-content/uploads/sites/9/elementor/google-fonts/css/robotoslab00d1.css?ver=1756438797' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-gf-local-plusjakartasans-css' href='../home/wp-content/uploads/sites/9/elementor/google-fonts/css/plusjakartasansc15b.css?ver=1756440496' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-gf-local-inter-css' href='../home/wp-content/uploads/sites/9/elementor/google-fonts/css/inter7216.css?ver=1756441594' type='text/css' media='all' />
+<script type="text/javascript" src="../home/wp-includes/js/jquery/jquery.minf43b.js?ver=3.7.1" id="jquery-core-js"></script>
+<script type="text/javascript" src="../home/wp-includes/js/jquery/jquery-migrate.min5589.js?ver=3.4.1" id="jquery-migrate-js"></script>
+<script type="text/javascript" id="sasico_scripts-js-extra">
+/* <![CDATA[ */
+var sasico_loadmore_params = {"ajaxurl":"https:\/\/sasico.pikathemes.site\/swift\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="../home/wp-content/themes/sasico/js/theme-loadmore2580.js?ver=1762166815" id="sasico_scripts-js"></script>
+<script type="text/javascript" src="../home/wp-content/themes/sasico/js/preloader32d4.js?ver=6.8.3" id="sasico-preloader-js"></script>
+<link rel="https://api.w.org/" href="../home/wp-json/index.html" /><link rel="alternate" title="JSON" type="application/json" href="../home/wp-json/wp/v2/pages/80.json" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="../xmlrpc0db0.php?rsd" />
+<meta name="generator" content="WordPress 6.8.3" />
+<link rel="canonical" href="index.html" />
+<link rel='shortlink' href='../indexbde5.html?p=80' />
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="../home/wp-json/oembed/1.0/embed9178.json?url=https%3A%2F%2Fsasico.pikathemes.site%2Fswift%2Fcontact-us%2F" />
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="../home/wp-json/oembed/1.0/embed5030?url=https%3A%2F%2Fsasico.pikathemes.site%2Fswift%2Fcontact-us%2F&amp;format=xml" />
+<meta name="generator" content="Elementor 3.32.5; features: e_font_icon_svg, additional_custom_breakpoints; settings: css_print_method-external, google_font-enabled, font_display-swap">
+			<style>
+				.e-con.e-parent:nth-of-type(n+4):not(.e-lazyloaded):not(.e-no-lazyload),
+				.e-con.e-parent:nth-of-type(n+4):not(.e-lazyloaded):not(.e-no-lazyload) * {
+					background-image: none !important;
+				}
+				@media screen and (max-height: 1024px) {
+					.e-con.e-parent:nth-of-type(n+3):not(.e-lazyloaded):not(.e-no-lazyload),
+					.e-con.e-parent:nth-of-type(n+3):not(.e-lazyloaded):not(.e-no-lazyload) * {
+						background-image: none !important;
+					}
+				}
+				@media screen and (max-height: 640px) {
+					.e-con.e-parent:nth-of-type(n+2):not(.e-lazyloaded):not(.e-no-lazyload),
+					.e-con.e-parent:nth-of-type(n+2):not(.e-lazyloaded):not(.e-no-lazyload) * {
+						background-image: none !important;
+					}
+				}
+			</style>
+			<link rel="icon" href="..//home/images/swift_icon.png" sizes="32x32" />
+<link rel="icon" href="..//home/images/swift_icon.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="..//home/images/swift_icon.png" />
+<meta name="msapplication-TileImage" content="/home/images/swift_icon.png" />
+		<style type="text/css" id="wp-custom-css">
+			.e-con {
+  scroll-margin-top: 79px;
+}
+.sasi-subscribe-form input[type=email]{
+	color: #ffffff;
+	border-color: rgba(255, 255, 255, 0.1);
+	background: rgba(255, 255, 255, 0.05);
+}
+.sasi-subscribe-form input[type=email]::-webkit-input-placeholder{
+	color: #8B98AC;
+}		</style>
+		<style id="kirki-inline-styles">@media (max-width: 767px){}@media (min-width: 768px) and (max-width: 1024px){}@media (min-width: 1024px){}.page-header{background:rgba(255,255,255,0);background-color:rgba(255,255,255,0);background-repeat:no-repeat;background-position:center center;background-attachment:scroll;-webkit-background-size:cover;-moz-background-size:cover;-ms-background-size:cover;-o-background-size:cover;background-size:cover;}body.blog, body.archive, body.search, body.single-post{background:rgba(255,255,255,0);background-color:rgba(255,255,255,0);background-repeat:no-repeat;background-position:center top;background-attachment:scroll;-webkit-background-size:cover;-moz-background-size:cover;-ms-background-size:cover;-o-background-size:cover;background-size:cover;}</style></head>
+
+<body class="wp-singular page-template-default page page-id-80 wp-theme-sasico elementor-default elementor-kit-51 elementor-page elementor-page-80 header-trans light-mode sasico-theme-ver-1.0.2 wordpress-version-6.8.3">
+<div id="preloader" style="background:#fff"><div class="loader-content"><img style="width:180;" src="/home/images/swiftlogo.png" alt="Preload Logo" class="loader-logo"></div></div>
+<div id="page" class="site">
+
+<header id="site-header" class="site-header header-transparent">
+
+    <div class="header-desktop">		<div data-elementor-type="wp-post" data-elementor-id="746" class="elementor elementor-746">
+				<div class="elementor-element elementor-element-016ff36 e-con-full e-flex e-con e-parent" data-id="016ff36" data-element_type="container">
+				<div class="elementor-element elementor-element-d67234c elementor-widget elementor-widget-sasico-logo" data-id="d67234c" data-element_type="widget" data-widget_type="sasico-logo.default">
+				<div class="elementor-widget-container">
+								
+	    	<div class="the-logo">
+				<a href="../index.html">
+					<img src="/home/images/logoswift.png" alt="swift Light">
+				</a>			        
+		    </div>
+		    
+	    				</div>
+				</div>
+				<div class="elementor-element elementor-element-f974613 elementor-widget elementor-widget-sasico-menu" data-id="f974613" data-element_type="widget" data-widget_type="sasico-menu.default">
+				<div class="elementor-widget-container">
+								
+	    	<nav id="site-navigation" class="main-navigation">			
+                <ul id="menu-main-menu" class="mobile_mainmenu none-style"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-566"><a href="index.html">Home</a></li>
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-569"><a href="#">Features</a></li>
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-570"><a href="#">Pricing</a></li>
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-567"><a href="privacy.html">Privacy</a></li>
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-565"><a href="contact-us.html">Contact</a></li>
+                    </ul>		</nav>
+			
+	    				</div>
+				</div>
+				<div class="elementor-element elementor-element-7655a10 elementor-align-right elementor-tablet_extra-align-right elementor-widget elementor-widget-sasi-button" data-id="7655a10" data-element_type="widget" data-widget_type="sasi-button.default">
+				<div class="elementor-widget-container">
+							
+		<a href="#" class="sasi-btn sasi-btn-primary sasi-btn-icon sasi-btn-icon__right">
+			<span class="sasi-text">Sign Up</span> 
+							<span class="sasi-icon">
+					<svg xmlns="http://www.w3.org/2000/svg" width="15" height="14" viewBox="0 0 15 14" fill="none"><path d="M6.84375 13.8125C6.96875 13.9688 7.21875 13.9688 7.375 13.8125L13.9062 7.28125C14.0625 7.125 14.0625 6.90625 13.9062 6.75L7.375 0.21875C7.21875 0.0625 6.96875 0.0625 6.84375 0.21875L6.21875 0.8125C6.0625 0.96875 6.0625 1.21875 6.21875 1.34375L11.0625 6.1875H0.375C0.1875 6.1875 0 6.375 0 6.5625V7.4375C0 7.65625 0.1875 7.8125 0.375 7.8125H11.0625L6.21875 12.6875C6.0625 12.8125 6.0625 13.0625 6.21875 13.2188L6.84375 13.8125Z" fill="#0E0E0E"></path></svg>				</span>
+					</a>
+	    
+	    				</div>
+				</div>
+				</div>
+				</div>
+		</div>
+    <div class="header-mobile">		<div data-elementor-type="wp-post" data-elementor-id="85" class="elementor elementor-85">
+				<div class="elementor-element elementor-element-5cfac93 e-flex e-con-boxed e-con e-parent" data-id="5cfac93" data-element_type="container">
+					<div class="e-con-inner">
+				<div class="elementor-element elementor-element-e128445 elementor-widget elementor-widget-sasico-logo" data-id="e128445" data-element_type="widget" data-widget_type="sasico-logo.default">
+				<div class="elementor-widget-container">
+								
+	    	<div class="the-logo">
+				<a href="index.html">
+					<img src="/home/images/logoswift.png" alt="swift Light">
+				</a>			        
+		    </div>
+		    
+	    				</div>
+				</div>
+				<div class="elementor-element elementor-element-fa0e0c8 elementor-widget elementor-widget-sasico-menu-mobile" data-id="fa0e0c8" data-element_type="widget" data-widget_type="sasico-menu-mobile.default">
+				<div class="elementor-widget-container">
+								
+	    	<div class="sasi-menu-mobile sasi-cta-header">
+				<div id="mmenu-toggle" class="mmenu-toggle">
+					<button type="button" aria-label="menu mobile">
+						<i class="ss-menu1"></i>
+					</button>
+				</div>
+				<div class="site-overlay mmenu-overlay"></div>
+				<div id="mmenu-wrapper" class="mmenu-wrapper">
+					<div class="mmenu-inner">
+						<a class="mmenu-close btn-close" href="#" aria-label="Close"><svg aria-hidden="true" role="img" focusable="false" width="16" height="16" viewBox="0 0 16 16"><path d="M16 1.4L14.6 0L8 6.6L1.4 0L0 1.4L6.6 8L0 14.6L1.4 16L8 9.4L14.6 16L16 14.6L9.4 8L16 1.4Z"></path></svg></a>
+						<div class="mobile-nav">
+							<ul id="menu-main-menu" class="mobile_mainmenu none-style"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-566"><a href="index.html">Home</a></li>
+                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-569"><a href="features.html">Features</a></li>
+                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-570"><a href="pricing.html">Pricing</a></li>
+                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-567"><a href="privacy.html">Privacy</a></li>
+                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-565"><a href="contact-us.html">Contact</a></li>
+                                </ul>					</div>   	
+					</div>   	
+				</div>
+			</div>
+	    				</div>
+				</div>
+					</div>
+				</div>
+				</div>
+		</div>
+</header>
+<div id="content" class="site-content">
+	
+    		<div data-elementor-type="wp-page" data-elementor-id="80" class="elementor elementor-80">
+				<div class="elementor-element elementor-element-8ea1c92 e-con-full e-flex e-con e-parent" data-id="8ea1c92" data-element_type="container">
+		<div class="elementor-element elementor-element-c3bd338 e-con-full section-padd-bot e-flex e-con e-child" data-id="c3bd338" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+				<div class="elementor-element elementor-element-df54472 elementor-widget__width-initial elementor-invisible elementor-widget elementor-widget-heading" data-id="df54472" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeIn&quot;,&quot;_animation_delay&quot;:150}" data-widget_type="heading.default">
+					<h2 class="elementor-heading-title elementor-size-default">Have a question? We’re just a message away</h2>				</div>
+				<div class="elementor-element elementor-element-dac8c38 elementor-widget__width-initial elementor-widget-tablet__width-initial elementor-invisible elementor-widget elementor-widget-text-editor" data-id="dac8c38" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeIn&quot;,&quot;_animation_delay&quot;:300}" data-widget_type="text-editor.default">
+									<p>We’re here to help—whenever you need us. Whether you have<br />a question, an idea, or you&#8217;re ready to start your next project,<br />our team is just a message away.</p>								</div>
+				</div>
+				</div>
+		<div class="elementor-element elementor-element-3269c81 section-padd e-flex e-con-boxed e-con e-parent" data-id="3269c81" data-element_type="container">
+					<div class="e-con-inner">
+				<div class="elementor-element elementor-element-f309075 elementor-invisible elementor-widget elementor-widget-heading" data-id="f309075" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;}" data-widget_type="heading.default">
+					<h2 class="elementor-heading-title elementor-size-default">Reach Out &amp; Let’s Make Ideas Real</h2>				</div>
+		<div class="elementor-element elementor-element-6da999c e-grid e-con-full e-con e-child" data-id="6da999c" data-element_type="container">
+		<div class="elementor-element elementor-element-5177045 e-con-full e-flex elementor-invisible e-con e-child" data-id="5177045" data-element_type="container" data-settings="{&quot;animation&quot;:&quot;fadeInUp&quot;}">
+				<div class="elementor-element elementor-element-3cfd773 sasi-view-icon-stacked sasi-position-top elementor-widget elementor-widget-sasi-iconbox" data-id="3cfd773" data-element_type="widget" data-widget_type="sasi-iconbox.default">
+				<div class="elementor-widget-container">
+							<div class="sasi-icon-box">
+						<div class="sasi-icon sasi-icon-box__icon">
+				<svg xmlns="http://www.w3.org/2000/svg" width="35" height="40" viewBox="0 0 35 40" fill="none"><path d="M24.1481 26.4285C28.3857 19.7494 27.853 20.5827 27.9751 20.4085C29.5179 18.2227 30.3333 15.6502 30.3333 12.9688C30.3333 5.85781 24.5886 0 17.5 0C10.4345 0 4.66667 5.84625 4.66667 12.9688C4.66667 15.6484 5.4992 18.2884 7.09256 20.5036L10.8517 26.4286C6.83254 27.049 0 28.8978 0 32.9688C0 34.4527 0.964289 36.5676 5.55816 38.2155C8.76587 39.3662 13.0069 40 17.5 40C25.9019 40 35 37.6194 35 32.9688C35 28.8971 28.1755 27.0502 24.1481 26.4285ZM9.04159 19.2145C9.02876 19.1943 9.01538 19.1746 9.00138 19.1552C7.6755 17.323 7 15.1516 7 12.9688C7 7.10797 11.6982 2.34375 17.5 2.34375C23.2897 2.34375 28 7.11008 28 12.9688C28 15.1552 27.3373 17.2529 26.0831 19.0368C25.9707 19.1857 26.5571 18.2707 17.5 32.546L9.04159 19.2145ZM17.5 37.6562C8.32269 37.6562 2.33333 34.9466 2.33333 32.9688C2.33333 31.6394 5.41084 29.4535 12.2304 28.6015L16.5161 35.3564C16.7303 35.6941 17.1013 35.8984 17.4999 35.8984C17.8985 35.8984 18.2696 35.694 18.4837 35.3564L22.7694 28.6015C29.5891 29.4535 32.6667 31.6394 32.6667 32.9688C32.6667 34.9298 26.7312 37.6562 17.5 37.6562Z" fill="#004FFC"></path><path d="M17.5013 7.10938C14.2848 7.10938 11.668 9.73789 11.668 12.9688C11.668 16.1996 14.2848 18.8281 17.5013 18.8281C20.7178 18.8281 23.3346 16.1996 23.3346 12.9688C23.3346 9.73789 20.7178 7.10938 17.5013 7.10938ZM17.5013 16.4844C15.5714 16.4844 14.0013 14.9073 14.0013 12.9688C14.0013 11.0302 15.5714 9.45312 17.5013 9.45312C19.4312 9.45312 21.0013 11.0302 21.0013 12.9688C21.0013 14.9073 19.4312 16.4844 17.5013 16.4844Z" fill="#004FFC"></path></svg>	        </div>
+	        	        <div class="sasi-icon-box__content">
+	        	<h4 class="icon-box-title">Main Address</h4>				<div class="icon-box-des">6th floor,Yobe Investment Building, Ralph Shodeinde St, Abuja</div>							</div>	
+	    </div>
+	    				</div>
+				</div>
+				</div>
+		<div class="elementor-element elementor-element-97217d9 e-con-full e-flex elementor-invisible e-con e-child" data-id="97217d9" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;animation&quot;:&quot;fadeInUp&quot;,&quot;animation_delay&quot;:200}">
+				<div class="elementor-element elementor-element-c4568c0 elementor-view-stacked elementor-shape-rounded elementor-widget elementor-widget-icon" data-id="c4568c0" data-element_type="widget" data-widget_type="icon.default">
+							<div class="elementor-icon-wrapper">
+			<div class="elementor-icon">
+			<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none"><path d="M31.5858 24.7793C30.7668 23.9266 29.779 23.4708 28.7321 23.4708C27.6936 23.4708 26.6974 23.9182 25.8446 24.7709L23.1767 27.4302C22.9572 27.312 22.7376 27.2022 22.5266 27.0925C22.2226 26.9405 21.9356 26.797 21.6907 26.645C19.1916 25.0579 16.9205 22.9895 14.7422 20.3133C13.6869 18.9795 12.9777 17.8566 12.4627 16.7169C13.155 16.0838 13.7966 15.4253 14.4214 14.7921C14.6578 14.5557 14.8942 14.3109 15.1306 14.0745C16.9036 12.3016 16.9036 10.0054 15.1306 8.23248L12.8257 5.92774C12.564 5.66603 12.2938 5.39588 12.0405 5.12573C11.5339 4.60231 11.002 4.062 10.4533 3.55546C9.6343 2.74501 8.65492 2.31445 7.62489 2.31445C6.59486 2.31445 5.5986 2.74501 4.75431 3.55546C4.74587 3.56391 4.74587 3.56391 4.73743 3.57235L1.86685 6.46804C0.786158 7.54865 0.169827 8.86565 0.0347412 10.3937C-0.167888 12.8588 0.5582 15.1551 1.11543 16.6578C2.48318 20.3471 4.52635 23.7662 7.57423 27.4302C11.2722 31.8455 15.7216 35.3321 20.8042 37.7888C22.7461 38.709 25.3381 39.7981 28.234 39.9838C28.4113 39.9922 28.597 40.0007 28.7659 40.0007C30.7162 40.0007 32.3541 39.3 33.6374 37.907C33.6459 37.8901 33.6627 37.8817 33.6712 37.8648C34.1102 37.3329 34.6168 36.8517 35.1487 36.3368C35.5117 35.9906 35.8832 35.6276 36.2463 35.2477C37.0821 34.3782 37.5211 33.3651 37.5211 32.3267C37.5211 31.2798 37.0737 30.2752 36.2209 29.431L31.5858 24.7793ZM34.6083 33.669C34.5999 33.669 34.5999 33.6774 34.6083 33.669C34.2791 34.0236 33.9414 34.3444 33.5783 34.699C33.0295 35.2224 32.4723 35.7711 31.9488 36.3874C31.0961 37.2992 30.0914 37.7297 28.7743 37.7297C28.6477 37.7297 28.5126 37.7297 28.3859 37.7213C25.8784 37.5609 23.5482 36.5816 21.8005 35.7458C17.0218 33.4326 12.8257 30.1486 9.3388 25.9865C6.45977 22.5168 4.5348 19.3087 3.25992 15.8643C2.47473 13.7622 2.18768 12.1244 2.31432 10.5794C2.39875 9.59168 2.77868 8.77278 3.47944 8.07207L6.35846 5.19326C6.77216 4.80492 7.21119 4.59386 7.64178 4.59386C8.17368 4.59386 8.60427 4.91467 8.87444 5.18482C8.88288 5.19326 8.89132 5.20171 8.89977 5.21015C9.41478 5.69136 9.90447 6.18945 10.4195 6.72131C10.6812 6.99146 10.9514 7.26162 11.2216 7.54021L13.5265 9.84495C14.4214 10.7398 14.4214 11.5672 13.5265 12.462C13.2816 12.7069 13.0452 12.9517 12.8004 13.1881C12.0912 13.9141 11.4157 14.5895 10.6812 15.248C10.6643 15.2649 10.6474 15.2733 10.639 15.2902C9.91291 16.0162 10.048 16.7254 10.2 17.2066C10.2084 17.2319 10.2169 17.2572 10.2253 17.2826C10.8247 18.7346 11.669 20.1023 12.9523 21.7316L12.9608 21.7401C15.291 24.6105 17.7479 26.8477 20.4581 28.5614C20.8042 28.7809 21.1588 28.9582 21.4965 29.1271C21.8005 29.279 22.0875 29.4225 22.3324 29.5745C22.3662 29.5914 22.3999 29.6167 22.4337 29.6336C22.7208 29.7771 22.9909 29.8447 23.2696 29.8447C23.9703 29.8447 24.4093 29.4057 24.5529 29.2621L27.4403 26.3749C27.7274 26.0879 28.1833 25.7417 28.7152 25.7417C29.2387 25.7417 29.6693 26.071 29.931 26.358C29.9394 26.3664 29.9394 26.3664 29.9479 26.3749L34.5999 31.0266C35.4695 31.8877 35.4695 32.7741 34.6083 33.669Z" fill="#004FFC"></path><path d="M21.5905 9.51676C23.8026 9.88822 25.812 10.9351 27.4161 12.5391C29.0203 14.1431 30.0587 16.1524 30.4387 18.3642C30.5315 18.9214 31.0128 19.3098 31.5616 19.3098C31.6291 19.3098 31.6882 19.3013 31.7558 19.2929C32.3805 19.1916 32.7942 18.6006 32.6929 17.9759C32.237 15.2997 30.9706 12.8599 29.0372 10.9266C27.1037 8.99334 24.6637 7.727 21.9874 7.27112C21.3626 7.16981 20.78 7.58348 20.6703 8.19977C20.5605 8.81605 20.9658 9.41545 21.5905 9.51676Z" fill="#004FFC"></path><path d="M39.9253 17.6448C39.1739 13.238 37.0969 9.22788 33.9055 6.03671C30.7141 2.84553 26.7037 0.768736 22.2966 0.0173754C21.6802 -0.0923739 21.0977 0.329739 20.9879 0.946024C20.8866 1.57075 21.3003 2.15327 21.9251 2.26302C25.8594 2.92995 29.4477 4.79569 32.3014 7.64073C35.1551 10.4942 37.0125 14.0822 37.6795 18.0163C37.7724 18.5735 38.2536 18.9618 38.8024 18.9618C38.8699 18.9618 38.929 18.9534 38.9966 18.9449C39.6129 18.8521 40.035 18.2611 39.9253 17.6448Z" fill="#004FFC"></path></svg>			</div>
+		</div>
+						</div>
+				<div class="elementor-element elementor-element-0cef460 elementor-widget elementor-widget-heading" data-id="0cef460" data-element_type="widget" data-widget_type="heading.default">
+					<h3 class="elementor-heading-title elementor-size-default">Need Urgent?</h3>				</div>
+				<div class="elementor-element elementor-element-f8c9423 sasi-view-default elementor-widget elementor-widget-sasi-icon-list" data-id="f8c9423" data-element_type="widget" data-widget_type="sasi-icon-list.default">
+				<div class="elementor-widget-container">
+						        <div class="sasi-icon-list-wrapper">
+	        	<ul class="unstyle sasi-icon-list-items ">
+	        			        			<li class="sasi-icon-list-item ">
+	        				<a href="tel:+1%20(234)%205678%209900">							<span class="sasi-icon-list-text title-link">+234 8128 947 560
+                            </span>
+															</a>
+								        			</li>
+	        			        			
+	        			        	</ul>
+	        </div>
+	    				</div>
+				</div>
+				</div>
+		<div class="elementor-element elementor-element-d5d58da e-con-full e-flex elementor-invisible e-con e-child" data-id="d5d58da" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;animation&quot;:&quot;fadeInUp&quot;,&quot;animation_delay&quot;:400}">
+				<div class="elementor-element elementor-element-3b6f66d elementor-view-stacked elementor-shape-rounded elementor-widget elementor-widget-icon" data-id="3b6f66d" data-element_type="widget" data-widget_type="icon.default">
+							<div class="elementor-icon-wrapper">
+			<div class="elementor-icon">
+			<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none"><g clip-path="url(#clip0_6034_41221)"><path d="M17.1552 19.4255C18.0921 19.8008 19.0941 19.9868 20.1033 19.9728C21.1125 19.9589 22.109 19.7452 23.0352 19.3442C23.2788 19.2394 23.4708 19.042 23.569 18.7956C23.6671 18.5492 23.6634 18.2739 23.5585 18.0302C23.4537 17.7866 23.2563 17.5946 23.0099 17.4964C22.7635 17.3983 22.4881 17.402 22.2445 17.5069C21.1214 17.9905 19.8724 18.099 18.6827 17.8164C17.493 17.5338 16.4263 16.875 15.6407 15.938C14.8551 15.0009 14.3927 13.8356 14.322 12.6148C14.2513 11.3941 14.5762 10.1831 15.2484 9.16171C15.9205 8.14027 16.9042 7.36283 18.0533 6.9448C19.2024 6.52676 20.4556 6.49043 21.627 6.84119C22.7984 7.19195 23.8254 7.91111 24.5556 8.89189C25.2859 9.87267 25.6803 11.0628 25.6805 12.2855V12.9975V13.0269C25.6798 13.038 25.6798 13.0491 25.6805 13.0602C25.7035 13.3943 25.5965 13.7243 25.3818 13.9812C25.1671 14.2382 24.8613 14.4022 24.5285 14.4389C24.3853 14.4359 24.2441 14.4048 24.113 14.3472C23.9819 14.2897 23.8634 14.2068 23.7643 14.1034C23.6652 14 23.5875 13.8781 23.5356 13.7446C23.4837 13.6111 23.4586 13.4687 23.4618 13.3255V10.1055C23.4618 9.84033 23.3565 9.58598 23.1689 9.39844C22.9814 9.2109 22.7271 9.10555 22.4618 9.10555C22.2246 9.10869 21.9964 9.1972 21.8192 9.35488C21.2876 9.02225 20.6756 8.84046 20.0486 8.82895C19.4217 8.81745 18.8034 8.97668 18.26 9.28959C17.7166 9.60249 17.2685 10.0573 16.9637 10.6053C16.6589 11.1533 16.5089 11.7739 16.5298 12.4006C16.5506 13.0273 16.7415 13.6366 17.082 14.1631C17.4225 14.6897 17.8998 15.1137 18.4628 15.3898C19.0258 15.6659 19.6533 15.7837 20.2781 15.7306C20.9029 15.6775 21.5015 15.4554 22.0098 15.0882C22.2992 15.502 22.6838 15.8401 23.1312 16.0742C23.5785 16.3084 24.0756 16.4316 24.5805 16.4335C25.4403 16.3799 26.2452 15.9927 26.8237 15.3544C27.4022 14.7161 27.7087 13.8771 27.6778 13.0162C27.6778 13.0082 27.6778 13.0015 27.6778 12.9935V12.2855C27.6774 10.89 27.2968 9.52085 26.5769 8.32525C25.857 7.12966 24.8251 6.15273 23.5918 5.49938C22.3586 4.84602 20.9707 4.54093 19.5772 4.61685C18.1837 4.69277 16.8372 5.14684 15.6822 5.9303C14.5273 6.71376 13.6076 7.79702 13.0219 9.06375C12.4362 10.3305 12.2065 11.7328 12.3577 13.1202C12.5088 14.5076 13.0351 15.8276 13.8798 16.9385C14.7246 18.0494 15.856 18.9092 17.1525 19.4255H17.1552ZM19.9978 13.7442C19.7097 13.7426 19.4285 13.6557 19.1896 13.4945C18.9508 13.3333 18.7651 13.1049 18.6559 12.8382C18.5467 12.5716 18.519 12.2785 18.5762 11.9961C18.6334 11.7137 18.7729 11.4545 18.9772 11.2513C19.1815 11.0481 19.4415 10.91 19.7242 10.8544C20.0069 10.7987 20.2998 10.8281 20.5659 10.9387C20.8319 11.0493 21.0593 11.2363 21.2192 11.476C21.3791 11.7157 21.4645 11.9974 21.4645 12.2855C21.4643 12.4777 21.4262 12.668 21.3523 12.8454C21.2785 13.0228 21.1703 13.1839 21.0341 13.3194C20.8978 13.4549 20.7361 13.5622 20.5583 13.6351C20.3805 13.708 20.19 13.7451 19.9978 13.7442Z" fill="#004FFC"></path><path d="M39.4734 13.5484C39.3312 13.1108 39.1083 12.7037 38.816 12.3484L33.4507 5.90304V4.01237C33.4496 3.04023 33.063 2.10822 32.3756 1.42081C31.6882 0.73341 30.7562 0.346762 29.784 0.345703H10.208C9.2359 0.346762 8.30388 0.73341 7.61648 1.42081C6.92907 2.10822 6.54242 3.04023 6.54136 4.01237V5.91104L1.18003 12.3497C0.632705 13.0088 0.332767 13.8383 0.332031 14.695V33.3217C0.334148 35.0008 1.00209 36.6104 2.18936 37.7977C3.37663 38.985 4.98631 39.6529 6.66536 39.655H33.332C34.9759 39.6563 36.555 39.0146 37.732 37.867L37.7494 37.855C38.3565 37.2665 38.8392 36.5619 39.1688 35.7831C39.4984 35.0044 39.6682 34.1673 39.668 33.3217V14.695C39.6645 14.333 39.607 13.9735 39.4974 13.6284C39.4894 13.6004 39.4814 13.5764 39.4734 13.5484ZM36.888 35.7857L24.956 25.4377L37.6654 15.7497V33.3217C37.6654 34.2034 37.394 35.0637 36.888 35.7857ZM37.228 13.567L33.4507 16.4457V9.0297L37.228 13.567ZM10.208 2.3457H29.784C30.2258 2.34641 30.6494 2.52223 30.9618 2.83464C31.2742 3.14705 31.45 3.57056 31.4507 4.01237V17.971L23.412 24.1044L22.1907 23.0377C21.5789 22.515 20.8007 22.2279 19.996 22.2279C19.1914 22.2279 18.4131 22.515 17.8014 23.0377L16.588 24.091L8.54136 17.9577V4.01237C8.54207 3.57056 8.71789 3.14705 9.0303 2.83464C9.34271 2.52223 9.76622 2.34641 10.208 2.3457ZM3.11203 35.7897C2.60465 35.0667 2.3323 34.205 2.33203 33.3217V15.743L15.044 25.4337L3.11203 35.7897ZM6.54136 16.435L2.77336 13.563L6.54136 9.0297V16.435ZM19.9987 37.655H6.66536C5.95194 37.6502 5.25108 37.4669 4.6267 37.1217L19.1094 24.555C19.3567 24.3448 19.6707 24.2294 19.9954 24.2294C20.32 24.2294 20.634 24.3448 20.8814 24.555L35.3747 37.1217C34.7491 37.4674 34.0468 37.6508 33.332 37.655H19.9987Z" fill="#004FFC"></path></g><defs><clipPath id="clip0_6034_41221"><rect width="40" height="40" fill="white"></rect></clipPath></defs></svg>			</div>
+		</div>
+						</div>
+				<div class="elementor-element elementor-element-7d68432 elementor-widget elementor-widget-heading" data-id="7d68432" data-element_type="widget" data-widget_type="heading.default">
+					<h3 class="elementor-heading-title elementor-size-default">Email Address</h3>				</div>
+				<div class="elementor-element elementor-element-68bda25 sasi-view-default elementor-widget elementor-widget-sasi-icon-list" data-id="68bda25" data-element_type="widget" data-widget_type="sasi-icon-list.default">
+				<div class="elementor-widget-container">
+						        <div class="sasi-icon-list-wrapper">
+	        	<ul class="unstyle sasi-icon-list-items ">
+	        			        		
+	        			        			<li class="sasi-icon-list-item ">
+	        				<a href="#">							<span class="sasi-icon-list-text title-link">info@pixels.com.ng</span>
+															</a>
+								        			</li>
+	        			        	</ul>
+	        </div>
+	    				</div>
+				</div>
+				</div>
+		<div class="elementor-element elementor-element-3883455 e-con-full e-flex elementor-invisible e-con e-child" data-id="3883455" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;animation&quot;:&quot;fadeInUp&quot;,&quot;animation_delay&quot;:600}">
+				<div class="elementor-element elementor-element-8109d9c elementor-view-stacked elementor-shape-rounded elementor-widget elementor-widget-icon" data-id="8109d9c" data-element_type="widget" data-widget_type="icon.default">
+							<div class="elementor-icon-wrapper">
+			<div class="elementor-icon">
+			<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none"><path d="M24.5331 37.9045C24.5185 37.7764 24.4822 37.6491 24.4104 37.5318C24.1458 37.1045 23.5858 36.9709 23.1595 37.2345C22.4277 37.6855 21.6741 37.97 20.9086 38.0982V29.09H22.3722C22.8749 29.09 23.2813 28.6827 23.2813 28.1809C23.2813 27.6791 22.8749 27.2718 22.3722 27.2718H20.9086V20.9082H23.0449C23.5476 20.9082 23.954 20.5009 23.954 19.9991C23.954 19.4973 23.5476 19.09 23.0449 19.09H20.9086V12.7264H29.1584C29.6957 14.9555 29.9993 17.4127 29.9993 19.9991C29.9993 20.5009 30.4057 20.9082 30.9084 20.9082H38.1346C38.0873 21.8436 37.9919 22.7736 37.801 23.6745C37.6973 24.1655 38.011 24.6482 38.5019 24.7527C38.9928 24.8582 39.4755 24.5427 39.58 24.0518C39.8591 22.7355 40 21.3718 40 20C40 8.97182 31.0284 0 20.0005 0C8.97252 0 0 8.97182 0 20C0 31.0282 8.97161 40 19.9995 40C21.4441 40 22.8649 39.8464 24.2249 39.5418C24.714 39.4318 25.0231 38.9464 24.9131 38.4564C24.8603 38.22 24.7185 38.03 24.5331 37.9045ZM19.0905 38.0982C15.7824 37.5527 12.9415 34.0655 11.3525 29.0909H19.0905V38.0982ZM19.0905 27.2727H10.8407C10.367 25.3082 10.087 23.1609 10.0252 20.9091H19.0905V27.2727ZM1.8645 20.9091H8.208C8.26527 23.1555 8.52799 25.2936 8.97252 27.2727H3.3472C2.4854 25.3082 1.97632 23.1609 1.8645 20.9091ZM3.3472 12.7273H8.97252C8.52799 14.7064 8.26527 16.8445 8.208 19.0909H1.8645C1.97632 16.8391 2.4854 14.6918 3.3472 12.7273ZM19.0905 19.0909H10.0252C10.087 16.8391 10.367 14.6918 10.8407 12.7273H19.0905V19.0909ZM19.0905 1.90182V10.9091H11.3525C12.9406 5.93455 15.7824 2.44727 19.0905 1.90182ZM20.9086 10.9091V1.90182C24.2167 2.44727 27.0576 5.93455 28.6466 10.9091H20.9086ZM31.0275 12.7273H36.6528C37.5146 14.6918 38.0237 16.8391 38.1355 19.0909H31.8065C31.7502 16.8418 31.4729 14.7091 31.0275 12.7273ZM35.721 10.9091H30.5557C29.5802 7.60636 28.0866 4.85727 26.2385 2.94455C30.252 4.41818 33.6011 7.25818 35.721 10.9091ZM13.7706 2.94091C11.9179 4.85455 10.4189 7.60182 9.44251 10.9091H4.27808C6.39985 7.25455 9.75342 4.41273 13.7706 2.94091ZM4.27808 29.0909H9.44251C10.4198 32.3982 11.9179 35.1464 13.7706 37.0591C9.75251 35.5873 6.39985 32.7455 4.27808 29.0909Z" fill="#004FFC"></path><path d="M38.9667 27.0213L27.2152 21.3794C26.6261 21.0967 25.9234 21.1531 25.3861 21.5285C24.848 21.9049 24.5543 22.544 24.618 23.1967L25.8997 36.1694C25.9707 36.8931 26.4443 37.4858 27.1343 37.7158C27.8261 37.9458 28.5579 37.754 29.0488 37.2185L30.6815 35.4349L32.8132 38.4776C33.2305 39.0749 33.855 39.4731 34.5741 39.5995C34.7341 39.6276 34.8941 39.6413 35.0523 39.6413C35.6068 39.6413 36.1477 39.4722 36.6113 39.1476L38.1013 38.1049C39.3322 37.2422 39.634 35.5385 38.7713 34.3067L36.6395 31.2631L38.8731 30.3394C39.5458 30.0613 39.9767 29.4367 39.9958 28.7094C40.0158 27.9822 39.6213 27.3349 38.9649 27.0204L38.9667 27.0213ZM34.8986 30.0167C34.6441 30.1222 34.4505 30.3376 34.3732 30.6022C34.2959 30.8676 34.3432 31.1522 34.5014 31.3785L37.2831 35.3504C37.5704 35.7613 37.4704 36.3294 37.0604 36.6167L35.5704 37.6594C35.3714 37.7985 35.1295 37.854 34.8905 37.8104C34.6514 37.7685 34.4441 37.6358 34.3041 37.4367L31.5223 33.4649C31.3642 33.2385 31.1124 33.0976 30.8369 33.0794C30.8169 33.0785 30.7969 33.0776 30.7778 33.0776C30.5242 33.0776 30.2796 33.184 30.1078 33.3731L27.7097 35.9922L26.4279 23.0185L38.1804 28.6604L34.8995 30.0176L34.8986 30.0167Z" fill="#004FFC"></path></svg>			</div>
+		</div>
+						</div>
+				<div class="elementor-element elementor-element-6e36cda elementor-widget elementor-widget-heading" data-id="6e36cda" data-element_type="widget" data-widget_type="heading.default">
+					<h3 class="elementor-heading-title elementor-size-default">Social Media</h3>				</div>
+				<div class="elementor-element elementor-element-e840800 elementor-widget elementor-widget-sasi-social-icons" data-id="e840800" data-element_type="widget" data-widget_type="sasi-social-icons.default">
+				<div class="elementor-widget-container">
+							<div class="sasi-social-icons__wrapper dflex justify-content-center align-items-center">
+							<a class="sasi-social-icons__item dflex justify-content-center align-items-center sasi-social-icon-facebook-f elementor-repeater-item-298ebd3" aria-label="Social Icon Link" href="#" target="_blank">
+					<span class="sasi-icon">						<svg class="e-font-icon-svg e-fab-facebook-f" viewBox="0 0 320 512" xmlns="http://www.w3.org/2000/svg"><path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"></path></svg></span>									</a>
+							<a class="sasi-social-icons__item dflex justify-content-center align-items-center sasi-social-icon-x-twitter elementor-repeater-item-3cc693f" aria-label="Social Icon Link" href="#" target="_blank">
+					<span class="sasi-icon">						<svg class="e-font-icon-svg e-fab-x-twitter" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"></path></svg></span>									</a>
+							<a class="sasi-social-icons__item dflex justify-content-center align-items-center sasi-social-icon-linkedin-in elementor-repeater-item-d4e2e98" aria-label="Social Icon Link" href="#" target="_blank">
+					<span class="sasi-icon">						<svg class="e-font-icon-svg e-fab-linkedin-in" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"></path></svg></span>									</a>
+							<a class="sasi-social-icons__item dflex justify-content-center align-items-center sasi-social-icon-youtube elementor-repeater-item-7683473" aria-label="Social Icon Link" href="#" target="_blank">
+					<span class="sasi-icon">						<svg class="e-font-icon-svg e-fab-youtube" viewBox="0 0 576 512" xmlns="http://www.w3.org/2000/svg"><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"></path></svg></span>									</a>
+					</div>
+						</div>
+				</div>
+				</div>
+				</div>
+		<div class="elementor-element elementor-element-55deec7 e-con-full e-flex e-con e-child" data-id="55deec7" data-element_type="container">
+		<div class="elementor-element elementor-element-7044f19 e-con-full e-flex e-con e-child" data-id="7044f19" data-element_type="container">
+				<div class="elementor-element elementor-element-2e94fcc elementor-invisible elementor-widget elementor-widget-google_maps" data-id="2e94fcc" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInLeft&quot;}" data-widget_type="google_maps.default">
+							<div class="elementor-custom-embed">
+			<iframe loading="lazy"
+					src="https://maps.google.com/maps?q=6th%20floor,%20Yobe%20Investment%20Building,%20Ralph%20Shodeinde%20St,%20Abuja&t=m&z=10&output=embed&iwloc=near
+                    "
+					title="6th floor,Yobe Investment Building, Ralph Shodeinde St, Abuja"
+					aria-label="6th floor,Yobe Investment Building, Ralph Shodeinde St, Abuja"
+			></iframe>
+		</div>
+						</div>
+				</div>
+		<div class="elementor-element elementor-element-6d424e9 e-con-full e-flex elementor-invisible e-con e-child" data-id="6d424e9" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;animation&quot;:&quot;fadeInRight&quot;}">
+				<div class="elementor-element elementor-element-dde85dd elementor-widget elementor-widget-heading" data-id="dde85dd" data-element_type="widget" data-widget_type="heading.default">
+					<h3 class="elementor-heading-title elementor-size-default">Let’s Build Something Great Together</h3>				</div>
+				<div class="elementor-element elementor-element-4d8ce07 elementor-widget elementor-widget-text-editor" data-id="4d8ce07" data-element_type="widget" data-widget_type="text-editor.default">
+									<p>Say Hello — We’d Love to Hear from You</p>								</div>
+				<div class="elementor-element elementor-element-342e869 elementor-widget elementor-widget-shortcode" data-id="342e869" data-element_type="widget" data-widget_type="shortcode.default">
+							<div class="elementor-shortcode">
+<div class="wpcf7 no-js" id="wpcf7-f6-p80-o1" lang="en-US" dir="ltr" data-wpcf7-id="6">
+<div class="screen-reader-response"><p role="status" aria-live="polite" aria-atomic="true"></p> <ul></ul></div>
+<form action="#" method="post" class="wpcf7-form init" aria-label="Contact form" novalidate="novalidate" data-status="init">
+<fieldset class="hidden-fields-container"><input type="hidden" name="_wpcf7" value="6" /><input type="hidden" name="_wpcf7_version" value="6.1.2" /><input type="hidden" name="_wpcf7_locale" value="en_US" /><input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f6-p80-o1" /><input type="hidden" name="_wpcf7_container_post" value="80" /><input type="hidden" name="_wpcf7_posted_data_hash" value="" />
+</fieldset>
+<div class="sasi-main-form-wpcf7 home-swift-wpcf7 ">
+	<div class="row">
+		<p class="col-md-12"><br />
+<span class="wpcf7-form-control-wrap" data-name="your-name"><input size="40" maxlength="400" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Full Name" value="" type="text" name="your-name" /></span>
+		</p>
+		<p class="col-md-12"><br />
+<span class="wpcf7-form-control-wrap" data-name="your-email"><input size="40" maxlength="400" class="wpcf7-form-control wpcf7-email wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-email" aria-required="true" aria-invalid="false" placeholder="Email Address" value="" type="email" name="your-email" /></span>
+		</p>
+		<p class="col-md-12"><br />
+<span class="wpcf7-form-control-wrap" data-name="your-phone"><input size="40" maxlength="400" class="wpcf7-form-control wpcf7-tel wpcf7-text wpcf7-validates-as-tel" aria-invalid="false" placeholder="Phone Number" value="" type="tel" name="your-phone" /></span>
+		</p>
+	
+		<p class="col-md-12"><br />
+<span class="wpcf7-form-control-wrap" data-name="your-message"><textarea cols="40" rows="10" maxlength="2000" class="wpcf7-form-control wpcf7-textarea" aria-invalid="false" placeholder="Message" name="your-message"></textarea></span>
+		</p>
+		<div class="col-md-12 text-left">
+			<p><button type="submit" class="sasi-btn sasi-btn-primary sasi-btn-icon"><br />
+<span class="sasi-text">Send Message</span><br />
+<span class="sasi-icon"><i class="ss-arrow-right"></i></span><br />
+</button>
+			</p>
+		</div>
+	</div>
+</div><div class="wpcf7-response-output" aria-hidden="true"></div>
+</form>
+</div>
+</div>
+						</div>
+				</div>
+				</div>
+					</div>
+				</div>
+				</div>
+		
+
+	</div>
+    <footer id="site-footer" class="site-footer" itemscope="itemscope" itemtype="http://schema.org/WPFooter">		<div data-elementor-type="wp-post" data-elementor-id="33" class="elementor elementor-33">
+        <div class="elementor-element elementor-element-574efd6 e-flex e-con-boxed e-con e-parent" data-id="574efd6" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+            <div class="e-con-inner">
+<div class="elementor-element elementor-element-426ad21 e-con-full e-flex e-con e-child" data-id="426ad21" data-element_type="container">
+        <div class="elementor-element elementor-element-4219d24 elementor-invisible elementor-widget elementor-widget-heading" data-id="4219d24" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;}" data-widget_type="heading.default">
+            <h2 class="elementor-heading-title elementor-size-default">Start your free trial today</h2>				</div>
+        <div class="elementor-element elementor-element-bd87ba4 elementor-invisible elementor-widget elementor-widget-text-editor" data-id="bd87ba4" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;,&quot;_animation_delay&quot;:200}" data-widget_type="text-editor.default">
+                            <p>Let your business thrive with smart conversations, smarter support, better results</p>								</div>
+<div class="elementor-element elementor-element-3d7212c e-con-full e-flex e-con e-child" data-id="3d7212c" data-element_type="container">
+        <div class="elementor-element elementor-element-2d340ce elementor-invisible elementor-widget elementor-widget-sasi-button" data-id="2d340ce" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;,&quot;_animation_delay&quot;:400}" data-widget_type="sasi-button.default">
+        <div class="elementor-widget-container">
+                    
+<a href="#" class="sasi-btn sasi-btn-primary sasi-btn-icon sasi-btn-icon__right">
+    <span class="sasi-text">Start 14 Days Free Trial</span> 
+                    <span class="sasi-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="14" viewBox="0 0 15 14" fill="none"><path d="M6.84375 13.8125C6.96875 13.9688 7.21875 13.9688 7.375 13.8125L13.9062 7.28125C14.0625 7.125 14.0625 6.90625 13.9062 6.75L7.375 0.21875C7.21875 0.0625 6.96875 0.0625 6.84375 0.21875L6.21875 0.8125C6.0625 0.96875 6.0625 1.21875 6.21875 1.34375L11.0625 6.1875H0.375C0.1875 6.1875 0 6.375 0 6.5625V7.4375C0 7.65625 0.1875 7.8125 0.375 7.8125H11.0625L6.21875 12.6875C6.0625 12.8125 6.0625 13.0625 6.21875 13.2188L6.84375 13.8125Z" fill="#0E0E0E"></path></svg>				</span>
+            </a>
+
+                </div>
+        </div>
+        <div class="elementor-element elementor-element-d7fb592 elementor-invisible elementor-widget elementor-widget-sasi-button" data-id="d7fb592" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;,&quot;_animation_delay&quot;:500}" data-widget_type="sasi-button.default">
+        <div class="elementor-widget-container">
+  
+                </div>
+        </div>
+        </div>
+        </div>
+<div class="elementor-element elementor-element-b507c39 e-con-full e-flex e-con e-child" data-id="b507c39" data-element_type="container">
+<div class="elementor-element elementor-element-2f51374 e-con-full e-flex elementor-invisible e-con e-child" data-id="2f51374" data-element_type="container" data-settings="{&quot;animation&quot;:&quot;fadeIn&quot;}">
+        <div class="elementor-element elementor-element-3c184f5 elementor-widget elementor-widget-sasico-logo" data-id="3c184f5" data-element_type="widget" data-widget_type="sasico-logo.default">
+        <div class="elementor-widget-container">
+                        
+            <div class="the-logo">
+                <a href="index.html">
+                    <img src="/home/images/logoswift.png" alt="swift Light">
+                </a>			        
+            </div>
+            
+                        </div>
+                </div>
+                <div class="elementor-element elementor-element-85cefd9 elementor-widget elementor-widget-text-editor" data-id="85cefd9" data-element_type="widget" data-widget_type="text-editor.default">
+                                    <p>Built for professionals, teams, and students who value efficiency, clarity, and performance.</p>								</div>
+        <div class="elementor-element elementor-element-21fc5cd elementor-widget elementor-widget-sasi-social-icons" data-id="21fc5cd" data-element_type="widget" data-widget_type="sasi-social-icons.default">
+        <div class="elementor-widget-container">
+                    <div class="sasi-social-icons__wrapper dflex justify-content-center align-items-center">
+                    <a class="sasi-social-icons__item dflex justify-content-center align-items-center sasi-social-icon-facebook-f elementor-repeater-item-a1d5d2d" aria-label="Social Icon Link" href="#" target="_blank">
+            <span class="sasi-icon">						<svg class="e-font-icon-svg e-fab-facebook-f" viewBox="0 0 320 512" xmlns="http://www.w3.org/2000/svg"><path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"></path></svg></span>									</a>
+                    <a class="sasi-social-icons__item dflex justify-content-center align-items-center sasi-social-icon-x-twitter elementor-repeater-item-45ceb26" aria-label="Social Icon Link" href="#" target="_blank">
+            <span class="sasi-icon">						<svg class="e-font-icon-svg e-fab-x-twitter" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"></path></svg></span>									</a>
+                    <a class="sasi-social-icons__item dflex justify-content-center align-items-center sasi-social-icon-linkedin-in elementor-repeater-item-17864c7" aria-label="Social Icon Link" href="#" target="_blank">
+            <span class="sasi-icon">						<svg class="e-font-icon-svg e-fab-linkedin-in" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"></path></svg></span>									</a>
+                    <a class="sasi-social-icons__item dflex justify-content-center align-items-center sasi-social-icon-youtube elementor-repeater-item-6582f03" aria-label="Social Icon Link" href="#" target="_blank">
+            <span class="sasi-icon">						<svg class="e-font-icon-svg e-fab-youtube" viewBox="0 0 576 512" xmlns="http://www.w3.org/2000/svg"><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"></path></svg></span>									</a>
+            </div>
+                </div>
+        </div>
+        </div>
+<div class="elementor-element elementor-element-68d71f6 e-con-full e-flex e-con e-child" data-id="68d71f6" data-element_type="container">
+<div class="elementor-element elementor-element-6356ad3 e-grid e-con-full elementor-invisible e-con e-child" data-id="6356ad3" data-element_type="container" data-settings="{&quot;animation&quot;:&quot;fadeIn&quot;,&quot;animation_delay&quot;:150}">
+<div class="elementor-element elementor-element-1d15523 e-con-full e-flex e-con e-child" data-id="1d15523" data-element_type="container">
+        <div class="elementor-element elementor-element-027c53f elementor-widget elementor-widget-heading" data-id="027c53f" data-element_type="widget" data-widget_type="heading.default">
+            <h5 class="elementor-heading-title elementor-size-default">Product</h5>				</div>
+        <div class="elementor-element elementor-element-460d54c sasi-view-default elementor-widget elementor-widget-sasi-icon-list" data-id="460d54c" data-element_type="widget" data-widget_type="sasi-icon-list.default">
+        <div class="elementor-widget-container">
+                        <div class="sasi-icon-list-wrapper">
+        <ul class="unstyle sasi-icon-list-items ">
+                                    <li class="sasi-icon-list-item ">
+                    <a href="#">							<span class="sasi-icon-list-text title-link">Features</span>
+                                                    </a>
+                                            </li>
+                                    <li class="sasi-icon-list-item ">
+                    <a href="#">							<span class="sasi-icon-list-text title-link">Integrations</span>
+                                                    </a>
+                                            </li>
+                                    <li class="sasi-icon-list-item ">
+                    <a href="#">							<span class="sasi-icon-list-text title-link">Download</span>
+                                                    </a>
+                                            </li>
+                                    <li class="sasi-icon-list-item ">
+                    <a href="#">							<span class="sasi-icon-list-text title-link">Pricing</span>
+                                                    </a>
+                                            </li>
+                            </ul>
+    </div>
+                </div>
+        </div>
+        </div>
+<div class="elementor-element elementor-element-92cc9fd e-con-full e-flex e-con e-child" data-id="92cc9fd" data-element_type="container">
+        <div class="elementor-element elementor-element-924a3d5 elementor-widget elementor-widget-heading" data-id="924a3d5" data-element_type="widget" data-widget_type="heading.default">
+            <h5 class="elementor-heading-title elementor-size-default">Company</h5>				</div>
+        <div class="elementor-element elementor-element-35ed3c6 sasi-view-default elementor-widget elementor-widget-sasi-icon-list" data-id="35ed3c6" data-element_type="widget" data-widget_type="sasi-icon-list.default">
+        <div class="elementor-widget-container">
+                        <div class="sasi-icon-list-wrapper">
+        <ul class="unstyle sasi-icon-list-items ">
+                                    <li class="sasi-icon-list-item ">
+                    <a href="#">							<span class="sasi-icon-list-text title-link">About us</span>
+                                                    </a>
+                                            </li>
+                                    <li class="sasi-icon-list-item ">
+                    <a href="#">							<span class="sasi-icon-list-text title-link">Latest Blog</span>
+                                                    </a>
+                                            </li>
+                                    <li class="sasi-icon-list-item ">
+                    <a href="#">							<span class="sasi-icon-list-text title-link">Our Clients</span>
+                                                    </a>
+                                            </li>
+                                    <li class="sasi-icon-list-item ">
+                    <a href="#">							<span class="sasi-icon-list-text title-link">Careers</span>
+                                                    </a>
+                                            </li>
+                            </ul>
+    </div>
+                </div>
+        </div>
+        </div>
+        </div>
+        </div>
+<div class="elementor-element elementor-element-1ac6060 e-con-full e-flex elementor-invisible e-con e-child" data-id="1ac6060" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;animation&quot;:&quot;fadeIn&quot;,&quot;animation_delay&quot;:300}">
+        <div class="elementor-element elementor-element-916855c elementor-widget elementor-widget-heading" data-id="916855c" data-element_type="widget" data-widget_type="heading.default">
+            <h5 class="elementor-heading-title elementor-size-default">Join Our Newsletter</h5>				</div>
+        <div class="elementor-element elementor-element-c99cce0 elementor-widget elementor-widget-text-editor" data-id="c99cce0" data-element_type="widget" data-widget_type="text-editor.default">
+                            <p>Never Miss an Update — Sign Up Today</p>								</div>
+        <div class="elementor-element elementor-element-acd25b9 elementor-widget elementor-widget-shortcode" data-id="acd25b9" data-element_type="widget" data-widget_type="shortcode.default">
+                    <div class="elementor-shortcode"><script>(function() {
+window.mc4wp = window.mc4wp || {
+listeners: [],
+forms: {
+    on: function(evt, cb) {
+        window.mc4wp.listeners.push(
+            {
+                event   : evt,
+                callback: cb
+            }
+        );
+    }
+}
+}
+})();
+</script><!-- Mailchimp for WordPress v4.10.7 - https://wordpress.org/plugins/mailchimp-for-wp/ --><form id="mc4wp-form-1" class="mc4wp-form mc4wp-form-53" method="post" data-id="53" data-name="Form Footer" ><div class="mc4wp-form-fields"><div class="sasi-subscribe-form dflex gap-10">
+<input type="email" id="email" name="EMAIL" placeholder="Enter email" required>
+<button type="submit" class="sasi-icon"><i class="ss-arrow-right"></i></button>
+</div>
+</div><label style="display: none !important;">Leave this field empty if you're human: <input type="text" name="_mc4wp_honeypot" value="" tabindex="-1" autocomplete="off" /></label><input type="hidden" name="_mc4wp_timestamp" value="1762164013" /><input type="hidden" name="_mc4wp_form_id" value="53" /><input type="hidden" name="_mc4wp_form_element_id" value="mc4wp-form-1" /><div class="mc4wp-response"></div></form><!-- / Mailchimp for WordPress Plugin --></div>
+                </div>
+        </div>
+        </div>
+<div class="elementor-element elementor-element-95d50ef e-con-full e-flex e-con e-child" data-id="95d50ef" data-element_type="container">
+        <div class="elementor-element elementor-element-c284bd1 elementor-invisible elementor-widget elementor-widget-text-editor" data-id="c284bd1" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeIn&quot;,&quot;_animation_delay&quot;:300}" data-widget_type="text-editor.default">
+                            <p>Swift App,2025 © All rights reserved</p>								</div>
+        <div class="elementor-element elementor-element-193f7e9 elementor-view-stacked btn-back-to-top elementor-shape-circle elementor-invisible elementor-widget elementor-widget-icon" data-id="193f7e9" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeIn&quot;,&quot;_animation_delay&quot;:300}" data-widget_type="icon.default">
+                    <div class="elementor-icon-wrapper">
+    <a class="elementor-icon" href="#">
+    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13"><path d="M0.539062 6.91406C0.402344 6.80469 0.402344 6.58594 0.539062 6.44922L6.25391 0.734375C6.39062 0.597656 6.58203 0.597656 6.71875 0.734375L12.4336 6.44922C12.5703 6.58594 12.5703 6.80469 12.4336 6.91406L11.9141 7.46094C11.7773 7.59766 11.5586 7.59766 11.4492 7.46094L7.21094 3.22266V12.5469C7.21094 12.7383 7.04688 12.875 6.88281 12.875H6.11719C5.92578 12.875 5.78906 12.7383 5.78906 12.5469V3.22266L1.52344 7.46094C1.41406 7.59766 1.19531 7.59766 1.05859 7.46094L0.539062 6.91406Z"></path></svg>			</a>
+</div>
+                </div>
+        <div class="elementor-element elementor-element-3e24e7c sasi-view-default elementor-invisible elementor-widget elementor-widget-sasi-icon-list" data-id="3e24e7c" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeIn&quot;,&quot;_animation_delay&quot;:300}" data-widget_type="sasi-icon-list.default">
+        <div class="elementor-widget-container">
+                        <div class="sasi-icon-list-wrapper">
+        <ul class="unstyle sasi-icon-list-items --inline-items">
+                                    <li class="sasi-icon-list-item --inline-item">
+                    <a href="#">							<span class="sasi-icon-list-text title-link">Terms & Conditions</span>
+                                                    </a>
+                                            </li>
+                                    <li class="sasi-icon-list-item --inline-item">
+                    <a href="#">							<span class="sasi-icon-list-text title-link">Privacy Policy</span>
+                                                    </a>
+                                            </li>
+                            </ul>
+    </div>
+                </div>
+        </div>
+        </div>
+            </div>
+        </div>
+        </div>
+		</footer></div>
+<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"\/swift\/*"},{"not":{"href_matches":["\/swift\/wp-*.php","\/swift\/wp-admin\/*","\/swift\/wp-content\/uploads\/sites\/9\/*","\/swift\/wp-content\/*","\/swift\/wp-content\/plugins\/*","\/swift\/wp-content\/themes\/sasico\/*","\/swift\/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+<script>(function() {function maybePrefixUrlField () {
+  const value = this.value.trim()
+  if (value !== '' && value.indexOf('http') !== 0) {
+    this.value = 'http://' + value
+  }
+}
+
+const urlFields = document.querySelectorAll('.mc4wp-form input[type="url"]')
+for (let j = 0; j < urlFields.length; j++) {
+  urlFields[j].addEventListener('blur', maybePrefixUrlField)
+}
+})();</script>			<script>
+				const lazyloadRunObserver = () => {
+					const lazyloadBackgrounds = document.querySelectorAll( `.e-con.e-parent:not(.e-lazyloaded)` );
+					const lazyloadBackgroundObserver = new IntersectionObserver( ( entries ) => {
+						entries.forEach( ( entry ) => {
+							if ( entry.isIntersecting ) {
+								let lazyloadBackground = entry.target;
+								if( lazyloadBackground ) {
+									lazyloadBackground.classList.add( 'e-lazyloaded' );
+								}
+								lazyloadBackgroundObserver.unobserve( entry.target );
+							}
+						});
+					}, { rootMargin: '200px 0px 200px 0px' } );
+					lazyloadBackgrounds.forEach( ( lazyloadBackground ) => {
+						lazyloadBackgroundObserver.observe( lazyloadBackground );
+					} );
+				};
+				const events = [
+					'DOMContentLoaded',
+					'elementor/lazyload/observe',
+				];
+				events.forEach( ( event ) => {
+					document.addEventListener( event, lazyloadRunObserver );
+				} );
+			</script>
+			<link rel='stylesheet' id='elementor-post-746-css' href='../home/wp-content/uploads/sites/9/elementor/css/post-74616ae.css?ver=1758809716' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-post-85-css' href='../home/wp-content/uploads/sites/9/elementor/css/post-85f23b.css?ver=1757929543' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-post-33-css' href='../home/wp-content/uploads/sites/9/elementor/css/post-33f23b.css?ver=1757929543' type='text/css' media='all' />
+<script type="text/javascript" src="../home/wp-includes/js/dist/hooks.min4fdd.js?ver=4d63a3d491d11ffd8ac6" id="wp-hooks-js"></script>
+<script type="text/javascript" src="../home/wp-includes/js/dist/i18n.minc33c.js?ver=5e580eb46a90c2b997e6" id="wp-i18n-js"></script>
+<script type="text/javascript" id="wp-i18n-js-after">
+/* <![CDATA[ */
+wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+/* ]]> */
+</script>
+<script type="text/javascript" src="../home/wp-content/plugins/contact-form-7/includes/swv/js/index658f.js?ver=6.1.2" id="swv-js"></script>
+<script type="text/javascript" id="contact-form-7-js-before">
+/* <![CDATA[ */
+var wpcf7 = {
+    "api": {
+        "root": "https:\/\/sasico.pikathemes.site\/swift\/wp-json\/",
+        "namespace": "contact-form-7\/v1"
+    }
+};
+/* ]]> */
+</script>
+<script type="text/javascript" src="../home/wp-content/plugins/contact-form-7/includes/js/index658f.js?ver=6.1.2" id="contact-form-7-js"></script>
+<script type="text/javascript" src="../home/wp-content/themes/sasico/js/plugin-addon20b9.js?ver=1.0.2" id="sasico-plugin-script-js"></script>
+<script type="text/javascript" src="../home/wp-includes/js/imagesloaded.minbb93.js?ver=5.0.0" id="imagesloaded-js"></script>
+<script type="text/javascript" src="../home/wp-content/themes/sasico/js/elementor-widgets20b9.js?ver=1.0.2" id="sasico-elementor-js"></script>
+<script type="text/javascript" src="../home/wp-content/themes/sasico/js/elementor-header20b9.js?ver=1.0.2" id="sasico-elementor-header-js"></script>
+<script type="text/javascript" src="../home/wp-content/themes/sasico/js/theme20b9.js?ver=1.0.2" id="sasico-scripts-js"></script>
+<script type="text/javascript" src="../home/wp-content/plugins/elementor/assets/js/webpack.runtime.min9287.js?ver=3.32.5" id="elementor-webpack-runtime-js"></script>
+<script type="text/javascript" src="../home/wp-content/plugins/elementor/assets/js/frontend-modules.min9287.js?ver=3.32.5" id="elementor-frontend-modules-js"></script>
+<script type="text/javascript" src="../home/wp-includes/js/jquery/ui/core.minb37e.js?ver=1.13.3" id="jquery-ui-core-js"></script>
+<script type="text/javascript" id="elementor-frontend-js-before">
+/* <![CDATA[ */
+var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false,"isScriptDebug":false},"i18n":{"shareOnFacebook":"Share on Facebook","shareOnTwitter":"Share on Twitter","pinIt":"Pin it","download":"Download","downloadImage":"Download image","fullscreen":"Fullscreen","zoom":"Zoom","share":"Share","playVideo":"Play Video","previous":"Previous","next":"Next","close":"Close","a11yCarouselPrevSlideMessage":"Previous slide","a11yCarouselNextSlideMessage":"Next slide","a11yCarouselFirstSlideMessage":"This is the first slide","a11yCarouselLastSlideMessage":"This is the last slide","a11yCarouselPaginationBulletMessage":"Go to slide"},"is_rtl":false,"breakpoints":{"xs":0,"sm":480,"md":576,"lg":992,"xl":1440,"xxl":1600},"responsive":{"breakpoints":{"mobile":{"label":"Mobile Portrait","value":575,"default_value":767,"direction":"max","is_enabled":true},"mobile_extra":{"label":"Mobile Landscape","value":767,"default_value":880,"direction":"max","is_enabled":true},"tablet":{"label":"Tablet Portrait","value":991,"default_value":1024,"direction":"max","is_enabled":true},"tablet_extra":{"label":"Tablet Landscape","value":1199,"default_value":1200,"direction":"max","is_enabled":true},"laptop":{"label":"Laptop","value":1399,"default_value":1366,"direction":"max","is_enabled":true},"widescreen":{"label":"Widescreen","value":2400,"default_value":2400,"direction":"min","is_enabled":false}},"hasCustomBreakpoints":true},"version":"3.32.5","is_static":false,"experimentalFeatures":{"e_font_icon_svg":true,"additional_custom_breakpoints":true,"container":true,"e_optimized_markup":true,"nested-elements":true,"home_screen":true,"global_classes_should_enforce_capabilities":true,"e_variables":true,"cloud-library":true,"e_opt_in_v4_page":true,"import-export-customization":true},"urls":{"assets":"https:\/\/sasico.pikathemes.site\/swift\/wp-content\/plugins\/elementor\/assets\/","ajaxurl":"https:\/\/sasico.pikathemes.site\/swift\/wp-admin\/admin-ajax.php","uploadUrl":"https:\/\/sasico.pikathemes.site\/swift\/wp-content\/uploads\/sites\/9"},"nonces":{"floatingButtonsClickTracking":"6a80d0fdc9"},"swiperClass":"swiper","settings":{"page":[],"editorPreferences":[]},"kit":{"active_breakpoints":["viewport_mobile","viewport_mobile_extra","viewport_tablet","viewport_tablet_extra","viewport_laptop"],"viewport_mobile":575,"viewport_mobile_extra":767,"viewport_tablet":991,"viewport_tablet_extra":1199,"viewport_laptop":1399,"global_image_lightbox":"yes","lightbox_enable_counter":"yes","lightbox_enable_fullscreen":"yes","lightbox_enable_zoom":"yes","lightbox_enable_share":"yes","lightbox_title_src":"title","lightbox_description_src":"description"},"post":{"id":80,"title":"Contact%20Us%20%E2%80%93%20swift%20Light","excerpt":"","featuredImage":false}};
+/* ]]> */
+</script>
+<script type="text/javascript" src="../home/wp-content/plugins/elementor/assets/js/frontend.min9287.js?ver=3.32.5" id="elementor-frontend-js"></script>
+<script type="text/javascript" defer src="../home/wp-content/plugins/mailchimp-for-wp/assets/js/forms9073.js?ver=4.10.7" id="mc4wp-forms-api-js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,560 @@
+<!doctype html>
+<html lang="en-US">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="profile" href="#">
+
+	<title>Swift - Office Productivity </title>
+<meta name='robots' content='max-image-preview:large' />
+	<style>img:is([sizes="auto" i], [sizes^="auto," i]) { contain-intrinsic-size: 3000px 1500px }</style>
+	<link rel="alternate" type="application/rss+xml" title="swift Light &raquo; Feed" href="../feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="swift Light &raquo; Comments Feed" href="../comments/feed/index.html" />
+<script type="text/javascript">
+/* <![CDATA[ */
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16.0.1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16.0.1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/sasico.pikathemes.site\/swift\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.8.3"}};
+/*! This file is auto-generated */
+!function(s,n){var o,i,e;function c(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function p(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data),a=(e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0),new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data));return t.every(function(e,t){return e===a[t]})}function u(e,t){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);for(var n=e.getImageData(16,16,1,1),a=0;a<n.data.length;a++)if(0!==n.data[a])return!1;return!0}function f(e,t,n,a){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\udde8\ud83c\uddf6","\ud83c\udde8\u200b\ud83c\uddf6")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!a(e,"\ud83e\udedf")}return!1}function g(e,t,n,a){var r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):s.createElement("canvas"),o=r.getContext("2d",{willReadFrequently:!0}),i=(o.textBaseline="top",o.font="600 32px Arial",{});return e.forEach(function(e){i[e]=t(o,e,n,a)}),i}function t(e){var t=s.createElement("script");t.src=e,t.defer=!0,s.head.appendChild(t)}"undefined"!=typeof Promise&&(o="wpEmojiSettingsSupports",i=["flag","emoji"],n.supports={everything:!0,everythingExceptFlag:!0},e=new Promise(function(e){s.addEventListener("DOMContentLoaded",e,{once:!0})}),new Promise(function(t){var n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+g.toString()+"("+[JSON.stringify(i),f.toString(),p.toString(),u.toString()].join(",")+"));",a=new Blob([e],{type:"text/javascript"}),r=new Worker(URL.createObjectURL(a),{name:"wpTestEmojiSupports"});return void(r.onmessage=function(e){c(n=e.data),r.terminate(),t(n)})}catch(e){}c(n=g(i,f,p,u))}t(n)}).then(function(e){for(var t in e)n.supports[t]=e[t],n.supports.everything=n.supports.everything&&n.supports[t],"flag"!==t&&(n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&n.supports[t]);n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&!n.supports.flag,n.DOMReady=!1,n.readyCallback=function(){n.DOMReady=!0}}).then(function(){return e}).then(function(){var e;n.supports.everything||(n.readyCallback(),(e=n.source||{}).concatemoji?t(e.concatemoji):e.wpemoji&&e.twemoji&&(t(e.twemoji),t(e.wpemoji)))}))}((window,document),window._wpemojiSettings);
+/* ]]> */
+</script>
+<style id='wp-emoji-styles-inline-css' type='text/css'>
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+</style>
+<style id='classic-theme-styles-inline-css' type='text/css'>
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+</style>
+<style id='global-styles-inline-css' type='text/css'>
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}
+</style>
+<link rel='stylesheet' id='contact-form-7-css' href='../home/wp-content/plugins/contact-form-7/includes/css/styles658f.css?ver=6.1.2' type='text/css' media='all' />
+<link rel='stylesheet' id='sasico-font-text-css' href='../home/wp-content/themes/sasico/css/font-text32d4.css?ver=6.8.3' type='text/css' media='all' />
+<link rel='stylesheet' id='sasico-font-icomoon-css' href='../home/wp-content/themes/sasico/css/icomoon32d4.css?ver=6.8.3' type='text/css' media='all' />
+<link rel='stylesheet' id='sasico-plugin-css-css' href='../home/wp-content/themes/sasico/css/plugin-addon5152.css?ver=1.0' type='text/css' media='all' />
+<link rel='stylesheet' id='sasico-style-css' href='../home/wp-content/themes/sasico/style20b9.css?ver=1.0.2' type='text/css' media='all' />
+<style id='sasico-style-inline-css' type='text/css'>
+:root{--sasi-color-primary:#004ffc;--sasi-color-dark:#021b42;} .dark-mode{--sasi-color-white:#021b42; --sasi-bg-color-white:#021b42;}.sasi-btn-primary{--sasi-btn-color:#ffffff;--sasi-btn-bg-color-hover:#021b42;}.sasi-btn-primary .sasi-icon{--sasi-btn-icon-color:#004ffc;--sasi-btn-icon-bg-color:#ffffff;}.sasi-btn-primary:hover .sasi-icon{--sasi-btn-icon-color-hover:#021b42;}.sasi-btn-outline_1{--sasi-btn-color:#021b42;--sasi-btn-color-hover:#ffffff;--sasi-btn-bg-color-hover:#021b42;--sasi-btn-border-color:#021b421a;}.sasi-btn-outline_1 .sasi-icon{--sasi-btn-icon-color:#ffffff;--sasi-btn-icon-bg-color:#021b42;}
+</style>
+<link rel='stylesheet' id='sasico-preloader-css' href='../home/wp-content/themes/sasico/css/preloader32d4.css?ver=6.8.3' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-frontend-css' href='../home/wp-content/uploads/sites/9/elementor/css/custom-frontend.minf23b.css?ver=1757929543' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-post-51-css' href='../home/wp-content/uploads/sites/9/elementor/css/post-51f23b.css?ver=1757929543' type='text/css' media='all' />
+<link rel='stylesheet' id='e-animation-fadeIn-css' href='../home/wp-content/plugins/elementor/assets/lib/animations/styles/fadeIn.min9287.css?ver=3.32.5' type='text/css' media='all' />
+<link rel='stylesheet' id='widget-heading-css' href='../home/wp-content/plugins/elementor/assets/css/widget-heading.min9287.css?ver=3.32.5' type='text/css' media='all' />
+<link rel='stylesheet' id='e-animation-fadeInLeft-css' href='../home/wp-content/plugins/elementor/assets/lib/animations/styles/fadeInLeft.min9287.css?ver=3.32.5' type='text/css' media='all' />
+<link rel='stylesheet' id='e-animation-fadeInRight-css' href='../home/wp-content/plugins/elementor/assets/lib/animations/styles/fadeInRight.min9287.css?ver=3.32.5' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-post-152-css' href='../home/wp-content/uploads/sites/9/elementor/css/post-15216ae.css?ver=1758809716' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-gf-local-roboto-css' href='../home/wp-content/uploads/sites/9/elementor/google-fonts/css/roboto1c16.css?ver=1756438741' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-gf-local-robotoslab-css' href='../home/wp-content/uploads/sites/9/elementor/google-fonts/css/robotoslab00d1.css?ver=1756438797' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-gf-local-plusjakartasans-css' href='../home/wp-content/uploads/sites/9/elementor/google-fonts/css/plusjakartasansc15b.css?ver=1756440496' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-gf-local-inter-css' href='../home/wp-content/uploads/sites/9/elementor/google-fonts/css/inter7216.css?ver=1756441594' type='text/css' media='all' />
+<script type="text/javascript" src="../home/wp-includes/js/jquery/jquery.minf43b.js?ver=3.7.1" id="jquery-core-js"></script>
+<script type="text/javascript" src="../home/wp-includes/js/jquery/jquery-migrate.min5589.js?ver=3.4.1" id="jquery-migrate-js"></script>
+<script type="text/javascript" id="sasico_scripts-js-extra">
+/* <![CDATA[ */
+var sasico_loadmore_params = {"ajaxurl":"https:\/\/sasico.pikathemes.site\/swift\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="../home/wp-content/themes/sasico/js/theme-loadmore2f13.js?ver=1762164348" id="sasico_scripts-js"></script>
+<script type="text/javascript" src="../home/wp-content/themes/sasico/js/preloader32d4.js?ver=6.8.3" id="sasico-preloader-js"></script>
+<link rel="https://api.w.org/" href="../home/wp-json/index.html" /><link rel="alternate" title="JSON" type="application/json" href="../home/wp-json/wp/v2/pages/152.json" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="../xmlrpc0db0.php?rsd" />
+<meta name="generator" content="WordPress 6.8.3" />
+<link rel="canonical" href="index.html" />
+<link rel='shortlink' href='../index1611.html?p=152' />
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="../home/wp-json/oembed/1.0/embed49ef.json?url=https%3A%2F%2Fsasico.pikathemes.site%2Fswift%2Fhelp%2F" />
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="../home/wp-json/oembed/1.0/embed5308?url=https%3A%2F%2Fsasico.pikathemes.site%2Fswift%2Fhelp%2F&amp;format=xml" />
+<meta name="generator" content="Elementor 3.32.5; features: e_font_icon_svg, additional_custom_breakpoints; settings: css_print_method-external, google_font-enabled, font_display-swap">
+			<style>
+				.e-con.e-parent:nth-of-type(n+4):not(.e-lazyloaded):not(.e-no-lazyload),
+				.e-con.e-parent:nth-of-type(n+4):not(.e-lazyloaded):not(.e-no-lazyload) * {
+					background-image: none !important;
+				}
+				@media screen and (max-height: 1024px) {
+					.e-con.e-parent:nth-of-type(n+3):not(.e-lazyloaded):not(.e-no-lazyload),
+					.e-con.e-parent:nth-of-type(n+3):not(.e-lazyloaded):not(.e-no-lazyload) * {
+						background-image: none !important;
+					}
+				}
+				@media screen and (max-height: 640px) {
+					.e-con.e-parent:nth-of-type(n+2):not(.e-lazyloaded):not(.e-no-lazyload),
+					.e-con.e-parent:nth-of-type(n+2):not(.e-lazyloaded):not(.e-no-lazyload) * {
+						background-image: none !important;
+					}
+				}
+			</style>
+			<link rel="icon" href="../home/images/swift_icon.png" sizes="32x32" />
+<link rel="icon" href="../home/images/swift_icon.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="../home/images/swift_icon.png" />
+<meta name="msapplication-TileImage" content="/home/images/swift_icon.png" />
+		<style type="text/css" id="wp-custom-css">
+			.e-con {
+  scroll-margin-top: 79px;
+}
+.sasi-subscribe-form input[type=email]{
+	color: #ffffff;
+	border-color: rgba(255, 255, 255, 0.1);
+	background: rgba(255, 255, 255, 0.05);
+}
+.sasi-subscribe-form input[type=email]::-webkit-input-placeholder{
+	color: #8B98AC;
+}		</style>
+		<style id="kirki-inline-styles">@media (max-width: 767px){}@media (min-width: 768px) and (max-width: 1024px){}@media (min-width: 1024px){}.page-header{background:rgba(255,255,255,0);background-color:rgba(255,255,255,0);background-repeat:no-repeat;background-position:center center;background-attachment:scroll;-webkit-background-size:cover;-moz-background-size:cover;-ms-background-size:cover;-o-background-size:cover;background-size:cover;}body.blog, body.archive, body.search, body.single-post{background:rgba(255,255,255,0);background-color:rgba(255,255,255,0);background-repeat:no-repeat;background-position:center top;background-attachment:scroll;-webkit-background-size:cover;-moz-background-size:cover;-ms-background-size:cover;-o-background-size:cover;background-size:cover;}</style></head>
+
+<body class="wp-singular page-template-default page page-id-152 wp-theme-sasico elementor-default elementor-kit-51 elementor-page elementor-page-152 header-trans light-mode sasico-theme-ver-1.0.2 wordpress-version-6.8.3">
+<div id="preloader" style="background:#fff"><div class="loader-content"><img style="width:180;" src="/home/images/swiftlogo.png" alt="Preload Logo" class="loader-logo"></div></div>
+<div id="page" class="site">
+
+	<header id="site-header" class="site-header header-transparent">
+
+		<div class="header-desktop">		<div data-elementor-type="wp-post" data-elementor-id="746" class="elementor elementor-746">
+					<div class="elementor-element elementor-element-016ff36 e-con-full e-flex e-con e-parent" data-id="016ff36" data-element_type="container">
+					<div class="elementor-element elementor-element-d67234c elementor-widget elementor-widget-sasico-logo" data-id="d67234c" data-element_type="widget" data-widget_type="sasico-logo.default">
+					<div class="elementor-widget-container">
+									
+						<div class="the-logo">
+							<a href="index.html">
+								<img src="/home/images/logoswift.png" alt="swift Light">
+							</a>			        
+						</div>
+				
+							</div>
+					</div>
+					<div class="elementor-element elementor-element-f974613 elementor-widget elementor-widget-sasico-menu" data-id="f974613" data-element_type="widget" data-widget_type="sasico-menu.default">
+					<div class="elementor-widget-container">
+									
+						<nav id="site-navigation" class="main-navigation">			
+							<ul id="primary-menu" class="menu"><li id="menu-item-566" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-566"><a href="index.html">Home</a></li>
+			<li id="menu-item-569" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-569"><a href="features.html">Features</a></li>
+			<li id="menu-item-570" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-570"><a href="pricing.html">Pricing</a></li>
+			<li id="menu-item-567" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-567"><a href="privacy.html">Privacy</a></li>
+			<li id="menu-item-565" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-565"><a href="contact-us.html">Contact</a></li>
+			</ul>			</nav>
+				
+							</div>
+					</div>
+					<div class="elementor-element elementor-element-7655a10 elementor-align-right elementor-tablet_extra-align-right elementor-widget elementor-widget-sasi-button" data-id="7655a10" data-element_type="widget" data-widget_type="sasi-button.default">
+					<div class="elementor-widget-container">
+								
+			<a href="#" class="sasi-btn sasi-btn-primary sasi-btn-icon sasi-btn-icon__right">
+				<span class="sasi-text">Sign Up</span> 
+								<span class="sasi-icon">
+						<svg xmlns="http://www.w3.org/2000/svg" width="15" height="14" viewBox="0 0 15 14" fill="none"><path d="M6.84375 13.8125C6.96875 13.9688 7.21875 13.9688 7.375 13.8125L13.9062 7.28125C14.0625 7.125 14.0625 6.90625 13.9062 6.75L7.375 0.21875C7.21875 0.0625 6.96875 0.0625 6.84375 0.21875L6.21875 0.8125C6.0625 0.96875 6.0625 1.21875 6.21875 1.34375L11.0625 6.1875H0.375C0.1875 6.1875 0 6.375 0 6.5625V7.4375C0 7.65625 0.1875 7.8125 0.375 7.8125H11.0625L6.21875 12.6875C6.0625 12.8125 6.0625 13.0625 6.21875 13.2188L6.84375 13.8125Z" fill="#0E0E0E"></path></svg>				</span>
+						</a>
+			
+							</div>
+					</div>
+					</div>
+					</div>
+			</div>
+		<div class="header-mobile">		<div data-elementor-type="wp-post" data-elementor-id="85" class="elementor elementor-85">
+					<div class="elementor-element elementor-element-5cfac93 e-flex e-con-boxed e-con e-parent" data-id="5cfac93" data-element_type="container">
+						<div class="e-con-inner">
+					<div class="elementor-element elementor-element-e128445 elementor-widget elementor-widget-sasico-logo" data-id="e128445" data-element_type="widget" data-widget_type="sasico-logo.default">
+					<div class="elementor-widget-container">
+									
+				<div class="the-logo">
+					<a href="index.html">
+						<img src="/home/images/logoswift.png" alt="">
+					</a>			        
+				</div>
+				
+							</div>
+					</div>
+					<div class="elementor-element elementor-element-fa0e0c8 elementor-widget elementor-widget-sasico-menu-mobile" data-id="fa0e0c8" data-element_type="widget" data-widget_type="sasico-menu-mobile.default">
+					<div class="elementor-widget-container">
+									
+				<div class="sasi-menu-mobile sasi-cta-header">
+					<div id="mmenu-toggle" class="mmenu-toggle">
+						<button type="button" aria-label="menu mobile">
+							<i class="ss-menu1"></i>
+						</button>
+					</div>
+					<div class="site-overlay mmenu-overlay"></div>
+					<div id="mmenu-wrapper" class="mmenu-wrapper">
+						<div class="mmenu-inner">
+							<a class="mmenu-close btn-close" href="#" aria-label="Close"><svg aria-hidden="true" role="img" focusable="false" width="16" height="16" viewBox="0 0 16 16"><path d="M16 1.4L14.6 0L8 6.6L1.4 0L0 1.4L6.6 8L0 14.6L1.4 16L8 9.4L14.6 16L16 14.6L9.4 8L16 1.4Z"></path></svg></a>
+							<div class="mobile-nav">
+								<ul id="menu-main-menu" class="mobile_mainmenu none-style"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-566"><a href="index.html">Home</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-569"><a href="features.html">Features</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-570"><a href="pricing.html">Pricing</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-567"><a href="privacy.html">Privacy</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-565"><a href="contact-us.html">Contact</a></li>
+	</ul>						</div>   	
+						</div>   	
+					</div>
+				</div>
+							</div>
+					</div>
+						</div>
+					</div>
+					</div>
+			</div>
+	</header>
+<div id="content" class="site-content">
+	
+    		<div data-elementor-type="wp-page" data-elementor-id="152" class="elementor elementor-152">
+				<div class="elementor-element elementor-element-12f8220 e-con-full e-flex e-con e-parent" data-id="12f8220" data-element_type="container">
+		<div class="elementor-element elementor-element-ffb3168 e-con-full section-padd-bot e-flex e-con e-child" data-id="ffb3168" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+				<div class="elementor-element elementor-element-2f9e7f8 elementor-widget__width-initial elementor-invisible elementor-widget elementor-widget-heading" data-id="2f9e7f8" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeIn&quot;,&quot;_animation_delay&quot;:150}" data-widget_type="heading.default">
+					<h2 class="elementor-heading-title elementor-size-default">We Offer flexible pricing Starting from ₦1,000</h2>				</div>
+				<div class="elementor-element elementor-element-a9adb0f elementor-widget__width-initial elementor-widget-tablet__width-initial elementor-invisible elementor-widget elementor-widget-text-editor" data-id="a9adb0f" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeIn&quot;,&quot;_animation_delay&quot;:300}" data-widget_type="text-editor.default">
+									<p>Whether you’re just getting started or scaling fast, we’ve got a pricing plan that fits your needs. Our transparent and flexible packages are designed</p>								</div>
+				</div>
+				</div>
+		<div class="elementor-element elementor-element-ccba543 section-padd e-flex e-con-boxed e-con e-parent" data-id="ccba543" data-element_type="container">
+					<div class="e-con-inner">
+		<div class="elementor-element elementor-element-7f1a49f e-con-full sticky-container e-flex e-con e-child" data-id="7f1a49f" data-element_type="container">
+				<div class="elementor-element elementor-element-33e80d0 elementor-invisible elementor-widget elementor-widget-heading" data-id="33e80d0" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInLeft&quot;}" data-widget_type="heading.default">
+					<h2 class="elementor-heading-title elementor-size-default">Have Any Questions on your minds!</h2>				</div>
+				<div class="elementor-element elementor-element-d481ef3 elementor-invisible elementor-widget elementor-widget-text-editor" data-id="d481ef3" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInLeft&quot;,&quot;_animation_delay&quot;:200}" data-widget_type="text-editor.default">
+									<p>We know choosing the right software can raise a lot of questions. That’s why we’ve put together answers to the most common ones</p>								</div>
+				<div class="elementor-element elementor-element-a694448 elementor-invisible elementor-widget elementor-widget-sasi-button" data-id="a694448" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInLeft&quot;}" data-widget_type="sasi-button.default">
+				<div class="elementor-widget-container">
+							
+		<a href="contact-us.html" class="sasi-btn sasi-btn-primary sasi-btn-icon sasi-btn-icon__right">
+			<span class="sasi-text">Get A Quote</span> 
+							<span class="sasi-icon">
+					<svg xmlns="http://www.w3.org/2000/svg" width="15" height="14" viewBox="0 0 15 14" fill="none"><path d="M6.84375 13.8125C6.96875 13.9688 7.21875 13.9688 7.375 13.8125L13.9062 7.28125C14.0625 7.125 14.0625 6.90625 13.9062 6.75L7.375 0.21875C7.21875 0.0625 6.96875 0.0625 6.84375 0.21875L6.21875 0.8125C6.0625 0.96875 6.0625 1.21875 6.21875 1.34375L11.0625 6.1875H0.375C0.1875 6.1875 0 6.375 0 6.5625V7.4375C0 7.65625 0.1875 7.8125 0.375 7.8125H11.0625L6.21875 12.6875C6.0625 12.8125 6.0625 13.0625 6.21875 13.2188L6.84375 13.8125Z" fill="#0E0E0E"></path></svg>				</span>
+					</a>
+	    
+	    				</div>
+				</div>
+			
+				</div>
+		<div class="elementor-element elementor-element-5a32f38 e-con-full e-flex e-con e-child" data-id="5a32f38" data-element_type="container">
+				<div class="elementor-element elementor-element-9b9f93f elementor-invisible elementor-widget elementor-widget-heading" data-id="9b9f93f" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInRight&quot;}" data-widget_type="heading.default">
+					
+				
+				<div class="elementor-element elementor-element-d43a95d elementor-invisible elementor-widget elementor-widget-heading" data-id="d43a95d" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInRight&quot;}" data-widget_type="heading.default">
+					<h3 class="elementor-heading-title elementor-size-default">Pricing Package</h3>				</div>
+				<div class="elementor-element elementor-element-b6add2c elementor-invisible elementor-widget elementor-widget-sasi-accordions" data-id="b6add2c" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInRight&quot;}" data-widget_type="sasi-accordions.default">
+				<div class="elementor-widget-container">
+					
+		<div class="sasi-accordions-wrapper one-expand no-distance">
+						<div class="sasi-acc-item">
+				
+				<h3 class="sasi-acc-item__title" data-tab="1" data-default="yes" >
+					1. What’s included in each pricing package?																		<span class="sasi-icon down"><svg xmlns="http://www.w3.org/2000/svg" width="7" height="12" viewBox="0 0 7 12" fill="none"><path d="M6.84375 6.28125L2.28125 10.9062C2.125 11.0625 1.875 11.0625 1.75 10.9062L1.125 10.2812C0.96875 10.125 0.96875 9.90625 1.125 9.75L4.8125 6L1.125 2.28125C0.96875 2.125 0.96875 1.875 1.125 1.75L1.75 1.125C1.875 0.96875 2.125 0.96875 2.28125 1.125L6.84375 5.75C7 5.90625 7 6.125 6.84375 6.28125Z" fill="#0E0E0E"></path></svg></span>
+							<span class="sasi-icon up"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="7" viewBox="0 0 12 7" fill="none"><path d="M6.28125 0.15625L10.9062 4.71875C11.0625 4.875 11.0625 5.125 10.9062 5.25L10.2812 5.875C10.125 6.03125 9.90625 6.03125 9.75 5.875L6 2.1875L2.28125 5.875C2.125 6.03125 1.875 6.03125 1.75 5.875L1.125 5.25C0.96875 5.125 0.96875 4.875 1.125 4.71875L5.75 0.15625C5.90625 -6.34632e-08 6.125 -7.30251e-08 6.28125 0.15625Z" fill="#0E0E0E"></path></svg></span>
+															</h3>
+				<div class="sasi-acc-item__content">
+					<div class="acc__content-inner"><p>Each pricing package includes a specific set of features, usage limits, and support options, designed to match different needs and budgets for individuals or teams.</p></div>
+				</div>
+			</div>
+						<div class="sasi-acc-item">
+				
+				<h3 class="sasi-acc-item__title" data-tab="2" data-default="" >
+					2. Can I request a custom package?																		<span class="sasi-icon down"><svg xmlns="http://www.w3.org/2000/svg" width="7" height="12" viewBox="0 0 7 12" fill="none"><path d="M6.84375 6.28125L2.28125 10.9062C2.125 11.0625 1.875 11.0625 1.75 10.9062L1.125 10.2812C0.96875 10.125 0.96875 9.90625 1.125 9.75L4.8125 6L1.125 2.28125C0.96875 2.125 0.96875 1.875 1.125 1.75L1.75 1.125C1.875 0.96875 2.125 0.96875 2.28125 1.125L6.84375 5.75C7 5.90625 7 6.125 6.84375 6.28125Z" fill="#0E0E0E"></path></svg></span>
+							<span class="sasi-icon up"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="7" viewBox="0 0 12 7" fill="none"><path d="M6.28125 0.15625L10.9062 4.71875C11.0625 4.875 11.0625 5.125 10.9062 5.25L10.2812 5.875C10.125 6.03125 9.90625 6.03125 9.75 5.875L6 2.1875L2.28125 5.875C2.125 6.03125 1.875 6.03125 1.75 5.875L1.125 5.25C0.96875 5.125 0.96875 4.875 1.125 4.71875L5.75 0.15625C5.90625 -6.34632e-08 6.125 -7.30251e-08 6.28125 0.15625Z" fill="#0E0E0E"></path></svg></span>
+															</h3>
+				<div class="sasi-acc-item__content">
+					<div class="acc__content-inner"><p>Yes, you can request a custom package tailored to your specific needs, with personalized features, usage limits, and support options to suit your goals.</p></div>
+				</div>
+			</div>
+						<div class="sasi-acc-item">
+				
+				<h3 class="sasi-acc-item__title" data-tab="3" data-default="" >
+					3. Are revisions included in the price?																		<span class="sasi-icon down"><svg xmlns="http://www.w3.org/2000/svg" width="7" height="12" viewBox="0 0 7 12" fill="none"><path d="M6.84375 6.28125L2.28125 10.9062C2.125 11.0625 1.875 11.0625 1.75 10.9062L1.125 10.2812C0.96875 10.125 0.96875 9.90625 1.125 9.75L4.8125 6L1.125 2.28125C0.96875 2.125 0.96875 1.875 1.125 1.75L1.75 1.125C1.875 0.96875 2.125 0.96875 2.28125 1.125L6.84375 5.75C7 5.90625 7 6.125 6.84375 6.28125Z" fill="#0E0E0E"></path></svg></span>
+							<span class="sasi-icon up"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="7" viewBox="0 0 12 7" fill="none"><path d="M6.28125 0.15625L10.9062 4.71875C11.0625 4.875 11.0625 5.125 10.9062 5.25L10.2812 5.875C10.125 6.03125 9.90625 6.03125 9.75 5.875L6 2.1875L2.28125 5.875C2.125 6.03125 1.875 6.03125 1.75 5.875L1.125 5.25C0.96875 5.125 0.96875 4.875 1.125 4.71875L5.75 0.15625C5.90625 -6.34632e-08 6.125 -7.30251e-08 6.28125 0.15625Z" fill="#0E0E0E"></path></svg></span>
+															</h3>
+				<div class="sasi-acc-item__content">
+					<div class="acc__content-inner"><p>Yes, revisions are included in the price, within the agreed scope, to ensure the final result aligns with your vision and requirements.</p></div>
+				</div>
+			</div>
+				
+						<div class="sasi-acc-item">
+				
+				<h3 class="sasi-acc-item__title" data-tab="5" data-default="" >
+					4. Can I upgrade my package later?																		<span class="sasi-icon down"><svg xmlns="http://www.w3.org/2000/svg" width="7" height="12" viewBox="0 0 7 12" fill="none"><path d="M6.84375 6.28125L2.28125 10.9062C2.125 11.0625 1.875 11.0625 1.75 10.9062L1.125 10.2812C0.96875 10.125 0.96875 9.90625 1.125 9.75L4.8125 6L1.125 2.28125C0.96875 2.125 0.96875 1.875 1.125 1.75L1.75 1.125C1.875 0.96875 2.125 0.96875 2.28125 1.125L6.84375 5.75C7 5.90625 7 6.125 6.84375 6.28125Z" fill="#0E0E0E"></path></svg></span>
+							<span class="sasi-icon up"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="7" viewBox="0 0 12 7" fill="none"><path d="M6.28125 0.15625L10.9062 4.71875C11.0625 4.875 11.0625 5.125 10.9062 5.25L10.2812 5.875C10.125 6.03125 9.90625 6.03125 9.75 5.875L6 2.1875L2.28125 5.875C2.125 6.03125 1.875 6.03125 1.75 5.875L1.125 5.25C0.96875 5.125 0.96875 4.875 1.125 4.71875L5.75 0.15625C5.90625 -6.34632e-08 6.125 -7.30251e-08 6.28125 0.15625Z" fill="#0E0E0E"></path></svg></span>
+															</h3>
+				<div class="sasi-acc-item__content">
+					<div class="acc__content-inner"><p>Yes, you can upgrade your package at any time to access additional features, higher limits, and enhanced support without disrupting your ongoing work.</p></div>
+				</div>
+			</div>
+				    </div>
+
+	    				</div>
+				</div>
+				</div>
+					</div>
+				</div>
+				</div>
+		
+
+	</div>
+	<footer id="site-footer" class="site-footer" itemscope="itemscope" itemtype="http://schema.org/WPFooter">		<div data-elementor-type="wp-post" data-elementor-id="33" class="elementor elementor-33">
+		<div class="elementor-element elementor-element-574efd6 e-flex e-con-boxed e-con e-parent" data-id="574efd6" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+			<div class="e-con-inner">
+<div class="elementor-element elementor-element-426ad21 e-con-full e-flex e-con e-child" data-id="426ad21" data-element_type="container">
+		<div class="elementor-element elementor-element-4219d24 elementor-invisible elementor-widget elementor-widget-heading" data-id="4219d24" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;}" data-widget_type="heading.default">
+			<h2 class="elementor-heading-title elementor-size-default">Start your free trial today</h2>				</div>
+		<div class="elementor-element elementor-element-bd87ba4 elementor-invisible elementor-widget elementor-widget-text-editor" data-id="bd87ba4" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;,&quot;_animation_delay&quot;:200}" data-widget_type="text-editor.default">
+							<p>Let your business thrive with smart conversations, smarter support, better results</p>								</div>
+<div class="elementor-element elementor-element-3d7212c e-con-full e-flex e-con e-child" data-id="3d7212c" data-element_type="container">
+		<div class="elementor-element elementor-element-2d340ce elementor-invisible elementor-widget elementor-widget-sasi-button" data-id="2d340ce" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;,&quot;_animation_delay&quot;:400}" data-widget_type="sasi-button.default">
+		<div class="elementor-widget-container">
+					
+<a href="#" class="sasi-btn sasi-btn-primary sasi-btn-icon sasi-btn-icon__right">
+	<span class="sasi-text">Start 14 Days Free Trial</span> 
+					<span class="sasi-icon">
+			<svg xmlns="http://www.w3.org/2000/svg" width="15" height="14" viewBox="0 0 15 14" fill="none"><path d="M6.84375 13.8125C6.96875 13.9688 7.21875 13.9688 7.375 13.8125L13.9062 7.28125C14.0625 7.125 14.0625 6.90625 13.9062 6.75L7.375 0.21875C7.21875 0.0625 6.96875 0.0625 6.84375 0.21875L6.21875 0.8125C6.0625 0.96875 6.0625 1.21875 6.21875 1.34375L11.0625 6.1875H0.375C0.1875 6.1875 0 6.375 0 6.5625V7.4375C0 7.65625 0.1875 7.8125 0.375 7.8125H11.0625L6.21875 12.6875C6.0625 12.8125 6.0625 13.0625 6.21875 13.2188L6.84375 13.8125Z" fill="#0E0E0E"></path></svg>				</span>
+			</a>
+
+				</div>
+		</div>
+		<div class="elementor-element elementor-element-d7fb592 elementor-invisible elementor-widget elementor-widget-sasi-button" data-id="d7fb592" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;,&quot;_animation_delay&quot;:500}" data-widget_type="sasi-button.default">
+		<div class="elementor-widget-container">
+
+
+				</div>
+		</div>
+		</div>
+		</div>
+<div class="elementor-element elementor-element-b507c39 e-con-full e-flex e-con e-child" data-id="b507c39" data-element_type="container">
+<div class="elementor-element elementor-element-2f51374 e-con-full e-flex elementor-invisible e-con e-child" data-id="2f51374" data-element_type="container" data-settings="{&quot;animation&quot;:&quot;fadeIn&quot;}">
+		<div class="elementor-element elementor-element-3c184f5 elementor-widget elementor-widget-sasico-logo" data-id="3c184f5" data-element_type="widget" data-widget_type="sasico-logo.default">
+		<div class="elementor-widget-container">
+						
+			<div class="the-logo">
+				<a href="index.html">
+					<img src="/home/images/logoswift.png" alt="swift Light">
+				</a>			        
+			</div>
+			
+						</div>
+				</div>
+				<div class="elementor-element elementor-element-85cefd9 elementor-widget elementor-widget-text-editor" data-id="85cefd9" data-element_type="widget" data-widget_type="text-editor.default">
+									<p>Built for professionals, teams, and students who value efficiency, clarity, and performance.</p>								</div>
+		<div class="elementor-element elementor-element-21fc5cd elementor-widget elementor-widget-sasi-social-icons" data-id="21fc5cd" data-element_type="widget" data-widget_type="sasi-social-icons.default">
+		<div class="elementor-widget-container">
+					<div class="sasi-social-icons__wrapper dflex justify-content-center align-items-center">
+					<a class="sasi-social-icons__item dflex justify-content-center align-items-center sasi-social-icon-facebook-f elementor-repeater-item-a1d5d2d" aria-label="Social Icon Link" href="#" target="_blank">
+			<span class="sasi-icon">						<svg class="e-font-icon-svg e-fab-facebook-f" viewBox="0 0 320 512" xmlns="http://www.w3.org/2000/svg"><path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"></path></svg></span>									</a>
+					<a class="sasi-social-icons__item dflex justify-content-center align-items-center sasi-social-icon-x-twitter elementor-repeater-item-45ceb26" aria-label="Social Icon Link" href="#" target="_blank">
+			<span class="sasi-icon">						<svg class="e-font-icon-svg e-fab-x-twitter" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"></path></svg></span>									</a>
+					<a class="sasi-social-icons__item dflex justify-content-center align-items-center sasi-social-icon-linkedin-in elementor-repeater-item-17864c7" aria-label="Social Icon Link" href="#" target="_blank">
+			<span class="sasi-icon">						<svg class="e-font-icon-svg e-fab-linkedin-in" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"></path></svg></span>									</a>
+					<a class="sasi-social-icons__item dflex justify-content-center align-items-center sasi-social-icon-youtube elementor-repeater-item-6582f03" aria-label="Social Icon Link" href="#" target="_blank">
+			<span class="sasi-icon">						<svg class="e-font-icon-svg e-fab-youtube" viewBox="0 0 576 512" xmlns="http://www.w3.org/2000/svg"><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"></path></svg></span>									</a>
+			</div>
+				</div>
+		</div>
+		</div>
+<div class="elementor-element elementor-element-68d71f6 e-con-full e-flex e-con e-child" data-id="68d71f6" data-element_type="container">
+<div class="elementor-element elementor-element-6356ad3 e-grid e-con-full elementor-invisible e-con e-child" data-id="6356ad3" data-element_type="container" data-settings="{&quot;animation&quot;:&quot;fadeIn&quot;,&quot;animation_delay&quot;:150}">
+<div class="elementor-element elementor-element-1d15523 e-con-full e-flex e-con e-child" data-id="1d15523" data-element_type="container">
+		<div class="elementor-element elementor-element-027c53f elementor-widget elementor-widget-heading" data-id="027c53f" data-element_type="widget" data-widget_type="heading.default">
+			<h5 class="elementor-heading-title elementor-size-default">Product</h5>				</div>
+		<div class="elementor-element elementor-element-460d54c sasi-view-default elementor-widget elementor-widget-sasi-icon-list" data-id="460d54c" data-element_type="widget" data-widget_type="sasi-icon-list.default">
+		<div class="elementor-widget-container">
+						<div class="sasi-icon-list-wrapper">
+		<ul class="unstyle sasi-icon-list-items ">
+									<li class="sasi-icon-list-item ">
+					<a href="home">							<span class="sasi-icon-list-text title-link">Home</span>
+													</a>
+											</li>
+									<li class="sasi-icon-list-item ">
+					<a href="features.html">							<span class="sasi-icon-list-text title-link">Features</span>
+													</a>
+											</li>
+									<li class="sasi-icon-list-item ">
+					<a href="pricing.html">							<span class="sasi-icon-list-text title-link">Pricing</span>
+													</a>
+											</li>
+									<li class="sasi-icon-list-item ">
+					<a href="privacy.html
+					">							<span class="sasi-icon-list-text title-link">Privacy</span>
+													</a>
+											</li>
+							</ul>
+	</div>
+				</div>
+		</div>
+		</div>
+<div class="elementor-element elementor-element-92cc9fd e-con-full e-flex e-con e-child" data-id="92cc9fd" data-element_type="container">
+		<div class="elementor-element elementor-element-924a3d5 elementor-widget elementor-widget-heading" data-id="924a3d5" data-element_type="widget" data-widget_type="heading.default">
+			<h5 class="elementor-heading-title elementor-size-default">Company</h5>				</div>
+		<div class="elementor-element elementor-element-35ed3c6 sasi-view-default elementor-widget elementor-widget-sasi-icon-list" data-id="35ed3c6" data-element_type="widget" data-widget_type="sasi-icon-list.default">
+		<div class="elementor-widget-container">
+						<div class="sasi-icon-list-wrapper">
+		<ul class="unstyle sasi-icon-list-items ">
+									<li class="sasi-icon-list-item ">
+					<a href="#">							<span class="sasi-icon-list-text title-link">About us</span>
+													</a>
+											</li>
+									<li class="sasi-icon-list-item ">
+					<a href="#">							<span class="sasi-icon-list-text title-link">Latest Blog</span>
+													</a>
+											</li>
+									<li class="sasi-icon-list-item ">
+					<a href="#">							<span class="sasi-icon-list-text title-link">Our Clients</span>
+													</a>
+											</li>
+									<li class="sasi-icon-list-item ">
+					<a href="#">							<span class="sasi-icon-list-text title-link">Careers</span>
+													</a>
+											</li>
+							</ul>
+	</div>
+				</div>
+		</div>
+		</div>
+		</div>
+		</div>
+<div class="elementor-element elementor-element-1ac6060 e-con-full e-flex elementor-invisible e-con e-child" data-id="1ac6060" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;animation&quot;:&quot;fadeIn&quot;,&quot;animation_delay&quot;:300}">
+		<div class="elementor-element elementor-element-916855c elementor-widget elementor-widget-heading" data-id="916855c" data-element_type="widget" data-widget_type="heading.default">
+			<h5 class="elementor-heading-title elementor-size-default">Join Our Newsletter</h5>				</div>
+		<div class="elementor-element elementor-element-c99cce0 elementor-widget elementor-widget-text-editor" data-id="c99cce0" data-element_type="widget" data-widget_type="text-editor.default">
+							<p>Never Miss an Update — Sign Up Today</p>								</div>
+		<div class="elementor-element elementor-element-acd25b9 elementor-widget elementor-widget-shortcode" data-id="acd25b9" data-element_type="widget" data-widget_type="shortcode.default">
+					<div class="elementor-shortcode"><script>(function() {
+window.mc4wp = window.mc4wp || {
+listeners: [],
+forms: {
+	on: function(evt, cb) {
+		window.mc4wp.listeners.push(
+			{
+				event   : evt,
+				callback: cb
+			}
+		);
+	}
+}
+}
+})();
+</script><form id="mc4wp-form-1" class="mc4wp-form mc4wp-form-53" method="post" data-id="53" data-name="Form Footer" ><div class="mc4wp-form-fields"><div class="sasi-subscribe-form dflex gap-10">
+<input type="email" id="email" name="EMAIL" placeholder="Enter email" required>
+<button type="submit" class="sasi-icon"><i class="ss-arrow-right"></i></button>
+</div>
+</div><label style="display: none !important;">Leave this field empty if you're human: <input type="text" name="_mc4wp_honeypot" value="" tabindex="-1" autocomplete="off" /></label><input type="hidden" name="_mc4wp_timestamp" value="1762164013" /><input type="hidden" name="_mc4wp_form_id" value="53" /><input type="hidden" name="_mc4wp_form_element_id" value="mc4wp-form-1" /><div class="mc4wp-response"></div></form><!-- / Mailchimp for WordPress Plugin --></div>
+				</div>
+		</div>
+		</div>
+<div class="elementor-element elementor-element-95d50ef e-con-full e-flex e-con e-child" data-id="95d50ef" data-element_type="container">
+		<div class="elementor-element elementor-element-c284bd1 elementor-invisible elementor-widget elementor-widget-text-editor" data-id="c284bd1" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeIn&quot;,&quot;_animation_delay&quot;:300}" data-widget_type="text-editor.default">
+							<p>Swift App,2025 © All rights reserved</p>								</div>
+		<div class="elementor-element elementor-element-193f7e9 elementor-view-stacked btn-back-to-top elementor-shape-circle elementor-invisible elementor-widget elementor-widget-icon" data-id="193f7e9" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeIn&quot;,&quot;_animation_delay&quot;:300}" data-widget_type="icon.default">
+					<div class="elementor-icon-wrapper">
+	<a class="elementor-icon" href="#">
+	<svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13"><path d="M0.539062 6.91406C0.402344 6.80469 0.402344 6.58594 0.539062 6.44922L6.25391 0.734375C6.39062 0.597656 6.58203 0.597656 6.71875 0.734375L12.4336 6.44922C12.5703 6.58594 12.5703 6.80469 12.4336 6.91406L11.9141 7.46094C11.7773 7.59766 11.5586 7.59766 11.4492 7.46094L7.21094 3.22266V12.5469C7.21094 12.7383 7.04688 12.875 6.88281 12.875H6.11719C5.92578 12.875 5.78906 12.7383 5.78906 12.5469V3.22266L1.52344 7.46094C1.41406 7.59766 1.19531 7.59766 1.05859 7.46094L0.539062 6.91406Z"></path></svg>			</a>
+</div>
+				</div>
+		<div class="elementor-element elementor-element-3e24e7c sasi-view-default elementor-invisible elementor-widget elementor-widget-sasi-icon-list" data-id="3e24e7c" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeIn&quot;,&quot;_animation_delay&quot;:300}" data-widget_type="sasi-icon-list.default">
+		<div class="elementor-widget-container">
+						<div class="sasi-icon-list-wrapper">
+		<ul class="unstyle sasi-icon-list-items --inline-items">
+									<li class="sasi-icon-list-item --inline-item">
+					<a href="#">							<span class="sasi-icon-list-text title-link">Terms & Conditions</span>
+													</a>
+											</li>
+									<li class="sasi-icon-list-item --inline-item">
+					<a href="#">							<span class="sasi-icon-list-text title-link">Privacy Policy</span>
+													</a>
+											</li>
+							</ul>
+	</div>
+				</div>
+		</div>
+		</div>
+			</div>
+		</div>
+		</div>
+</footer></div>
+<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"\/swift\/*"},{"not":{"href_matches":["\/swift\/wp-*.php","\/swift\/wp-admin\/*","\/swift\/wp-content\/uploads\/sites\/9\/*","\/swift\/wp-content\/*","\/swift\/wp-content\/plugins\/*","\/swift\/wp-content\/themes\/sasico\/*","\/swift\/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+<script>(function() {function maybePrefixUrlField () {
+  const value = this.value.trim()
+  if (value !== '' && value.indexOf('http') !== 0) {
+    this.value = 'http://' + value
+  }
+}
+
+const urlFields = document.querySelectorAll('.mc4wp-form input[type="url"]')
+for (let j = 0; j < urlFields.length; j++) {
+  urlFields[j].addEventListener('blur', maybePrefixUrlField)
+}
+})();</script>			<script>
+				const lazyloadRunObserver = () => {
+					const lazyloadBackgrounds = document.querySelectorAll( `.e-con.e-parent:not(.e-lazyloaded)` );
+					const lazyloadBackgroundObserver = new IntersectionObserver( ( entries ) => {
+						entries.forEach( ( entry ) => {
+							if ( entry.isIntersecting ) {
+								let lazyloadBackground = entry.target;
+								if( lazyloadBackground ) {
+									lazyloadBackground.classList.add( 'e-lazyloaded' );
+								}
+								lazyloadBackgroundObserver.unobserve( entry.target );
+							}
+						});
+					}, { rootMargin: '200px 0px 200px 0px' } );
+					lazyloadBackgrounds.forEach( ( lazyloadBackground ) => {
+						lazyloadBackgroundObserver.observe( lazyloadBackground );
+					} );
+				};
+				const events = [
+					'DOMContentLoaded',
+					'elementor/lazyload/observe',
+				];
+				events.forEach( ( event ) => {
+					document.addEventListener( event, lazyloadRunObserver );
+				} );
+			</script>
+			<link rel='stylesheet' id='elementor-post-746-css' href='../home/wp-content/uploads/sites/9/elementor/css/post-74616ae.css?ver=1758809716' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-post-85-css' href='../home/wp-content/uploads/sites/9/elementor/css/post-85f23b.css?ver=1757929543' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-post-33-css' href='../home/wp-content/uploads/sites/9/elementor/css/post-33f23b.css?ver=1757929543' type='text/css' media='all' />
+<script type="text/javascript" src="../home/wp-includes/js/dist/hooks.min4fdd.js?ver=4d63a3d491d11ffd8ac6" id="wp-hooks-js"></script>
+<script type="text/javascript" src="../home/wp-includes/js/dist/i18n.minc33c.js?ver=5e580eb46a90c2b997e6" id="wp-i18n-js"></script>
+<script type="text/javascript" id="wp-i18n-js-after">
+/* <![CDATA[ */
+wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+/* ]]> */
+</script>
+<script type="text/javascript" src="../home/wp-content/plugins/contact-form-7/includes/swv/js/index658f.js?ver=6.1.2" id="swv-js"></script>
+<script type="text/javascript" id="contact-form-7-js-before">
+/* <![CDATA[ */
+var wpcf7 = {
+    "api": {
+        "root": "https:\/\/sasico.pikathemes.site\/swift\/wp-json\/",
+        "namespace": "contact-form-7\/v1"
+    }
+};
+/* ]]> */
+</script>
+<script type="text/javascript" src="../home/wp-content/plugins/contact-form-7/includes/js/index658f.js?ver=6.1.2" id="contact-form-7-js"></script>
+<script type="text/javascript" src="../home/wp-content/themes/sasico/js/plugin-addon20b9.js?ver=1.0.2" id="sasico-plugin-script-js"></script>
+<script type="text/javascript" src="../home/wp-includes/js/imagesloaded.minbb93.js?ver=5.0.0" id="imagesloaded-js"></script>
+<script type="text/javascript" src="../home/wp-content/themes/sasico/js/elementor-widgets20b9.js?ver=1.0.2" id="sasico-elementor-js"></script>
+<script type="text/javascript" src="../home/wp-content/themes/sasico/js/elementor-header20b9.js?ver=1.0.2" id="sasico-elementor-header-js"></script>
+<script type="text/javascript" src="../home/wp-content/themes/sasico/js/theme20b9.js?ver=1.0.2" id="sasico-scripts-js"></script>
+<script type="text/javascript" src="../home/wp-content/plugins/elementor/assets/js/webpack.runtime.min9287.js?ver=3.32.5" id="elementor-webpack-runtime-js"></script>
+<script type="text/javascript" src="../home/wp-content/plugins/elementor/assets/js/frontend-modules.min9287.js?ver=3.32.5" id="elementor-frontend-modules-js"></script>
+<script type="text/javascript" src="../home/wp-includes/js/jquery/ui/core.minb37e.js?ver=1.13.3" id="jquery-ui-core-js"></script>
+<script type="text/javascript" id="elementor-frontend-js-before">
+/* <![CDATA[ */
+var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false,"isScriptDebug":false},"i18n":{"shareOnFacebook":"Share on Facebook","shareOnTwitter":"Share on Twitter","pinIt":"Pin it","download":"Download","downloadImage":"Download image","fullscreen":"Fullscreen","zoom":"Zoom","share":"Share","playVideo":"Play Video","previous":"Previous","next":"Next","close":"Close","a11yCarouselPrevSlideMessage":"Previous slide","a11yCarouselNextSlideMessage":"Next slide","a11yCarouselFirstSlideMessage":"This is the first slide","a11yCarouselLastSlideMessage":"This is the last slide","a11yCarouselPaginationBulletMessage":"Go to slide"},"is_rtl":false,"breakpoints":{"xs":0,"sm":480,"md":576,"lg":992,"xl":1440,"xxl":1600},"responsive":{"breakpoints":{"mobile":{"label":"Mobile Portrait","value":575,"default_value":767,"direction":"max","is_enabled":true},"mobile_extra":{"label":"Mobile Landscape","value":767,"default_value":880,"direction":"max","is_enabled":true},"tablet":{"label":"Tablet Portrait","value":991,"default_value":1024,"direction":"max","is_enabled":true},"tablet_extra":{"label":"Tablet Landscape","value":1199,"default_value":1200,"direction":"max","is_enabled":true},"laptop":{"label":"Laptop","value":1399,"default_value":1366,"direction":"max","is_enabled":true},"widescreen":{"label":"Widescreen","value":2400,"default_value":2400,"direction":"min","is_enabled":false}},"hasCustomBreakpoints":true},"version":"3.32.5","is_static":false,"experimentalFeatures":{"e_font_icon_svg":true,"additional_custom_breakpoints":true,"container":true,"e_optimized_markup":true,"nested-elements":true,"home_screen":true,"global_classes_should_enforce_capabilities":true,"e_variables":true,"cloud-library":true,"e_opt_in_v4_page":true,"import-export-customization":true},"urls":{"assets":"https:\/\/sasico.pikathemes.site\/swift\/wp-content\/plugins\/elementor\/assets\/","ajaxurl":"https:\/\/sasico.pikathemes.site\/swift\/wp-admin\/admin-ajax.php","uploadUrl":"https:\/\/sasico.pikathemes.site\/swift\/wp-content\/uploads\/sites\/9"},"nonces":{"floatingButtonsClickTracking":"6a80d0fdc9"},"swiperClass":"swiper","settings":{"page":[],"editorPreferences":[]},"kit":{"active_breakpoints":["viewport_mobile","viewport_mobile_extra","viewport_tablet","viewport_tablet_extra","viewport_laptop"],"viewport_mobile":575,"viewport_mobile_extra":767,"viewport_tablet":991,"viewport_tablet_extra":1199,"viewport_laptop":1399,"global_image_lightbox":"yes","lightbox_enable_counter":"yes","lightbox_enable_fullscreen":"yes","lightbox_enable_zoom":"yes","lightbox_enable_share":"yes","lightbox_title_src":"title","lightbox_description_src":"description"},"post":{"id":152,"title":"Help%20%E2%80%93%20swift%20Light","excerpt":"","featuredImage":false}};
+/* ]]> */
+</script>
+<script type="text/javascript" src="../home/wp-content/plugins/elementor/assets/js/frontend.min9287.js?ver=3.32.5" id="elementor-frontend-js"></script>
+<script type="text/javascript" defer src="../home/wp-content/plugins/mailchimp-for-wp/assets/js/forms9073.js?ver=4.10.7" id="mc4wp-forms-api-js"></script>
+
+</body>
+
+<!-- Mirrored from sasico.pikathemes.site/swift/help/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 03 Nov 2025 10:20:22 GMT -->
+</html>

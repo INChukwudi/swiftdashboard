@@ -1,11 +1,11 @@
-// src/app/new-task/new-task.component.ts
+// src/app/new-task/new-task.ts
 import { Component, OnInit, OnDestroy, Output, EventEmitter, Input } from '@angular/core';
 import { FormBuilder, FormGroup, FormArray, Validators, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { TaskService, TaskData, Project } from '../services/task.service';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import { TagifyInputComponent, TagifyWhitelistItem } from '../tagify-input/tagify-input';
+import { CollaboratorSelector, Collaborator } from '../collaborator-selector/collaborator-selector';
 
 declare var bootstrap: any;
 declare var Swal: any;
@@ -42,7 +42,7 @@ interface Employee {
 @Component({
   selector: 'app-new-task',
   standalone: true,  
-  imports: [ReactiveFormsModule, CommonModule, TagifyInputComponent],
+  imports: [ReactiveFormsModule, CommonModule, CollaboratorSelector],
   templateUrl: './new-task.html',
   styleUrls: ['./new-task.scss']
 })
@@ -57,8 +57,8 @@ export class NewTaskComponent implements OnInit, OnDestroy {
   private destroy$ = new Subject<void>();
   private modal: any;
 
-  // Tagify whitelist for collaborators
-  collaboratorWhitelist: TagifyWhitelistItem[] = [];
+  // Collaborator list for the selector component
+  collaboratorList: Collaborator[] = [];
 
   // Data arrays
   departments: Department[] = [];
@@ -114,10 +114,10 @@ export class NewTaskComponent implements OnInit, OnDestroy {
       category: ['', Validators.required],
       startDate: ['', Validators.required],
       dueDate: ['', Validators.required],
-      priority: ['',],
-      recurrence: ['OneTime',],
+      priority: [''],
+      recurrence: ['OneTime'],
       status: ['NotStarted'],
-      collaboratorIds: [[]],
+      collaboratorIds: [[]], // Array of selected collaborator IDs
       subtasks: this.fb.array([])
     });
 
@@ -224,21 +224,20 @@ export class NewTaskComponent implements OnInit, OnDestroy {
           if (response.ok || response.success) {
             this.employees = response.data?.pageData || response.data || [];
             console.log('✅ Employees loaded:', this.employees.length);
-            console.log('📋 First 3 employees from API:', this.employees.slice(0, 3));
             
-            // Build whitelist for Tagify component
-            this.collaboratorWhitelist = this.employees.map(emp => ({
-              value: `${emp.firstName} ${emp.lastName}`,
+            // Build collaborator list for the selector component
+            this.collaboratorList = this.employees.map(emp => ({
               id: emp.id,
+              firstName: emp.firstName,
+              lastName: emp.lastName,
               email: emp.email,
               avatarUrl: emp.avatarUrl,
-              firstName: emp.firstName,
-              lastName: emp.lastName
+              job: emp.job,
+              department: emp.department,
+              phoneNumber: emp.phoneNumber
             }));
             
-            console.log('✅ Collaborator whitelist built:', this.collaboratorWhitelist.length, 'items');
-            console.log('📋 First 3 whitelist items:', this.collaboratorWhitelist.slice(0, 3));
-            console.log('📋 Sample whitelist item:', JSON.stringify(this.collaboratorWhitelist[0], null, 2));
+            console.log('✅ Collaborator list built:', this.collaboratorList.length, 'items');
           }
           this.isLoadingEmployees = false;
         },
@@ -268,6 +267,14 @@ export class NewTaskComponent implements OnInit, OnDestroy {
 
     // Reset category selection
     this.taskForm.patchValue({ category: '' });
+  }
+
+  // ============= COLLABORATOR HANDLING =============
+
+  onCollaboratorsChange(selectedIds: string[]): void {
+    console.log('📋 Collaborators selection changed:', selectedIds);
+    // The form control is already updated via formControlName binding
+    // This handler is for any additional logic you might need
   }
 
   // ============= SUBTASKS =============

@@ -1,0 +1,330 @@
+// src/app/collaborator-selector/collaborator-selector.scss
+
+// ============= MAIN CONTAINER =============
+.collaborator-selector {
+  position: relative;
+  width: 100%;
+
+  &.disabled {
+    opacity: 0.6;
+    pointer-events: none;
+  }
+}
+
+// ============= SELECTED COLLABORATORS (PILLS) =============
+.selected-collaborators-container {
+  .collaborator-pill {
+    background-color: rgba(0, 158, 247, 0.1) !important;
+    border: 1px solid rgba(0, 158, 247, 0.2);
+    transition: all 0.2s ease;
+    max-width: 250px;
+
+    &:hover {
+      background-color: rgba(0, 158, 247, 0.15) !important;
+      border-color: rgba(0, 158, 247, 0.3);
+    }
+
+    .symbol {
+      flex-shrink: 0;
+    }
+
+    .symbol-label {
+      font-size: 10px;
+    }
+
+    span.fs-7 {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 150px;
+    }
+
+    .btn-icon {
+      flex-shrink: 0;
+      transition: all 0.15s ease;
+      
+      &:hover {
+        background-color: rgba(241, 65, 108, 0.1) !important;
+        color: #f1416c !important;
+      }
+    }
+  }
+}
+
+// ============= INPUT FIELD =============
+.form-control-solid {
+  &.cursor-pointer {
+    cursor: pointer;
+  }
+
+  &.focus {
+    border-color: #009ef7 !important;
+    box-shadow: 0 0 0 0.25rem rgba(0, 158, 247, 0.1) !important;
+  }
+
+  &.disabled {
+    background-color: #f5f8fa;
+    cursor: not-allowed;
+  }
+
+  .form-control-transparent {
+    background-color: transparent !important;
+    outline: none !important;
+    box-shadow: none !important;
+
+    &::placeholder {
+      color: #a1a5b7;
+    }
+
+    &:focus {
+      outline: none !important;
+      box-shadow: none !important;
+    }
+  }
+}
+
+// ============= DROPDOWN MENU =============
+.dropdown-menu-custom {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1055;
+  margin-top: 5px;
+  
+  border: 1px solid #e4e6ef;
+  border-radius: 0.475rem;
+  box-shadow: 0 0.5rem 1.5rem 0.5rem rgba(0, 0, 0, 0.075);
+  animation: dropdownFadeIn 0.2s ease;
+
+  // Custom scrollbar
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #f5f8fa;
+    border-radius: 3px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #c4c4c4;
+    border-radius: 3px;
+
+    &:hover {
+      background: #a1a5b7;
+    }
+  }
+}
+
+@keyframes dropdownFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// ============= DROPDOWN ITEMS =============
+.dropdown-item {
+  border-bottom: 1px solid #f5f8fa;
+  transition: all 0.15s ease;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &:hover {
+    background-color: #d1ecff !important;
+  }
+
+  &.highlighted {
+    background-color: #f1faff !important;
+  }
+
+  &.selected {
+    background-color: rgba(0, 158, 247, 0.05) !important;
+
+    &:hover {
+      background-color: rgba(0, 158, 247, 0.1) !important;
+    }
+  }
+
+  // Avatar styling
+  .symbol {
+    flex-shrink: 0;
+
+    img {
+      object-fit: cover;
+    }
+
+    .symbol-label {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  // Employee info
+  .d-flex.flex-column {
+    min-width: 0; // Enable text truncation
+  }
+
+  // Badge styling
+  .badge {
+    font-size: 10px;
+    padding: 0.25rem 0.5rem;
+  }
+}
+
+// ============= CHECKBOX STYLING =============
+.form-check-custom {
+  .form-check-input {
+    width: 1.25rem;
+    height: 1.25rem;
+    cursor: pointer;
+    
+    &:checked {
+      background-color: #009ef7;
+      border-color: #009ef7;
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 0.25rem rgba(0, 158, 247, 0.25);
+    }
+  }
+}
+
+// ============= BUTTONS =============
+.btn-light-primary {
+  background-color: rgba(0, 158, 247, 0.1) !important;
+  color: #009ef7 !important;
+  border: none;
+
+  &:hover {
+    background-color: rgba(0, 158, 247, 0.2) !important;
+    color: #009ef7 !important;
+  }
+}
+
+.btn-light-danger {
+  background-color: rgba(241, 65, 108, 0.1) !important;
+  color: #f1416c !important;
+  border: none;
+
+  &:hover {
+    background-color: rgba(241, 65, 108, 0.2) !important;
+    color: #f1416c !important;
+  }
+}
+
+// ============= AVATAR BACKGROUND COLORS =============
+.symbol-label {
+  &.bg-primary {
+    background-color: #009ef7 !important;
+  }
+  &.bg-success {
+    background-color: #50cd89 !important;
+  }
+  &.bg-info {
+    background-color: #7239ea !important;
+  }
+  &.bg-warning {
+    background-color: #ffc700 !important;
+  }
+  &.bg-danger {
+    background-color: #f1416c !important;
+  }
+  &.bg-dark {
+    background-color: #181c32 !important;
+  }
+  &.bg-secondary {
+    background-color: #7e8299 !important;
+  }
+}
+
+// Text inverse colors for avatars
+.text-inverse-primary {
+  color: #ffffff !important;
+}
+.text-inverse-success {
+  color: #ffffff !important;
+}
+.text-inverse-info {
+  color: #ffffff !important;
+}
+.text-inverse-warning {
+  color: #181c32 !important;
+}
+.text-inverse-danger {
+  color: #ffffff !important;
+}
+.text-inverse-dark {
+  color: #ffffff !important;
+}
+.text-inverse-secondary {
+  color: #ffffff !important;
+}
+
+// ============= RESPONSIVE =============
+@media (max-width: 576px) {
+  .selected-collaborators-container {
+    .collaborator-pill {
+      max-width: 200px;
+
+      span.fs-7 {
+        max-width: 100px;
+      }
+    }
+  }
+
+  .dropdown-menu-custom {
+    max-height: 300px !important;
+  }
+
+  .dropdown-item {
+    padding: 0.75rem 1rem !important;
+
+    .symbol-45px {
+      width: 35px !important;
+      height: 35px !important;
+    }
+  }
+}
+
+// ============= UTILITY CLASSES =============
+.min-h-45px {
+  min-height: 45px;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.object-fit-cover {
+  object-fit: cover;
+}
+
+.text-truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+// ============= LOADING STATE (Optional) =============
+.loading-spinner {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid #f3f3f3;
+  border-top: 2px solid #009ef7;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

@@ -1,0 +1,56 @@
+/* phủ toàn màn hình */
+#preloader {
+  position: fixed;
+  inset: 0;
+  background: #ffffff; /* hoặc gradient */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999999;
+  transition: opacity 0.8s ease; /* hiệu ứng fade-out */
+}
+
+/* khi load xong */
+#preloader.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* nội dung loader */
+.loader-content {
+  text-align: center;
+  color: #0e0e0e;
+  font-family: sans-serif;
+  animation: fadeIn 1s ease;
+}
+
+.loader-logo {
+  width: 180px;
+  height: auto;
+  margin-bottom: 15px;
+  animation: pulse 1.5s infinite;
+}
+
+.loader-text {
+  font-size: 16px;
+  letter-spacing: 2px;
+  animation: blink 1.5s infinite;
+}
+
+/* hiệu ứng logo */
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.1); opacity: 1; }
+}
+
+/* hiệu ứng chữ */
+@keyframes blink {
+  0%, 100% { opacity: 0.7; }
+  50% { opacity: 1; }
+}
+
+/* fade in khi hiện */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

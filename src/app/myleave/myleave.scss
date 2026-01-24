@@ -1,0 +1,66 @@
+// myleave.scss
+
+// Modal animation
+.modal.show {
+    display: block !important;
+  }
+  
+  // Form validation
+  .is-invalid {
+    border-color: #f1416c !important;
+  }
+  
+  .invalid-feedback {
+    display: block;
+    color: #f1416c;
+    font-size: 0.85rem;
+    margin-top: 0.25rem;
+  }
+  
+  // Current leave banner animation
+  .bg-light-success {
+    animation: pulse 2s infinite;
+  }
+  
+  @keyframes pulse {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.9;
+    }
+  }
+  
+  // Table row hover
+  .table tbody tr:hover {
+    background-color: rgba(0, 0, 0, 0.02);
+  }
+  
+  // Pagination cursor
+  .pagination .page-link {
+    cursor: pointer;
+  }
+  
+  .pagination .page-item.disabled .page-link {
+    cursor: not-allowed;
+  }
+  
+  // Button spacing in action column
+  .gap-2 {
+    gap: 0.5rem !important;
+  }
+  
+  // Modal backdrop
+  .modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1040;
+  }
+  
+  .modal {
+    z-index: 1050;
+  }
