@@ -10,6 +10,6 @@ import { RouterLink } from '@angular/router';
 export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
-       location.replace('/home');
+       location.replace('/home/');
   }
 }
