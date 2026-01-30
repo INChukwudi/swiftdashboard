@@ -101,7 +101,7 @@ export class SigninComponent {
     const payload = {
       phoneNumberOrEmail: this.email.trim(),
       password: this.password,
-      allowedAdminRoles: true
+      allowedAdminRoles: this.selectedRole === 'admin'
     };
 
     this.http
