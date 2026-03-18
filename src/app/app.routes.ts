@@ -20,6 +20,7 @@ import { Adminproject } from './adminproject/adminproject';
 import { Adminviewproject } from './adminviewproject/adminviewproject';
 import { InnovationComponent } from './innovation/innovation';
 import { Adminsettings } from './adminsettings/adminsettings';
+import { BulkTaskImportComponent } from './bulk-task-import/bulk-task-import';
 
 // Employee pages
 import { DashboardEmployeeComponent } from './dashboard-employee/dashboard-employee';
@@ -64,6 +65,7 @@ export const routes: Routes = [
       { path: 'projects/:projectId', component: Adminviewproject },
       { path: 'innovation', component: InnovationComponent },
       { path: 'settings', component: Adminsettings },
+      { path: 'bulk-task-import', component: BulkTaskImportComponent },
     ],
   },
 

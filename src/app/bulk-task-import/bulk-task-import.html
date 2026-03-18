@@ -1,0 +1,602 @@
+<!-- src/app/bulk-task-import/bulk-task-import.html -->
+<div class="bulk-import-wrapper">
+
+  <!-- ══════════════════════════════════════════
+       PAGE HEADER
+  ══════════════════════════════════════════ -->
+  <div class="page-header mb-8">
+    <div class="d-flex align-items-center gap-4">
+      <div class="header-icon">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+          <path opacity="0.3" d="M10 4H21C21.6 4 22 4.4 22 5V7H10V4Z" fill="currentColor"/>
+          <path d="M10.4 3.60001L12 6H21C21.6 6 22 6.4 22 7V19C22 19.6 21.6 20 21 20H3C2.4 20 2 19.6 2 19V4C2 3.4 2.4 3 3 3H9.20001C9.70001 3 10.2 3.20001 10.4 3.60001Z" fill="currentColor"/>
+        </svg>
+      </div>
+      <div>
+        <h1 class="page-title mb-0">Bulk Task Import</h1>
+        <p class="page-subtitle mb-0">Paste a JSON array to create multiple tasks at once</p>
+      </div>
+    </div>
+
+    <!-- Step indicator -->
+    <div class="step-track mt-6">
+      <div class="step-item" [class.active]="step === 'input'" [class.done]="step !== 'input'">
+        <div class="step-bubble">1</div>
+        <span>Paste JSON</span>
+      </div>
+      <div class="step-line"></div>
+      <div class="step-item" [class.active]="step === 'preview'" [class.done]="step === 'running' || step === 'done'">
+        <div class="step-bubble">2</div>
+        <span>Preview</span>
+      </div>
+      <div class="step-line"></div>
+      <div class="step-item" [class.active]="step === 'running'" [class.done]="step === 'done'">
+        <div class="step-bubble">3</div>
+        <span>Import</span>
+      </div>
+      <div class="step-line"></div>
+      <div class="step-item" [class.active]="step === 'done'">
+        <div class="step-bubble">4</div>
+        <span>Done</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       META LOADING / ERROR BANNER
+  ══════════════════════════════════════════ -->
+  <div *ngIf="isLoadingMeta" class="alert-bar info mb-6">
+    <span class="spinner-border spinner-border-sm me-2"></span>
+    Loading lookup data (projects, departments, categories, employees)…
+  </div>
+
+  <div *ngIf="metaError" class="alert-bar danger mb-6">
+    <strong>⚠ Metadata Error:</strong> {{ metaError }}
+    <button class="btn-link ms-3" (click)="loadMetadata()">Retry</button>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       STEP 1 — JSON INPUT
+  ══════════════════════════════════════════ -->
+  <div *ngIf="step === 'input'" class="card-panel">
+
+    <!-- Schema reference -->
+    <div class="schema-box mb-6">
+      <div class="schema-header">
+        <span class="schema-title">📋 Expected JSON Schema</span>
+        <div class="schema-actions">
+          <button class="pill-btn" (click)="loadSample()">Load Sample</button>
+          <button class="pill-btn" (click)="copyTemplate()">Copy Template</button>
+        </div>
+      </div>
+      <pre class="schema-code"><code>[
+  &#123;
+    <span class="key">"project"</span>:       <span class="str">"Project Name or ID"</span>,      <span class="comment">// required</span>
+    <span class="key">"title"</span>:         <span class="str">"Task Title"</span>,               <span class="comment">// required</span>
+    <span class="key">"description"</span>:   <span class="str">"Task description"</span>,           <span class="comment">// required</span>
+    <span class="key">"department"</span>:    <span class="str">"Department Name or ID"</span>,      <span class="comment">// required</span>
+    <span class="key">"category"</span>:      <span class="str">"Category Title or ID"</span>,       <span class="comment">// required</span>
+    <span class="key">"startDate"</span>:     <span class="str">"2025-03-01"</span>,                <span class="comment">// required YYYY-MM-DD</span>
+    <span class="key">"dueDate"</span>:       <span class="str">"2025-03-15"</span>,                <span class="comment">// required YYYY-MM-DD</span>
+    <span class="key">"priority"</span>:      <span class="str">"Low | Medium | High"</span>,        <span class="comment">// optional</span>
+    <span class="key">"recurrence"</span>:    <span class="str">"OneTime | Daily | Weekly…"</span>,  <span class="comment">// optional</span>
+    <span class="key">"collaborators"</span>: [<span class="str">"email@company.com"</span>],        <span class="comment">// optional — email or ID</span>
+    <span class="key">"subtasks"</span>:      [&#123; <span class="key">"title"</span>: <span class="str">"Subtask name"</span> &#125;]    <span class="comment">// optional</span>
+  &#125;
+]</code></pre>
+    </div>
+
+    <!-- Textarea -->
+    <div class="input-section">
+      <label class="input-label">Paste your JSON array below</label>
+      <textarea
+        class="json-textarea"
+        [(ngModel)]="jsonInput"
+        [class.has-error]="jsonError"
+        placeholder='[ { "project": "...", "title": "...", ... } ]'
+        rows="16"
+        spellcheck="false"
+      ></textarea>
+
+      <!-- Error display -->
+      <div *ngIf="jsonError" class="error-list mt-3">
+        <div class="error-header">⛔ Validation errors — fix these before proceeding:</div>
+        <pre class="error-body">{{ jsonError }}</pre>
+      </div>
+    </div>
+
+    <!-- Action row -->
+    <div class="action-row mt-6">
+      <div class="char-count text-muted fs-7">
+        {{ jsonInput.length | number }} characters
+      </div>
+      <button
+        class="btn-primary-custom"
+        (click)="parseAndPreview()"
+        [disabled]="isLoadingMeta || !jsonInput.trim()">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="me-2">
+          <path d="M5 12H19M12 5L19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        Validate &amp; Preview
+      </button>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       STEP 2 — PREVIEW TABLE
+  ══════════════════════════════════════════ -->
+  <div *ngIf="step === 'preview'" class="card-panel">
+
+    <!-- Summary strip -->
+    <div class="summary-strip mb-6">
+      <div class="summary-badge total">
+        <span class="badge-num">{{ taskRows.length }}</span>
+        <span class="badge-lbl">Tasks ready</span>
+      </div>
+      <div class="summary-badge info">
+        <span class="badge-num">{{ taskRows.length }}</span>
+        <span class="badge-lbl">Will be created</span>
+      </div>
+      <div class="summary-action ms-auto">
+        <button class="pill-btn danger" (click)="resetAll()">← Back &amp; Edit</button>
+      </div>
+    </div>
+
+    <!-- Task preview table -->
+    <div class="table-responsive">
+      <table class="preview-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Project</th>
+            <th>Title</th>
+            <th>Department / Category</th>
+            <th>Dates</th>
+            <th>Priority</th>
+            <th>Recurrence</th>
+            <th>Collaborators</th>
+            <th>Subtasks</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let row of taskRows; trackBy: trackByIndex">
+            <td class="idx-cell">{{ row.index }}</td>
+            <td>
+              <span class="cell-main">{{ row.raw.project }}</span>
+              <span *ngIf="row.resolvedProjectId" class="cell-sub resolved">✓ ID found</span>
+              <span *ngIf="!row.resolvedProjectId" class="cell-sub unresolved">⚠ Not found</span>
+            </td>
+            <td>
+              <span class="cell-main fw-semibold">{{ row.raw.title }}</span>
+              <span class="cell-sub text-truncate" style="max-width:180px">{{ row.raw.description }}</span>
+            </td>
+            <td>
+              <span class="dept-tag">{{ row.raw.department }}</span>
+              <span class="cat-tag">{{ row.raw.category }}</span>
+              <span *ngIf="!row.resolvedCategoryId" class="cell-sub unresolved">⚠ Category not found</span>
+            </td>
+            <td>
+              <div class="date-pair">
+                <span class="date-from">{{ row.raw.startDate }}</span>
+                <span class="date-arrow">→</span>
+                <span class="date-to">{{ row.raw.dueDate }}</span>
+              </div>
+            </td>
+            <td>
+              <span class="priority-pill" [class]="'priority-' + (row.raw.priority || 'none' | lowercase)">
+                {{ row.raw.priority || '—' }}
+              </span>
+            </td>
+            <td>
+              <span class="recurrence-label">{{ row.raw.recurrence || 'OneTime' }}</span>
+            </td>
+            <td>
+              <span *ngIf="!row.raw.collaborators?.length" class="text-muted fs-7">None</span>
+              <div *ngIf="row.raw.collaborators?.length" class="collab-list">
+                <span *ngFor="let c of row.raw.collaborators" class="collab-chip">
+                  {{ c }}
+                  <span *ngIf="resolveCollabResolved(row, c)" class="collab-ok">✓</span>
+                </span>
+              </div>
+            </td>
+            <td>
+              <span *ngIf="!row.raw.subtasks?.length" class="text-muted fs-7">None</span>
+              <span *ngIf="row.raw.subtasks?.length"
+                    class="subtask-count"
+                    [title]="getSubtaskTitles(row.raw.subtasks)">
+                {{ row.raw.subtasks?.length }} subtask(s)
+              </span>
+            </td>
+            <td>
+              <button class="icon-btn danger" title="Remove this task" (click)="removeRow(row.index - 1)">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                  <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Start button -->
+    <div class="action-row mt-6">
+      <span class="text-muted fs-7">Tasks will be submitted in batches of 5</span>
+      <button
+        class="btn-primary-custom btn-go"
+        (click)="startImport()"
+        [disabled]="taskRows.length === 0">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="me-2">
+          <path d="M5 3L19 12L5 21V3Z" fill="currentColor"/>
+        </svg>
+        Start Import ({{ taskRows.length }} tasks)
+      </button>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       STEP 3 — RUNNING / LIVE PROGRESS
+  ══════════════════════════════════════════ -->
+  <div *ngIf="step === 'running' || step === 'done'" class="card-panel">
+
+    <!-- Progress header -->
+    <div class="progress-header mb-6">
+      <div class="progress-title">
+        <span *ngIf="step === 'running'">
+          <span class="spinner-border spinner-border-sm me-2 text-primary"></span>
+          Importing tasks…
+        </span>
+        <span *ngIf="step === 'done'">
+          🎉 Import Complete
+        </span>
+      </div>
+
+      <div class="progress-stats">
+        <span class="stat success">✅ {{ successCount }} succeeded</span>
+        <span class="stat failed">❌ {{ failedCount }} failed</span>
+        <span class="stat total">📋 {{ totalTasks }} total</span>
+      </div>
+    </div>
+
+    <!-- Progress bar -->
+    <div class="progress-track mb-6">
+      <div class="progress-fill" [style.width.%]="progressPercent">
+        <span class="progress-label">{{ progressPercent }}%</span>
+      </div>
+    </div>
+
+    <!-- Live task list -->
+    <div class="live-list">
+      <div *ngFor="let row of taskRows; trackBy: trackByIndex"
+           class="live-row"
+           [class.live-success]="row.status === 'success'"
+           [class.live-failed]="row.status === 'failed'"
+           [class.live-running]="row.status === 'running'">
+
+        <div class="live-status-icon">
+          <span *ngIf="row.status === 'pending'">⏳</span>
+          <span *ngIf="row.status === 'running'" class="spinner-border spinner-border-sm text-primary"></span>
+          <span *ngIf="row.status === 'success'">✅</span>
+          <span *ngIf="row.status === 'failed'">❌</span>
+        </div>
+
+        <div class="live-info">
+          <span class="live-title">{{ row.raw.title }}</span>
+          <span class="live-meta">{{ row.raw.project }} · {{ row.raw.department }}</span>
+        </div>
+
+        <div class="live-right">
+          <span class="live-badge" [ngClass]="statusClass(row.status)">
+            {{ row.status | titlecase }}
+          </span>
+          <span *ngIf="row.error" class="live-error" [title]="row.error">
+            {{ row.error | slice:0:60 }}{{ row.error.length > 60 ? '…' : '' }}
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Done actions -->
+    <div *ngIf="step === 'done'" class="action-row mt-8">
+      <div class="done-summary">
+        <div class="done-card success">
+          <div class="done-num">{{ successCount }}</div>
+          <div class="done-lbl">Tasks Created</div>
+        </div>
+        <div class="done-card failed">
+          <div class="done-num">{{ failedCount }}</div>
+          <div class="done-lbl">Failed / Skipped</div>
+        </div>
+      </div>
+      <button class="btn-primary-custom" (click)="resetAll()">
+        Import More Tasks
+      </button>
+    </div>
+  </div>
+
+</div>
+
+<style>
+/* ── Wrapper ────────────────────────────────────── */
+.bulk-import-wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+/* ── Page header ────────────────────────────────── */
+.header-icon {
+  width: 52px; height: 52px;
+  background: rgba(0,158,247,.12);
+  border-radius: 14px;
+  display: grid; place-items: center;
+  color: #009ef7;
+}
+.page-title   { font-size: 1.6rem; font-weight: 700; color: #181c32; }
+.page-subtitle{ font-size: .9rem; color: #7e8299; }
+
+/* ── Step track ─────────────────────────────────── */
+.step-track {
+  display: flex; align-items: center; gap: 0;
+}
+.step-item {
+  display: flex; flex-direction: column; align-items: center; gap: 4px;
+  min-width: 64px; font-size: .75rem; color: #a1a5b7; font-weight: 500;
+  transition: color .3s;
+}
+.step-item.active { color: #009ef7; }
+.step-item.done   { color: #50cd89; }
+.step-bubble {
+  width: 30px; height: 30px; border-radius: 50%; border: 2px solid currentColor;
+  display: grid; place-items: center; font-weight: 700; font-size: .8rem;
+  background: #fff; transition: background .3s;
+}
+.step-item.active .step-bubble { background: #009ef7; color: #fff; border-color: #009ef7; }
+.step-item.done   .step-bubble { background: #50cd89; color: #fff; border-color: #50cd89; }
+.step-line {
+  flex: 1; height: 2px; background: #e4e6ef; margin-bottom: 20px;
+}
+
+/* ── Alert bars ─────────────────────────────────── */
+.alert-bar {
+  padding: .85rem 1.25rem; border-radius: 10px;
+  font-size: .875rem; display: flex; align-items: center;
+}
+.alert-bar.info   { background: rgba(0,158,247,.1);  color: #0095e8; }
+.alert-bar.danger { background: rgba(241,65,108,.1); color: #d9214e; }
+.btn-link {
+  background: none; border: none; cursor: pointer;
+  color: inherit; text-decoration: underline; padding: 0; font-size: inherit;
+}
+
+/* ── Card panel ─────────────────────────────────── */
+.card-panel {
+  background: #fff;
+  border: 1px solid #e4e6ef;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 2px 16px rgba(0,0,0,.05);
+}
+
+/* ── Schema box ─────────────────────────────────── */
+.schema-box {
+  border: 1px solid #e4e6ef; border-radius: 12px; overflow: hidden;
+}
+.schema-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: .75rem 1.25rem; background: #f9f9f9; border-bottom: 1px solid #e4e6ef;
+}
+.schema-title { font-weight: 600; font-size: .875rem; color: #181c32; }
+.schema-actions { display: flex; gap: .5rem; }
+.schema-code {
+  margin: 0; padding: 1.25rem; background: #1e1e2d;
+  color: #b0b0c3; font-size: .8rem; line-height: 1.7; overflow-x: auto;
+}
+.schema-code .key     { color: #7ecfff; }
+.schema-code .str     { color: #a8ff9a; }
+.schema-code .comment { color: #636375; font-style: italic; }
+
+/* ── JSON textarea ──────────────────────────────── */
+.input-label {
+  display: block; font-size: .875rem; font-weight: 600;
+  color: #3f4254; margin-bottom: .5rem;
+}
+.json-textarea {
+  width: 100%; border: 1px solid #e4e6ef; border-radius: 10px;
+  padding: 1rem; font-family: 'Courier New', monospace; font-size: .8rem;
+  line-height: 1.6; resize: vertical; background: #fafafa;
+  color: #181c32; outline: none; transition: border-color .2s, box-shadow .2s;
+}
+.json-textarea:focus  { border-color: #009ef7; box-shadow: 0 0 0 3px rgba(0,158,247,.1); background:#fff; }
+.json-textarea.has-error { border-color: #f1416c; box-shadow: 0 0 0 3px rgba(241,65,108,.1); }
+
+/* ── Error list ─────────────────────────────────── */
+.error-list {
+  border: 1px solid #f1416c; border-radius: 10px; overflow: hidden;
+}
+.error-header {
+  background: rgba(241,65,108,.08); padding: .6rem 1rem;
+  font-size: .8rem; font-weight: 600; color: #d9214e;
+}
+.error-body {
+  margin: 0; padding: .75rem 1rem; background: #fff8fa;
+  font-size: .78rem; color: #d9214e; white-space: pre-wrap;
+}
+
+/* ── Action row ─────────────────────────────────── */
+.action-row {
+  display: flex; align-items: center; justify-content: flex-end; gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* ── Buttons ────────────────────────────────────── */
+.btn-primary-custom {
+  display: inline-flex; align-items: center;
+  background: #009ef7; color: #fff; border: none;
+  border-radius: 10px; padding: .65rem 1.5rem;
+  font-size: .9rem; font-weight: 600; cursor: pointer;
+  transition: background .2s, transform .1s;
+}
+.btn-primary-custom:hover:not(:disabled) { background: #0088d4; transform: translateY(-1px); }
+.btn-primary-custom:disabled { opacity: .55; cursor: not-allowed; }
+.btn-primary-custom.btn-go   { padding: .75rem 2rem; font-size: 1rem; }
+
+.pill-btn {
+  background: #f5f8ff; border: 1px solid #e4e6ef; border-radius: 20px;
+  padding: .3rem .9rem; font-size: .78rem; cursor: pointer; color: #5e6278;
+  transition: background .2s;
+}
+.pill-btn:hover { background: #eef2ff; }
+.pill-btn.danger { color: #d9214e; border-color: rgba(241,65,108,.3); }
+.pill-btn.danger:hover { background: rgba(241,65,108,.08); }
+
+.icon-btn {
+  width: 28px; height: 28px; border-radius: 8px; border: none;
+  display: grid; place-items: center; cursor: pointer; transition: background .2s;
+}
+.icon-btn.danger { background: rgba(241,65,108,.08); color: #f1416c; }
+.icon-btn.danger:hover { background: rgba(241,65,108,.2); }
+
+/* ── Summary strip ──────────────────────────────── */
+.summary-strip {
+  display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;
+}
+.summary-badge {
+  display: flex; align-items: center; gap: .5rem;
+  background: #f9f9f9; border: 1px solid #e4e6ef;
+  border-radius: 10px; padding: .5rem 1rem;
+}
+.summary-badge.total { border-color: #009ef7; background: rgba(0,158,247,.06); }
+.summary-badge.info  { border-color: #50cd89; background: rgba(80,205,137,.06); }
+.badge-num { font-size: 1.4rem; font-weight: 700; color: #181c32; line-height:1; }
+.badge-lbl { font-size: .78rem; color: #7e8299; }
+
+/* ── Preview table ──────────────────────────────── */
+.table-responsive { overflow-x: auto; border-radius: 12px; border: 1px solid #e4e6ef; }
+.preview-table {
+  width: 100%; border-collapse: collapse; font-size: .82rem;
+}
+.preview-table thead tr { background: #f9f9f9; }
+.preview-table th {
+  padding: .75rem 1rem; text-align: left;
+  font-size: .75rem; font-weight: 600; color: #7e8299;
+  text-transform: uppercase; letter-spacing: .05em;
+  border-bottom: 1px solid #e4e6ef; white-space: nowrap;
+}
+.preview-table td {
+  padding: .7rem 1rem; border-bottom: 1px solid #f3f6f9;
+  vertical-align: top;
+}
+.preview-table tbody tr:last-child td { border-bottom: none; }
+.preview-table tbody tr:hover td { background: #fafcff; }
+
+.idx-cell { color: #a1a5b7; font-weight: 600; }
+.cell-main { display: block; font-weight: 500; color: #181c32; }
+.cell-sub  { display: block; font-size: .73rem; color: #a1a5b7; margin-top: 2px; }
+.cell-sub.resolved   { color: #50cd89; }
+.cell-sub.unresolved { color: #f1416c; }
+
+.dept-tag, .cat-tag {
+  display: inline-block; border-radius: 6px; padding: .15rem .55rem;
+  font-size: .72rem; font-weight: 600; margin-right: .25rem; margin-bottom: 2px;
+}
+.dept-tag { background: rgba(0,158,247,.1);  color: #009ef7; }
+.cat-tag  { background: rgba(114,57,234,.1); color: #7239ea; }
+
+.date-pair { display: flex; align-items: center; gap: .35rem; white-space: nowrap; }
+.date-from { color: #5e6278; }
+.date-arrow{ color: #a1a5b7; }
+.date-to   { color: #181c32; font-weight: 500; }
+
+.priority-pill {
+  display: inline-block; border-radius: 20px; padding: .2rem .7rem;
+  font-size: .73rem; font-weight: 600;
+}
+.priority-high   { background: rgba(241,65,108,.1);  color: #f1416c; }
+.priority-medium { background: rgba(255,199,0,.15);  color: #b37d00; }
+.priority-low    { background: rgba(80,205,137,.12); color: #17a86a; }
+.priority-none   { background: #f3f6f9; color: #a1a5b7; }
+
+.recurrence-label { font-size: .78rem; color: #5e6278; }
+
+.collab-list { display: flex; flex-direction: column; gap: 3px; }
+.collab-chip {
+  display: inline-flex; align-items: center; gap: 3px;
+  background: #f3f6f9; border-radius: 6px; padding: .1rem .45rem;
+  font-size: .72rem; color: #5e6278;
+}
+.collab-ok { color: #50cd89; }
+
+.subtask-count {
+  background: rgba(114,57,234,.08); color: #7239ea;
+  border-radius: 6px; padding: .15rem .55rem; font-size: .73rem; font-weight: 600;
+  cursor: default;
+}
+
+/* ── Progress section ───────────────────────────── */
+.progress-header { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: .5rem; }
+.progress-title  { font-size: 1.1rem; font-weight: 700; color: #181c32; display: flex; align-items: center; }
+.progress-stats  { display: flex; gap: 1rem; flex-wrap: wrap; }
+.stat { font-size: .82rem; font-weight: 500; }
+.stat.success { color: #17a86a; }
+.stat.failed  { color: #f1416c; }
+.stat.total   { color: #5e6278; }
+
+.progress-track {
+  height: 16px; background: #f3f6f9; border-radius: 20px; overflow: hidden; position: relative;
+}
+.progress-fill {
+  height: 100%; background: linear-gradient(90deg, #009ef7, #0088d4);
+  border-radius: 20px; transition: width .4s ease;
+  display: flex; align-items: center; justify-content: flex-end;
+  min-width: 40px;
+}
+.progress-label { font-size: .68rem; font-weight: 700; color: #fff; padding-right: 8px; }
+
+/* ── Live list ──────────────────────────────────── */
+.live-list { display: flex; flex-direction: column; gap: .5rem; max-height: 420px; overflow-y: auto; }
+.live-row {
+  display: flex; align-items: flex-start; gap: .75rem;
+  padding: .75rem 1rem; border-radius: 10px; border: 1px solid #f3f6f9;
+  transition: border-color .3s, background .3s;
+}
+.live-row.live-success { border-color: rgba(80,205,137,.3); background: rgba(80,205,137,.04); }
+.live-row.live-failed  { border-color: rgba(241,65,108,.3); background: rgba(241,65,108,.04); }
+.live-row.live-running { border-color: rgba(0,158,247,.3);  background: rgba(0,158,247,.04); }
+
+.live-status-icon { font-size: 1rem; padding-top: 2px; min-width: 22px; }
+.live-info { flex: 1; display: flex; flex-direction: column; gap: 2px; }
+.live-title { font-weight: 600; font-size: .875rem; color: #181c32; }
+.live-meta  { font-size: .75rem; color: #a1a5b7; }
+.live-right { display: flex; flex-direction: column; align-items: flex-end; gap: 3px; min-width: 100px; }
+.live-badge {
+  display: inline-block; border-radius: 6px; padding: .15rem .6rem;
+  font-size: .72rem; font-weight: 600;
+}
+.badge-secondary { background: #f3f6f9; color: #a1a5b7; }
+.badge-primary   { background: rgba(0,158,247,.1);  color: #009ef7; }
+.badge-success   { background: rgba(80,205,137,.12); color: #17a86a; }
+.badge-danger    { background: rgba(241,65,108,.1);  color: #f1416c; }
+.badge-warning   { background: rgba(255,199,0,.15);  color: #b37d00; }
+.live-error      { font-size: .7rem; color: #f1416c; text-align: right; }
+
+/* ── Done summary ───────────────────────────────── */
+.done-summary { display: flex; gap: 1rem; }
+.done-card {
+  border-radius: 12px; padding: 1rem 1.5rem; text-align: center;
+  min-width: 100px; border: 1px solid;
+}
+.done-card.success { border-color: rgba(80,205,137,.3); background: rgba(80,205,137,.06); }
+.done-card.failed  { border-color: rgba(241,65,108,.3); background: rgba(241,65,108,.06); }
+.done-num { font-size: 2rem; font-weight: 700; line-height: 1; }
+.done-card.success .done-num { color: #17a86a; }
+.done-card.failed  .done-num { color: #f1416c; }
+.done-lbl { font-size: .78rem; color: #7e8299; margin-top: 4px; }
+
+/* ── Scrollbar ──────────────────────────────────── */
+.live-list::-webkit-scrollbar { width: 5px; }
+.live-list::-webkit-scrollbar-track { background: #f3f6f9; border-radius: 10px; }
+.live-list::-webkit-scrollbar-thumb { background: #d6d6e0; border-radius: 10px; }
+</style>
