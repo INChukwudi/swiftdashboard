@@ -22,6 +22,7 @@ import { InnovationComponent } from './innovation/innovation';
 import { Adminsettings } from './adminsettings/adminsettings';
 import { BulkTaskImportComponent } from './bulk-task-import/bulk-task-import';
 
+
 // Employee pages
 import { DashboardEmployeeComponent } from './dashboard-employee/dashboard-employee';
 import { Task } from './task/task';
@@ -32,6 +33,7 @@ import { Profile } from './profile/profile';
 import { Leave } from './leave/leave';
 import { Myleave } from './myleave/myleave';
 import { HomeComponent } from './home/home.component';
+
 
 
 
@@ -79,9 +81,10 @@ export const routes: Routes = [
       { path: 'projects', component: Project },
       { path: 'projects/:projectId', component: Viewproject },
       { path: 'innovation', component: InnovationComponent },
-      { path: 'myattendance', component: Myattendance},
-      { path: 'profile', component: Profile},
-      { path: 'myleave', component: Myleave},
+      { path: 'myattendance', component: Myattendance },
+      { path: 'profile', component: Profile },
+      { path: 'myleave', component: Myleave },
+     { path: 'bulk-import', component: BulkTaskImportComponent },
     ],
   },
 
