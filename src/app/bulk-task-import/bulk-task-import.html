@@ -71,17 +71,18 @@
       </div>
       <pre class="schema-code"><code>[
   &#123;
-    <span class="key">"project"</span>:       <span class="str">"Project Name or ID"</span>,      <span class="comment">// required</span>
-    <span class="key">"title"</span>:         <span class="str">"Task Title"</span>,               <span class="comment">// required</span>
-    <span class="key">"description"</span>:   <span class="str">"Task description"</span>,           <span class="comment">// required</span>
-    <span class="key">"department"</span>:    <span class="str">"Department Name or ID"</span>,      <span class="comment">// required</span>
-    <span class="key">"category"</span>:      <span class="str">"Category Title or ID"</span>,       <span class="comment">// required</span>
-    <span class="key">"startDate"</span>:     <span class="str">"2025-03-01"</span>,                <span class="comment">// required YYYY-MM-DD</span>
-    <span class="key">"dueDate"</span>:       <span class="str">"2025-03-15"</span>,                <span class="comment">// required YYYY-MM-DD</span>
-    <span class="key">"priority"</span>:      <span class="str">"Low | Medium | High"</span>,        <span class="comment">// optional</span>
-    <span class="key">"recurrence"</span>:    <span class="str">"OneTime | Daily | Weekly…"</span>,  <span class="comment">// optional</span>
-    <span class="key">"collaborators"</span>: [<span class="str">"email@company.com"</span>],        <span class="comment">// optional — email or ID</span>
-    <span class="key">"subtasks"</span>:      [&#123; <span class="key">"title"</span>: <span class="str">"Subtask name"</span> &#125;]    <span class="comment">// optional</span>
+    <span class="key">"project"</span>:       <span class="str">"Project Name or ID"</span>,                              <span class="comment">// required</span>
+    <span class="key">"title"</span>:         <span class="str">"Task Title"</span>,                                     <span class="comment">// required</span>
+    <span class="key">"description"</span>:   <span class="str">"Task description"</span>,                                <span class="comment">// required</span>
+    <span class="key">"department"</span>:    <span class="str">"Department Name or ID"</span>,                           <span class="comment">// required</span>
+    <span class="key">"category"</span>:      <span class="str">"Category Title or ID"</span>,                            <span class="comment">// required</span>
+    <span class="key">"startDate"</span>:     <span class="str">"2025-03-01"</span>,                                     <span class="comment">// required YYYY-MM-DD</span>
+    <span class="key">"dueDate"</span>:       <span class="str">"2025-03-15"</span>,                                     <span class="comment">// required YYYY-MM-DD</span>
+    <span class="key">"taskStatus"</span>:    <span class="str">"NotStarted | InProgress | Completed | UnderReview | Overdue"</span>,  <span class="comment">// optional, default: NotStarted</span>
+    <span class="key">"priority"</span>:      <span class="str">"Low | Medium | High"</span>,                             <span class="comment">// optional</span>
+    <span class="key">"recurrence"</span>:    <span class="str">"OneTime | Daily | Weekly | BiWeekly | Monthly | Quarterly"</span>,  <span class="comment">// optional</span>
+    <span class="key">"collaborators"</span>: [<span class="str">"email@company.com"</span>],                           <span class="comment">// optional — email or ID</span>
+    <span class="key">"subtasks"</span>:      [&#123; <span class="key">"title"</span>: <span class="str">"Subtask name"</span> &#125;]               <span class="comment">// optional</span>
   &#125;
 ]</code></pre>
     </div>
@@ -152,6 +153,7 @@
             <th>Title</th>
             <th>Department / Category</th>
             <th>Dates</th>
+            <th>Status</th>
             <th>Priority</th>
             <th>Recurrence</th>
             <th>Collaborators</th>
@@ -183,8 +185,14 @@
                 <span class="date-to">{{ row.raw.dueDate }}</span>
               </div>
             </td>
+            <!-- ── Task Status column ── -->
             <td>
-              <span class="priority-pill" [class]="'priority-' + (row.raw.priority || 'none' | lowercase)">
+              <span class="task-status-pill" [ngClass]="taskStatusClass(row.raw.taskStatus)">
+                {{ row.raw.taskStatus || 'NotStarted' }}
+              </span>
+            </td>
+            <td>
+              <span class="priority-pill" [ngClass]="'priority-' + (row.raw.priority ? (row.raw.priority | lowercase) : 'none')">
                 {{ row.raw.priority || '—' }}
               </span>
             </td>
@@ -283,7 +291,7 @@
 
         <div class="live-info">
           <span class="live-title">{{ row.raw.title }}</span>
-          <span class="live-meta">{{ row.raw.project }} · {{ row.raw.department }}</span>
+          <span class="live-meta">{{ row.raw.project }} · {{ row.raw.department }} · {{ row.raw.taskStatus || 'NotStarted' }}</span>
         </div>
 
         <div class="live-right">
@@ -320,7 +328,7 @@
 <style>
 /* ── Wrapper ────────────────────────────────────── */
 .bulk-import-wrapper {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 2rem 1.5rem;
   font-family: 'Segoe UI', system-ui, sans-serif;
@@ -509,6 +517,17 @@
 .date-from { color: #5e6278; }
 .date-arrow{ color: #a1a5b7; }
 .date-to   { color: #181c32; font-weight: 500; }
+
+/* ── Task Status pill ───────────────────────────── */
+.task-status-pill {
+  display: inline-block; border-radius: 20px; padding: .2rem .75rem;
+  font-size: .73rem; font-weight: 600; white-space: nowrap;
+}
+.ts-not-started  { background: #f3f6f9;               color: #a1a5b7; }
+.ts-in-progress  { background: rgba(255,199,0,.15);   color: #b37d00; }
+.ts-completed    { background: rgba(80,205,137,.12);  color: #17a86a; }
+.ts-under-review { background: rgba(0,158,247,.1);    color: #009ef7; }
+.ts-overdue      { background: rgba(241,65,108,.1);   color: #f1416c; }
 
 .priority-pill {
   display: inline-block; border-radius: 20px; padding: .2rem .7rem;

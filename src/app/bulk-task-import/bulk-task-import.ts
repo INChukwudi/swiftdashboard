@@ -14,6 +14,7 @@ export interface BulkTaskItem {
   category: string;
   startDate: string;
   dueDate: string;
+  taskStatus?: 'NotStarted' | 'InProgress' | 'Completed' | 'UnderReview' | 'Overdue';
   priority?: 'Low' | 'Medium' | 'High';
   recurrence?: 'OneTime' | 'Daily' | 'Weekly' | 'BiWeekly' | 'Monthly' | 'Quarterly';
   collaborators?: string[];
@@ -38,6 +39,7 @@ interface ApiEmployee   { id: string; firstName: string; lastName: string; email
 interface ApiProject    { id: string; title?: string; name?: string; }
 
 const BATCH_SIZE = 5;
+const VALID_TASK_STATUSES = ['NotStarted', 'InProgress', 'Completed', 'UnderReview', 'Overdue'];
 
 @Component({
   selector: 'app-bulk-task-import',
@@ -79,6 +81,7 @@ export class BulkTaskImportComponent implements OnInit, OnDestroy {
       category: "Frontend",
       startDate: "2025-03-01",
       dueDate: "2025-03-15",
+      taskStatus: "InProgress",
       priority: "High",
       recurrence: "OneTime",
       collaborators: ["jane.doe@company.com"],
@@ -95,6 +98,7 @@ export class BulkTaskImportComponent implements OnInit, OnDestroy {
       category: "Backend",
       startDate: "2025-03-05",
       dueDate: "2025-03-20",
+      taskStatus: "NotStarted",
       priority: "Medium",
       recurrence: "OneTime",
       collaborators: []
@@ -141,19 +145,19 @@ export class BulkTaskImportComponent implements OnInit, OnDestroy {
     if (!val) return undefined;
     return this.projects.find(p =>
       p.id === val ||
-      (p.title || p.name || '').toLowerCase() === val.toLowerCase()
+      (p.title ?? p.name ?? '').toLowerCase() === val.toLowerCase()
     )?.id;
   }
 
   private resolveCategoryId(catVal: string, deptVal: string): string | undefined {
-    if (!catVal) return undefined;
+    if (!catVal || !deptVal) return undefined;
     const dept = this.departments.find(d =>
-      d.id === deptVal || d.name.toLowerCase() === deptVal.toLowerCase()
+      d.id === deptVal || (d.name ?? '').toLowerCase() === deptVal.toLowerCase()
     );
     const deptName = dept?.name;
     return this.categories.find(c => {
-      const titleMatch = c.title.toLowerCase() === catVal.toLowerCase() || c.id === catVal;
-      const deptMatch  = deptName ? c.department === deptName : true;
+      const titleMatch = (c.title ?? '').toLowerCase() === catVal.toLowerCase() || c.id === catVal;
+      const deptMatch  = deptName ? (c.department ?? '').toLowerCase() === deptName.toLowerCase() : true;
       return titleMatch && deptMatch;
     })?.id;
   }
@@ -162,8 +166,8 @@ export class BulkTaskImportComponent implements OnInit, OnDestroy {
     if (!val) return undefined;
     return this.employees.find(e =>
       e.id === val ||
-      e.email.toLowerCase() === val.toLowerCase() ||
-      `${e.firstName} ${e.lastName}`.toLowerCase() === val.toLowerCase()
+      (e.email ?? '').toLowerCase() === val.toLowerCase() ||
+      `${e.firstName ?? ''} ${e.lastName ?? ''}`.toLowerCase() === val.toLowerCase()
     )?.id;
   }
 
@@ -215,6 +219,13 @@ export class BulkTaskImportComponent implements OnInit, OnDestroy {
 
       if (missing.length) {
         validationErrors.push(`Row ${rowNum} — missing: ${missing.join(', ')}`);
+      }
+
+      // Validate taskStatus if provided
+      if (raw.taskStatus && !VALID_TASK_STATUSES.includes(raw.taskStatus)) {
+        validationErrors.push(
+          `Row ${rowNum} — invalid taskStatus "${raw.taskStatus}". Must be one of: ${VALID_TASK_STATUSES.join(', ')}`
+        );
       }
 
       const resolvedProjectId       = raw.project ? this.resolveProjectId(raw.project) : undefined;
@@ -320,7 +331,7 @@ export class BulkTaskImportComponent implements OnInit, OnDestroy {
     const payload: any = {
       title:           r.title,
       description:     r.description,
-      status:          'NotStarted',
+      status:          r.taskStatus || 'NotStarted',
       priority:        r.priority   || '',
       recurrence:      r.recurrence || 'OneTime',
       startDate:       new Date(r.startDate).toISOString(),
@@ -380,6 +391,17 @@ export class BulkTaskImportComponent implements OnInit, OnDestroy {
       failed:  'badge-danger'
     };
     return map[status];
+  }
+
+  taskStatusClass(taskStatus: string | undefined): string {
+    const map: Record<string, string> = {
+      NotStarted:  'ts-not-started',
+      InProgress:  'ts-in-progress',
+      Completed:   'ts-completed',
+      UnderReview: 'ts-under-review',
+      Overdue:     'ts-overdue'
+    };
+    return map[taskStatus || 'NotStarted'] || 'ts-not-started';
   }
 
   trackByIndex(_: number, row: TaskRow): number {
